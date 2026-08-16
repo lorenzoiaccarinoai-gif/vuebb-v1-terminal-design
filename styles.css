@@ -687,9 +687,10 @@ button {
 
 .contatti-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-xl);
   align-items: start;
+  max-width: 640px;
 }
 
 .contatti-lead {
@@ -729,71 +730,6 @@ button {
 
 .detail-item a:hover {
   border-bottom-color: var(--color-black);
-}
-
-/* Form */
-.contatti-form {
-  background-color: var(--color-white);
-  padding: var(--space-lg);
-  border: 1px solid var(--color-gray-200);
-}
-
-.form-group {
-  margin-bottom: var(--space-md);
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-gray-500);
-  margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--color-gray-200);
-  color: var(--color-black);
-  transition: border-color 0.25s ease;
-  background: transparent;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-bottom-color: var(--color-black);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.form-group .error-msg {
-  display: block;
-  font-size: 0.75rem;
-  color: #b33;
-  margin-top: 0.35rem;
-  min-height: 1.1em;
-}
-
-.form-group.has-error input,
-.form-group.has-error textarea {
-  border-bottom-color: #b33;
-}
-
-.form-success {
-  margin-top: var(--space-md);
-  padding: var(--space-md);
-  background-color: var(--color-off-white);
-  border: 1px solid var(--color-gray-200);
-  text-align: center;
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  color: var(--color-black);
 }
 
 /* Footer */
@@ -1008,10 +944,6 @@ button {
     padding: 0 1.25rem;
   }
 
-  .contatti-form {
-    padding: var(--space-md);
-  }
-
   .filosofia-quote {
     padding: var(--space-md);
   }
@@ -1029,4 +961,3 @@ button {
     transition: none;
   }
 }
-
