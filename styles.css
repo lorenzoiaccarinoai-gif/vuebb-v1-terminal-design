@@ -315,7 +315,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: calc(var(--header-height) + 2rem) var(--space-md) 4rem;
+  padding: calc(var(--header-height) + 2rem) var(--space-md) var(--space-3xl);
   position: relative;
   background-color: var(--color-white);
 }
@@ -906,6 +906,7 @@ button {
 
   .hero {
     padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: var(--space-2xl);
   }
 
   .hero-logo {
