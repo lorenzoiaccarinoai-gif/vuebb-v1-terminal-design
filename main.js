@@ -62,7 +62,7 @@
 
   // ---------- Smooth reveal on scroll ----------
   const revealElements = document.querySelectorAll(
-    '.section-header, .filosofia-text, .filosofia-quote, .servizio-card, .metodo-step, .perchi-card, .pricing-card, .contatti-info, .contatti-form'
+    '.section-header, .filosofia-text, .filosofia-quote, .servizio-card, .metodo-step, .perchi-card, .pricing-card, .contatti-info'
   );
 
   revealElements.forEach((el) => {
@@ -85,81 +85,6 @@
   }, observerOptions);
 
   revealElements.forEach((el) => revealObserver.observe(el));
-
-  // ---------- Contact form ----------
-  const form = document.getElementById('contact-form');
-  const successMsg = document.getElementById('form-success');
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Clear previous errors
-      form.querySelectorAll('.form-group').forEach((g) => {
-        g.classList.remove('has-error');
-        const msg = g.querySelector('.error-msg');
-        if (msg) msg.textContent = '';
-      });
-
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-      let valid = true;
-
-      if (!name) {
-        setError(form.name, 'Inserite il vostro nome');
-        valid = false;
-      }
-
-      if (!email) {
-        setError(form.email, 'Inserite un indirizzo email');
-        valid = false;
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        setError(form.email, 'Indirizzo email non valido');
-        valid = false;
-      }
-
-      if (!message) {
-        setError(form.message, 'Scrivete un breve messaggio');
-        valid = false;
-      } else if (message.length < 10) {
-        setError(form.message, 'Messaggio troppo breve');
-        valid = false;
-      }
-
-      if (!valid) return;
-
-      // Simulate submission
-      const btn = form.querySelector('button[type="submit"]');
-      const btnText = btn.querySelector('.btn-text');
-      const btnLoading = btn.querySelector('.btn-loading');
-
-      btn.disabled = true;
-      btnText.hidden = true;
-      btnLoading.hidden = false;
-
-      // Fake delay for UX
-      setTimeout(() => {
-        form.reset();
-        btn.disabled = false;
-        btnText.hidden = false;
-        btnLoading.hidden = true;
-        successMsg.hidden = false;
-
-        // Hide success after a while
-        setTimeout(() => {
-          successMsg.hidden = true;
-        }, 6000);
-      }, 1100);
-    });
-  }
-
-  function setError(input, message) {
-    const group = input.closest('.form-group');
-    group.classList.add('has-error');
-    const msgEl = group.querySelector('.error-msg');
-    if (msgEl) msgEl.textContent = message;
-  }
 
   // ---------- Current year ----------
   const yearEl = document.getElementById('year');
@@ -192,4 +117,3 @@
 
   window.addEventListener('scroll', highlightNav, { passive: true });
 })();
-
