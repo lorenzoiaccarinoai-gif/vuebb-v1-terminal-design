@@ -374,14 +374,7 @@ button {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-gray-400);
-  margin-bottom: var(--space-xl);
-}
-
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  margin-bottom: 0;
 }
 
 /* ========== SECTIONS ========== */
@@ -732,6 +725,13 @@ button {
   border-bottom-color: var(--color-black);
 }
 
+.detail-note {
+  font-size: 0.8rem;
+  color: var(--color-gray-400);
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
 /* Footer */
 .footer {
   background-color: var(--color-black);
@@ -822,10 +822,6 @@ button {
   animation: heroUnveil 1.1s var(--ease-out) 0.68s both;
 }
 
-.hero-cta {
-  animation: heroUnveil 1.15s var(--ease-out) 0.85s both;
-}
-
 /* Scroll reveals — fluid, soft scale + settle (desktop & mobile) */
 .reveal {
   opacity: 0;
@@ -914,15 +910,6 @@ button {
 
   .hero-logo {
     width: 110px;
-  }
-
-  .hero-cta {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-cta .btn {
-    width: 100%;
   }
 
   .section {
