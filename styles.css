@@ -671,6 +671,31 @@ button {
   border-top: 1px solid var(--color-gray-100);
 }
 
+.pricing-addon {
+  max-width: 720px;
+  margin: var(--space-xl) auto 0;
+  padding: var(--space-lg) var(--space-md);
+  border: 1px solid var(--color-gray-200);
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.pricing-addon-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-black);
+  margin-bottom: var(--space-sm);
+}
+
+.pricing-addon p {
+  font-size: 0.975rem;
+  color: var(--color-gray-700);
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 38rem;
+}
+
 /* Contatti */
 .contatti {
   background-color: var(--color-off-white);
@@ -722,6 +747,14 @@ button {
 
 .detail-item a:hover {
   border-bottom-color: var(--color-black);
+}
+
+.detail-alt {
+  font-size: 0.8rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gray-500) !important;
+  margin-top: 0.15rem;
 }
 
 .detail-note {
@@ -783,6 +816,22 @@ button {
 }
 
 .footer-links a:hover {
+  color: var(--color-white);
+}
+
+.footer-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  justify-content: center;
+}
+
+.footer-contacts a {
+  font-size: 0.8rem;
+  color: var(--color-gray-300);
+}
+
+.footer-contacts a:hover {
   color: var(--color-white);
 }
 
