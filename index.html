@@ -11,7 +11,12 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Navigation -->
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
+
   <header class="header" id="header">
     <div class="container header-inner">
       <a href="#hero" class="logo-link" aria-label="TSM Home">
@@ -24,7 +29,7 @@
       <nav class="nav" id="nav">
         <ul class="nav-list">
           <li><a href="#filosofia" class="nav-link">Filosofia</a></li>
-          <li><a href="#servizi" class="nav-link">Servizi</a></li>
+          <li><a href="#servizi" class="nav-link">Discipline</a></li>
           <li><a href="#metodo" class="nav-link">Metodo</a></li>
           <li><a href="#per-chi" class="nav-link">Per chi</a></li>
           <li><a href="#pricing" class="nav-link">Prezzi</a></li>
@@ -38,9 +43,8 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="container hero-content">
+    <div class="container hero-content glass glass-hero">
       <div class="hero-logo-wrap">
         <picture>
           <source srcset="images/tsm-logo.webp" type="image/webp">
@@ -52,36 +56,34 @@
         <span class="hero-title-sub">su Misura</span>
       </h1>
       <p class="hero-tagline">
-        Boutique di Siti Web, Web App ed E-commerce<br>
-        ultra personalizzati
+        Boutique di sviluppo web:<br>
+        siti, web app ed e-commerce ultra personalizzati
       </p>
       <p class="hero-audience">
         Per Professionisti · Micro-Imprese · PMI
       </p>
     </div>
-
   </section>
 
-  <!-- Filosofia -->
   <section class="section filosofia" id="filosofia">
     <div class="container">
       <div class="section-header">
         <span class="section-label">La nostra essenza</span>
-        <h2 class="section-title">Non siamo un’agenzia.<br>Siamo una boutique.</h2>
+        <h2 class="section-title">Non siamo un’agenzia.<br>Siamo una boutique web.</h2>
       </div>
       <div class="filosofia-grid">
-        <div class="filosofia-text">
+        <div class="filosofia-text glass">
           <p class="lead">
             TSM nasce dall’idea che il web debba adattarsi alle persone e al brand, non il contrario.
           </p>
           <p>
-            Come un sarto confeziona un abito su misura, noi progettiamo e realizziamo siti, applicazioni e negozi online che rispettano l’unicità di ogni attività professionale.
+            Come un sarto confeziona un abito su misura, progettiamo e realizziamo siti boutique, web app e negozi online che rispettano l’unicità di ogni attività.
           </p>
           <p>
-            Nessun template. Nessuna soluzione “pronta all’uso”. Solo lavoro artigianale potenziato dalle più recenti tecnologie, attenzione maniacale ai dettagli e risultati che parlano da soli.
+            Nessun template. Nessuna soluzione “pronta all’uso”. Solo lavoro artigianale, attenzione maniacale ai dettagli e risultati che parlano da soli.
           </p>
         </div>
-        <div class="filosofia-quote">
+        <div class="filosofia-quote glass glass-strong">
           <blockquote>
             L'unicità non è un optional.<br>E' il punto di partenza.
           </blockquote>
@@ -90,16 +92,15 @@
     </div>
   </section>
 
-  <!-- Servizi -->
   <section class="section servizi" id="servizi">
     <div class="container">
       <div class="section-header center">
         <span class="section-label">Cosa facciamo</span>
         <h2 class="section-title">Tre discipline.<br>Un’unica firma.</h2>
-        <p class="section-desc">Ogni progetto nasce da un dialogo profondo e si sviluppa con la cura di un pezzo unico.</p>
+        <p class="section-desc">Sviluppo web su misura: ogni progetto nasce da un dialogo profondo e si costruisce come un pezzo unico.</p>
       </div>
       <div class="servizi-grid">
-        <article class="servizio-card">
+        <article class="servizio-card glass">
           <div class="servizio-number">01</div>
           <h3 class="servizio-title">Siti Web Boutique</h3>
           <p class="servizio-desc">
@@ -112,7 +113,7 @@
             <li>Siti editoriali e portfolio</li>
           </ul>
         </article>
-        <article class="servizio-card">
+        <article class="servizio-card glass">
           <div class="servizio-number">02</div>
           <h3 class="servizio-title">Web App</h3>
           <p class="servizio-desc">
@@ -125,7 +126,7 @@
             <li>Prenotazioni e flussi operativi</li>
           </ul>
         </article>
-        <article class="servizio-card">
+        <article class="servizio-card glass">
           <div class="servizio-number">03</div>
           <h3 class="servizio-title">E-commerce</h3>
           <p class="servizio-desc">
@@ -142,56 +143,54 @@
     </div>
   </section>
 
-  <!-- Metodo -->
   <section class="section metodo" id="metodo">
     <div class="container">
       <div class="section-header center">
         <span class="section-label">Come lavoriamo</span>
         <h2 class="section-title">Il metodo TSM</h2>
-        <p class="section-desc">Un percorso chiaro e orientato al risultato.</p>
+        <p class="section-desc">Un percorso chiaro, dal brief al sito, alla web app o allo store online.</p>
       </div>
       <div class="metodo-timeline">
-        <div class="metodo-step">
+        <div class="metodo-step glass glass-dark">
           <div class="step-marker">
             <span class="step-num">1</span>
           </div>
           <div class="step-content">
             <h3>Ascolto</h3>
-            <p>Partiamo da voi. Comprendiamo a fondo brand, obiettivi, vincoli e ambizioni. Nessuna soluzione prima di una diagnosi precisa.</p>
+            <p>Partiamo da voi. Comprendiamo brand, obiettivi e ambizioni digitali. Nessuna soluzione prima di una diagnosi precisa.</p>
           </div>
         </div>
-        <div class="metodo-step">
+        <div class="metodo-step glass glass-dark">
           <div class="step-marker">
             <span class="step-num">2</span>
           </div>
           <div class="step-content">
             <h3>Progettazione</h3>
-            <p>Definiamo architettura, flussi e interfacce. Ogni decisione è condivisa e motivata. Il progetto si allinea alla vostra visione.</p>
+            <p>Definiamo architettura, flussi e interfacce del vostro sito, web app o e-commerce. Ogni decisione è condivisa e motivata.</p>
           </div>
         </div>
-        <div class="metodo-step">
+        <div class="metodo-step glass glass-dark">
           <div class="step-marker">
             <span class="step-num">3</span>
           </div>
           <div class="step-content">
             <h3>Realizzazione</h3>
-            <p>Sviluppo iterativo, test continui, attenzione ossessiva alla qualità. Vi accompagniamo in ogni fase senza sorprese.</p>
+            <p>Sviluppo web iterativo, test continui, attenzione ossessiva alla qualità. Vi accompagniamo in ogni fase senza sorprese.</p>
           </div>
         </div>
-        <div class="metodo-step">
+        <div class="metodo-step glass glass-dark">
           <div class="step-marker">
             <span class="step-num">4</span>
           </div>
           <div class="step-content">
             <h3>Affiancamento</h3>
-            <p>Consegna non significa abbandono. Formazione, supporto ed evoluzione continua fanno parte del nostro impegno.</p>
+            <p>Consegna non significa abbandono. Formazione, supporto ed evoluzione della presenza web fanno parte del nostro impegno.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Per chi -->
   <section class="section per-chi" id="per-chi">
     <div class="container">
       <div class="section-header center">
@@ -199,23 +198,22 @@
         <h2 class="section-title">Per chi non si accontenta<br>del “già fatto”.</h2>
       </div>
       <div class="perchi-grid">
-        <div class="perchi-card">
+        <div class="perchi-card glass">
           <h3>Professionisti</h3>
-          <p>Studi, consulenti, creativi. Chi gestisce relazioni di alto valore e ha bisogno di un sito o di una piattaforma all’altezza della propria professionalità.</p>
+          <p>Studi, consulenti, creativi. Chi gestisce relazioni di alto valore e ha bisogno di un sito o di una piattaforma web all’altezza della propria professionalità.</p>
         </div>
-        <div class="perchi-card">
+        <div class="perchi-card glass">
           <h3>Micro-Imprese</h3>
           <p>Realtà agili che vogliono crescere senza perdere identità. Un web che scala con voi, non che vi impone modelli estranei.</p>
         </div>
-        <div class="perchi-card">
+        <div class="perchi-card glass">
           <h3>PMI</h3>
-          <p>Aziende strutturate che cercano siti, web app ed e-commerce verticali, e un partner capace di parlare il linguaggio del business.</p>
+          <p>Aziende strutturate che cercano siti boutique, web app ed e-commerce verticali, e un partner capace di parlare il linguaggio del business.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
   <section class="section pricing" id="pricing">
     <div class="container">
       <div class="section-header center">
@@ -226,7 +224,7 @@
         </p>
       </div>
       <div class="pricing-grid">
-        <article class="pricing-card">
+        <article class="pricing-card glass">
           <h3 class="pricing-label">Siti Web Boutique</h3>
           <div class="pricing-price">
             <span class="pricing-from">a partire da</span>
@@ -235,7 +233,7 @@
           </div>
           <p class="pricing-note">Preventivo personalizzato in base a<br>pagine, funzionalità e personal branding.</p>
         </article>
-        <article class="pricing-card">
+        <article class="pricing-card glass">
           <h3 class="pricing-label">Web App</h3>
           <div class="pricing-price">
             <span class="pricing-from">a partire da</span>
@@ -244,7 +242,7 @@
           </div>
           <p class="pricing-note">Preventivo personalizzato in base a<br>flussi, integrazioni e requisiti specifici.</p>
         </article>
-        <article class="pricing-card">
+        <article class="pricing-card glass">
           <h3 class="pricing-label">E-commerce</h3>
           <div class="pricing-price">
             <span class="pricing-from">a partire da</span>
@@ -254,7 +252,7 @@
           <p class="pricing-note">Preventivo personalizzato in base a<br>catalogo, pagamenti e logistica.</p>
         </article>
       </div>
-      <article class="pricing-card pricing-addon">
+      <article class="pricing-card pricing-addon glass">
         <div class="pricing-addon-main">
           <h3 class="pricing-label">Canone di gestione</h3>
           <div class="pricing-price">
@@ -270,13 +268,12 @@
     </div>
   </section>
 
-  <!-- Contatti (solo info, senza form) -->
   <section class="section contatti" id="contatti">
     <div class="container">
-      <div class="contatti-wrapper">
+      <div class="contatti-wrapper glass glass-strong">
         <div class="contatti-info">
           <span class="section-label">Iniziamo</span>
-          <h2 class="section-title">Raccontateci<br>il vostro progetto.</h2>
+          <h2 class="section-title">Raccontateci<br>il vostro progetto web.</h2>
           <p class="contatti-lead">
             Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.
           </p>
@@ -300,9 +297,8 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-inner">
+    <div class="container footer-inner glass glass-dark footer-glass">
       <div class="footer-brand">
         <picture>
           <source srcset="images/tsm-logo.webp" type="image/webp">
@@ -312,7 +308,7 @@
       </div>
       <div class="footer-links">
         <a href="#filosofia">Filosofia</a>
-        <a href="#servizi">Servizi</a>
+        <a href="#servizi">Discipline</a>
         <a href="#metodo">Metodo</a>
         <a href="#pricing">Prezzi</a>
         <a href="#contatti">Contatti</a>
