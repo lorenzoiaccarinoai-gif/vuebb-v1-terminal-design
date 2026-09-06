@@ -37,6 +37,7 @@
   --space-xl: 4rem;
   --space-2xl: 6rem;
   --space-3xl: 9rem;
+  --section-y: 5rem;
 
   --container-max: 1120px;
   --container-narrow: 720px;
@@ -68,10 +69,12 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--color-dark);
-  background:
+  background-color: var(--color-off-white);
+  background-image:
+    radial-gradient(circle, rgba(10, 10, 10, 0.055) 0.55px, transparent 0.7px),
     radial-gradient(1200px 700px at 12% -10%, rgba(255, 255, 255, 0.9), transparent 55%),
-    radial-gradient(900px 600px at 90% 8%, rgba(235, 235, 235, 0.7), transparent 50%),
-    var(--color-off-white);
+    radial-gradient(900px 600px at 90% 8%, rgba(235, 235, 235, 0.7), transparent 50%);
+  background-size: 7px 7px, auto, auto;
   overflow-x: hidden;
 }
 
@@ -358,43 +361,17 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: calc(var(--header-height) + 5rem) var(--space-md) var(--space-3xl);
-  min-height: 100svh;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.hero-lava {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
-}
-
-.hero-lava canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-  filter: blur(30px) contrast(12);
-  transform: scale(1.08);
-  transform-origin: center;
+  padding: calc(var(--header-height) + var(--section-y)) var(--space-md) var(--section-y);
 }
 
 .hero-content {
   text-align: center;
   max-width: 760px;
-  z-index: 1;
 }
 
 .glass-hero {
   padding: 3.2rem 2.4rem 2.8rem;
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.34);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
 }
 
 .hero-logo-wrap {
@@ -450,11 +427,22 @@ button {
 }
 
 .section {
-  padding: var(--space-3xl) 0;
+  padding: var(--section-y) 0;
 }
 
 .filosofia {
-  background: transparent;
+  background-color: var(--color-off-white);
+  background-image:
+    repeating-conic-gradient(from 0deg, rgba(10, 10, 10, 0.035) 0 25%, transparent 0 50%);
+  background-size: 6px 6px;
+}
+
+.servizi {
+  background-color: var(--color-off-white);
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
 }
 
 .filosofia-grid {
@@ -562,10 +550,22 @@ button {
 }
 
 .metodo {
-  background:
-    radial-gradient(800px 500px at 80% 0%, rgba(74, 74, 74, 0.45), transparent 60%),
-    var(--color-black);
+  background-color: var(--color-black);
+  background-image:
+    repeating-linear-gradient(60deg, transparent 0 10px, rgba(255, 255, 255, 0.04) 10px 11px),
+    repeating-linear-gradient(-60deg, transparent 0 10px, rgba(255, 255, 255, 0.04) 10px 11px),
+    repeating-linear-gradient(0deg, transparent 0 10px, rgba(255, 255, 255, 0.028) 10px 11px),
+    radial-gradient(800px 500px at 80% 0%, rgba(74, 74, 74, 0.45), transparent 60%);
   color: var(--color-white);
+}
+
+.per-chi {
+  background-color: var(--color-off-white);
+  background-image:
+    radial-gradient(circle, rgba(10, 10, 10, 0.06) 0.55px, transparent 0.7px),
+    radial-gradient(circle, rgba(10, 10, 10, 0.06) 0.55px, transparent 0.7px);
+  background-size: 9px 16px, 9px 16px;
+  background-position: 0 0, 4.5px 8px;
 }
 
 .metodo .section-label {
@@ -672,7 +672,10 @@ button {
 }
 
 .pricing {
-  background: transparent;
+  background-color: var(--color-off-white);
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 6px, rgba(10, 10, 10, 0.035) 6px 7px),
+    repeating-linear-gradient(-45deg, transparent 0 6px, rgba(10, 10, 10, 0.028) 6px 7px);
 }
 
 .pricing-grid {
@@ -778,8 +781,12 @@ button {
 }
 
 .contatti {
-  background: transparent;
-  padding-bottom: var(--space-3xl);
+  background-color: var(--color-off-white);
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.05) 1px, transparent 1px);
+  background-size: 7px 7px;
+  background-position: center;
 }
 
 .contatti-wrapper {
@@ -836,11 +843,15 @@ button {
 }
 
 .footer {
-  background:
-    radial-gradient(700px 400px at 20% 0%, rgba(74, 74, 74, 0.35), transparent 60%),
-    var(--color-black);
+  background-color: var(--color-black);
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.06) 0.55px, transparent 0.7px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.06) 0.55px, transparent 0.7px),
+    radial-gradient(700px 400px at 20% 0%, rgba(74, 74, 74, 0.35), transparent 60%);
+  background-size: 10px 18px, 10px 18px, auto;
+  background-position: 0 0, 5px 9px, 0 0;
   color: var(--color-gray-300);
-  padding: var(--space-xl) 0 var(--space-lg);
+  padding: var(--section-y) 0 var(--space-lg);
 }
 
 .footer-inner {
@@ -999,6 +1010,7 @@ button {
 @media (max-width: 768px) {
   :root {
     --header-height: 68px;
+    --section-y: 4rem;
   }
 
   .nav {
@@ -1040,8 +1052,7 @@ button {
   }
 
   .hero {
-    padding-top: calc(var(--header-height) + 3rem);
-    padding-bottom: var(--space-2xl);
+    padding: calc(var(--header-height) + var(--section-y)) var(--space-md) var(--section-y);
   }
 
   .glass-hero {
@@ -1054,7 +1065,7 @@ button {
   }
 
   .section {
-    padding: var(--space-2xl) 0;
+    padding: var(--section-y) 0;
   }
 
   .metodo-timeline::before {
@@ -1095,10 +1106,5 @@ button {
   *::after {
     animation: none !important;
     transition: none !important;
-  }
-
-  .hero-lava canvas {
-    filter: none;
-    transform: none;
   }
 }
