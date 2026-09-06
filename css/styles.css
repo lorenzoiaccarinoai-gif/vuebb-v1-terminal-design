@@ -46,6 +46,10 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --duration: 0.4s;
+
+  --mesh-size: 6px 6px;
+  --mesh-ink: repeating-conic-gradient(from 0deg, rgba(10, 10, 10, 0.065) 0 25%, transparent 0 50%);
+  --mesh-chalk: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.08) 0 25%, transparent 0 50%);
 }
 
 *,
@@ -71,10 +75,10 @@ body {
   color: var(--color-dark);
   background-color: var(--color-off-white);
   background-image:
-    radial-gradient(circle, rgba(10, 10, 10, 0.055) 0.55px, transparent 0.7px),
+    var(--mesh-ink),
     radial-gradient(1200px 700px at 12% -10%, rgba(255, 255, 255, 0.9), transparent 55%),
     radial-gradient(900px 600px at 90% 8%, rgba(235, 235, 235, 0.7), transparent 50%);
-  background-size: 7px 7px, auto, auto;
+  background-size: var(--mesh-size), auto, auto;
   overflow-x: hidden;
 }
 
@@ -430,19 +434,15 @@ button {
   padding: var(--section-y) 0;
 }
 
-.filosofia {
+.hero,
+.filosofia,
+.servizi,
+.per-chi,
+.pricing,
+.contatti {
   background-color: var(--color-off-white);
-  background-image:
-    repeating-conic-gradient(from 0deg, rgba(10, 10, 10, 0.035) 0 25%, transparent 0 50%);
-  background-size: 6px 6px;
-}
-
-.servizi {
-  background-color: var(--color-off-white);
-  background-image:
-    linear-gradient(rgba(10, 10, 10, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 10, 10, 0.04) 1px, transparent 1px);
-  background-size: 8px 8px;
+  background-image: var(--mesh-ink);
+  background-size: var(--mesh-size);
 }
 
 .filosofia-grid {
@@ -552,20 +552,10 @@ button {
 .metodo {
   background-color: var(--color-black);
   background-image:
-    repeating-linear-gradient(60deg, transparent 0 10px, rgba(255, 255, 255, 0.04) 10px 11px),
-    repeating-linear-gradient(-60deg, transparent 0 10px, rgba(255, 255, 255, 0.04) 10px 11px),
-    repeating-linear-gradient(0deg, transparent 0 10px, rgba(255, 255, 255, 0.028) 10px 11px),
+    var(--mesh-chalk),
     radial-gradient(800px 500px at 80% 0%, rgba(74, 74, 74, 0.45), transparent 60%);
+  background-size: var(--mesh-size), auto;
   color: var(--color-white);
-}
-
-.per-chi {
-  background-color: var(--color-off-white);
-  background-image:
-    radial-gradient(circle, rgba(10, 10, 10, 0.06) 0.55px, transparent 0.7px),
-    radial-gradient(circle, rgba(10, 10, 10, 0.06) 0.55px, transparent 0.7px);
-  background-size: 9px 16px, 9px 16px;
-  background-position: 0 0, 4.5px 8px;
 }
 
 .metodo .section-label {
@@ -671,13 +661,6 @@ button {
   line-height: 1.65;
 }
 
-.pricing {
-  background-color: var(--color-off-white);
-  background-image:
-    repeating-linear-gradient(45deg, transparent 0 6px, rgba(10, 10, 10, 0.035) 6px 7px),
-    repeating-linear-gradient(-45deg, transparent 0 6px, rgba(10, 10, 10, 0.028) 6px 7px);
-}
-
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -780,15 +763,6 @@ button {
   align-self: center;
 }
 
-.contatti {
-  background-color: var(--color-off-white);
-  background-image:
-    linear-gradient(rgba(10, 10, 10, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 10, 10, 0.05) 1px, transparent 1px);
-  background-size: 7px 7px;
-  background-position: center;
-}
-
 .contatti-wrapper {
   max-width: 640px;
   padding: var(--space-xl) var(--space-lg);
@@ -845,11 +819,9 @@ button {
 .footer {
   background-color: var(--color-black);
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.06) 0.55px, transparent 0.7px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.06) 0.55px, transparent 0.7px),
+    var(--mesh-chalk),
     radial-gradient(700px 400px at 20% 0%, rgba(74, 74, 74, 0.35), transparent 60%);
-  background-size: 10px 18px, 10px 18px, auto;
-  background-position: 0 0, 5px 9px, 0 0;
+  background-size: var(--mesh-size), auto;
   color: var(--color-gray-300);
   padding: var(--section-y) 0 var(--space-lg);
 }
