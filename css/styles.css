@@ -50,6 +50,8 @@
   --mesh-size: 6px 6px;
   --mesh-ink: repeating-conic-gradient(from 0deg, rgba(10, 10, 10, 0.065) 0 25%, transparent 0 50%);
   --mesh-chalk: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.08) 0 25%, transparent 0 50%);
+  --stitch: rgba(10, 10, 10, 0.42);
+  --stitch-seam: rgba(10, 10, 10, 0.14);
 }
 
 *,
@@ -432,6 +434,40 @@ button {
 
 .section {
   padding: var(--section-y) 0;
+}
+
+.section::before,
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  pointer-events: none;
+  z-index: 2;
+  background-image:
+    radial-gradient(circle, var(--stitch) 0.7px, transparent 0.85px),
+    repeating-linear-gradient(90deg, var(--stitch) 0 7px, transparent 7px 16px),
+    repeating-linear-gradient(90deg, var(--stitch) 0 7px, transparent 7px 16px),
+    linear-gradient(var(--stitch-seam), var(--stitch-seam));
+  background-size:
+    16px 16px,
+    16px 1.35px,
+    16px 1.35px,
+    100% 1px;
+  background-position:
+    0 6.5px,
+    4.5px 4px,
+    4.5px 9.5px,
+    0 7px;
+  background-repeat: repeat-x;
+}
+
+.metodo,
+.footer {
+  --stitch: rgba(255, 255, 255, 0.4);
+  --stitch-seam: rgba(255, 255, 255, 0.14);
 }
 
 .hero,
