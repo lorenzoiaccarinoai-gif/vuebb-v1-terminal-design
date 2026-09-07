@@ -647,23 +647,6 @@ button {
   position: relative;
 }
 
-.price-card.featured {
-  background: linear-gradient(180deg, rgba(46, 232, 228, 0.18), rgba(179, 26, 120, 0.12));
-  border-color: var(--lime);
-}
-
-.badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--lime);
-  color: #07060c;
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-}
-
 .from,
 .iva {
   color: var(--muted);
