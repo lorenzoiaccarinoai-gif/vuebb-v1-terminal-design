@@ -7,10 +7,18 @@
   <title>TSM — Tecnologia su Misura</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div class="mesh" aria-hidden="true">
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+    <span class="blob blob-c"></span>
+    <span class="blob blob-d"></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
   <header class="header" id="header">
     <div class="container header-inner">
       <a href="#hero" class="logo-link" aria-label="TSM Home">
@@ -27,8 +35,8 @@
           <li><a href="#metodo" class="nav-link">Metodo</a></li>
           <li><a href="#per-chi" class="nav-link">Per chi</a></li>
           <li><a href="#pricing" class="nav-link">Prezzi</a></li>
-          <li><a href="#contatti" class="nav-link">Contatti</a></li>
         </ul>
+        <a class="btn btn-lime btn-sm" href="#contatti">Parliamone</a>
       </nav>
       <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu" aria-expanded="false">
         <span class="menu-bar"></span>
@@ -39,254 +47,233 @@
 
   <section class="hero" id="hero">
     <div class="container hero-content">
-      <p class="eyebrow">Web boutique · Milano e oltre</p>
-      <h1 class="hero-title">Tecnologia su misura<br>per il vostro successo online.</h1>
-      <p class="hero-tagline">Siti web, web app ed e-commerce ultra personalizzati per professionisti, micro-imprese e PMI.</p>
-      <a class="link-animated" href="#contatti">Parliamone</a>
+      <span class="chip">Boutique web · su misura</span>
+      <h1 class="hero-title">Tecnologia<br>su misura.</h1>
+      <p class="hero-tagline">Siti, web app ed e-commerce ultra personalizzati. Interfacce che si muovono, coinvolgono e convertono.</p>
+      <div class="hero-actions">
+        <a class="btn btn-lime" href="#contatti">Inizia un progetto</a>
+        <a class="btn btn-ghost" href="#servizi">Vedi le discipline</a>
+      </div>
     </div>
   </section>
 
-  <div class="hatch" aria-hidden="true"></div>
-
-  <section class="section filosofia" id="filosofia">
+  <section class="section specs" id="filosofia">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">La nostra essenza</span>
+        <span class="section-label">Filosofia</span>
         <h2 class="section-title">Non siamo un’agenzia.<br>Siamo una boutique web.</h2>
+        <p class="section-desc">TSM nasce dall’idea che il web debba adattarsi alle persone e al brand, non il contrario. Nessun template. Solo pezzi unici.</p>
       </div>
-      <div class="filosofia-grid">
-        <div class="filosofia-text">
-          <p class="lead">TSM nasce dall’idea che il web debba adattarsi alle persone e al brand, non il contrario.</p>
-          <p>Come un sarto confeziona un abito su misura, progettiamo e realizziamo siti boutique, web app e negozi online che rispettano l’unicità di ogni attività.</p>
-          <p>Nessun template. Nessuna soluzione “pronta all’uso”. Solo lavoro artigianale, attenzione maniacale ai dettagli e risultati che parlano da soli.</p>
-        </div>
-        <blockquote class="filosofia-quote">
-          L'unicità non è un optional.<br>È il punto di partenza.
-        </blockquote>
+      <div class="spec-grid">
+        <article class="spec-card">
+          <h3>Ascolto prima del codice</h3>
+          <p>Come un sarto confeziona un abito su misura, progettiamo siti boutique, web app e negozi online che rispettano l’unicità di ogni attività.</p>
+        </article>
+        <article class="spec-card">
+          <h3>Zero soluzioni pronte</h3>
+          <p>Nessuna soluzione “pronta all’uso”. Lavoro artigianale, attenzione maniacale ai dettagli e risultati che parlano da soli.</p>
+        </article>
+        <article class="spec-card highlight">
+          <h3>L’unicità non è un optional</h3>
+          <p>È il punto di partenza. Ogni pixel è pensato per il vostro posizionamento, non per un modello generico.</p>
+        </article>
       </div>
     </div>
   </section>
-
-  <div class="hatch" aria-hidden="true"></div>
 
   <section class="section servizi" id="servizi">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Cosa facciamo</span>
-        <h2 class="section-title">Tre discipline.<br>Un’unica firma.</h2>
-        <p class="section-desc">Sviluppo web su misura: ogni progetto nasce da un dialogo profondo e si costruisce come un pezzo unico.</p>
+        <span class="section-label">Discipline</span>
+        <h2 class="section-title">Tre strumenti.<br>Un’unica firma.</h2>
+        <p class="section-desc">Ogni progetto nasce da un dialogo profondo e si costruisce come un pezzo unico.</p>
       </div>
-      <div class="servizi-list">
-        <article class="servizio-card">
-          <div class="servizio-number">01</div>
-          <div class="servizio-body">
-            <h3 class="servizio-title">Siti Web Boutique</h3>
-            <p class="servizio-desc">Presenze digitali curate e convertenti. Ogni pixel è pensato per rappresentare il vostro posizionamento con eleganza ed efficacia.</p>
-            <ul class="servizio-list-items">
-              <li>Siti di personal branding per professionisti</li>
-              <li>Siti istituzionali e corporate</li>
-              <li>Landing page ad alta conversione</li>
-              <li>Siti editoriali e portfolio</li>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-visual v1"></div>
+          <div class="product-body">
+            <span class="product-index">01</span>
+            <h3>Siti Web Boutique</h3>
+            <p>Presenze digitali curate e convertenti. Ogni pixel è pensato per rappresentare il vostro posizionamento con eleganza ed efficacia.</p>
+            <ul>
+              <li>Personal branding</li>
+              <li>Corporate</li>
+              <li>Landing ad alta conversione</li>
+              <li>Editoriali e portfolio</li>
             </ul>
           </div>
         </article>
-        <article class="servizio-card">
-          <div class="servizio-number">02</div>
-          <div class="servizio-body">
-            <h3 class="servizio-title">Web App</h3>
-            <p class="servizio-desc">Applicazioni web progettate intorno ai vostri processi reali. Interfacce chiare, flussi su misura, controllo senza forzature.</p>
-            <ul class="servizio-list-items">
-              <li>Aree riservate e dashboard</li>
+        <article class="product-card">
+          <div class="product-visual v2"></div>
+          <div class="product-body">
+            <span class="product-index">02</span>
+            <h3>Web App</h3>
+            <p>Applicazioni web intorno ai vostri processi reali. Interfacce chiare, flussi su misura, controllo senza forzature.</p>
+            <ul>
+              <li>Dashboard e aree riservate</li>
               <li>Portali clienti e fornitori</li>
-              <li>Strumenti interni su misura</li>
-              <li>Prenotazioni e flussi operativi</li>
+              <li>Strumenti interni</li>
+              <li>Prenotazioni e flussi</li>
             </ul>
           </div>
         </article>
-        <article class="servizio-card">
-          <div class="servizio-number">03</div>
-          <div class="servizio-body">
-            <h3 class="servizio-title">E-commerce</h3>
-            <p class="servizio-desc">Negozi online su misura: catalogo, checkout e gestione ordini costruiti intorno al vostro modo di vendere, non a un modello generico.</p>
-            <ul class="servizio-list-items">
-              <li>Store boutique e cataloghi curati</li>
+        <article class="product-card">
+          <div class="product-visual v3"></div>
+          <div class="product-body">
+            <span class="product-index">03</span>
+            <h3>E-commerce</h3>
+            <p>Negozi online su misura: catalogo, checkout e ordini costruiti intorno al vostro modo di vendere.</p>
+            <ul>
+              <li>Store boutique</li>
               <li>Checkout e pagamenti</li>
-              <li>Gestione prodotti e scorte</li>
-              <li>Integrazioni di vendita e spedizione</li>
+              <li>Scorte e catalogo</li>
+              <li>Integrazioni di vendita</li>
             </ul>
           </div>
         </article>
       </div>
     </div>
   </section>
-
-  <div class="hatch hatch-dark" aria-hidden="true"></div>
 
   <section class="section metodo" id="metodo">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Come lavoriamo</span>
-        <h2 class="section-title">Il metodo TSM</h2>
-        <p class="section-desc">Un percorso chiaro, dal brief al sito, alla web app o allo store online.</p>
+        <span class="section-label">Metodo</span>
+        <h2 class="section-title">Dal brief al live,<br>senza rumore.</h2>
+        <p class="section-desc">Un percorso chiaro, dal primo ascolto al sito, alla web app o allo store online.</p>
       </div>
-      <div class="metodo-timeline">
-        <div class="metodo-step">
-          <span class="step-num">01</span>
-          <div class="step-content">
+      <ol class="steps">
+        <li>
+          <span>01</span>
+          <div>
             <h3>Ascolto</h3>
             <p>Partiamo da voi. Comprendiamo brand, obiettivi e ambizioni digitali. Nessuna soluzione prima di una diagnosi precisa.</p>
           </div>
-        </div>
-        <div class="metodo-step">
-          <span class="step-num">02</span>
-          <div class="step-content">
+        </li>
+        <li>
+          <span>02</span>
+          <div>
             <h3>Progettazione</h3>
-            <p>Definiamo architettura, flussi e interfacce del vostro sito, web app o e-commerce. Ogni decisione è condivisa e motivata.</p>
+            <p>Definiamo architettura, flussi e interfacce. Ogni decisione è condivisa e motivata.</p>
           </div>
-        </div>
-        <div class="metodo-step">
-          <span class="step-num">03</span>
-          <div class="step-content">
+        </li>
+        <li>
+          <span>03</span>
+          <div>
             <h3>Realizzazione</h3>
-            <p>Sviluppo web iterativo, test continui, attenzione ossessiva alla qualità. Vi accompagniamo in ogni fase senza sorprese.</p>
+            <p>Sviluppo iterativo, test continui, attenzione ossessiva alla qualità. Niente sorprese.</p>
           </div>
-        </div>
-        <div class="metodo-step">
-          <span class="step-num">04</span>
-          <div class="step-content">
+        </li>
+        <li>
+          <span>04</span>
+          <div>
             <h3>Affiancamento</h3>
-            <p>Consegna non significa abbandono. Formazione, supporto ed evoluzione della presenza web fanno parte del nostro impegno.</p>
+            <p>Consegna non significa abbandono. Formazione, supporto ed evoluzione fanno parte del lavoro.</p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
-
-  <div class="hatch hatch-dark" aria-hidden="true"></div>
 
   <section class="section per-chi" id="per-chi">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Il nostro pubblico</span>
+        <span class="section-label">Per chi</span>
         <h2 class="section-title">Per chi non si accontenta del “già fatto”.</h2>
       </div>
-      <div class="perchi-grid">
-        <div class="perchi-card">
+      <div class="quote-grid">
+        <article class="quote-card">
           <h3>Professionisti</h3>
-          <p>Studi, consulenti, creativi. Chi gestisce relazioni di alto valore e ha bisogno di un sito o di una piattaforma web all’altezza della propria professionalità.</p>
-        </div>
-        <div class="perchi-card">
+          <p>Studi, consulenti, creativi. Chi gestisce relazioni di alto valore e ha bisogno di un web all’altezza della propria professionalità.</p>
+        </article>
+        <article class="quote-card">
           <h3>Micro-Imprese</h3>
           <p>Realtà agili che vogliono crescere senza perdere identità. Un web che scala con voi, non che vi impone modelli estranei.</p>
-        </div>
-        <div class="perchi-card">
+        </article>
+        <article class="quote-card">
           <h3>PMI</h3>
-          <p>Aziende strutturate che cercano siti boutique, web app ed e-commerce verticali, e un partner capace di parlare il linguaggio del business.</p>
-        </div>
+          <p>Aziende strutturate che cercano siti boutique, web app ed e-commerce verticali, e un partner che parla il linguaggio del business.</p>
+        </article>
       </div>
     </div>
   </section>
-
-  <div class="hatch" aria-hidden="true"></div>
 
   <section class="section pricing" id="pricing">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Investimento</span>
         <h2 class="section-title">Prezzi su misura.<br>Valore senza compromessi.</h2>
-        <p class="section-desc">Ogni investimento è pensato per risultare sempre profittevole: i ritorni si collocano su un altro ordine di grandezza rispetto ai costi.</p>
+        <p class="section-desc">Ogni investimento è pensato per risultare profittevole: i ritorni stanno su un altro ordine di grandezza rispetto ai costi.</p>
       </div>
-      <div class="pricing-grid">
-        <article class="pricing-card">
-          <h3 class="pricing-label">Siti Web Boutique</h3>
-          <div class="pricing-price">
-            <span class="pricing-from">a partire da</span>
-            <span class="pricing-amount">€ 690</span>
-            <span class="pricing-iva">IVA inclusa · da concordare</span>
-          </div>
-          <p class="pricing-note">Preventivo in base a pagine, funzionalità e personal branding.</p>
+      <div class="price-grid">
+        <article class="price-card">
+          <h3>Siti Web Boutique</h3>
+          <p class="from">a partire da</p>
+          <p class="amount">€ 690</p>
+          <p class="iva">IVA inclusa · da concordare</p>
+          <p class="note">Pagine, funzionalità e personal branding.</p>
         </article>
-        <article class="pricing-card">
-          <h3 class="pricing-label">Web App</h3>
-          <div class="pricing-price">
-            <span class="pricing-from">a partire da</span>
-            <span class="pricing-amount">€ 990</span>
-            <span class="pricing-iva">IVA inclusa · da concordare</span>
-          </div>
-          <p class="pricing-note">Preventivo in base a flussi, integrazioni e requisiti specifici.</p>
+        <article class="price-card featured">
+          <span class="badge">Più scelto</span>
+          <h3>Web App</h3>
+          <p class="from">a partire da</p>
+          <p class="amount">€ 990</p>
+          <p class="iva">IVA inclusa · da concordare</p>
+          <p class="note">Flussi, integrazioni e requisiti specifici.</p>
         </article>
-        <article class="pricing-card">
-          <h3 class="pricing-label">E-commerce</h3>
-          <div class="pricing-price">
-            <span class="pricing-from">a partire da</span>
-            <span class="pricing-amount">€ 1.290</span>
-            <span class="pricing-iva">IVA inclusa · da concordare</span>
-          </div>
-          <p class="pricing-note">Preventivo in base a catalogo, pagamenti e logistica.</p>
+        <article class="price-card">
+          <h3>E-commerce</h3>
+          <p class="from">a partire da</p>
+          <p class="amount">€ 1.290</p>
+          <p class="iva">IVA inclusa · da concordare</p>
+          <p class="note">Catalogo, pagamenti e logistica.</p>
         </article>
       </div>
-      <article class="pricing-card pricing-addon">
+      <article class="price-card addon">
         <div>
-          <h3 class="pricing-label">Canone di gestione</h3>
-          <div class="pricing-price">
-            <span class="pricing-from">a partire da</span>
-            <span class="pricing-amount pricing-amount-sm">€ 15 / mese</span>
-            <span class="pricing-iva">IVA inclusa</span>
-          </div>
+          <h3>Canone di gestione</h3>
+          <p class="amount sm">€ 15 / mese</p>
+          <p class="iva">IVA inclusa</p>
         </div>
-        <p class="pricing-note">Manutenzione, hosting, dominio proprietario, cookie e aggiornamenti. La conformità GDPR, se necessaria, viene quotata a parte.</p>
+        <p class="note">Manutenzione, hosting, dominio proprietario, cookie e aggiornamenti. GDPR, se necessario, si quota a parte.</p>
       </article>
     </div>
   </section>
 
-  <div class="hatch hatch-dark" aria-hidden="true"></div>
-
   <section class="section contatti" id="contatti">
-    <div class="container">
+    <div class="container contact-panel">
       <span class="section-label">Iniziamo</span>
-      <h2 class="section-title talk-title">Raccontateci il vostro progetto.</h2>
-      <p class="contatti-lead">Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.</p>
-      <div class="contatti-details">
-        <div class="detail-item">
-          <span class="detail-label">Email</span>
-          <a class="link-animated" href="mailto:tecnologiasumisura.info@gmail.com">tecnologiasumisura.info@gmail.com</a>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Cellulare / WhatsApp</span>
-          <a class="link-animated" href="https://wa.me/393334585718" target="_blank" rel="noopener noreferrer">+39 333 458 5718</a>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Risposta</span>
-          <span>Entro 24 ore lavorative</span>
-        </div>
+      <h2 class="section-title">Raccontateci il vostro progetto.</h2>
+      <p class="section-desc">Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.</p>
+      <div class="contact-row">
+        <a class="btn btn-lime" href="mailto:tecnologiasumisura.info@gmail.com">Scrivici</a>
+        <a class="btn btn-ghost" href="https://wa.me/393334585718" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+      <div class="contact-meta">
+        <p>tecnologiasumisura.info@gmail.com</p>
+        <p>+39 333 458 5718</p>
+        <p>Risposta entro 24 ore lavorative</p>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <a class="footer-talk" href="#contatti">Parliamone →</a>
-      <div class="footer-row">
-        <div class="footer-brand">
-          <picture>
-            <source srcset="images/tsm-logo.webp" type="image/webp">
-            <img src="images/tsm-logo.jpg" alt="TSM" class="footer-logo" width="367" height="480">
-          </picture>
-          <p>Tecnologia su Misura</p>
-        </div>
-        <div class="footer-links">
-          <a href="#filosofia">Filosofia</a>
-          <a href="#servizi">Discipline</a>
-          <a href="#metodo">Metodo</a>
-          <a href="#pricing">Prezzi</a>
-          <a href="#contatti">Contatti</a>
-        </div>
-        <div class="footer-contacts">
-          <a href="mailto:tecnologiasumisura.info@gmail.com">tecnologiasumisura.info@gmail.com</a>
-          <a href="https://wa.me/393334585718" target="_blank" rel="noopener noreferrer">+39 333 458 5718</a>
-        </div>
+      <div class="footer-brand">
+        <picture>
+          <source srcset="images/tsm-logo.webp" type="image/webp">
+          <img src="images/tsm-logo.jpg" alt="TSM" class="footer-logo" width="367" height="480">
+        </picture>
+        <p>Tecnologia su Misura</p>
       </div>
-      <p class="footer-copy">&copy; <span id="year"></span> TSM — Tecnologia su Misura. Tutti i diritti riservati.</p>
+      <div class="footer-links">
+        <a href="#filosofia">Filosofia</a>
+        <a href="#servizi">Discipline</a>
+        <a href="#metodo">Metodo</a>
+        <a href="#pricing">Prezzi</a>
+        <a href="#contatti">Contatti</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> TSM. Tutti i diritti riservati.</p>
     </div>
   </footer>
 

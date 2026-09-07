@@ -54,7 +54,7 @@
   }
 
   const revealElements = document.querySelectorAll(
-    '.section-header, .filosofia-text, .filosofia-quote, .servizio-card, .metodo-step, .perchi-card, .pricing-card, .contatti-details'
+    '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel'
   );
 
   revealElements.forEach((el) => {
