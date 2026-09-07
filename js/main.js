@@ -53,39 +53,49 @@
     });
   }
 
+  const hoverSel = [
+    '.logo-link',
+    '.nav-link',
+    '.btn',
+    '.chip',
+    '.spec-card',
+    '.quote-card',
+    '.price-card',
+    '.product-card',
+    '.steps li',
+    '.contact-panel',
+    '.footer-links a',
+  ].join(',');
+
+  let hovered = null;
+
+  function setHover(el) {
+    if (hovered && hovered !== el) hovered.classList.remove('is-hover');
+    if (el) el.classList.add('is-hover');
+    hovered = el || null;
+  }
+
+  document.addEventListener('touchstart', (e) => {
+    setHover(e.target.closest(hoverSel));
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    const el = e.target.closest(hoverSel);
+    if (!el) setHover(null);
+  }, { passive: true });
+
   const revealElements = document.querySelectorAll(
     '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel'
   );
 
-  function wrapTitleLines(el) {
-    if (el.querySelector('.cover-line')) return;
-    const parts = el.innerHTML.split(/<br\s*\/?>/i);
-    el.innerHTML = parts
-      .map((part) => `<span class="cover-line"><span>${part.trim()}</span></span>`)
-      .join('');
-  }
-
-  document.querySelectorAll('.section-title').forEach(wrapTitleLines);
-  document.querySelectorAll('.section-desc, .section-label').forEach((el) => {
-    if (el.querySelector('.cover-line')) return;
-    el.innerHTML = `<span class="cover-line"><span>${el.innerHTML}</span></span>`;
-  });
-
-  document.querySelectorAll('.spec-card, .quote-card, .price-card, .steps li, .contact-panel').forEach((el) => {
-    el.classList.add('cover-wipe');
-  });
-
-  document.querySelectorAll('.product-card, .section-header').forEach((el) => {
+  document.querySelectorAll('.product-card, .section-header, .spec-card, .quote-card, .price-card, .steps li, .contact-panel').forEach((el) => {
     el.classList.add('reveal');
   });
 
   const groups = document.querySelectorAll('.spec-grid, .product-grid, .quote-grid, .price-grid, .steps');
   groups.forEach((group) => {
     [...group.children].forEach((child, i) => {
-      const delay = `${i * 0.12}s`;
-      child.style.transitionDelay = delay;
-      const vis = child.querySelector('.product-visual');
-      if (vis) vis.style.transitionDelay = delay;
+      child.style.transitionDelay = `${i * 0.08}s`;
     });
   });
 
@@ -104,36 +114,28 @@
     });
   }, {
     root: null,
-    rootMargin: '0px 0px -10% 0px',
-    threshold: 0.14,
+    rootMargin: '0px 0px -8% 0px',
+    threshold: 0.12,
   });
 
-  if (reduced) {
-    document.body.classList.remove('is-booting');
+  const cover = document.getElementById('page-cover');
+  const heroContent = document.getElementById('hero-content');
+
+  function startUncover() {
+    if (document.body.classList.contains('is-ready')) return;
+    cover?.classList.add('is-out');
     document.body.classList.add('is-ready');
-    document.getElementById('page-cover')?.classList.add('is-out');
-    document.getElementById('hero-content')?.classList.add('is-in');
-    document.querySelectorAll('.cover-wipe, .reveal, .section-header, .cover-line').forEach(unveil);
+    document.body.classList.remove('is-booting');
+    setTimeout(() => heroContent?.classList.add('is-in'), 160);
+  }
+
+  if (reduced) {
+    startUncover();
+    document.querySelectorAll('.reveal').forEach(unveil);
   } else {
-    const cover = document.getElementById('page-cover');
-    const heroContent = document.getElementById('hero-content');
-
-    const startUncover = () => {
-      if (document.body.classList.contains('is-ready')) return;
-      cover?.classList.add('is-out');
-      document.body.classList.add('is-ready');
-      document.body.classList.remove('is-booting');
-      setTimeout(() => heroContent?.classList.add('is-in'), 180);
-    };
-
-    window.addEventListener('load', () => {
-      setTimeout(startUncover, 480);
-    });
+    window.addEventListener('load', () => setTimeout(startUncover, 700));
     setTimeout(startUncover, 2200);
-
-    [...revealElements, ...document.querySelectorAll('.cover-wipe')].forEach((el) => {
-      revealObserver.observe(el);
-    });
+    revealElements.forEach((el) => revealObserver.observe(el));
   }
 
   const yearEl = document.getElementById('year');
