@@ -1,15 +1,16 @@
-/* TSM — grainy dark UI, dusk palette */
+/* TSM — grainy dark UI, nebula palette */
 
 :root {
-  --bg: #05070d;
-  --bg-2: #0a1220;
-  --ink: #f3f6fb;
-  --muted: #9aa7b8;
-  --lime: #f48b96;
-  --lime-2: #ffb3bb;
-  --cyan: #7ec8f0;
-  --blue: #1a6fd4;
-  --line: rgba(255, 255, 255, 0.09);
+  --bg: #07140f;
+  --bg-2: #0b1f1a;
+  --ink: #eef6d8;
+  --muted: #8aa89a;
+  --lime: #c5dc45;
+  --lime-2: #e4f0b0;
+  --cyan: #3ecfc0;
+  --blue: #0d4a5c;
+  --emerald: #1c8a62;
+  --line: rgba(228, 240, 176, 0.12);
   --font: 'Geist', system-ui, sans-serif;
   --header: 76px;
   --radius: 28px;
@@ -97,7 +98,7 @@ button {
   height: 52vw;
   left: 8%;
   bottom: -18%;
-  background: radial-gradient(circle, #f48b96 0%, transparent 70%);
+  background: radial-gradient(circle, #c5dc45 0%, transparent 70%);
 }
 
 .blob-b {
@@ -105,7 +106,7 @@ button {
   height: 44vw;
   right: -8%;
   top: 8%;
-  background: radial-gradient(circle, #3b8fd9 0%, transparent 68%);
+  background: radial-gradient(circle, #0d4a5c 0%, transparent 68%);
   animation-duration: 22s;
 }
 
@@ -114,16 +115,16 @@ button {
   height: 48vw;
   left: 18%;
   top: 28%;
-  background: radial-gradient(circle, #7ec8f0 0%, transparent 70%);
+  background: radial-gradient(circle, #1c8a62 0%, transparent 70%);
   animation-duration: 26s;
 }
 
 .blob-d {
-  width: 32vw;
-  height: 32vw;
+  width: 36vw;
+  height: 36vw;
   left: -10%;
   top: -8%;
-  background: radial-gradient(circle, #0a3d7a 0%, transparent 70%);
+  background: radial-gradient(circle, #3ecfc0 0%, transparent 70%);
   animation-duration: 16s;
 }
 
@@ -146,7 +147,7 @@ button {
   inset: 0 0 auto 0;
   height: var(--header);
   z-index: 20;
-  background: rgba(5, 7, 13, 0.55);
+  background: rgba(7, 20, 15, 0.58);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
@@ -239,7 +240,7 @@ button {
 
 .btn-lime {
   background: var(--lime);
-  color: #05070d;
+  color: #0b1f1a;
 }
 
 .btn-lime:hover {
@@ -273,9 +274,9 @@ button {
   display: inline-flex;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid rgba(126, 200, 240, 0.4);
-  background: rgba(126, 200, 240, 0.1);
-  color: var(--cyan);
+  border: 1px solid rgba(197, 220, 69, 0.4);
+  background: rgba(197, 220, 69, 0.1);
+  color: var(--lime);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -323,7 +324,12 @@ button {
 
 .section-label {
   display: inline-block;
-  color: var(--cyan);
+  color: var(--lime);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
 }
 
 .section-title {
@@ -393,8 +399,8 @@ button {
 }
 
 .spec-card.highlight {
-  background: linear-gradient(180deg, rgba(126, 200, 240, 0.18), rgba(244, 139, 150, 0.12));
-  border-color: rgba(126, 200, 240, 0.4);
+  background: linear-gradient(180deg, rgba(197, 220, 69, 0.16), rgba(28, 138, 98, 0.12));
+  border-color: rgba(197, 220, 69, 0.45);
 }
 
 .product-card {
@@ -406,7 +412,7 @@ button {
 
 .product-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(126, 200, 240, 0.45);
+  border-color: rgba(197, 220, 69, 0.45);
 }
 
 .product-visual {
@@ -422,9 +428,9 @@ button {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
-.v1 { background: radial-gradient(circle at 50% 85%, #f48b96, #3b8fd9 42%, #05070d 72%); }
-.v2 { background: radial-gradient(circle at 50% 80%, #7ec8f0, #1a6fd4 48%, #05070d 74%); }
-.v3 { background: radial-gradient(circle at 50% 90%, #ffb3bb, #7ec8f0 38%, #0a3d7a 70%); }
+.v1 { background: radial-gradient(circle at 50% 80%, #c5dc45, #1c8a62 42%, #07140f 72%); }
+.v2 { background: radial-gradient(circle at 40% 70%, #3ecfc0, #0d4a5c 48%, #07140f 74%); }
+.v3 { background: radial-gradient(circle at 60% 85%, #e4f0b0, #1c8a62 38%, #0b1f1a 70%); }
 
 .product-body {
   padding: 1.4rem 1.4rem 1.6rem;
@@ -477,8 +483,8 @@ button {
 }
 
 .price-card.featured {
-  background: linear-gradient(180deg, rgba(126, 200, 240, 0.16), rgba(244, 139, 150, 0.1));
-  border-color: var(--cyan);
+  background: linear-gradient(180deg, rgba(197, 220, 69, 0.18), rgba(28, 138, 98, 0.1));
+  border-color: var(--lime);
 }
 
 .badge {
@@ -486,7 +492,7 @@ button {
   top: 1rem;
   right: 1rem;
   background: var(--lime);
-  color: #05070d;
+  color: #0b1f1a;
   font-size: 0.68rem;
   font-weight: 700;
   padding: 0.25rem 0.55rem;
@@ -605,7 +611,7 @@ button {
     inset: 0 0 0 auto;
     width: min(320px, 86vw);
     height: 100vh;
-    background: #05070d;
+    background: #07140f;
     flex-direction: column;
     align-items: flex-start;
     padding: calc(var(--header) + 1.5rem) 1.4rem;
