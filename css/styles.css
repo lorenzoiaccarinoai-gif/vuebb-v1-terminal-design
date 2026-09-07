@@ -677,16 +677,19 @@ button {
   margin: 0.25rem 0 0.35rem;
 }
 
-.amount.sm {
-  font-size: 1.7rem;
+.amount span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--muted);
 }
 
-.price-card.addon {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 1.5rem;
-  align-items: center;
+.price-include {
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  max-width: 40rem;
 }
 
 .contact-panel {
