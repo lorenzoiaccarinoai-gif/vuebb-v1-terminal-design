@@ -50,8 +50,11 @@
   --mesh-size: 6px 6px;
   --mesh-ink: repeating-conic-gradient(from 0deg, rgba(10, 10, 10, 0.065) 0 25%, transparent 0 50%);
   --mesh-chalk: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.08) 0 25%, transparent 0 50%);
+  --bind: var(--color-gray-200);
+  --bind-hi: rgba(255, 255, 255, 0.55);
+  --bind-lo: rgba(10, 10, 10, 0.1);
   --stitch: rgba(10, 10, 10, 0.42);
-  --stitch-seam: rgba(10, 10, 10, 0.14);
+  --seam-wash: rgba(255, 255, 255, 0.4);
 }
 
 *,
@@ -119,6 +122,8 @@ button {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--space-md);
+  position: relative;
+  z-index: 1;
 }
 
 /* Ambient orbs */
@@ -440,34 +445,36 @@ button {
 .footer::before {
   content: '';
   position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  z-index: 3;
+  pointer-events: none;
+  background-color: var(--bind);
+  background-image:
+    radial-gradient(circle, var(--stitch) 0.6px, transparent 0.75px),
+    repeating-linear-gradient(90deg, var(--stitch) 0 9px, transparent 9px 20px);
+  background-size: 20px 20px, 20px 1.25px;
+  background-position: 0 50%, 5.5px 50%;
+  background-repeat: repeat-x;
+  box-shadow:
+    inset 0 1px 0 var(--bind-hi),
+    inset 0 -1px 0 var(--bind-lo),
+    0 6px 14px rgba(10, 10, 10, 0.05);
+}
+
+.section::after,
+.footer::after {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 14px;
+  height: 56px;
+  z-index: 0;
   pointer-events: none;
-  z-index: 2;
-  background-image:
-    radial-gradient(circle, var(--stitch) 0.7px, transparent 0.85px),
-    repeating-linear-gradient(90deg, var(--stitch) 0 7px, transparent 7px 16px),
-    repeating-linear-gradient(90deg, var(--stitch) 0 7px, transparent 7px 16px),
-    linear-gradient(var(--stitch-seam), var(--stitch-seam));
-  background-size:
-    16px 16px,
-    16px 1.35px,
-    16px 1.35px,
-    100% 1px;
-  background-position:
-    0 6.5px,
-    4.5px 4px,
-    4.5px 9.5px,
-    0 7px;
-  background-repeat: repeat-x;
-}
-
-.metodo,
-.footer {
-  --stitch: rgba(255, 255, 255, 0.4);
-  --stitch-seam: rgba(255, 255, 255, 0.14);
+  background: linear-gradient(to bottom, var(--seam-wash), transparent);
 }
 
 .hero,
@@ -476,9 +483,45 @@ button {
 .per-chi,
 .pricing,
 .contatti {
-  background-color: var(--color-off-white);
   background-image: var(--mesh-ink);
   background-size: var(--mesh-size);
+}
+
+.hero {
+  background-color: var(--color-white);
+}
+
+.filosofia {
+  background-color: var(--color-off-white);
+  --seam-wash: rgba(255, 255, 255, 0.55);
+}
+
+.servizi {
+  background-color: var(--color-gray-100);
+  --seam-wash: rgba(247, 247, 245, 0.55);
+}
+
+.per-chi {
+  background-color: var(--color-off-white);
+  --seam-wash: rgba(10, 10, 10, 0.07);
+}
+
+.pricing {
+  background-color: var(--color-white);
+  --seam-wash: rgba(247, 247, 245, 0.6);
+}
+
+.contatti {
+  background-color: var(--color-gray-100);
+  --seam-wash: rgba(255, 255, 255, 0.5);
+}
+
+.metodo,
+.footer {
+  --bind: var(--color-gray-900);
+  --bind-hi: rgba(255, 255, 255, 0.12);
+  --bind-lo: rgba(0, 0, 0, 0.45);
+  --stitch: rgba(255, 255, 255, 0.38);
 }
 
 .filosofia-grid {
@@ -592,6 +635,7 @@ button {
     radial-gradient(800px 500px at 80% 0%, rgba(74, 74, 74, 0.45), transparent 60%);
   background-size: var(--mesh-size), auto;
   color: var(--color-white);
+  --seam-wash: rgba(235, 235, 235, 0.14);
 }
 
 .metodo .section-label {
@@ -853,13 +897,14 @@ button {
 }
 
 .footer {
-  background-color: var(--color-black);
+  background-color: var(--color-near-black);
   background-image:
     var(--mesh-chalk),
     radial-gradient(700px 400px at 20% 0%, rgba(74, 74, 74, 0.35), transparent 60%);
   background-size: var(--mesh-size), auto;
   color: var(--color-gray-300);
   padding: var(--section-y) 0 var(--space-lg);
+  --seam-wash: rgba(235, 235, 235, 0.1);
 }
 
 .footer-inner {
