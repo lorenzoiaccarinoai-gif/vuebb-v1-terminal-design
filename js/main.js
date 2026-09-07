@@ -67,21 +67,60 @@
     '.footer-links a',
   ].join(',');
 
+  const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel';
+  const isTouchUI = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
   let hovered = null;
 
   function setHover(el) {
-    if (hovered && hovered !== el) hovered.classList.remove('is-hover');
+    if (hovered === el) return;
+    if (hovered) hovered.classList.remove('is-hover');
     if (el) el.classList.add('is-hover');
     hovered = el || null;
   }
 
-  document.addEventListener('touchstart', (e) => {
-    setHover(e.target.closest(hoverSel));
-  }, { passive: true });
+  function pickScrollHover() {
+    if (!isTouchUI) return;
+    const vh = window.innerHeight;
+    const fx = window.innerWidth / 2;
+    const fy = vh * 0.42;
+    let best = null;
+    let bestDist = Infinity;
 
-  document.addEventListener('touchend', (e) => {
+    document.querySelectorAll(scrollHoverSel).forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.bottom < 64 || r.top > vh - 48) return;
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const dist = Math.hypot(cx - fx, cy - fy);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = el;
+      }
+    });
+
+    setHover(best);
+  }
+
+  let hoverTick = false;
+  function onScrollHover() {
+    if (hoverTick) return;
+    hoverTick = true;
+    requestAnimationFrame(() => {
+      pickScrollHover();
+      hoverTick = false;
+    });
+  }
+
+  if (isTouchUI) {
+    window.addEventListener('scroll', onScrollHover, { passive: true });
+    window.addEventListener('resize', onScrollHover);
+    pickScrollHover();
+  }
+
+  document.addEventListener('touchstart', (e) => {
     const el = e.target.closest(hoverSel);
-    if (!el) setHover(null);
+    if (el) setHover(el);
   }, { passive: true });
 
   const revealElements = document.querySelectorAll(
