@@ -171,7 +171,7 @@ button {
   height: 42px;
   width: auto;
   object-fit: contain;
-  filter: none;
+  filter: invert(1) brightness(1.15);
 }
 
 .logo-text {
