@@ -346,7 +346,7 @@ button {
   min-height: 0;
   display: flex;
   align-items: flex-end;
-  padding: calc(var(--header) + 1.4rem) 0 0;
+  padding: calc(var(--header) + 2.8rem) 0 0;
 }
 
 .hero-content {
@@ -949,7 +949,7 @@ body.is-ready .header {
   }
 
   .hero {
-    padding: calc(var(--header) + 1rem) 0 0;
+    padding: calc(var(--header) + 2.1rem) 0 0;
   }
 
   :root {

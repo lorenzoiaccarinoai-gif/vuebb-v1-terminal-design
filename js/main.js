@@ -53,6 +53,64 @@
     });
   }
 
+  const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel';
+
+  function isMobileLayout() {
+    return window.innerWidth <= 960;
+  }
+
+  let hovered = null;
+
+  function setHover(el) {
+    if (hovered === el) return;
+    if (hovered) hovered.classList.remove('is-hover');
+    if (el) el.classList.add('is-hover');
+    hovered = el || null;
+  }
+
+  function pickScrollHover() {
+    if (!isMobileLayout()) {
+      if (hovered) setHover(null);
+      return;
+    }
+
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const fx = (window.innerWidth || document.documentElement.clientWidth) / 2;
+    const fy = vh * 0.5;
+    let best = null;
+    let bestDist = Infinity;
+
+    document.querySelectorAll(scrollHoverSel).forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.height < 8) return;
+      if (r.bottom < 80 || r.top > vh - 64) return;
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const dist = Math.hypot((cx - fx) * 0.4, cy - fy);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = el;
+      }
+    });
+
+    setHover(best);
+  }
+
+  let hoverTick = false;
+  function onScrollHover() {
+    if (hoverTick) return;
+    hoverTick = true;
+    requestAnimationFrame(() => {
+      pickScrollHover();
+      hoverTick = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScrollHover, { passive: true });
+  document.addEventListener('scroll', onScrollHover, { passive: true });
+  window.addEventListener('touchmove', onScrollHover, { passive: true });
+  window.addEventListener('resize', onScrollHover);
+
   const revealElements = document.querySelectorAll(
     '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel'
   );
@@ -106,6 +164,10 @@
     setTimeout(startUncover, 2200);
     revealElements.forEach((el) => revealObserver.observe(el));
   }
+
+  pickScrollHover();
+  setTimeout(pickScrollHover, 500);
+  setTimeout(pickScrollHover, 1400);
 
   const yearEl = document.getElementById('year');
   if (yearEl) {
