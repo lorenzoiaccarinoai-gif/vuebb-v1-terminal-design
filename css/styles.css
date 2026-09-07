@@ -346,11 +346,14 @@ button {
   min-height: 0;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
   padding: calc(var(--header) + 2.8rem) 0 0;
 }
 
 .hero-content {
   max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .chip {
@@ -399,13 +402,14 @@ button {
 
 .hero-tagline {
   font-size: clamp(1.05rem, 2vw, 1.3rem);
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
 }
 
 .hero-actions {
   display: flex;
   gap: 0.8rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Sections */
