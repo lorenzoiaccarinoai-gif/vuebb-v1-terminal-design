@@ -53,94 +53,6 @@
     });
   }
 
-  const hoverSel = [
-    '.logo-link',
-    '.nav-link',
-    '.btn',
-    '.chip',
-    '.spec-card',
-    '.quote-card',
-    '.price-card',
-    '.product-card',
-    '.steps li',
-    '.contact-panel',
-    '.footer-links a',
-  ].join(',');
-
-  const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel';
-
-  function isMobileLayout() {
-    return window.innerWidth <= 960 || window.matchMedia('(hover: none), (pointer: coarse)').matches;
-  }
-
-  let hovered = null;
-
-  function setHover(el) {
-    if (hovered === el) return;
-    if (hovered) hovered.classList.remove('is-hover');
-    if (el) el.classList.add('is-hover');
-    hovered = el || null;
-  }
-
-  function pickScrollHover() {
-    if (!isMobileLayout()) {
-      if (hovered && hovered.matches(scrollHoverSel)) setHover(null);
-      return;
-    }
-
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    const fx = (window.innerWidth || document.documentElement.clientWidth) / 2;
-    const fy = vh * 0.38;
-    let best = null;
-    let bestDist = Infinity;
-
-    document.querySelectorAll(scrollHoverSel).forEach((el) => {
-      const r = el.getBoundingClientRect();
-      if (r.height < 8) return;
-      if (r.bottom < 72 || r.top > vh - 56) return;
-      const cx = r.left + r.width / 2;
-      const cy = r.top + Math.min(r.height * 0.4, 120);
-      const dist = Math.hypot((cx - fx) * 0.35, cy - fy);
-      if (dist < bestDist) {
-        bestDist = dist;
-        best = el;
-      }
-    });
-
-    setHover(best);
-  }
-
-  let hoverTick = false;
-  function onScrollHover() {
-    if (hoverTick) return;
-    hoverTick = true;
-    requestAnimationFrame(() => {
-      pickScrollHover();
-      hoverTick = false;
-    });
-  }
-
-  const scrollHoverOpts = { passive: true };
-  window.addEventListener('scroll', onScrollHover, scrollHoverOpts);
-  document.addEventListener('scroll', onScrollHover, scrollHoverOpts);
-  window.addEventListener('touchmove', onScrollHover, scrollHoverOpts);
-  window.addEventListener('resize', onScrollHover);
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('scroll', onScrollHover, scrollHoverOpts);
-    window.visualViewport.addEventListener('resize', onScrollHover);
-  }
-
-  const bandObserver = new IntersectionObserver(() => onScrollHover(), {
-    root: null,
-    rootMargin: '-25% 0px -45% 0px',
-    threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
-  });
-
-  document.addEventListener('touchstart', (e) => {
-    const el = e.target.closest(hoverSel);
-    if (el) setHover(el);
-  }, { passive: true });
-
   const revealElements = document.querySelectorAll(
     '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel'
   );
@@ -194,11 +106,6 @@
     setTimeout(startUncover, 2200);
     revealElements.forEach((el) => revealObserver.observe(el));
   }
-
-  document.querySelectorAll(scrollHoverSel).forEach((el) => bandObserver.observe(el));
-  pickScrollHover();
-  setTimeout(pickScrollHover, 400);
-  setTimeout(pickScrollHover, 1200);
 
   const yearEl = document.getElementById('year');
   if (yearEl) {
