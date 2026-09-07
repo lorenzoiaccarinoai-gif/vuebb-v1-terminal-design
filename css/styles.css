@@ -877,10 +877,26 @@ body.is-ready .header {
   transform: none;
 }
 
+.spec-card.reveal.visible:hover,
+.spec-card.reveal.visible.is-hover,
+.spec-card.reveal.is-in:hover,
+.spec-card.reveal.is-in.is-hover,
+.quote-card.reveal.visible:hover,
+.quote-card.reveal.visible.is-hover,
+.quote-card.reveal.is-in:hover,
+.quote-card.reveal.is-in.is-hover,
+.price-card.reveal.visible:hover,
+.price-card.reveal.visible.is-hover,
+.price-card.reveal.is-in:hover,
+.price-card.reveal.is-in.is-hover,
 .product-card.reveal.visible:hover,
-.product-card.reveal.is-in:hover,
 .product-card.reveal.visible.is-hover,
-.product-card.reveal.is-in.is-hover {
+.product-card.reveal.is-in:hover,
+.product-card.reveal.is-in.is-hover,
+.steps li.reveal.visible:hover,
+.steps li.reveal.visible.is-hover,
+.steps li.reveal.is-in:hover,
+.steps li.reveal.is-in.is-hover {
   transform: translateY(-8px);
 }
 
