@@ -1,13 +1,15 @@
-/* TSM — grainy dark UI, lime accent */
+/* TSM — grainy dark UI, dusk palette */
 
 :root {
-  --bg: #141414;
-  --bg-2: #1c1c1c;
-  --ink: #f4f4f0;
-  --muted: #a3a39a;
-  --lime: #c2f13c;
-  --lime-2: #d8ff6a;
-  --line: rgba(255, 255, 255, 0.08);
+  --bg: #05070d;
+  --bg-2: #0a1220;
+  --ink: #f3f6fb;
+  --muted: #9aa7b8;
+  --lime: #f48b96;
+  --lime-2: #ffb3bb;
+  --cyan: #7ec8f0;
+  --blue: #1a6fd4;
+  --line: rgba(255, 255, 255, 0.09);
   --font: 'Geist', system-ui, sans-serif;
   --header: 76px;
   --radius: 28px;
@@ -91,37 +93,37 @@ button {
 }
 
 .blob-a {
-  width: 46vw;
-  height: 46vw;
-  left: -8%;
-  top: -10%;
-  background: radial-gradient(circle, #c2f13c 0%, transparent 70%);
+  width: 52vw;
+  height: 52vw;
+  left: 8%;
+  bottom: -18%;
+  background: radial-gradient(circle, #f48b96 0%, transparent 70%);
 }
 
 .blob-b {
-  width: 40vw;
-  height: 40vw;
-  right: -10%;
-  top: 18%;
-  background: radial-gradient(circle, #7cffb2 0%, transparent 68%);
+  width: 44vw;
+  height: 44vw;
+  right: -8%;
+  top: 8%;
+  background: radial-gradient(circle, #3b8fd9 0%, transparent 68%);
   animation-duration: 22s;
 }
 
 .blob-c {
-  width: 38vw;
-  height: 38vw;
-  left: 28%;
-  bottom: -12%;
-  background: radial-gradient(circle, #e8ff7a 0%, transparent 70%);
+  width: 48vw;
+  height: 48vw;
+  left: 18%;
+  top: 28%;
+  background: radial-gradient(circle, #7ec8f0 0%, transparent 70%);
   animation-duration: 26s;
 }
 
 .blob-d {
-  width: 28vw;
-  height: 28vw;
-  right: 18%;
-  bottom: 8%;
-  background: radial-gradient(circle, #3cf1c2 0%, transparent 70%);
+  width: 32vw;
+  height: 32vw;
+  left: -10%;
+  top: -8%;
+  background: radial-gradient(circle, #0a3d7a 0%, transparent 70%);
   animation-duration: 16s;
 }
 
@@ -144,7 +146,7 @@ button {
   inset: 0 0 auto 0;
   height: var(--header);
   z-index: 20;
-  background: rgba(20, 20, 20, 0.55);
+  background: rgba(5, 7, 13, 0.55);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
@@ -237,7 +239,7 @@ button {
 
 .btn-lime {
   background: var(--lime);
-  color: #141414;
+  color: #05070d;
 }
 
 .btn-lime:hover {
@@ -271,9 +273,9 @@ button {
   display: inline-flex;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid rgba(194, 241, 60, 0.35);
-  background: rgba(194, 241, 60, 0.08);
-  color: var(--lime);
+  border: 1px solid rgba(126, 200, 240, 0.4);
+  background: rgba(126, 200, 240, 0.1);
+  color: var(--cyan);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -321,12 +323,7 @@ button {
 
 .section-label {
   display: inline-block;
-  color: var(--lime);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 0.9rem;
+  color: var(--cyan);
 }
 
 .section-title {
@@ -396,8 +393,8 @@ button {
 }
 
 .spec-card.highlight {
-  background: linear-gradient(180deg, rgba(194, 241, 60, 0.16), rgba(255, 255, 255, 0.04));
-  border-color: rgba(194, 241, 60, 0.45);
+  background: linear-gradient(180deg, rgba(126, 200, 240, 0.18), rgba(244, 139, 150, 0.12));
+  border-color: rgba(126, 200, 240, 0.4);
 }
 
 .product-card {
@@ -409,7 +406,7 @@ button {
 
 .product-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(194, 241, 60, 0.4);
+  border-color: rgba(126, 200, 240, 0.45);
 }
 
 .product-visual {
@@ -425,9 +422,9 @@ button {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
-.v1 { background: radial-gradient(circle at 30% 40%, #c2f13c, #1a3a22 62%, #141414); }
-.v2 { background: radial-gradient(circle at 70% 30%, #7cffb2, #143a32 60%, #141414); }
-.v3 { background: radial-gradient(circle at 50% 60%, #e8ff7a, #3a3314 60%, #141414); }
+.v1 { background: radial-gradient(circle at 50% 85%, #f48b96, #3b8fd9 42%, #05070d 72%); }
+.v2 { background: radial-gradient(circle at 50% 80%, #7ec8f0, #1a6fd4 48%, #05070d 74%); }
+.v3 { background: radial-gradient(circle at 50% 90%, #ffb3bb, #7ec8f0 38%, #0a3d7a 70%); }
 
 .product-body {
   padding: 1.4rem 1.4rem 1.6rem;
@@ -480,8 +477,8 @@ button {
 }
 
 .price-card.featured {
-  background: linear-gradient(180deg, rgba(194, 241, 60, 0.18), rgba(255, 255, 255, 0.04));
-  border-color: var(--lime);
+  background: linear-gradient(180deg, rgba(126, 200, 240, 0.16), rgba(244, 139, 150, 0.1));
+  border-color: var(--cyan);
 }
 
 .badge {
@@ -489,7 +486,7 @@ button {
   top: 1rem;
   right: 1rem;
   background: var(--lime);
-  color: #141414;
+  color: #05070d;
   font-size: 0.68rem;
   font-weight: 700;
   padding: 0.25rem 0.55rem;
@@ -608,7 +605,7 @@ button {
     inset: 0 0 0 auto;
     width: min(320px, 86vw);
     height: 100vh;
-    background: #141414;
+    background: #05070d;
     flex-direction: column;
     align-items: flex-start;
     padding: calc(var(--header) + 1.5rem) 1.4rem;
