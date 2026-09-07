@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 480" fill="none" role="img" aria-label="TSM">
+  <defs>
+    <linearGradient id="sStroke" x1="70" y1="80" x2="250" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B31A78"/>
+      <stop offset="0.45" stop-color="#2EE8E4"/>
+      <stop offset="1" stop-color="#8FF7F3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- M -->
+  <path fill="#F4F7FF" d="M54 412V188h36.5l70.2 148.6L232.3 188H268v224h-36.5V250.2L178.8 368h-16.6L90.5 250.2V412H54Z"/>
+
+  <!-- T -->
+  <path fill="#F4F7FF" d="M68 86V58h224v28h-94.2v126H162.2V86H68Z"/>
+  <path fill="#F4F7FF" d="M56 58h24l-12-18H68L56 58Zm248 0h-24l12-18h12l12 18Z"/>
+
+  <!-- S calligraphic -->
+  <path stroke="url(#sStroke)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" d="M238 78c-62-28-148 4-142 62 6 52 86 48 92 96 6 50-78 64-128 40"/>
+</svg>

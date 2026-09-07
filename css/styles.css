@@ -168,10 +168,10 @@ button {
 
 .logo-img,
 .footer-logo {
-  height: 34px;
+  height: 42px;
   width: auto;
   object-fit: contain;
-  filter: invert(1) grayscale(1) brightness(1.4);
+  filter: none;
 }
 
 .logo-text {
