@@ -1,16 +1,17 @@
-/* TSM — grainy dark UI, nebula palette */
+/* TSM — grainy dark UI, galaxy palette */
 
 :root {
-  --bg: #07140f;
-  --bg-2: #0b1f1a;
-  --ink: #eef6d8;
-  --muted: #8aa89a;
-  --lime: #c5dc45;
-  --lime-2: #e4f0b0;
-  --cyan: #3ecfc0;
-  --blue: #0d4a5c;
-  --emerald: #1c8a62;
-  --line: rgba(228, 240, 176, 0.12);
+  --bg: #07060c;
+  --bg-2: #14081f;
+  --ink: #eef4ff;
+  --muted: #9aa3c4;
+  --lime: #2ee8e4;
+  --lime-2: #8ff7f3;
+  --cyan: #2ee8e4;
+  --blue: #121e8a;
+  --magenta: #b31a78;
+  --violet: #2a0848;
+  --line: rgba(142, 247, 243, 0.12);
   --font: 'Geist', system-ui, sans-serif;
   --header: 76px;
   --radius: 28px;
@@ -98,7 +99,7 @@ button {
   height: 52vw;
   left: 8%;
   bottom: -18%;
-  background: radial-gradient(circle, #c5dc45 0%, transparent 70%);
+  background: radial-gradient(circle, #b31a78 0%, transparent 70%);
 }
 
 .blob-b {
@@ -106,7 +107,7 @@ button {
   height: 44vw;
   right: -8%;
   top: 8%;
-  background: radial-gradient(circle, #0d4a5c 0%, transparent 68%);
+  background: radial-gradient(circle, #2ee8e4 0%, transparent 68%);
   animation-duration: 22s;
 }
 
@@ -115,7 +116,7 @@ button {
   height: 48vw;
   left: 18%;
   top: 28%;
-  background: radial-gradient(circle, #1c8a62 0%, transparent 70%);
+  background: radial-gradient(circle, #121e8a 0%, transparent 70%);
   animation-duration: 26s;
 }
 
@@ -124,7 +125,7 @@ button {
   height: 36vw;
   left: -10%;
   top: -8%;
-  background: radial-gradient(circle, #3ecfc0 0%, transparent 70%);
+  background: radial-gradient(circle, #2a0848 0%, transparent 70%);
   animation-duration: 16s;
 }
 
@@ -147,7 +148,7 @@ button {
   inset: 0 0 auto 0;
   height: var(--header);
   z-index: 20;
-  background: rgba(7, 20, 15, 0.58);
+  background: rgba(7, 6, 12, 0.58);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
@@ -240,7 +241,7 @@ button {
 
 .btn-lime {
   background: var(--lime);
-  color: #0b1f1a;
+  color: #07060c;
 }
 
 .btn-lime:hover {
@@ -274,8 +275,8 @@ button {
   display: inline-flex;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid rgba(197, 220, 69, 0.4);
-  background: rgba(197, 220, 69, 0.1);
+  border: 1px solid rgba(46, 232, 228, 0.4);
+  background: rgba(46, 232, 228, 0.1);
   color: var(--lime);
   font-size: 0.75rem;
   font-weight: 500;
@@ -399,8 +400,8 @@ button {
 }
 
 .spec-card.highlight {
-  background: linear-gradient(180deg, rgba(197, 220, 69, 0.16), rgba(28, 138, 98, 0.12));
-  border-color: rgba(197, 220, 69, 0.45);
+  background: linear-gradient(180deg, rgba(46, 232, 228, 0.16), rgba(179, 26, 120, 0.14));
+  border-color: rgba(46, 232, 228, 0.45);
 }
 
 .product-card {
@@ -412,7 +413,7 @@ button {
 
 .product-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(197, 220, 69, 0.45);
+  border-color: rgba(46, 232, 228, 0.45);
 }
 
 .product-visual {
@@ -428,9 +429,9 @@ button {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
-.v1 { background: radial-gradient(circle at 50% 80%, #c5dc45, #1c8a62 42%, #07140f 72%); }
-.v2 { background: radial-gradient(circle at 40% 70%, #3ecfc0, #0d4a5c 48%, #07140f 74%); }
-.v3 { background: radial-gradient(circle at 60% 85%, #e4f0b0, #1c8a62 38%, #0b1f1a 70%); }
+.v1 { background: radial-gradient(circle at 50% 80%, #2ee8e4, #121e8a 42%, #07060c 72%); }
+.v2 { background: radial-gradient(circle at 40% 70%, #b31a78, #2a0848 48%, #07060c 74%); }
+.v3 { background: radial-gradient(circle at 60% 85%, #8ff7f3, #b31a78 38%, #121e8a 70%); }
 
 .product-body {
   padding: 1.4rem 1.4rem 1.6rem;
@@ -483,7 +484,7 @@ button {
 }
 
 .price-card.featured {
-  background: linear-gradient(180deg, rgba(197, 220, 69, 0.18), rgba(28, 138, 98, 0.1));
+  background: linear-gradient(180deg, rgba(46, 232, 228, 0.18), rgba(179, 26, 120, 0.12));
   border-color: var(--lime);
 }
 
@@ -492,7 +493,7 @@ button {
   top: 1rem;
   right: 1rem;
   background: var(--lime);
-  color: #0b1f1a;
+  color: #07060c;
   font-size: 0.68rem;
   font-weight: 700;
   padding: 0.25rem 0.55rem;
@@ -611,7 +612,7 @@ button {
     inset: 0 0 0 auto;
     width: min(320px, 86vw);
     height: 100vh;
-    background: #07140f;
+    background: #07060c;
     flex-direction: column;
     align-items: flex-start;
     padding: calc(var(--header) + 1.5rem) 1.4rem;
