@@ -909,8 +909,7 @@ body.is-ready .header {
   .spec-grid,
   .product-grid,
   .quote-grid,
-  .price-grid,
-  .price-card.addon {
+  .price-grid {
     grid-template-columns: 1fr;
   }
 }
