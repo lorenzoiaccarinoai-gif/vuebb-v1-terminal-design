@@ -678,6 +678,12 @@ button {
   line-height: 1.45;
   max-width: 40rem;
 }
+.price-include + .price-include {
+  margin-top: 0.35rem;
+}
+.price-gdpr {
+  display: block;
+}
 
 .contact-panel {
   padding: 3rem 2rem;
