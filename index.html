@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body class="is-booting">
   <div class="page-cover" id="page-cover" aria-hidden="true">
@@ -37,11 +38,12 @@
         <ul class="nav-list">
           <li><a href="#filosofia" class="nav-link">Filosofia</a></li>
           <li><a href="#servizi" class="nav-link">Servizi</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
           <li><a href="#metodo" class="nav-link">Metodo</a></li>
           <li><a href="#per-chi" class="nav-link">Per chi</a></li>
           <li><a href="#pricing" class="nav-link">Prezzi</a></li>
         </ul>
-        <a class="btn btn-lime btn-sm" href="#contatti">Parliamone</a>
+        <a class="btn btn-lime btn-sm" href="#contatti">Contattaci</a>
       </nav>
       <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu" aria-expanded="false">
         <span class="menu-bar"></span>
@@ -136,6 +138,59 @@
             </ul>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">I nostri lavori.<br>Pezzi unici, dal vivo.</h2>
+        <p class="section-desc">Una selezione di siti creati da TSM. Clicca per aprire la galleria.</p>
+      </div>
+      <button class="portfolio-trigger" id="portfolio-trigger" type="button" aria-expanded="false" aria-controls="portfolio-panel">
+        <span class="portfolio-trigger-visual" aria-hidden="true"></span>
+        <span class="portfolio-trigger-body">
+          <span class="product-index">TSM</span>
+          <h3>Siti creati da TSM</h3>
+          <p>Apri il blocco per vedere le anteprime dei progetti.</p>
+        </span>
+        <span class="portfolio-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="portfolio-panel" id="portfolio-panel" hidden>
+        <div class="portfolio-grid">
+          <figure class="shot shot-a">
+            <div class="browser"><span></span><span></span><span></span></div>
+            <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
+            <figcaption>Boutique studio</figcaption>
+          </figure>
+          <figure class="shot shot-b">
+            <div class="browser"><span></span><span></span><span></span></div>
+            <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
+            <figcaption>Web app gestionale</figcaption>
+          </figure>
+          <figure class="shot shot-c">
+            <div class="browser"><span></span><span></span><span></span></div>
+            <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
+            <figcaption>E-commerce atelier</figcaption>
+          </figure>
+          <figure class="shot shot-d">
+            <div class="browser"><span></span><span></span><span></span></div>
+            <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
+            <figcaption>Landing conversione</figcaption>
+          </figure>
+          <figure class="shot shot-e">
+            <div class="browser"><span></span><span></span><span></span></div>
+            <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
+            <figcaption>Portale clienti</figcaption>
+          </figure>
+          <figure class="shot shot-f">
+            <div class="browser"><span></span><span></span><span></span></div>
+            <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
+            <figcaption>Sito editoriale</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -244,13 +299,13 @@
       <h2 class="section-title">Raccontateci il vostro progetto.</h2>
       <p class="section-desc">Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.</p>
       <div class="contact-row">
-        <a class="btn btn-lime" href="mailto:tecnologiasumisura.info@gmail.com">Scrivici</a>
+        <a class="btn btn-lime" href="mailto:tecnologiasumisura.info@gmail.com">Scrivici una mail</a>
         <a class="btn btn-ghost" href="https://wa.me/393334585718" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
       <div class="contact-meta">
         <p>tecnologiasumisura.info@gmail.com</p>
         <p>+39 333 458 5718</p>
-        <p>Risposta entro 24 ore lavorative</p>
+        <p>Risposta entro due giorni lavorativi</p>
       </div>
     </div>
   </section>
@@ -264,9 +319,17 @@
         </picture>
         <p>Tecnologia su Misura</p>
       </div>
+      <div class="footer-cta">
+        <p class="footer-cta-label">Scrivici o WhatsApp</p>
+        <div class="footer-cta-row">
+          <a class="btn btn-lime btn-sm" href="mailto:tecnologiasumisura.info@gmail.com">Scrivici una mail</a>
+          <a class="btn btn-ghost btn-sm" href="https://wa.me/393334585718" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+      </div>
       <div class="footer-links">
         <a href="#filosofia">Filosofia</a>
         <a href="#servizi">Servizi</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#metodo">Metodo</a>
         <a href="#pricing">Prezzi</a>
         <a href="#contatti">Contatti</a>
