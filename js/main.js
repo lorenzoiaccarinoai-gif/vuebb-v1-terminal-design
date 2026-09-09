@@ -22,6 +22,14 @@
   const menuToggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('nav');
 
+  function closeNav() {
+    if (!nav || !menuToggle) return;
+    nav.classList.remove('open');
+    menuToggle.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
@@ -30,13 +38,8 @@
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    nav.querySelectorAll('.nav-link').forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+    nav.querySelectorAll('.nav-link, .btn').forEach((link) => {
+      link.addEventListener('click', closeNav);
     });
 
     document.addEventListener('click', (e) => {
@@ -45,15 +48,24 @@
         !nav.contains(e.target) &&
         !menuToggle.contains(e.target)
       ) {
-        nav.classList.remove('open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        closeNav();
       }
     });
   }
 
-  const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel';
+  const portfolioTrigger = document.getElementById('portfolio-trigger');
+  const portfolioPanel = document.getElementById('portfolio-panel');
+
+  if (portfolioTrigger && portfolioPanel) {
+    portfolioTrigger.addEventListener('click', () => {
+      const open = portfolioTrigger.classList.toggle('is-open');
+      portfolioPanel.classList.toggle('is-open', open);
+      portfolioPanel.hidden = !open;
+      portfolioTrigger.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel, .portfolio-trigger, .shot';
 
   function isMobileLayout() {
     return window.innerWidth <= 960;
@@ -112,14 +124,14 @@
   window.addEventListener('resize', onScrollHover);
 
   const revealElements = document.querySelectorAll(
-    '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel'
+    '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel, .portfolio-trigger, .shot'
   );
 
-  document.querySelectorAll('.product-card, .section-header, .spec-card, .quote-card, .price-card, .steps li, .contact-panel').forEach((el) => {
+  document.querySelectorAll('.product-card, .section-header, .spec-card, .quote-card, .price-card, .steps li, .contact-panel, .portfolio-trigger').forEach((el) => {
     el.classList.add('reveal');
   });
 
-  const groups = document.querySelectorAll('.spec-grid, .product-grid, .quote-grid, .price-grid, .steps');
+  const groups = document.querySelectorAll('.spec-grid, .product-grid, .quote-grid, .price-grid, .steps, .portfolio-grid');
   groups.forEach((group) => {
     [...group.children].forEach((child, i) => {
       child.style.transitionDelay = `${i * 0.08}s`;
