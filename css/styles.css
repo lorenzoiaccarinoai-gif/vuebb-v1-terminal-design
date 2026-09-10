@@ -887,7 +887,17 @@ body.is-ready .header {
 .steps li.reveal.visible:hover,
 .steps li.reveal.visible.is-hover,
 .steps li.reveal.is-in:hover,
-.steps li.reveal.is-in.is-hover {
+.steps li.reveal.is-in.is-hover,
+.portfolio-trigger.reveal.visible:hover,
+.portfolio-trigger.reveal.visible.is-hover,
+.portfolio-trigger.reveal.is-in:hover,
+.portfolio-trigger.reveal.is-in.is-hover,
+.portfolio-trigger.reveal.visible.is-open,
+.portfolio-trigger.reveal.is-in.is-open,
+.shot.reveal.visible:hover,
+.shot.reveal.visible.is-hover,
+.shot.reveal.is-in:hover,
+.shot.reveal.is-in.is-hover {
   transform: translateY(-8px);
 }
 

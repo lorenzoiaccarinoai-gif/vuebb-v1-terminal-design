@@ -55,6 +55,20 @@
 
   const portfolioTrigger = document.getElementById('portfolio-trigger');
   const portfolioPanel = document.getElementById('portfolio-panel');
+  const shots = document.querySelectorAll('.shot');
+
+  function revealShots() {
+    shots.forEach((shot, i) => {
+      shot.classList.add('reveal');
+      shot.classList.remove('is-in', 'visible');
+      shot.style.transitionDelay = `${i * 0.08}s`;
+    });
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        shots.forEach((shot) => shot.classList.add('is-in', 'visible'));
+      });
+    });
+  }
 
   if (portfolioTrigger && portfolioPanel) {
     portfolioTrigger.addEventListener('click', () => {
@@ -62,8 +76,54 @@
       portfolioPanel.classList.toggle('is-open', open);
       portfolioPanel.hidden = !open;
       portfolioTrigger.setAttribute('aria-expanded', String(open));
+      if (open) revealShots();
     });
   }
+
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxFrame = document.getElementById('gallery-frame');
+  const lightboxCaption = document.getElementById('gallery-caption');
+  const lightboxClose = document.getElementById('gallery-close');
+
+  function openGallery(shot) {
+    if (!lightbox || !lightboxFrame || !lightboxCaption) return;
+    const screen = shot.querySelector('.shot-screen');
+    const browser = shot.querySelector('.browser');
+    lightboxFrame.innerHTML = '';
+    if (browser) lightboxFrame.appendChild(browser.cloneNode(true));
+    if (screen) lightboxFrame.appendChild(screen.cloneNode(true));
+    lightboxCaption.textContent = shot.dataset.caption || shot.querySelector('figcaption')?.textContent || '';
+    lightbox.hidden = false;
+    requestAnimationFrame(() => lightbox.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGallery() {
+    if (!lightbox) return;
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      if (!lightbox.classList.contains('is-open')) lightbox.hidden = true;
+    }, 450);
+  }
+
+  shots.forEach((shot) => {
+    shot.addEventListener('click', () => openGallery(shot));
+    shot.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openGallery(shot);
+      }
+    });
+  });
+
+  lightboxClose?.addEventListener('click', closeGallery);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeGallery();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox?.classList.contains('is-open')) closeGallery();
+  });
 
   const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel, .portfolio-trigger, .shot';
 
@@ -124,7 +184,7 @@
   window.addEventListener('resize', onScrollHover);
 
   const revealElements = document.querySelectorAll(
-    '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel, .portfolio-trigger, .shot'
+    '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel, .portfolio-trigger'
   );
 
   document.querySelectorAll('.product-card, .section-header, .spec-card, .quote-card, .price-card, .steps li, .contact-panel, .portfolio-trigger').forEach((el) => {
@@ -171,6 +231,7 @@
   if (reduced) {
     startUncover();
     document.querySelectorAll('.reveal').forEach(unveil);
+    shots.forEach(unveil);
   } else {
     window.addEventListener('load', () => setTimeout(startUncover, 700));
     setTimeout(startUncover, 2200);

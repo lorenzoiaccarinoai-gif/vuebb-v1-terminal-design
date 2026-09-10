@@ -160,32 +160,32 @@
       </button>
       <div class="portfolio-panel" id="portfolio-panel" hidden>
         <div class="portfolio-grid">
-          <figure class="shot shot-a">
+          <figure class="shot shot-a" role="button" tabindex="0" data-caption="Boutique studio">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
             <figcaption>Boutique studio</figcaption>
           </figure>
-          <figure class="shot shot-b">
+          <figure class="shot shot-b" role="button" tabindex="0" data-caption="Web app gestionale">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
             <figcaption>Web app gestionale</figcaption>
           </figure>
-          <figure class="shot shot-c">
+          <figure class="shot shot-c" role="button" tabindex="0" data-caption="E-commerce atelier">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
             <figcaption>E-commerce atelier</figcaption>
           </figure>
-          <figure class="shot shot-d">
+          <figure class="shot shot-d" role="button" tabindex="0" data-caption="Landing conversione">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
             <figcaption>Landing conversione</figcaption>
           </figure>
-          <figure class="shot shot-e">
+          <figure class="shot shot-e" role="button" tabindex="0" data-caption="Portale clienti">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
             <figcaption>Portale clienti</figcaption>
           </figure>
-          <figure class="shot shot-f">
+          <figure class="shot shot-f" role="button" tabindex="0" data-caption="Sito editoriale">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen"><div class="shot-hero"></div><div class="shot-lines"></div></div>
             <figcaption>Sito editoriale</figcaption>
@@ -330,6 +330,14 @@
       <p class="footer-copy">&copy; <span id="year"></span> TSM. Tutti i diritti riservati.</p>
     </div>
   </footer>
+
+  <div class="gallery-lightbox" id="gallery-lightbox" hidden>
+    <button class="gallery-close" id="gallery-close" type="button" aria-label="Chiudi anteprima">×</button>
+    <figure class="gallery-figure">
+      <div class="gallery-frame" id="gallery-frame"></div>
+      <figcaption class="gallery-caption" id="gallery-caption"></figcaption>
+    </figure>
+  </div>
 
   <script src="js/main.js" defer></script>
 </body>
