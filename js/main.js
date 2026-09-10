@@ -27,11 +27,14 @@
     nav.classList.remove('open');
     menuToggle.classList.remove('active');
     menuToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    if (!document.body.classList.contains('cookie-lock')) {
+      document.body.style.overflow = '';
+    }
   }
 
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
+      if (document.body.classList.contains('cookie-lock')) return;
       const isOpen = nav.classList.toggle('open');
       menuToggle.classList.toggle('active', isOpen);
       menuToggle.setAttribute('aria-expanded', isOpen);
@@ -101,7 +104,9 @@
   function closeGallery() {
     if (!lightbox) return;
     lightbox.classList.remove('is-open');
-    document.body.style.overflow = '';
+    if (!document.body.classList.contains('cookie-lock')) {
+      document.body.style.overflow = '';
+    }
     setTimeout(() => {
       if (!lightbox.classList.contains('is-open')) lightbox.hidden = true;
     }, 450);
@@ -175,15 +180,27 @@
     });
   }
 
+  function lockPage() {
+    document.body.classList.add('cookie-lock');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function unlockPage() {
+    document.body.classList.remove('cookie-lock');
+    document.body.style.overflow = '';
+  }
+
   function hideBanner() {
     if (!banner) return;
     banner.classList.remove('is-open');
     banner.hidden = true;
+    unlockPage();
   }
 
   function showBanner() {
     if (!banner) return;
     banner.hidden = false;
+    lockPage();
     requestAnimationFrame(() => banner.classList.add('is-open'));
   }
 
@@ -207,7 +224,7 @@
   if (savedConsent === 'granted') {
     loadGtag();
   } else if (!savedConsent) {
-    setTimeout(showBanner, 400);
+    showBanner();
   }
 
   const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel, .portfolio-trigger, .shot';
