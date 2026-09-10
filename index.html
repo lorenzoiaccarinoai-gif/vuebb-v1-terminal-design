@@ -326,6 +326,8 @@
         <a href="#metodo">Metodo</a>
         <a href="#pricing">Prezzi</a>
         <a href="#contatti">Contatti</a>
+        <a href="cookie-policy.html">Cookie policy</a>
+        <button type="button" class="footer-cookie-btn" id="cookie-manage">Gestisci cookie</button>
       </div>
       <p class="footer-copy">&copy; <span id="year"></span> TSM. Tutti i diritti riservati.</p>
     </div>
@@ -338,6 +340,20 @@
       <figcaption class="gallery-caption" id="gallery-caption"></figcaption>
     </figure>
   </div>
+
+  <aside class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-text">
+    <div class="cookie-banner-inner">
+      <div class="cookie-copy">
+        <span class="section-label">Cookie</span>
+        <h2 id="cookie-title">Misuriamo solo con il tuo consenso.</h2>
+        <p id="cookie-text">Usiamo un cookie tecnico per ricordare la scelta. Google Analytics (G-V5BW8KJ77Y) parte solo se accetti. <a href="cookie-policy.html">Leggi la cookie policy</a>.</p>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-ghost btn-sm" id="cookie-reject">Rifiuta</button>
+        <button type="button" class="btn btn-lime btn-sm" id="cookie-accept">Accetta</button>
+      </div>
+    </div>
+  </aside>
 
   <script src="js/main.js" defer></script>
 </body>
