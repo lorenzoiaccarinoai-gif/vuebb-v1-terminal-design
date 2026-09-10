@@ -321,6 +321,115 @@
     0 0 0 1px rgba(46, 232, 228, 0.12);
 }
 
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 1.2rem;
+  transform: translateX(-50%) translateY(18px);
+  width: min(720px, calc(100% - 24px));
+  z-index: 60;
+  background: rgba(7, 6, 12, 0.78);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  backdrop-filter: blur(18px);
+  padding: 1.15rem 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease), visibility 0.45s var(--ease);
+}
+
+.cookie-banner.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner.is-open[hidden] {
+  display: block;
+}
+
+.cookie-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cookie-copy h2 {
+  font-size: 1.05rem;
+  letter-spacing: -0.03em;
+  margin: 0.15rem 0 0.4rem;
+}
+
+.cookie-copy p,
+.policy-copy p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.cookie-copy a,
+.policy-copy a {
+  color: var(--lime);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.footer-cookie-btn {
+  color: var(--muted);
+  font-size: 0.82rem;
+  padding-bottom: 0.15rem;
+}
+
+.footer-cookie-btn:hover {
+  color: var(--lime);
+}
+
+.policy-page .header {
+  opacity: 1;
+}
+
+.policy-main {
+  padding-top: calc(var(--header) + 2rem);
+}
+
+.policy-panel {
+  text-align: left;
+}
+
+.policy-copy {
+  margin-top: 1.6rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.policy-copy h2 {
+  font-size: 1.05rem;
+  margin-top: 0.6rem;
+}
+
+.policy-copy code {
+  color: var(--lime);
+  font-size: 0.82rem;
+}
+
+.policy-updated {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+}
+
 @media (max-width: 960px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
@@ -328,5 +437,18 @@
 
   .portfolio-trigger {
     grid-template-columns: 72px 1fr auto;
+  }
+
+  .cookie-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cookie-actions {
+    width: 100%;
+  }
+
+  .cookie-actions .btn {
+    flex: 1;
   }
 }

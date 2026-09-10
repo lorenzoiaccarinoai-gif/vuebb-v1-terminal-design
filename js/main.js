@@ -125,6 +125,91 @@
     if (e.key === 'Escape' && lightbox?.classList.contains('is-open')) closeGallery();
   });
 
+  const GA_ID = 'G-V5BW8KJ77Y';
+  const CONSENT_KEY = 'tsm-cookie-consent';
+  const CONSENT_MAX_AGE = 1000 * 60 * 60 * 24 * 180;
+  const banner = document.getElementById('cookie-banner');
+
+  function readConsent() {
+    try {
+      const raw = localStorage.getItem(CONSENT_KEY);
+      if (!raw) return null;
+      const data = JSON.parse(raw);
+      if (!data || !data.choice || !data.at) return null;
+      if (Date.now() - data.at > CONSENT_MAX_AGE) {
+        localStorage.removeItem(CONSENT_KEY);
+        return null;
+      }
+      return data.choice;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function writeConsent(choice) {
+    localStorage.setItem(CONSENT_KEY, JSON.stringify({ choice: choice, at: Date.now() }));
+  }
+
+  function loadGtag() {
+    if (window.gtagLoaded) return;
+    window.gtagLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(script);
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  function clearAnalyticsCookies() {
+    document.cookie.split(';').forEach((part) => {
+      const name = part.split('=')[0].trim();
+      if (!name) return;
+      if (name === '_ga' || name.indexOf('_ga_') === 0 || name === '_gid' || name === '_gat') {
+        document.cookie = name + '=; Path=/; Max-Age=0; SameSite=Lax';
+      }
+    });
+  }
+
+  function hideBanner() {
+    if (!banner) return;
+    banner.classList.remove('is-open');
+    banner.hidden = true;
+  }
+
+  function showBanner() {
+    if (!banner) return;
+    banner.hidden = false;
+    requestAnimationFrame(() => banner.classList.add('is-open'));
+  }
+
+  function acceptCookies() {
+    writeConsent('granted');
+    hideBanner();
+    loadGtag();
+  }
+
+  function rejectCookies() {
+    writeConsent('denied');
+    hideBanner();
+    clearAnalyticsCookies();
+  }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', acceptCookies);
+  document.getElementById('cookie-reject')?.addEventListener('click', rejectCookies);
+  document.getElementById('cookie-manage')?.addEventListener('click', showBanner);
+
+  const savedConsent = readConsent();
+  if (savedConsent === 'granted') {
+    loadGtag();
+  } else if (!savedConsent) {
+    setTimeout(showBanner, 400);
+  }
+
   const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel, .portfolio-trigger, .shot';
 
   function isMobileLayout() {
