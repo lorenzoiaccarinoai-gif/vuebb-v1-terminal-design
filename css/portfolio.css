@@ -15,6 +15,7 @@
   color: inherit;
   position: relative;
   overflow: hidden;
+  z-index: 2;
   transition:
     transform 0.5s var(--ease),
     border-color 0.5s var(--ease),
@@ -101,25 +102,28 @@
   transform: rotate(225deg);
 }
 
+.portfolio-panel[hidden] {
+  display: block;
+}
+
 .portfolio-panel {
-  margin-top: 1rem;
+  margin-top: 0;
   overflow: hidden;
   max-height: 0;
-  opacity: 0;
-  transform: translateY(-10px);
+  opacity: 1;
+  padding: 0;
+  transform: none;
   transition:
-    max-height 1.1s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s,
-    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-    padding 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+    max-height 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+    margin-top 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 1.05s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .portfolio-panel.is-open {
   max-height: 1800px;
-  opacity: 1;
-  overflow: visible;
-  padding-block: 14px 24px;
-  transform: none;
+  margin-top: 1rem;
+  padding-block: 8px 24px;
+  overflow: hidden;
 }
 
 .portfolio-grid {
@@ -138,18 +142,10 @@
   cursor: zoom-in;
   position: relative;
   z-index: 1;
+  opacity: 1;
+  transform: none;
   transition:
     transform 0.5s var(--ease),
-    border-color 0.5s var(--ease),
-    box-shadow 0.5s var(--ease),
-    background 0.5s var(--ease),
-    z-index 0s;
-}
-
-.portfolio-panel .shot.reveal {
-  transition:
-    opacity 1.05s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 1.05s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.5s var(--ease),
     box-shadow 0.5s var(--ease),
     background 0.5s var(--ease),
