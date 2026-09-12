@@ -60,26 +60,22 @@
   const portfolioPanel = document.getElementById('portfolio-panel');
   const shots = document.querySelectorAll('.shot');
 
-  function revealShots() {
-    shots.forEach((shot, i) => {
-      shot.classList.add('reveal');
-      shot.classList.remove('is-in', 'visible');
-      shot.style.transitionDelay = `${i * 0.08}s`;
-    });
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        shots.forEach((shot) => shot.classList.add('is-in', 'visible'));
-      });
-    });
-  }
-
   if (portfolioTrigger && portfolioPanel) {
     portfolioTrigger.addEventListener('click', () => {
-      const open = portfolioTrigger.classList.toggle('is-open');
-      portfolioPanel.classList.toggle('is-open', open);
-      portfolioPanel.hidden = !open;
+      const open = !portfolioTrigger.classList.contains('is-open');
+      portfolioTrigger.classList.toggle('is-open', open);
       portfolioTrigger.setAttribute('aria-expanded', String(open));
-      if (open) revealShots();
+      if (open) {
+        portfolioPanel.hidden = false;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => portfolioPanel.classList.add('is-open'));
+        });
+      } else {
+        portfolioPanel.classList.remove('is-open');
+        setTimeout(() => {
+          if (!portfolioPanel.classList.contains('is-open')) portfolioPanel.hidden = true;
+        }, 1100);
+      }
     });
   }
 
@@ -293,7 +289,7 @@
     el.classList.add('reveal');
   });
 
-  const groups = document.querySelectorAll('.spec-grid, .product-grid, .quote-grid, .price-grid, .steps, .portfolio-grid');
+  const groups = document.querySelectorAll('.spec-grid, .product-grid, .quote-grid, .price-grid, .steps');
   groups.forEach((group) => {
     [...group.children].forEach((child, i) => {
       child.style.transitionDelay = `${i * 0.08}s`;
@@ -333,7 +329,6 @@
   if (reduced) {
     startUncover();
     document.querySelectorAll('.reveal').forEach(unveil);
-    shots.forEach(unveil);
   } else {
     window.addEventListener('load', () => setTimeout(startUncover, 700));
     setTimeout(startUncover, 2200);
