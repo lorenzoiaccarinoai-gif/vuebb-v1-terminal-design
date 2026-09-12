@@ -628,7 +628,9 @@ button {
 
 .steps {
   display: grid;
-  gap: 0.8rem;
+  gap: 1rem;
+  isolation: isolate;
+  padding-block: 14px 24px;
 }
 
 .steps li {
@@ -637,6 +639,12 @@ button {
   gap: 1rem;
   padding: 1.3rem 1.4rem;
   align-items: start;
+  z-index: 1;
+}
+
+.steps li:hover,
+.steps li.is-hover {
+  z-index: 8;
 }
 
 .steps li span {
