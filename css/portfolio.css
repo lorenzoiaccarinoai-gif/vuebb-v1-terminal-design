@@ -226,7 +226,7 @@
 
 .about-row {
   display: grid;
-  grid-template-columns: minmax(132px, 200px) 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 1.3rem;
   align-items: center;
   padding: 1.15rem 1.3rem;
@@ -235,14 +235,20 @@
 
 .about-photo {
   display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .about-photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 16px 28px rgba(46, 232, 228, 0.16));
+  object-fit: cover;
+  object-position: center 12%;
 }
 
 .about-copy h3 {
@@ -506,6 +512,6 @@ body.cookie-lock > *:not(#cookie-banner) {
   }
 
   .about-photo {
-    max-width: 200px;
+    width: min(220px, 70vw);
   }
 }
