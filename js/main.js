@@ -350,26 +350,27 @@
   }
 
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link, .footer-links a[href^="#"]');
 
   function highlightNav() {
     const scrollPos = window.scrollY + 120;
+    let current = '';
 
     sections.forEach((section) => {
       const top = section.offsetTop;
       const height = section.offsetHeight;
       const id = section.getAttribute('id');
-
       if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach((link) => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
-        });
+        current = id;
       }
+    });
+
+    navLinks.forEach((link) => {
+      const match = current && link.getAttribute('href') === `#${current}`;
+      link.classList.toggle('active', Boolean(match));
     });
   }
 
   window.addEventListener('scroll', highlightNav, { passive: true });
+  highlightNav();
 })();
