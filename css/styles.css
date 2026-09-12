@@ -742,45 +742,29 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1.4rem;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.85rem 1.2rem;
 }
 
-.footer-links a,
+.footer-legal a,
 .footer-copy,
 .footer-brand p {
   color: var(--muted);
   font-size: 0.82rem;
 }
 
-.footer-links a {
-  position: relative;
-  padding-bottom: 0.15rem;
+.footer-legal a {
   transition: color 0.35s var(--ease);
 }
 
-.footer-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, var(--magenta), var(--lime));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s var(--ease);
-}
-
-.footer-links a:hover,
-.footer-links a.is-hover,
-.footer-links a.active {
+.footer-legal a:hover {
   color: var(--lime);
-}
-
-.footer-links a:hover::after,
-.footer-links a.is-hover::after,
-.footer-links a.active::after {
-  transform: scaleX(1);
 }
 
 .contact-meta p {
