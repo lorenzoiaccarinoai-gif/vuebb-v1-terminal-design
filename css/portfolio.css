@@ -503,6 +503,15 @@ body.cookie-lock > *:not(#cookie-banner) {
 
   .cookie-actions {
     flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cookie-actions .btn {
+    height: 54px;
+    min-height: 54px;
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 0 1.2rem;
   }
 
   .about-row {
