@@ -218,7 +218,9 @@
 
   document.getElementById('cookie-accept')?.addEventListener('click', acceptCookies);
   document.getElementById('cookie-reject')?.addEventListener('click', rejectCookies);
-  document.getElementById('cookie-manage')?.addEventListener('click', showBanner);
+  document.getElementById('cookie-manage')?.addEventListener('click', (e) => {
+    showBanner();
+  });
 
   const savedConsent = readConsent();
   if (savedConsent === 'granted') {
