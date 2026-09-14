@@ -471,15 +471,39 @@ body.cookie-lock > *:not(#cookie-banner) {
   text-align: left;
 }
 
-.policy-copy {
-  margin-top: 1.6rem;
-  display: grid;
-  gap: 0.7rem;
+.policy-panel .section-header {
+  margin-bottom: 0;
 }
 
-.policy-copy h2 {
-  font-size: 1.05rem;
-  margin-top: 0.6rem;
+.policy-panel .section-title {
+  font-size: clamp(1.85rem, 4vw, 2.55rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.policy-panel .section-desc,
+.policy-panel.contact-panel .section-desc {
+  max-width: none;
+  margin: 0;
+}
+
+.policy-copy {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.35rem;
+}
+
+.policy-mod h2 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin: 0 0 0.4rem;
+}
+
+.policy-mod p {
+  margin: 0;
 }
 
 .policy-copy code {
@@ -488,7 +512,7 @@ body.cookie-lock > *:not(#cookie-banner) {
 }
 
 .policy-updated {
-  margin-top: 1rem;
+  margin-top: 0.2rem;
   font-size: 0.78rem;
 }
 
