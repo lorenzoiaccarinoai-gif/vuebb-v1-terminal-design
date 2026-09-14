@@ -1,0 +1,4 @@
+SIL Open Font License 1.1 — Geist Sans
+Copyright 2024 Vercel, released as Geist.
+These font files are redistributed unchanged under the SIL Open Font License, Version 1.1.
+https://openfontlicense.org/
