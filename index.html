@@ -356,12 +356,15 @@
     </div>
   </footer>
 
-  <div class="gallery-lightbox" id="gallery-lightbox" hidden>
+  <div class="gallery-lightbox" id="gallery-lightbox" hidden role="dialog" aria-modal="true" aria-label="Anteprima progetto">
     <button class="gallery-close" id="gallery-close" type="button" aria-label="Chiudi anteprima">×</button>
+    <button class="gallery-nav gallery-prev" id="gallery-prev" type="button" aria-label="Progetto precedente">‹</button>
     <figure class="gallery-figure">
       <div class="gallery-frame" id="gallery-frame"></div>
       <figcaption class="gallery-caption" id="gallery-caption"></figcaption>
+      <p class="gallery-counter" id="gallery-counter"></p>
     </figure>
+    <button class="gallery-nav gallery-next" id="gallery-next" type="button" aria-label="Progetto successivo">›</button>
   </div>
 
   <aside class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-text">
