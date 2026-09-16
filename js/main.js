@@ -102,7 +102,14 @@
     const browser = shot.querySelector('.browser');
     lightboxFrame.innerHTML = '';
     if (browser) lightboxFrame.appendChild(browser.cloneNode(true));
-    if (screen) lightboxFrame.appendChild(screen.cloneNode(true));
+    if (screen) {
+      const clone = screen.cloneNode(true);
+      clone.querySelectorAll('source, img').forEach((el) => {
+        el.setAttribute('sizes', 'min(1280px, 92vw)');
+      });
+      clone.querySelector('img')?.setAttribute('decoding', 'async');
+      lightboxFrame.appendChild(clone);
+    }
     lightboxCaption.textContent = shot.dataset.caption || shot.querySelector('figcaption')?.textContent || '';
     if (lightboxCounter) {
       lightboxCounter.textContent = `${index + 1} / ${shotList.length}`;
