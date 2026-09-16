@@ -645,6 +645,25 @@ button {
   background: rgba(46, 232, 228, 0.08);
 }
 
+.product-body li.feature-accent {
+  color: var(--lime);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-color: rgba(46, 232, 228, 0.5);
+  background: rgba(46, 232, 228, 0.14);
+  box-shadow: 0 0 0 1px rgba(46, 232, 228, 0.08);
+}
+
+.product-card:hover .product-body li.feature-accent,
+.product-card.is-hover .product-body li.feature-accent {
+  color: var(--lime-2);
+  border-color: rgba(46, 232, 228, 0.75);
+  background: rgba(46, 232, 228, 0.22);
+  box-shadow:
+    0 10px 24px rgba(7, 6, 12, 0.25),
+    0 0 0 1px rgba(46, 232, 228, 0.18);
+}
+
 .steps {
   display: grid;
   gap: 1rem;
