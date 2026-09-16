@@ -1,0 +1,26 @@
+{
+  "name": "TSM — Tecnologia su Misura",
+  "short_name": "TSM",
+  "description": "Siti, web app ed e-commerce ultra personalizzati. Interfacce che coinvolgono e convertono.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#121e8a",
+  "icons": [
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/tsm-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/tsm-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
