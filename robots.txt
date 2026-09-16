@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tecnologiasumisura.com/sitemap.xml
