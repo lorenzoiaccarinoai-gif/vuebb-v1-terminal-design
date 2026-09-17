@@ -950,7 +950,7 @@ body.is-ready .header {
   display: none;
   position: fixed;
   right: 1.35rem;
-  bottom: 1.35rem;
+  bottom: 4.5rem;
   z-index: 40;
 }
 
