@@ -395,50 +395,52 @@
   setTimeout(pickScrollHover, 1400);
 
 
-  const BOOK_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ34NtKx9wpTpUpEBwgfvwcQG2KDi4bOZApzVYQErB2D7M5inhF2rV_MMeUP55mwEplWqhvfihtz?gv=true';
+  const BOOK_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ34NtKx9wpTpUpEBwgfvwcQG2KDi4bOZApzVYQErB2D7M5inhF2rV_MMeUP55mwEplWqhvfihtz?gv=true&hl=it';
+  const bookModal = document.getElementById('book-modal');
+  const bookFrame = document.getElementById('book-frame');
+  const bookClose = document.getElementById('book-close');
 
-  function calendarReady() {
-    return window.calendar && calendar.schedulingButton && typeof calendar.schedulingButton.load === 'function';
-  }
-
-  function mountBookButton(target, label) {
-    if (!target || target.dataset.booked) return;
-    target.dataset.booked = '1';
-    if (calendarReady()) {
-      calendar.schedulingButton.load({
-        url: BOOK_URL,
-        color: '#2ee8e4',
-        label: label,
-        target: target,
-      });
-      return;
+  function openBookModal() {
+    if (!bookModal || document.body.classList.contains('cookie-lock')) return;
+    if (nav && nav.classList.contains('open')) closeNav();
+    if (bookFrame && !bookFrame.getAttribute('src')) {
+      bookFrame.src = BOOK_URL;
     }
-    const fallback = document.createElement('a');
-    fallback.className = 'btn btn-lime';
-    fallback.href = BOOK_URL;
-    fallback.target = '_blank';
-    fallback.rel = 'noopener noreferrer';
-    fallback.textContent = label;
-    target.appendChild(fallback);
+    bookModal.hidden = false;
+    requestAnimationFrame(() => bookModal.classList.add('is-open'));
+    document.body.classList.add('book-open');
+    document.body.style.overflow = 'hidden';
+    bookClose?.focus();
   }
 
-  function initBookButtons() {
-    mountBookButton(document.getElementById('cta-book-header'), 'Prenota call');
-    mountBookButton(document.getElementById('cta-book-float'), 'Prenota una call Conoscitiva & Demo');
-    mountBookButton(document.getElementById('cta-book-contact'), 'Prenota una call Conoscitiva & Demo');
-  }
-
-  function waitForCalendar(attempt) {
-    if (calendarReady() || attempt >= 20) {
-      initBookButtons();
-      return;
+  function closeBookModal() {
+    if (!bookModal) return;
+    bookModal.classList.remove('is-open');
+    document.body.classList.remove('book-open');
+    if (!document.body.classList.contains('cookie-lock')) {
+      document.body.style.overflow = '';
     }
-    setTimeout(function () {
-      waitForCalendar(attempt + 1);
-    }, 150);
+    setTimeout(() => {
+      if (!bookModal.classList.contains('is-open')) bookModal.hidden = true;
+    }, 450);
   }
 
-  waitForCalendar(0);
+  document.querySelectorAll('[data-book-call]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openBookModal();
+    });
+  });
+
+  bookClose?.addEventListener('click', closeBookModal);
+  bookModal?.addEventListener('click', (e) => {
+    if (e.target === bookModal) closeBookModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && bookModal?.classList.contains('is-open')) {
+      closeBookModal();
+    }
+  });
 
   const yearEl = document.getElementById('year');
   if (yearEl) {
