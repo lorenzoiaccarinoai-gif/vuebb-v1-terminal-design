@@ -394,6 +394,52 @@
   setTimeout(pickScrollHover, 500);
   setTimeout(pickScrollHover, 1400);
 
+
+  const BOOK_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ34NtKx9wpTpUpEBwgfvwcQG2KDi4bOZApzVYQErB2D7M5inhF2rV_MMeUP55mwEplWqhvfihtz?gv=true';
+
+  function calendarReady() {
+    return window.calendar && calendar.schedulingButton && typeof calendar.schedulingButton.load === 'function';
+  }
+
+  function mountBookButton(target, label) {
+    if (!target || target.dataset.booked) return;
+    target.dataset.booked = '1';
+    if (calendarReady()) {
+      calendar.schedulingButton.load({
+        url: BOOK_URL,
+        color: '#2ee8e4',
+        label: label,
+        target: target,
+      });
+      return;
+    }
+    const fallback = document.createElement('a');
+    fallback.className = 'btn btn-lime';
+    fallback.href = BOOK_URL;
+    fallback.target = '_blank';
+    fallback.rel = 'noopener noreferrer';
+    fallback.textContent = label;
+    target.appendChild(fallback);
+  }
+
+  function initBookButtons() {
+    mountBookButton(document.getElementById('cta-book-header'), 'Prenota call');
+    mountBookButton(document.getElementById('cta-book-float'), 'Prenota una call Conoscitiva & Demo');
+    mountBookButton(document.getElementById('cta-book-contact'), 'Prenota una call Conoscitiva & Demo');
+  }
+
+  function waitForCalendar(attempt) {
+    if (calendarReady() || attempt >= 20) {
+      initBookButtons();
+      return;
+    }
+    setTimeout(function () {
+      waitForCalendar(attempt + 1);
+    }, 150);
+  }
+
+  waitForCalendar(0);
+
   const yearEl = document.getElementById('year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
