@@ -126,6 +126,15 @@
   margin-bottom: 2.8rem;
 }
 
+#metodo .about-copy h3 {
+  margin-bottom: 0.4rem;
+}
+
+#metodo .about-copy .section-label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
 .cta-book-float {
   animation: ctaPulse 2.2s ease-in-out infinite;
 }
