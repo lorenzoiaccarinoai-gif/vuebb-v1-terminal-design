@@ -1,0 +1,120 @@
+/* Metodo: timeline verticale, stesso gradiente header, stesse animazioni */
+.steps {
+  position: relative;
+  display: grid;
+  gap: 1.8rem;
+  isolation: isolate;
+  padding: 8px 0 24px;
+  max-width: 42rem;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 15px;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--magenta), var(--lime));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 1.1rem;
+  padding: 0;
+  align-items: start;
+  z-index: 1;
+  background: none;
+  border: none;
+  border-radius: 0;
+  backdrop-filter: none;
+  overflow: visible;
+}
+
+.steps li::before {
+  display: none;
+}
+
+.steps li:hover,
+.steps li.is-hover {
+  z-index: 8;
+  transform: translateY(-8px);
+  border-color: transparent;
+  box-shadow: none;
+  background: none;
+}
+
+.steps li > span,
+.step-index {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: var(--lime);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 232, 228, 0.45);
+  background: #0b0914;
+  box-shadow: 0 0 0 4px rgba(7, 6, 12, 0.92);
+  transition:
+    transform 0.5s var(--ease),
+    border-color 0.5s var(--ease),
+    box-shadow 0.5s var(--ease),
+    color 0.5s var(--ease);
+}
+
+.steps li:hover > span,
+.steps li.is-hover > span,
+.steps li:hover .step-index,
+.steps li.is-hover .step-index {
+  color: var(--lime-2);
+  border-color: rgba(46, 232, 228, 0.8);
+  box-shadow:
+    0 0 0 4px rgba(7, 6, 12, 0.92),
+    0 12px 28px rgba(46, 232, 228, 0.18);
+}
+
+.steps li > div,
+.step-copy {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 0.15rem 0.2rem 0.2rem;
+}
+
+.steps li > div::after,
+.step-copy::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 25%, rgba(46, 232, 228, 0.1) 48%, transparent 72%);
+  transform: translateX(-120%);
+  transition: transform 0.85s var(--ease);
+  pointer-events: none;
+}
+
+.steps li:hover > div::after,
+.steps li.is-hover > div::after,
+.steps li:hover .step-copy::after,
+.steps li.is-hover .step-copy::after {
+  transform: translateX(120%);
+}
+
+.steps h3 {
+  margin-bottom: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  .steps {
+    max-width: none;
+  }
+}
