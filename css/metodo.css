@@ -1,18 +1,18 @@
-/* Metodo: timeline verticale, stesso gradiente header, stesse animazioni */
+/* Metodo: timeline + spaziatura + pulse CTA */
 .steps {
   position: relative;
   display: grid;
-  gap: 1.8rem;
+  gap: 2.6rem;
   isolation: isolate;
-  padding: 8px 0 24px;
+  padding: 1.2rem 0 0.5rem;
   max-width: 42rem;
 }
 
 .steps::before {
   content: '';
   position: absolute;
-  top: 10px;
-  bottom: 10px;
+  top: 18px;
+  bottom: 18px;
   left: 15px;
   width: 2px;
   border-radius: 999px;
@@ -24,7 +24,7 @@
 .steps li {
   display: grid;
   grid-template-columns: 32px 1fr;
-  gap: 1.1rem;
+  gap: 1.45rem;
   padding: 0;
   align-items: start;
   z-index: 1;
@@ -87,7 +87,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  padding: 0.15rem 0.2rem 0.2rem;
+  padding: 0.2rem 0.25rem 0.35rem;
 }
 
 .steps li > div::after,
@@ -110,11 +110,53 @@
 }
 
 .steps h3 {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.55rem;
+}
+
+#metodo.section {
+  padding-top: calc(var(--section-y) + 1.4rem);
+  padding-bottom: calc(var(--section-y) + 1.6rem);
+}
+
+#metodo .section-header {
+  margin-bottom: 3rem;
+}
+
+#metodo .about-row {
+  margin-bottom: 2.8rem;
+}
+
+.cta-book-float {
+  animation: ctaPulse 2.2s ease-in-out infinite;
+}
+
+.cta-book-float:hover,
+.cta-book-float.is-hover {
+  animation-play-state: paused;
+}
+
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgba(46, 232, 228, 0.42),
+      0 16px 40px rgba(46, 232, 228, 0.14);
+  }
+  50% {
+    box-shadow:
+      0 0 0 16px rgba(46, 232, 228, 0),
+      0 18px 44px rgba(46, 232, 228, 0.28);
+  }
 }
 
 @media (max-width: 768px) {
   .steps {
     max-width: none;
+    gap: 2.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-book-float {
+    animation: none;
   }
 }
