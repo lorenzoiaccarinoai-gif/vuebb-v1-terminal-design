@@ -2,6 +2,13 @@
   document.body.classList.add('is-ready');
   document.getElementById('hero-content')?.classList.add('is-in');
 
+  document.querySelectorAll('.logo-mark, .hero-title, .footer-mark').forEach((el) => {
+    if (el.querySelector('.vuebb-dot')) return;
+    const text = el.textContent || '';
+    if (!text.endsWith('.')) return;
+    el.innerHTML = text.slice(0, -1) + '<span class="vuebb-dot">.</span>';
+  });
+
   const logo = document.querySelector('.logo-mark');
   if (!logo) return;
 
@@ -10,6 +17,7 @@
     const max = Math.max(1, doc.scrollHeight - window.innerHeight);
     const p = Math.min(1, Math.max(0, window.scrollY / max));
     logo.style.setProperty('--logo-fill', (p * 100).toFixed(2) + '%');
+    logo.style.setProperty('--logo-fill-n', p.toFixed(3));
   }
 
   window.addEventListener('scroll', updateLogoFill, { passive: true });

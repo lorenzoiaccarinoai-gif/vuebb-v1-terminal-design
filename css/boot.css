@@ -1,9 +1,23 @@
-/* Header wordmark fills with the nav gradient as you scroll.
-   The period stays ink; only "Vuebb" takes the fill. */
+/* Vuebb. wordmark: gradient period; header letters fill on scroll. */
+.vuebb-dot {
+  background-image: linear-gradient(90deg, var(--magenta), var(--lime));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-mark,
+.hero-title,
+.footer-mark {
+  white-space: nowrap;
+}
+
 .logo-mark {
   position: relative;
   display: inline-block;
-  white-space: nowrap;
 }
 
 .logo-mark::after {
@@ -27,4 +41,20 @@
   -webkit-background-clip: text;
   background-clip: text;
   clip-path: inset(0 calc(100% - var(--logo-fill, 0%)) 0 0);
+}
+
+.logo-mark .vuebb-dot {
+  position: relative;
+}
+
+.logo-mark .vuebb-dot::after {
+  content: '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ink);
+  -webkit-text-fill-color: var(--ink);
+  background: none;
+  opacity: var(--logo-fill-n, 0);
+  pointer-events: none;
 }
