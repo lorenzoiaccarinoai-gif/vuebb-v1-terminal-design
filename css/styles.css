@@ -187,7 +187,6 @@ button {
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
 }
 
 .logo-img,
@@ -199,10 +198,21 @@ button {
   transition: filter 0.45s var(--ease), transform 0.45s var(--ease);
 }
 
-.logo-text {
+.logo-mark,
+.footer-mark {
   font-weight: 600;
-  letter-spacing: 0.08em;
-  transition: color 0.35s var(--ease), letter-spacing 0.45s var(--ease);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  color: var(--ink);
+}
+
+.logo-mark {
+  font-size: 1.55rem;
+  transition: color 0.35s var(--ease), transform 0.45s var(--ease);
+}
+
+.footer-mark {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
 }
 
 .logo-link:hover .logo-img,
@@ -211,8 +221,8 @@ button {
   filter: invert(1) brightness(1.15) drop-shadow(0 18px 28px rgba(46, 232, 228, 0.28));
 }
 
-.logo-link:hover .logo-text,
-.logo-link.is-hover .logo-text {
+.logo-link:hover .logo-mark,
+.logo-link.is-hover .logo-mark {
   color: var(--lime);
 }
 
@@ -1169,10 +1179,6 @@ body.book-open .cta-book-float,
 
   .book-modal-frame iframe {
     height: min(58vh, 560px);
-  }
-
-  .logo-text {
-    display: none;
   }
 
   .hero-title {

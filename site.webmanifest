@@ -4,8 +4,8 @@
   "description": "Siti, web app ed e-commerce ultra personalizzati. Interfacce che coinvolgono e convertono.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#121e8a",
+  "background_color": "#07060c",
+  "theme_color": "#07060c",
   "icons": [
     {
       "src": "/favicon-48x48.png",
