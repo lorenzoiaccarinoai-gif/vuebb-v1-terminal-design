@@ -3,13 +3,11 @@
   document.getElementById('hero-content')?.classList.add('is-in');
 
   const logo = document.querySelector('.logo-mark');
-  const footer = document.querySelector('.footer');
-  const header = document.getElementById('header');
-  if (!logo || !footer) return;
+  if (!logo) return;
 
   function updateLogoFill() {
-    const headerH = header ? header.offsetHeight : 76;
-    const max = Math.max(1, footer.offsetTop - headerH);
+    const doc = document.documentElement;
+    const max = Math.max(1, doc.scrollHeight - window.innerHeight);
     const p = Math.min(1, Math.max(0, window.scrollY / max));
     logo.style.setProperty('--logo-fill', (p * 100).toFixed(2) + '%');
   }

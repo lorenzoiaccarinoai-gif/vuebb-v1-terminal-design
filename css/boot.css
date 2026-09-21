@@ -1,4 +1,5 @@
-/* Header wordmark fills with the nav gradient as you scroll. */
+/* Header wordmark fills with the nav gradient as you scroll.
+   The period stays ink; only "Vuebb" takes the fill. */
 .logo-mark {
   position: relative;
   display: inline-block;
@@ -6,11 +7,10 @@
 }
 
 .logo-mark::after {
-  content: attr(data-mark);
+  content: 'Vuebb';
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   pointer-events: none;
