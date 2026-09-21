@@ -1217,6 +1217,14 @@ body.book-open .cta-book-float,
     padding: calc(var(--header) + 2.1rem) 0 0;
   }
 
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    column-gap: 1.15rem;
+    row-gap: 0.7rem;
+  }
+
   :root {
     --section-y: 3.6rem;
   }
