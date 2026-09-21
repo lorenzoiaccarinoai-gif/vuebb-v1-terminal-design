@@ -36,3 +36,13 @@
   background-clip: text;
   clip-path: inset(0 calc(100% - var(--logo-fill, 0%)) 0 0);
 }
+
+.footer-cookie-btn {
+  color: var(--muted);
+  font-size: 0.82rem;
+  transition: color 0.35s var(--ease);
+}
+
+.footer-cookie-btn:hover {
+  color: var(--lime);
+}
