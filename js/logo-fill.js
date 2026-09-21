@@ -17,7 +17,6 @@
     const max = Math.max(1, doc.scrollHeight - window.innerHeight);
     const p = Math.min(1, Math.max(0, window.scrollY / max));
     logo.style.setProperty('--logo-fill', (p * 100).toFixed(2) + '%');
-    logo.style.setProperty('--logo-fill-n', p.toFixed(3));
   }
 
   window.addEventListener('scroll', updateLogoFill, { passive: true });
