@@ -1,6 +1,6 @@
 {
-  "name": "TSM — Tecnologia su Misura",
-  "short_name": "TSM",
+  "name": "Vuebb",
+  "short_name": "Vuebb",
   "description": "Siti, web app ed e-commerce ultra personalizzati. Interfacce che coinvolgono e convertono.",
   "start_url": "/",
   "display": "standalone",
