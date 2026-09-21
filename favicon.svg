@@ -11,5 +11,5 @@
     </filter>
   </defs>
   <rect width="64" height="64" fill="#07060c"/>
-  <text x="32" y="34" text-anchor="middle" dominant-baseline="middle" fill="url(#dot)" filter="url(#grain)" font-family="Geist, system-ui, sans-serif" font-weight="600" font-size="46" letter-spacing="-0.045em">.</text>
+  <text x="32" y="36" text-anchor="middle" dominant-baseline="middle" fill="url(#dot)" filter="url(#grain)" font-family="Geist, system-ui, sans-serif" font-weight="600" font-size="42" letter-spacing="-0.045em">V</text>
 </svg>

@@ -3,10 +3,8 @@
   document.getElementById('hero-content')?.classList.add('is-in');
 
   document.querySelectorAll('.logo-mark, .hero-title, .footer-mark').forEach((el) => {
-    if (el.querySelector('.vuebb-dot')) return;
-    const text = el.textContent || '';
-    if (!text.endsWith('.')) return;
-    el.innerHTML = text.slice(0, -1) + '<span class="vuebb-dot">.</span>';
+    const text = (el.textContent || '').replace(/\.+$/, '').trim();
+    if (text) el.textContent = text;
   });
 
   const logo = document.querySelector('.logo-mark');
