@@ -864,9 +864,11 @@ button {
 }
 
 .page-cover-logo {
-  height: min(38vh, 260px);
-  width: auto;
-  filter: invert(1) brightness(1.15) drop-shadow(0 0 32px rgba(46, 232, 228, 0.45));
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  font-size: clamp(3.4rem, 12vw, 7.2rem);
+  color: var(--ink);
   animation: logoIn 0.9s var(--ease) both, logoPulse 1.6s ease-in-out 0.9s infinite alternate;
 }
 
@@ -876,8 +878,8 @@ button {
 }
 
 @keyframes logoPulse {
-  from { filter: invert(1) brightness(1.15) drop-shadow(0 0 18px rgba(46, 232, 228, 0.28)); }
-  to { filter: invert(1) brightness(1.2) drop-shadow(0 0 40px rgba(46, 232, 228, 0.55)); }
+  from { text-shadow: 0 0 18px rgba(46, 232, 228, 0.28); }
+  to { text-shadow: 0 0 40px rgba(46, 232, 228, 0.55); }
 }
 
 .page-cover.is-out {
