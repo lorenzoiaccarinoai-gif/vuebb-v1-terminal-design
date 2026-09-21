@@ -8,16 +8,26 @@
   });
 
   const logo = document.querySelector('.logo-mark');
-  if (!logo) return;
-
-  function updateLogoFill() {
-    const doc = document.documentElement;
-    const max = Math.max(1, doc.scrollHeight - window.innerHeight);
-    const p = Math.min(1, Math.max(0, window.scrollY / max));
-    logo.style.setProperty('--logo-fill', (p * 100).toFixed(2) + '%');
+  if (logo) {
+    function updateLogoFill() {
+      const doc = document.documentElement;
+      const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+      const p = Math.min(1, Math.max(0, window.scrollY / max));
+      logo.style.setProperty('--logo-fill', (p * 100).toFixed(2) + '%');
+    }
+    window.addEventListener('scroll', updateLogoFill, { passive: true });
+    window.addEventListener('resize', updateLogoFill);
+    updateLogoFill();
   }
 
-  window.addEventListener('scroll', updateLogoFill, { passive: true });
-  window.addEventListener('resize', updateLogoFill);
-  updateLogoFill();
+  document.getElementById('cookie-manage')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    banner.hidden = false;
+    document.body.classList.add('cookie-lock');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => banner.classList.add('is-open'));
+  });
 })();
