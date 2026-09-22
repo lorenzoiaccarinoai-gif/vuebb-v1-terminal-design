@@ -39,4 +39,10 @@
   if (extraEl) {
     extraEl.textContent = 'Extra da quotare: dominio proprietario, caselle email aziendali associate al dominio, produzione editoriale di contenuti ottimizzati SEO e AI, reportistica mensile sul traffico web, aggiornamenti successivi alla prima release ufficiale del sito web.';
   }
+
+  if (!document.querySelector('script[src="js/nav-scroll.js"]')) {
+    const s = document.createElement('script');
+    s.src = 'js/nav-scroll.js';
+    document.body.appendChild(s);
+  }
 })();
