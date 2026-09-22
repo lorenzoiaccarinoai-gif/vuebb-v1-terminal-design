@@ -1,0 +1,3 @@
+[build]
+  command = "node write-icons.js"
+  publish = "."
