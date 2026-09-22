@@ -394,7 +394,6 @@
   setTimeout(pickScrollHover, 500);
   setTimeout(pickScrollHover, 1400);
 
-
   const BOOK_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ34NtKx9wpTpUpEBwgfvwcQG2KDi4bOZApzVYQErB2D7M5inhF2rV_MMeUP55mwEplWqhvfihtz?gv=true&hl=it';
   const bookModal = document.getElementById('book-modal');
   const bookFrame = document.getElementById('book-frame');
@@ -447,28 +446,52 @@
     yearEl.textContent = new Date().getFullYear();
   }
 
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link, .footer-links a[href^="#"]');
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  const navLinks = Array.from(document.querySelectorAll('.nav .nav-link, .footer-links a[href^="#"]'));
+  let pinnedSection = '';
+  let pinTimer = 0;
 
-  function highlightNav() {
-    const scrollPos = window.scrollY + 120;
-    let current = '';
-
-    sections.forEach((section) => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-      if (scrollPos >= top && scrollPos < top + height) {
-        current = id;
-      }
-    });
-
+  function setActiveNav(id) {
     navLinks.forEach((link) => {
-      const match = current && link.getAttribute('href') === `#${current}`;
-      link.classList.toggle('active', Boolean(match));
+      const href = link.getAttribute('href') || '';
+      link.classList.toggle('active', Boolean(id) && href === '#' + id);
     });
   }
 
+  function sectionFromScroll() {
+    if (!sections.length) return '';
+    const headerH = header ? header.offsetHeight : 72;
+    const spy = window.scrollY + headerH + 28;
+    const doc = document.documentElement;
+    if (window.innerHeight + window.scrollY >= doc.scrollHeight - 12) {
+      return sections[sections.length - 1].id;
+    }
+    let current = sections[0].id;
+    sections.forEach((section) => {
+      if (section.offsetTop <= spy) current = section.id;
+    });
+    return current;
+  }
+
+  function highlightNav() {
+    setActiveNav(pinnedSection || sectionFromScroll());
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href') || '';
+      if (href.charAt(0) !== '#') return;
+      pinnedSection = href.slice(1);
+      setActiveNav(pinnedSection);
+      clearTimeout(pinTimer);
+      pinTimer = setTimeout(() => {
+        pinnedSection = '';
+        highlightNav();
+      }, 900);
+    });
+  });
+
   window.addEventListener('scroll', highlightNav, { passive: true });
+  window.addEventListener('resize', highlightNav);
   highlightNav();
 })();
