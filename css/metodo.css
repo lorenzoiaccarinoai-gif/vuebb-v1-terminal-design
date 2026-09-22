@@ -169,3 +169,12 @@
     animation: none;
   }
 }
+
+/* Stesso respiro di Metodo quando si clicca una voce del menu */
+html {
+  scroll-padding-top: calc(var(--header) + 1.4rem);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--header) + 1.4rem);
+}
