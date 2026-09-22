@@ -30,4 +30,13 @@
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => banner.classList.add('is-open'));
   });
+
+  const includeEl = document.querySelector('.price-include:not(.price-gdpr)');
+  if (includeEl) {
+    includeEl.textContent = 'Il canone include: manutenzione, hosting, informativa privacy e cookie.';
+  }
+  const extraEl = document.querySelector('.price-include.price-gdpr');
+  if (extraEl) {
+    extraEl.textContent = 'Extra da quotare: dominio proprietario, caselle email aziendali associate al dominio, produzione editoriale di contenuti ottimizzati SEO e AI, reportistica mensile sul traffico web, aggiornamenti successivi alla prima release ufficiale del sito web.';
+  }
 })();
