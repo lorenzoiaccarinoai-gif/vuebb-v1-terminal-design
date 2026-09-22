@@ -24,9 +24,13 @@
 
   function setActive(id) {
     links.forEach(function (link) {
+      if (link.classList.contains('logo-link')) {
+        link.classList.remove('active');
+        return;
+      }
       var href = link.getAttribute('href') || '';
       if (href.charAt(0) !== '#') return;
-      if (href === '#' + id) link.classList.add('active');
+      if (id && href === '#' + id) link.classList.add('active');
       else link.classList.remove('active');
     });
   }
@@ -37,6 +41,19 @@
     if (!el) return 0;
     var gap = 12;
     return Math.max(0, window.scrollY + el.getBoundingClientRect().top - headerH() - gap);
+  }
+
+  function goTop() {
+    pinned = 'hero';
+    setActive('');
+    scrolling = true;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    clearTimeout(pinTimer);
+    pinTimer = setTimeout(function () {
+      scrolling = false;
+      pinned = '';
+      highlight();
+    }, 1100);
   }
 
   function goTo(id) {
@@ -54,6 +71,7 @@
   }
 
   function currentId() {
+    if (window.scrollY < 24) return '';
     var line = headerH() + 20;
     var doc = document.documentElement;
     if (window.innerHeight + window.scrollY >= doc.scrollHeight - 8) {
@@ -65,11 +83,12 @@
       if (!el) return;
       if (el.getBoundingClientRect().top <= line) current = section.id;
     });
+    if (current === 'hero') return '';
     return current;
   }
 
   function highlight() {
-    setActive(pinned || currentId());
+    setActive(pinned === 'hero' ? '' : (pinned || currentId()));
   }
 
   function onClick(e) {
@@ -77,9 +96,14 @@
     if (!a || links.indexOf(a) === -1) return;
     var href = a.getAttribute('href') || '';
     var id = href.slice(1);
-    if (!id || !document.getElementById(id)) return;
     e.preventDefault();
     e.stopPropagation();
+    if (a.classList.contains('logo-link') || id === 'top') {
+      if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+      goTop();
+      return;
+    }
+    if (!id || !document.getElementById(id)) return;
     if (history.replaceState) history.replaceState(null, '', href);
     goTo(id);
   }
@@ -87,12 +111,15 @@
   document.addEventListener('click', onClick, true);
   window.addEventListener('scroll', function () {
     if (!scrolling) highlight();
+    else if (pinned === 'hero') setActive('');
     else setActive(pinned);
   }, { passive: true });
   window.addEventListener('resize', highlight);
 
   var hash = (location.hash || '').slice(1);
-  if (hash && document.getElementById(hash)) {
+  if (hash === 'hero' || hash === 'top') {
+    setTimeout(goTop, 50);
+  } else if (hash && document.getElementById(hash)) {
     setTimeout(function () { goTo(hash); }, 50);
   } else {
     highlight();
