@@ -46,16 +46,20 @@
       </a>
       <nav class="nav" id="nav">
         <ul class="nav-list">
-          <li><a href="#filosofia" class="nav-link">Filosofia</a></li>
-          <li><a href="#servizi" class="nav-link">Servizi</a></li>
-          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="#metodo" class="nav-link">Metodo</a></li>
-          <li><a href="#per-chi" class="nav-link">Per chi</a></li>
-          <li><a href="#pricing" class="nav-link">Prezzi</a></li>
+          <li><a href="#filosofia" class="nav-link" data-i18n="nav.filosofia">Filosofia</a></li>
+          <li><a href="#servizi" class="nav-link" data-i18n="nav.servizi">Servizi</a></li>
+          <li><a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="#metodo" class="nav-link" data-i18n="nav.metodo">Metodo</a></li>
+          <li><a href="#per-chi" class="nav-link" data-i18n="nav.perchi">Per chi</a></li>
+          <li><a href="#pricing" class="nav-link" data-i18n="nav.prezzi">Prezzi</a></li>
         </ul>
-        <a class="btn btn-lime btn-sm" href="#contatti">Contattaci</a>
+        <a class="btn btn-lime btn-sm" href="#contatti" data-i18n="nav.contatti">Contattaci</a>
       </nav>
-      <button type="button" class="btn btn-lime btn-sm cta-book cta-book-header" data-book-call>Prenota Call Demo</button>
+      <button type="button" class="btn btn-lime btn-sm cta-book cta-book-header" data-book-call data-i18n="cta.book">Prenota Call Demo</button>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambia lingua">
+        <span class="flag" id="langFlag">🇮🇹</span>
+        <span class="lang-code" id="langCode">IT</span>
+      </button>
       <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu" aria-expanded="false">
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
@@ -65,12 +69,12 @@
 
   <section class="hero" id="hero">
     <div class="container hero-content" id="hero-content">
-      <span class="chip">Boutique web</span>
+      <span class="chip" data-i18n="hero.chip">Boutique web</span>
       <h1 class="hero-title">Vuebb.</h1>
-      <p class="hero-tagline">Siti, web app ed e-commerce ultra personalizzati. Interfacce che coinvolgono e convertono.</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">Siti, web app ed e-commerce ultra personalizzati. Interfacce che coinvolgono e convertono.</p>
       <div class="hero-actions">
-        <button type="button" class="btn btn-lime" data-book-call>Prenota Call Demo</button>
-        <a class="btn btn-ghost" href="#servizi">Vedi i servizi</a>
+        <button type="button" class="btn btn-lime" data-book-call data-i18n="cta.book">Prenota Call Demo</button>
+        <a class="btn btn-ghost" href="#servizi" data-i18n="hero.services">Vedi i servizi</a>
       </div>
     </div>
   </section>
@@ -78,22 +82,22 @@
   <section class="section specs" id="filosofia">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Filosofia</span>
-        <h2 class="section-title">Non siamo un’agenzia.<br>Siamo una boutique web.</h2>
-        <p class="section-desc">Vuebb nasce dall’idea che il web debba adattarsi alle persone e al brand, non il contrario. Nessun template. Solo pezzi unici.</p>
+        <span class="section-label" data-i18n="nav.filosofia">Filosofia</span>
+        <h2 class="section-title" data-i18n="filo.title">Non siamo un’agenzia.<br>Siamo una boutique web.</h2>
+        <p class="section-desc" data-i18n="filo.desc">Vuebb nasce dall’idea che il web debba adattarsi alle persone e al brand, non il contrario. Nessun template. Solo pezzi unici.</p>
       </div>
       <div class="spec-grid">
         <article class="spec-card">
-          <h3>Ascolto prima del codice</h3>
-          <p>Come un sarto confeziona un abito su misura, progettiamo siti boutique, web app e negozi online che rispettano l’unicità di ogni attività.</p>
+          <h3 data-i18n="filo.s1.title">Ascolto prima del codice</h3>
+          <p data-i18n="filo.s1.desc">Come un sarto confeziona un abito su misura, progettiamo siti boutique, web app e negozi online che rispettano l’unicità di ogni attività.</p>
         </article>
         <article class="spec-card">
-          <h3>Zero soluzioni pronte</h3>
-          <p>Nessuna soluzione “pronta all’uso”. Lavoro artigianale, attenzione maniacale ai dettagli e risultati che parlano da soli.</p>
+          <h3 data-i18n="filo.s2.title">Zero soluzioni pronte</h3>
+          <p data-i18n="filo.s2.desc">Nessuna soluzione “pronta all’uso”. Lavoro artigianale, attenzione maniacale ai dettagli e risultati che parlano da soli.</p>
         </article>
         <article class="spec-card highlight">
-          <h3>L’unicità non è un optional</h3>
-          <p>È il punto di partenza. Ogni pixel è pensato per il vostro posizionamento, non per un modello generico.</p>
+          <h3 data-i18n="filo.s3.title">L’unicità non è un optional</h3>
+          <p data-i18n="filo.s3.desc">È il punto di partenza. Ogni pixel è pensato per il vostro posizionamento, non per un modello generico.</p>
         </article>
       </div>
     </div>
@@ -102,24 +106,24 @@
   <section class="section servizi" id="servizi">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Servizi</span>
-        <h2 class="section-title">Tre strumenti.<br>Un’unica firma.</h2>
-        <p class="section-desc">Ogni progetto nasce da un dialogo profondo e si costruisce come un pezzo unico.</p>
+        <span class="section-label" data-i18n="nav.servizi">Servizi</span>
+        <h2 class="section-title" data-i18n="serv.title">Tre strumenti.<br>Un’unica firma.</h2>
+        <p class="section-desc" data-i18n="serv.desc">Ogni progetto nasce da un dialogo profondo e si costruisce come un pezzo unico.</p>
       </div>
       <div class="product-grid">
         <article class="product-card">
           <div class="product-visual v1"></div>
           <div class="product-body">
             <span class="product-index">01</span>
-            <h3>Siti Web Boutique</h3>
-            <p>Presenze digitali curate e convertenti. Ogni pixel è pensato per rappresentare il vostro posizionamento con eleganza ed efficacia.</p>
+            <h3 data-i18n="serv.web.title">Siti Web Boutique</h3>
+            <p data-i18n="serv.web.desc">Presenze digitali curate e convertenti. Ogni pixel è pensato per rappresentare il vostro posizionamento con eleganza ed efficacia.</p>
             <ul>
-              <li class="feature-accent">Ottimizzazione mobile</li>
-              <li>Ottimizzazione SEO / AI</li>
-              <li>Personal branding</li>
-              <li>Corporate</li>
-              <li>Landing ad alta conversione</li>
-              <li>Editoriali e portfolio</li>
+              <li class="feature-accent" data-i18n="feat.mobile">Ottimizzazione mobile</li>
+              <li data-i18n="feat.seo">Ottimizzazione SEO / AI</li>
+              <li data-i18n="feat.brand">Personal branding</li>
+              <li data-i18n="feat.corp">Corporate</li>
+              <li data-i18n="feat.landing">Landing ad alta conversione</li>
+              <li data-i18n="feat.edit">Editoriali e portfolio</li>
             </ul>
           </div>
         </article>
@@ -127,14 +131,14 @@
           <div class="product-visual v2"></div>
           <div class="product-body">
             <span class="product-index">02</span>
-            <h3>Web App</h3>
-            <p>Applicazioni Web per i vostri processi reali. Interfacce chiare, flussi su misura, controllo senza forzature.</p>
+            <h3 data-i18n="serv.app.title">Web App</h3>
+            <p data-i18n="serv.app.desc">Applicazioni Web per i vostri processi reali. Interfacce chiare, flussi su misura, controllo senza forzature.</p>
             <ul>
-              <li class="feature-accent">Ottimizzazione mobile</li>
-              <li>Dashboard e aree riservate</li>
-              <li>Portali clienti e fornitori</li>
-              <li>Strumenti interni</li>
-              <li>Prenotazioni e flussi</li>
+              <li class="feature-accent" data-i18n="feat.mobile">Ottimizzazione mobile</li>
+              <li data-i18n="feat.dash">Dashboard e aree riservate</li>
+              <li data-i18n="feat.portali">Portali clienti e fornitori</li>
+              <li data-i18n="feat.internal">Strumenti interni</li>
+              <li data-i18n="feat.book">Prenotazioni e flussi</li>
             </ul>
           </div>
         </article>
@@ -142,14 +146,14 @@
           <div class="product-visual v3"></div>
           <div class="product-body">
             <span class="product-index">03</span>
-            <h3>E-commerce</h3>
-            <p>Negozi online su misura: catalogo, checkout e ordini costruiti intorno al vostro modo di vendere.</p>
+            <h3 data-i18n="serv.ecom.title">E-commerce</h3>
+            <p data-i18n="serv.ecom.desc">Negozi online su misura: catalogo, checkout e ordini costruiti intorno al vostro modo di vendere.</p>
             <ul>
-              <li class="feature-accent">Ottimizzazione mobile</li>
-              <li>Store boutique</li>
-              <li>Checkout e pagamenti</li>
-              <li>Scorte e catalogo</li>
-              <li>Integrazioni di vendita</li>
+              <li class="feature-accent" data-i18n="feat.mobile">Ottimizzazione mobile</li>
+              <li data-i18n="feat.store">Store boutique</li>
+              <li data-i18n="feat.checkout">Checkout e pagamenti</li>
+              <li data-i18n="feat.stock">Scorte e catalogo</li>
+              <li data-i18n="feat.sales">Integrazioni di vendita</li>
             </ul>
           </div>
         </article>
@@ -160,22 +164,22 @@
   <section class="section portfolio" id="portfolio">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Portfolio</span>
-        <h2 class="section-title">I nostri lavori.<br>Pezzi unici, dal vivo.</h2>
-        <p class="section-desc">Siti attualmente in lavorazione. Clicca per aprire l’anteprima.</p>
+        <span class="section-label" data-i18n="nav.portfolio">Portfolio</span>
+        <h2 class="section-title" data-i18n="port.title">I nostri lavori.<br>Pezzi unici, dal vivo.</h2>
+        <p class="section-desc" data-i18n="port.desc">Siti attualmente in lavorazione. Clicca per aprire l’anteprima.</p>
       </div>
       <button class="portfolio-trigger" id="portfolio-trigger" type="button" aria-expanded="false" aria-controls="portfolio-panel">
         <span class="portfolio-trigger-visual" aria-hidden="true"></span>
         <span class="portfolio-trigger-body">
           <span class="product-index">Vuebb</span>
-          <h3>In lavorazione</h3>
-          <p>Tre progetti boutique in corso. Apri il blocco per le anteprime.</p>
+          <h3 data-i18n="port.wip">In lavorazione</h3>
+          <p data-i18n="port.wip.desc">Tre progetti boutique in corso. Apri il blocco per le anteprime.</p>
         </span>
         <span class="portfolio-chevron" aria-hidden="true"></span>
       </button>
       <div class="portfolio-panel" id="portfolio-panel" hidden>
         <div class="portfolio-grid">
-          <figure class="shot" role="button" tabindex="0" data-caption="Emozioni Capresi — villa intera a Capri. In lavorazione.">
+          <figure class="shot" role="button" tabindex="0" data-caption="Emozioni Capresi — villa intera a Capri. In lavorazione." data-i18n-caption="cap.emozioni">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen">
               <picture>
@@ -184,11 +188,11 @@
               </picture>
             </div>
             <figcaption>
-              <span class="shot-status">In lavorazione</span>
+              <span class="shot-status" data-i18n="port.wip">In lavorazione</span>
               Emozioni Capresi
             </figcaption>
           </figure>
-          <figure class="shot" role="button" tabindex="0" data-caption="Moonlight dal 1980 — ristorante di Chef Lucio. In lavorazione.">
+          <figure class="shot" role="button" tabindex="0" data-caption="Moonlight dal 1980 — ristorante di Chef Lucio. In lavorazione." data-i18n-caption="cap.moonlight">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen">
               <picture>
@@ -197,11 +201,11 @@
               </picture>
             </div>
             <figcaption>
-              <span class="shot-status">In lavorazione</span>
+              <span class="shot-status" data-i18n="port.wip">In lavorazione</span>
               Moonlight dal 1980
             </figcaption>
           </figure>
-          <figure class="shot" role="button" tabindex="0" data-caption="Il Montano — Eco Bistrot & Cocktail Bar. In lavorazione.">
+          <figure class="shot" role="button" tabindex="0" data-caption="Il Montano — Eco Bistrot & Cocktail Bar. In lavorazione." data-i18n-caption="cap.montano">
             <div class="browser"><span></span><span></span><span></span></div>
             <div class="shot-screen">
               <picture>
@@ -210,7 +214,7 @@
               </picture>
             </div>
             <figcaption>
-              <span class="shot-status">In lavorazione</span>
+              <span class="shot-status" data-i18n="port.wip">In lavorazione</span>
               Il Montano
             </figcaption>
           </figure>
@@ -222,9 +226,9 @@
   <section class="section metodo" id="metodo">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Metodo</span>
-        <h2 class="section-title">Dal brief al live,<br>senza rumore.</h2>
-        <p class="section-desc">Un percorso chiaro, dal primo ascolto al sito, alla web app o allo store online. Ogni progetto nasce già pensato per il mobile: interfacce fluide ed esperienza ottimizzata per smartphone e tablet.</p>
+        <span class="section-label" data-i18n="nav.metodo">Metodo</span>
+        <h2 class="section-title" data-i18n="met.title">Dal brief al live,<br>senza rumore.</h2>
+        <p class="section-desc" data-i18n="met.desc">Un percorso chiaro, dal primo ascolto al sito, alla web app o allo store online. Ogni progetto nasce già pensato per il mobile: interfacce fluide ed esperienza ottimizzata per smartphone e tablet.</p>
       </div>
       <article class="spec-card highlight about-row">
         <picture class="about-photo">
@@ -233,15 +237,15 @@
         </picture>
         <div class="about-copy">
           <h3>Ing. Lorenzo Iaccarino</h3>
-          <span class="section-label">Fondatore di Vuebb</span>
-          <p>Anni al fianco di start-up innovative per professionisti: così si è sviluppato l'approccio Vuebb. L'obiettivo è supportare i clienti nel raggiungimento del massimo potenziale.</p>
+          <span class="section-label" data-i18n="met.founder">Fondatore di Vuebb</span>
+          <p data-i18n="met.about">Anni al fianco di start-up innovative per professionisti: così si è sviluppato l'approccio Vuebb. L'obiettivo è supportare i clienti nel raggiungimento del massimo potenziale.</p>
         </div>
       </article>
       <ol class="steps">
-        <li><span>01</span><div><h3>Ascolto</h3><p>Partiamo da voi. Comprendiamo brand, obiettivi e ambizioni digitali. Nessuna soluzione prima di una diagnosi precisa.</p></div></li>
-        <li><span>02</span><div><h3>Progettazione</h3><p>Definiamo architettura, flussi e interfacce. Ogni decisione è condivisa e motivata.</p></div></li>
-        <li><span>03</span><div><h3>Realizzazione</h3><p>Sviluppo iterativo, test continui, attenzione ossessiva alla qualità. Niente sorprese.</p></div></li>
-        <li><span>04</span><div><h3>Affiancamento</h3><p>Consegna non significa abbandono. Formazione, supporto ed evoluzione fanno parte del lavoro.</p></div></li>
+        <li><span>01</span><div><h3 data-i18n="met.s1.title">Ascolto</h3><p data-i18n="met.s1.desc">Partiamo da voi. Comprendiamo brand, obiettivi e ambizioni digitali. Nessuna soluzione prima di una diagnosi precisa.</p></div></li>
+        <li><span>02</span><div><h3 data-i18n="met.s2.title">Progettazione</h3><p data-i18n="met.s2.desc">Definiamo architettura, flussi e interfacce. Ogni decisione è condivisa e motivata.</p></div></li>
+        <li><span>03</span><div><h3 data-i18n="met.s3.title">Realizzazione</h3><p data-i18n="met.s3.desc">Sviluppo iterativo, test continui, attenzione ossessiva alla qualità. Niente sorprese.</p></div></li>
+        <li><span>04</span><div><h3 data-i18n="met.s4.title">Affiancamento</h3><p data-i18n="met.s4.desc">Consegna non significa abbandono. Formazione, supporto ed evoluzione fanno parte del lavoro.</p></div></li>
       </ol>
     </div>
   </section>
@@ -249,13 +253,13 @@
   <section class="section per-chi" id="per-chi">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Per chi</span>
-        <h2 class="section-title">Per chi non si accontenta del “già fatto”.</h2>
+        <span class="section-label" data-i18n="nav.perchi">Per chi</span>
+        <h2 class="section-title" data-i18n="who.title">Per chi non si accontenta del “già fatto”.</h2>
       </div>
       <div class="quote-grid">
-        <article class="quote-card"><h3>Professionisti</h3><p>Studi, consulenti, creativi. Chi gestisce relazioni di alto valore e ha bisogno di un web all’altezza della propria professionalità.</p></article>
-        <article class="quote-card"><h3>Micro-Imprese</h3><p>Realtà agili che vogliono crescere senza perdere identità. Un web che scala con voi, non che vi impone modelli estranei.</p></article>
-        <article class="quote-card"><h3>PMI</h3><p>Aziende strutturate che cercano siti boutique, web app ed e-commerce verticali, e un partner che parla il linguaggio del business.</p></article>
+        <article class="quote-card"><h3 data-i18n="who.p.title">Professionisti</h3><p data-i18n="who.p.desc">Studi, consulenti, creativi. Chi gestisce relazioni di alto valore e ha bisogno di un web all’altezza della propria professionalità.</p></article>
+        <article class="quote-card"><h3 data-i18n="who.m.title">Micro-Imprese</h3><p data-i18n="who.m.desc">Realtà agili che vogliono crescere senza perdere identità. Un web che scala con voi, non che vi impone modelli estranei.</p></article>
+        <article class="quote-card"><h3 data-i18n="who.s.title">PMI</h3><p data-i18n="who.s.desc">Aziende strutturate che cercano siti boutique, web app ed e-commerce verticali, e un partner che parla il linguaggio del business.</p></article>
       </div>
     </div>
   </section>
@@ -263,34 +267,34 @@
   <section class="section pricing" id="pricing">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Investimento</span>
-        <h2 class="section-title">Prezzi su misura.<br>Valore senza compromessi.</h2>
-        <p class="section-desc">Canone mensile, senza costo iniziale. Prezzi IVA inclusa.</p>
+        <span class="section-label" data-i18n="price.label">Investimento</span>
+        <h2 class="section-title" data-i18n="price.title">Prezzi su misura.<br>Valore senza compromessi.</h2>
+        <p class="section-desc" data-i18n="price.desc">Canone mensile, senza costo iniziale. Prezzi IVA inclusa.</p>
       </div>
       <div class="price-grid">
-        <article class="price-card"><h3>Siti Web Boutique</h3><p class="from">a partire da</p><p class="amount">€ 30<span> / mese</span></p><p class="iva">IVA inclusa · costo iniziale 0</p><p class="note">Pagine, funzionalità e personal branding.</p></article>
-        <article class="price-card"><h3>Web App</h3><p class="from">a partire da</p><p class="amount">€ 45<span> / mese</span></p><p class="iva">IVA inclusa · costo iniziale 0</p><p class="note">Flussi, integrazioni e requisiti specifici.</p></article>
-        <article class="price-card"><h3>E-commerce</h3><p class="from">a partire da</p><p class="amount">€ 60<span> / mese</span></p><p class="iva">IVA inclusa · costo iniziale 0</p><p class="note">Catalogo, pagamenti e logistica.</p></article>
+        <article class="price-card"><h3 data-i18n="serv.web.title">Siti Web Boutique</h3><p class="from" data-i18n="price.from">a partire da</p><p class="amount">€ 30<span data-i18n="price.month"> / mese</span></p><p class="iva" data-i18n="price.iva">IVA inclusa · costo iniziale 0</p><p class="note" data-i18n="price.web.note">Pagine, funzionalità e personal branding.</p></article>
+        <article class="price-card"><h3 data-i18n="serv.app.title">Web App</h3><p class="from" data-i18n="price.from">a partire da</p><p class="amount">€ 45<span data-i18n="price.month"> / mese</span></p><p class="iva" data-i18n="price.iva">IVA inclusa · costo iniziale 0</p><p class="note" data-i18n="price.app.note">Flussi, integrazioni e requisiti specifici.</p></article>
+        <article class="price-card"><h3 data-i18n="serv.ecom.title">E-commerce</h3><p class="from" data-i18n="price.from">a partire da</p><p class="amount">€ 60<span data-i18n="price.month"> / mese</span></p><p class="iva" data-i18n="price.iva">IVA inclusa · costo iniziale 0</p><p class="note" data-i18n="price.ecom.note">Catalogo, pagamenti e logistica.</p></article>
       </div>
-      <p class="price-include">Il canone include: manutenzione, hosting, dominio proprietario, informativa privacy e cookie.</p>
-      <p class="price-include price-gdpr">Extra da quotare: produzione editoriale di contenuti ottimizzati SEO e AI, reportistica mensile sul traffico web, aggiornamenti successivi alla prima release ufficiale del sito web.</p>
+      <p class="price-include" data-i18n="price.include">Il canone include: manutenzione, hosting, dominio proprietario, informativa privacy e cookie.</p>
+      <p class="price-include price-gdpr" data-i18n="price.extra">Extra da quotare: produzione editoriale di contenuti ottimizzati SEO e AI, reportistica mensile sul traffico web, aggiornamenti successivi alla prima release ufficiale del sito web.</p>
     </div>
   </section>
 
   <section class="section contatti" id="contatti">
     <div class="container contact-panel">
-      <span class="section-label">Iniziamo</span>
-      <h2 class="section-title">Raccontateci il vostro progetto.</h2>
-      <p class="section-desc">Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.</p>
+      <span class="section-label" data-i18n="cta.label">Iniziamo</span>
+      <h2 class="section-title" data-i18n="cta.title">Raccontateci il vostro progetto.</h2>
+      <p class="section-desc" data-i18n="cta.desc">Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.</p>
       <div class="contact-row">
-        <button type="button" class="btn btn-lime cta-book cta-book-contact" data-book-call>Prenota Call Demo</button>
-        <a class="btn btn-ghost" href="mailto:tecnologiasumisura.info@gmail.com">Scrivici una mail</a>
+        <button type="button" class="btn btn-lime cta-book cta-book-contact" data-book-call data-i18n="cta.book">Prenota Call Demo</button>
+        <a class="btn btn-ghost" href="mailto:tecnologiasumisura.info@gmail.com" data-i18n="cta.mail">Scrivici una mail</a>
         <a class="btn btn-ghost" href="https://wa.me/393334585718" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
       <div class="contact-meta">
         <p>tecnologiasumisura.info@gmail.com</p>
         <p>+39 333 458 5718</p>
-        <p>Risposta entro due giorni lavorativi</p>
+        <p data-i18n="cta.reply">Risposta entro due giorni lavorativi</p>
       </div>
     </div>
   </section>
@@ -301,19 +305,19 @@
         <span class="footer-mark">Vuebb.</span>
       </div>
       <nav class="footer-links" aria-label="Sezioni">
-        <a href="#filosofia" class="nav-link">Filosofia</a>
-        <a href="#servizi" class="nav-link">Servizi</a>
-        <a href="#portfolio" class="nav-link">Portfolio</a>
-        <a href="#metodo" class="nav-link">Metodo</a>
-        <a href="#per-chi" class="nav-link">Per chi</a>
-        <a href="#pricing" class="nav-link">Prezzi</a>
+        <a href="#filosofia" class="nav-link" data-i18n="nav.filosofia">Filosofia</a>
+        <a href="#servizi" class="nav-link" data-i18n="nav.servizi">Servizi</a>
+        <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="#metodo" class="nav-link" data-i18n="nav.metodo">Metodo</a>
+        <a href="#per-chi" class="nav-link" data-i18n="nav.perchi">Per chi</a>
+        <a href="#pricing" class="nav-link" data-i18n="nav.prezzi">Prezzi</a>
       </nav>
       <div class="footer-legal">
-        <a href="privacy-policy.html" target="_blank" rel="noopener">Informativa privacy</a>
-        <a href="cookie-policy.html" target="_blank" rel="noopener">Cookie policy</a>
-        <a href="cookie-policy.html" class="footer-cookie-btn" id="cookie-manage" target="_blank" rel="noopener">Gestisci cookie</a>
+        <a href="privacy-policy.html" target="_blank" rel="noopener" data-i18n="legal.privacy">Informativa privacy</a>
+        <a href="cookie-policy.html" target="_blank" rel="noopener" data-i18n="legal.cookie">Cookie policy</a>
+        <a href="cookie-policy.html" class="footer-cookie-btn" id="cookie-manage" target="_blank" rel="noopener" data-i18n="legal.manage">Gestisci cookie</a>
       </div>
-      <p class="footer-copy">&copy; <span id="year"></span> Vuebb. Tutti i diritti riservati.</p>
+      <p class="footer-copy">&copy; <span id="year"></span> Vuebb. <span data-i18n="legal.copy">Tutti i diritti riservati.</span></p>
     </div>
   </footer>
 
@@ -332,26 +336,26 @@
     <div class="cookie-banner-inner">
       <div class="cookie-copy">
         <span class="section-label">Cookie</span>
-        <h2 id="cookie-title">Chiarezza sull'utilizzo dei cookie.</h2>
-        <p id="cookie-text">Salviamo solo la tua preferenza; non raccogliamo alcun dato prima della tua autorizzazione. <a href="cookie-policy.html" target="_blank" rel="noopener">Cookie policy</a></p>
+        <h2 id="cookie-title" data-i18n="cookie.title">Chiarezza sull'utilizzo dei cookie.</h2>
+        <p id="cookie-text" data-i18n="cookie.text">Salviamo solo la tua preferenza; non raccogliamo alcun dato prima della tua autorizzazione. <a href="cookie-policy.html" target="_blank" rel="noopener">Cookie policy</a></p>
       </div>
       <div class="cookie-actions">
-        <button type="button" class="btn btn-ghost btn-sm" id="cookie-reject">Solo necessari</button>
-        <button type="button" class="btn btn-lime btn-sm" id="cookie-accept">Accetto</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="cookie-reject" data-i18n="cookie.reject">Solo necessari</button>
+        <button type="button" class="btn btn-lime btn-sm" id="cookie-accept" data-i18n="cookie.accept">Accetto</button>
       </div>
     </div>
   </aside>
 
-  <button type="button" class="btn btn-lime cta-book cta-book-float" data-book-call>Prenota Call Demo</button>
+  <button type="button" class="btn btn-lime cta-book cta-book-float" data-book-call data-i18n="cta.book">Prenota Call Demo</button>
 
   <div class="book-modal" id="book-modal" hidden role="dialog" aria-modal="true" aria-labelledby="book-title">
     <div class="book-modal-panel">
       <div class="book-modal-head">
         <div class="book-modal-copy">
-          <span class="section-label">Prenotazione</span>
-          <h2 id="book-title">Prenota Call Demo</h2>
-          <p>30 minuti. Nessun impegno — solo ascolto e chiarezza.</p>
-          <p class="book-modal-legal">Il form è di Google Calendar. <a href="privacy-policy.html" target="_blank" rel="noopener">Informativa privacy</a> · <a href="cookie-policy.html" target="_blank" rel="noopener">Cookie</a></p>
+          <span class="section-label" data-i18n="book.label">Prenotazione</span>
+          <h2 id="book-title" data-i18n="cta.book">Prenota Call Demo</h2>
+          <p data-i18n="book.desc">30 minuti. Nessun impegno — solo ascolto e chiarezza.</p>
+          <p class="book-modal-legal" data-i18n="book.legal">Il form è di Google Calendar. <a href="privacy-policy.html" target="_blank" rel="noopener">Informativa privacy</a> · <a href="cookie-policy.html" target="_blank" rel="noopener">Cookie</a></p>
         </div>
         <button class="gallery-close" id="book-close" type="button" aria-label="Chiudi prenotazione">×</button>
       </div>
@@ -362,6 +366,7 @@
     </div>
   </div>
 
+  <script src="js/i18n.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>

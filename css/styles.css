@@ -278,6 +278,37 @@ button {
   width: 28px;
 }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  height: 38px;
+  padding: 0 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.35s var(--ease), color 0.35s var(--ease), background 0.35s var(--ease);
+}
+
+.lang-toggle .flag {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  border-color: rgba(46, 232, 228, 0.45);
+  color: var(--lime);
+  background: rgba(46, 232, 228, 0.08);
+}
+
 .menu-bar {
   height: 1.5px;
   background: var(--ink);

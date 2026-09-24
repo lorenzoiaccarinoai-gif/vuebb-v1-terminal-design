@@ -27,7 +27,11 @@
       <a href="index.html#hero" class="logo-link" aria-label="Vuebb Home">
         <span class="logo-mark">Vuebb.</span>
       </a>
-      <a class="btn btn-lime btn-sm" href="index.html">Torna al sito</a>
+      <a class="btn btn-lime btn-sm" href="index.html" data-i18n="legal.back">Torna al sito</a>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambia lingua">
+        <span class="flag" id="langFlag">🇮🇹</span>
+        <span class="lang-code" id="langCode">IT</span>
+      </button>
     </div>
   </header>
 
@@ -84,5 +88,6 @@
       </div>
     </div>
   </main>
+  <script src="js/i18n.js" defer></script>
 </body>
 </html>
