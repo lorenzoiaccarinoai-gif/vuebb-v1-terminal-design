@@ -49,6 +49,7 @@
       "port.wip": "In lavorazione",
       "port.wip.desc": "Tre progetti boutique in corso. Apri il blocco per le anteprime.",
       "cap.emozioni": "Emozioni Capresi — villa intera a Capri. In lavorazione.",
+      "cap.emozioniCasa": "Emozioni Capresi — Dentro la casa. In lavorazione.",
       "cap.moonlight": "Moonlight dal 1980 — ristorante di Chef Lucio. In lavorazione.",
       "cap.montano": "Il Montano — Eco Bistrot & Cocktail Bar. In lavorazione.",
       "met.title": "Dal brief al live,<br>senza rumore.",

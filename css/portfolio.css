@@ -110,7 +110,7 @@
 }
 
 .portfolio-panel.is-open {
-  max-height: 2400px;
+  max-height: 4200px;
   opacity: 1;
   overflow: visible;
   padding-block: 14px 24px;
@@ -121,6 +121,13 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   isolation: isolate;
+  align-items: start;
+}
+
+.shot-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .shot {
