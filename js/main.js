@@ -47,6 +47,11 @@
       link.addEventListener('click', closeNav);
     });
 
+    document.getElementById('nav-close')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeNav();
+    });
     navBackdrop?.addEventListener('click', closeNav);
 
     document.addEventListener('click', (e) => {
