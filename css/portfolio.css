@@ -733,15 +733,30 @@ body.cookie-lock > *:not(#cookie-banner) {
     grid-row: auto;
   }
 
+  .shot-emozioni,
+  .shot.shot-phone {
+    display: block;
+    height: auto;
+  }
+
+  .shot:hover .shot-screen,
+  .shot.is-hover .shot-screen {
+    transform: none;
+    filter: none;
+  }
+
   .shot-screen-phone {
     width: min(100%, 250px);
     aspect-ratio: 9 / 16;
     flex: none;
+    overflow: hidden;
   }
 
   .shot figcaption,
   .shot-emozioni figcaption,
   .shot-phone figcaption {
+    position: relative;
+    z-index: 3;
     flex: none;
     margin-top: 0.65rem;
     justify-content: flex-start;
