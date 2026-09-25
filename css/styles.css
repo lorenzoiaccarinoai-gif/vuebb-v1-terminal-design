@@ -1282,15 +1282,24 @@ body.book-open .cta-book-float,
     display: none;
   }
 
+  .header .container {
+    width: 100%;
+    padding-inline: clamp(10px, 3.6vw, 20px);
+  }
+
   .header-inner {
+    --hdr-gap: clamp(0.38rem, 2.3vw, 0.9rem);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 0;
+    min-width: 0;
   }
 
   .header-inner > .logo-link {
     margin-right: auto;
+    flex: 0 1 auto;
+    min-width: 0;
   }
 
   .header-inner > .nav {
@@ -1304,7 +1313,7 @@ body.book-open .cta-book-float,
   .header-inner > .lang-toggle,
   .header-inner > .menu-toggle {
     flex: 0 0 auto;
-    margin-left: 0.7rem;
+    margin-left: var(--hdr-gap);
   }
 
   .header-inner > .cta-book-header {
