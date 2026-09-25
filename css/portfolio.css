@@ -362,6 +362,8 @@
   aspect-ratio: auto;
   max-height: min(84vh, 920px);
   transform: none;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .gallery-frame .shot-screen picture,
@@ -381,6 +383,8 @@
   aspect-ratio: auto;
   margin-inline: auto;
   background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .gallery-frame .shot-screen-phone picture,
@@ -390,6 +394,7 @@
   max-height: min(78vh, 820px);
   object-fit: contain;
   background: transparent;
+  border-radius: 12px;
 }
 
 .gallery-caption {
