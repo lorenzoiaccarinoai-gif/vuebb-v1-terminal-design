@@ -1252,11 +1252,6 @@ body.book-open .cta-book-float,
     display: none;
   }
 
-  .header .container {
-    width: 100%;
-    padding-inline: 16px;
-  }
-
   .header-inner {
     display: flex;
     align-items: center;
@@ -1275,29 +1270,7 @@ body.book-open .cta-book-float,
   .header-inner > .cta-book-header,
   .header-inner > .lang-toggle,
   .header-inner > .menu-toggle {
-    flex: 1 1 0;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .header-inner > .logo-link {
-    justify-content: flex-start;
-  }
-
-  .header-inner > .cta-book-header {
-    justify-content: center;
-    padding-inline: 0.55rem;
-    font-size: 0.72rem;
-    white-space: nowrap;
-  }
-
-  .header-inner > .lang-toggle {
-    justify-content: center;
-  }
-
-  .header-inner > .menu-toggle {
-    justify-content: flex-end;
+    flex: 0 0 auto;
   }
 
   .contact-row {
