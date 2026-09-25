@@ -24,6 +24,7 @@
 
   function setActive(id) {
     links.forEach(function (link) {
+      link.classList.remove('is-hover');
       if (link.classList.contains('logo-link')) {
         link.classList.remove('active');
         return;
@@ -106,6 +107,7 @@
     if (!id || !document.getElementById(id)) return;
     if (history.replaceState) history.replaceState(null, '', href);
     goTo(id);
+    if (typeof window.closeVuebbNav === 'function') window.closeVuebbNav();
   }
 
   document.addEventListener('click', onClick, true);
