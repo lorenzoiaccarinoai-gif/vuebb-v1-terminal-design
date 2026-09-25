@@ -235,6 +235,24 @@
   border-radius: 12px;
 }
 
+.shot-screen-logo {
+  background: #f7f4ee;
+}
+
+.shot-screen-logo picture,
+.shot-screen-logo img {
+  object-fit: contain;
+  object-position: center;
+  background: #f7f4ee;
+}
+
+.gallery-frame .shot-screen-logo,
+.gallery-frame .shot-screen-logo picture,
+.gallery-frame .shot-screen-logo img {
+  background: #f7f4ee;
+  object-fit: contain;
+}
+
 .shot-hero {
   height: 58%;
 }
