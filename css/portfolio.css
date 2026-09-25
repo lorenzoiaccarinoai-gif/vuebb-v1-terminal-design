@@ -231,13 +231,15 @@
   flex-shrink: 0;
 }
 
+.shot-phone figcaption {
+  margin-top: auto;
+}
+
 .shot-screen-phone {
-  width: 100%;
-  flex: 1 1 auto;
-  height: auto;
-  aspect-ratio: auto;
-  min-height: 0;
-  margin-inline: 0;
+  width: min(100%, 250px);
+  flex: 0 0 auto;
+  aspect-ratio: 700 / 1544;
+  margin-inline: auto;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -247,7 +249,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top center;
   border-radius: 12px;
 }
@@ -726,7 +728,8 @@ body.cookie-lock > *:not(#cookie-banner) {
   }
 
   .shot-screen-phone {
-    aspect-ratio: 16 / 9;
+    width: min(100%, 250px);
+    aspect-ratio: 700 / 1544;
     flex: none;
   }
 
