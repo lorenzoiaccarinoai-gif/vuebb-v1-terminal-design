@@ -121,7 +121,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   isolation: isolate;
-  align-items: start;
+  align-items: stretch;
 }
 
 .shot-col {
@@ -217,10 +217,18 @@
   object-position: top center;
 }
 
+.shot.shot-phone {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .shot-screen-phone {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-inline: auto;
+  flex: 1 1 auto;
+  aspect-ratio: auto;
+  min-height: 0;
+  margin-inline: 0;
   border-radius: 12px;
   overflow: hidden;
 }
