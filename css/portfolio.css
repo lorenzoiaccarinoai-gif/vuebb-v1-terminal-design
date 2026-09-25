@@ -221,12 +221,18 @@
   aspect-ratio: 700 / 1544;
   width: min(100%, 230px);
   margin-inline: auto;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .shot-screen-phone picture,
 .shot-screen-phone img {
-  object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: top center;
+  border-radius: 12px;
 }
 
 .shot-hero {
@@ -375,8 +381,11 @@
 
 .gallery-frame .shot-screen picture,
 .gallery-frame .shot-screen img {
+  display: block;
+  width: 100%;
   object-fit: contain;
-  background: #0b0a12;
+  background: transparent;
+  border-radius: 12px;
 }
 
 .gallery-lightbox.is-phone .gallery-figure {
@@ -394,14 +403,21 @@
   overflow: hidden;
 }
 
-.gallery-frame .shot-screen-phone picture,
+.gallery-frame .shot-screen-phone picture {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 .gallery-frame .shot-screen-phone img {
   width: 100%;
   height: auto;
   max-height: min(78vh, 820px);
-  object-fit: contain;
+  object-fit: cover;
   background: transparent;
   border-radius: 12px;
+  clip-path: inset(0 round 12px);
 }
 
 .gallery-caption {
