@@ -282,6 +282,10 @@ button {
   }
 }
 
+.nav-close {
+  display: none;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
