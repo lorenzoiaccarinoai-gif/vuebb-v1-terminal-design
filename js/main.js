@@ -112,7 +112,7 @@
     lightboxFrame.innerHTML = '';
     const phone = shot.classList.contains('shot-phone') || (screen && screen.classList.contains('shot-screen-phone'));
     lightbox.classList.toggle('is-phone', phone);
-    if (browser && !phone) lightboxFrame.appendChild(browser.cloneNode(true));
+    if (browser) lightboxFrame.appendChild(browser.cloneNode(true));
     if (screen) {
       const clone = screen.cloneNode(true);
       clone.querySelectorAll('source, img').forEach((el) => {

@@ -371,22 +371,13 @@
 }
 
 .gallery-lightbox.is-phone .gallery-figure {
-  width: min(430px, calc(100% - 4.5rem));
-}
-
-.gallery-lightbox.is-phone .gallery-frame {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 18px;
-  overflow: hidden;
+  width: min(420px, calc(100% - 4.5rem));
 }
 
 .gallery-frame .shot-screen-phone {
-  width: min(100%, 390px);
+  width: 100%;
   height: auto;
-  max-height: min(78vh, 860px);
+  max-height: min(78vh, 820px);
   aspect-ratio: auto;
   margin-inline: auto;
   background: transparent;
@@ -396,7 +387,7 @@
 .gallery-frame .shot-screen-phone img {
   width: 100%;
   height: auto;
-  max-height: min(78vh, 860px);
+  max-height: min(78vh, 820px);
   object-fit: contain;
   background: transparent;
 }
