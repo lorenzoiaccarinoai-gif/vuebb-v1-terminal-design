@@ -1,6 +1,5 @@
 /**
- * Vuebb fluid field — WebGL stable-fluids (Stam) + 2D fallback.
- * Pointer splat, hover trail, scroll slosh.
+ * Vuebb fluid field — looping WebGL background, no pointer/scroll/hover.
  */
 (function () {
   'use strict';
@@ -190,7 +189,7 @@
       bindQuad(P.advect);
       gl.uniform2f(P.advect.u.uTexel, texel[0], texel[1]);
       gl.uniform1f(P.advect.u.uDt, 0.018);
-      gl.uniform1f(P.advect.u.uDiss, 0.992);
+      gl.uniform1f(P.advect.u.uDiss, 0.996);
       gl.activeTexture(gl.TEXTURE0);
       gl.bindTexture(gl.TEXTURE_2D, vel.read.tex);
       gl.uniform1i(P.advect.u.uVel, 0);
@@ -246,7 +245,7 @@
       bindQuad(P.advect);
       gl.uniform2f(P.advect.u.uTexel, 1 / dyeW, 1 / dyeH);
       gl.uniform1f(P.advect.u.uDt, 0.018);
-      gl.uniform1f(P.advect.u.uDiss, 0.987);
+      gl.uniform1f(P.advect.u.uDiss, 0.994);
       gl.activeTexture(gl.TEXTURE0);
       gl.bindTexture(gl.TEXTURE_2D, vel.read.tex);
       gl.uniform1i(P.advect.u.uVel, 0);
@@ -266,52 +265,26 @@
       gl.disable(gl.BLEND);
     }
 
-    var last = { x: 0.5, y: 0.5, has: false, down: false };
-    var lastScroll = window.scrollY || 0;
     var MAG = [0.70, 0.10, 0.47];
     var CYA = [0.18, 0.91, 0.89];
+    var t0 = performance.now();
 
-    function uv(e) {
-      return { x: e.clientX / window.innerWidth, y: 1 - e.clientY / window.innerHeight };
-    }
-
-    function onMove(e) {
-      var p = uv(e);
-      var dx = p.x - last.x;
-      var dy = p.y - last.y;
-      var speed = Math.sqrt(dx * dx + dy * dy);
-      var col = last.down ? MAG : CYA;
-      var amp = last.down ? 1400 : 280;
-      var rad = last.down ? 0.0018 : 0.0007;
-      var dyeAmp = last.down ? 0.55 : 0.12;
-      if (last.has && speed > 0.0004) {
-        splat(p.x, p.y, dx, dy, [col[0] * dyeAmp, col[1] * dyeAmp, col[2] * dyeAmp], rad, amp);
-      } else if (!last.down) {
-        splat(p.x, p.y, 0, 0.002, [CYA[0] * 0.06, CYA[1] * 0.06, CYA[2] * 0.06], 0.00045, 80);
+    function ambient(now) {
+      var t = (now - t0) / 1000;
+      var emitters = [
+        { x: 0.22 + Math.sin(t * 0.23) * 0.16, y: 0.30 + Math.cos(t * 0.17) * 0.18, c: MAG, s: 0.22 },
+        { x: 0.74 + Math.cos(t * 0.19) * 0.14, y: 0.68 + Math.sin(t * 0.21) * 0.16, c: CYA, s: 0.26 },
+        { x: 0.50 + Math.sin(t * 0.11) * 0.28, y: 0.48 + Math.cos(t * 0.13) * 0.22, c: MAG, s: 0.12 },
+        { x: 0.38 + Math.cos(t * 0.31) * 0.20, y: 0.78 + Math.sin(t * 0.15) * 0.10, c: CYA, s: 0.16 }
+      ];
+      for (var i = 0; i < emitters.length; i++) {
+        var e = emitters[i];
+        var ang = t * (0.35 + i * 0.11) + i;
+        var dx = Math.cos(ang) * 0.012;
+        var dy = Math.sin(ang * 0.9) * 0.010;
+        var pulse = 0.10 + 0.06 * Math.sin(t * 0.8 + i);
+        splat(e.x, e.y, dx, dy, [e.c[0] * pulse, e.c[1] * pulse, e.c[2] * pulse], 0.0011 + e.s * 0.001, 320 + i * 40);
       }
-      last.x = p.x;
-      last.y = p.y;
-      last.has = true;
-    }
-
-    function onDown(e) {
-      if (e.button != null && e.button !== 0) return;
-      last.down = true;
-      var p = uv(e);
-      last.x = p.x;
-      last.y = p.y;
-      last.has = true;
-      splat(p.x, p.y, 0, 0.02, MAG, 0.0032, 900);
-    }
-    function onUp() { last.down = false; }
-
-    function onScroll() {
-      var y = window.scrollY || 0;
-      var dy = y - lastScroll;
-      lastScroll = y;
-      if (Math.abs(dy) < 2) return;
-      var dir = dy > 0 ? -0.035 : 0.035;
-      splat(0.5, dy > 0 ? 0.22 : 0.78, 0, dir, [CYA[0] * 0.16, CYA[1] * 0.16, MAG[2] * 0.12], 0.012, 420);
     }
 
     function resize() {
@@ -332,13 +305,12 @@
     }
 
     window.addEventListener('resize', resize, { passive: true });
-    window.addEventListener('pointerdown', onDown, { passive: true });
-    window.addEventListener('pointermove', onMove, { passive: true });
-    window.addEventListener('pointerup', onUp, { passive: true });
-    window.addEventListener('pointercancel', onUp, { passive: true });
-    window.addEventListener('scroll', onScroll, { passive: true });
     resize();
-    function loop() { step(); requestAnimationFrame(loop); }
+    function loop(now) {
+      ambient(now || performance.now());
+      step();
+      requestAnimationFrame(loop);
+    }
     requestAnimationFrame(loop);
     return true;
   }
