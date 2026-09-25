@@ -95,8 +95,11 @@
       'vec2 vel=texture2D(uVel,vUv).xy;gl_FragColor=vec4(vel+force*uTexel.y,0.0,1.0);}'
     ].join('');
     var showFS = [
-      'precision highp float;varying vec2 vUv;uniform sampler2D uDye;',
-      'void main(){vec3 c=texture2D(uDye,vUv).xyz;float a=clamp(length(c)*1.35,0.0,0.72);gl_FragColor=vec4(c,a);}'
+      'precision highp float;varying vec2 vUv;uniform sampler2D uDye;uniform float uFlash;',
+      'void main(){vec3 c=texture2D(uDye,vUv).xyz;c=max(c,vec3(0.0));float l=max(max(c.r,c.g),c.b);',
+      'float smoke=smoothstep(0.018,0.22,l);vec3 tone=pow(c*1.55,vec3(0.72));',
+      'tone=mix(tone,tone*tone*1.8,0.35);tone*=1.0+uFlash*1.8;float a=clamp(smoke*(0.55+uFlash*0.35),0.0,0.86);',
+      'gl_FragColor=vec4(tone,a);}'
     ].join('');
 
     var P = {
@@ -146,6 +149,8 @@
     var simH = 160;
     var dyeW = 256;
     var dyeH = 256;
+    var mobile = window.matchMedia("(max-width: 800px)").matches || (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 6);
+    var flash = 0;
     var vel, dye, div, pressure;
     var aspect = 1;
     var texel = [1 / simW, 1 / simH];
@@ -202,7 +207,7 @@
       if (P.vort) {
         bindQuad(P.vort);
         gl.uniform2f(P.vort.u.uTexel, texel[0], texel[1]);
-        gl.uniform1f(P.vort.u.uCurl, 18);
+        gl.uniform1f(P.vort.u.uCurl, mobile ? 22 : 30);
         gl.activeTexture(gl.TEXTURE0);
         gl.bindTexture(gl.TEXTURE_2D, vel.read.tex);
         gl.uniform1i(P.vort.u.uVel, 0);
@@ -220,7 +225,7 @@
 
       bindQuad(P.press);
       gl.uniform2f(P.press.u.uTexel, texel[0], texel[1]);
-      for (var i = 0; i < 14; i++) {
+      for (var i = 0; i < (mobile ? 6 : 8); i++) {
         gl.activeTexture(gl.TEXTURE0);
         gl.bindTexture(gl.TEXTURE_2D, pressure.read.tex);
         gl.uniform1i(P.press.u.uPress, 0);
@@ -259,6 +264,7 @@
       gl.activeTexture(gl.TEXTURE0);
       gl.bindTexture(gl.TEXTURE_2D, dye.read.tex);
       gl.uniform1i(P.show.u.uDye, 0);
+      if (P.show.u.uFlash) gl.uniform1f(P.show.u.uFlash, flash);
       gl.enable(gl.BLEND);
       gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
       blit(null);
@@ -271,34 +277,42 @@
 
     function ambient(now) {
       var t = (now - t0) / 1000;
+      var beat = Math.pow(Math.max(0, Math.sin(t * 3.15)), 18);
+      var beat2 = Math.pow(Math.max(0, Math.sin(t * 3.15 + 1.57)), 22);
+      flash = Math.min(1, beat * 1.1 + beat2 * 0.55);
       var emitters = [
-        { x: 0.22 + Math.sin(t * 0.23) * 0.16, y: 0.30 + Math.cos(t * 0.17) * 0.18, c: MAG, s: 0.22 },
-        { x: 0.74 + Math.cos(t * 0.19) * 0.14, y: 0.68 + Math.sin(t * 0.21) * 0.16, c: CYA, s: 0.26 },
-        { x: 0.50 + Math.sin(t * 0.11) * 0.28, y: 0.48 + Math.cos(t * 0.13) * 0.22, c: MAG, s: 0.12 },
-        { x: 0.38 + Math.cos(t * 0.31) * 0.20, y: 0.78 + Math.sin(t * 0.15) * 0.10, c: CYA, s: 0.16 }
+        { x: 0.20 + Math.sin(t * 0.21) * 0.18, y: 0.28 + Math.cos(t * 0.16) * 0.20, c: MAG, s: 0.18 },
+        { x: 0.78 + Math.cos(t * 0.18) * 0.14, y: 0.70 + Math.sin(t * 0.20) * 0.16, c: CYA, s: 0.20 }
       ];
+      if (!mobile) {
+        emitters.push({ x: 0.48 + Math.sin(t * 0.12) * 0.30, y: 0.50 + Math.cos(t * 0.14) * 0.24, c: MAG, s: 0.10 });
+      }
       for (var i = 0; i < emitters.length; i++) {
         var e = emitters[i];
-        var ang = t * (0.35 + i * 0.11) + i;
-        var dx = Math.cos(ang) * 0.012;
-        var dy = Math.sin(ang * 0.9) * 0.010;
-        var pulse = 0.10 + 0.06 * Math.sin(t * 0.8 + i);
-        splat(e.x, e.y, dx, dy, [e.c[0] * pulse, e.c[1] * pulse, e.c[2] * pulse], 0.0011 + e.s * 0.001, 320 + i * 40);
+        var ang = t * (0.4 + i * 0.13) + i;
+        var dx = Math.cos(ang) * 0.016;
+        var dy = Math.sin(ang * 0.88) * 0.013;
+        var pulse = 0.16 + 0.08 * Math.sin(t * 1.1 + i) + flash * 0.35;
+        splat(e.x, e.y, dx, dy, [e.c[0] * pulse, e.c[1] * pulse, e.c[2] * pulse], 0.0007 + e.s * 0.0007, 380);
+      }
+      if (flash > 0.55) {
+        var col = beat > beat2 ? MAG : CYA;
+        splat(0.5 + Math.sin(t * 0.7) * 0.2, 0.5, 0.02, 0.01, [col[0] * 0.7, col[1] * 0.7, col[2] * 0.7], 0.0024, 700);
       }
     }
 
     function resize() {
       var w = window.innerWidth;
       var h = window.innerHeight;
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var dpr = Math.min(window.devicePixelRatio || 1, mobile ? 1.25 : 1.75);
       canvas.width = Math.floor(w * dpr);
       canvas.height = Math.floor(h * dpr);
       canvas.style.width = w + 'px';
       canvas.style.height = h + 'px';
       aspect = w / Math.max(h, 1);
-      simH = 128;
-      simW = Math.max(96, Math.round(simH * aspect));
-      dyeH = 192;
+      simH = mobile ? 96 : 144;
+      simW = Math.max(80, Math.round(simH * aspect));
+      dyeH = mobile ? 180 : 288;
       dyeW = Math.max(128, Math.round(dyeH * aspect));
       texel = [1 / simW, 1 / simH];
       alloc();
@@ -306,7 +320,13 @@
 
     window.addEventListener('resize', resize, { passive: true });
     resize();
+    var skip = false;
     function loop(now) {
+      if (document.hidden) { requestAnimationFrame(loop); return; }
+      if (mobile) {
+        skip = !skip;
+        if (skip) { requestAnimationFrame(loop); return; }
+      }
       ambient(now || performance.now());
       step();
       requestAnimationFrame(loop);
