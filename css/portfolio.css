@@ -735,6 +735,12 @@ body.cookie-lock > *:not(#cookie-banner) {
     flex: none;
   }
 
+  .shot-phone figcaption {
+    flex: none;
+    margin-top: 0.65rem;
+    justify-content: flex-start;
+  }
+
   .portfolio-trigger {
     grid-template-columns: 72px 1fr auto;
   }
