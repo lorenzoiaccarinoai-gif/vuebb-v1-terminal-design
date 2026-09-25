@@ -97,8 +97,8 @@
     var showFS = [
       'precision highp float;varying vec2 vUv;uniform sampler2D uDye;uniform float uFlash;',
       'void main(){vec3 c=texture2D(uDye,vUv).xyz;c=max(c,vec3(0.0));float l=max(max(c.r,c.g),c.b);',
-      'float smoke=smoothstep(0.018,0.22,l);vec3 tone=pow(c*1.55,vec3(0.72));',
-      'tone=mix(tone,tone*tone*1.8,0.35);tone*=1.0+uFlash*1.8;float a=clamp(smoke*(0.55+uFlash*0.35),0.0,0.86);',
+      'float smoke=smoothstep(0.006,0.14,l);vec3 tone=pow(c*1.25,vec3(0.82));',
+      'tone=mix(tone,tone*vec3(0.85,0.7,1.05),0.22);tone*=1.0+uFlash*0.9;float a=clamp(smoke*(0.42+l*0.5+uFlash*0.2),0.0,0.78);',
       'gl_FragColor=vec4(tone,a);}'
     ].join('');
 
@@ -194,7 +194,7 @@
       bindQuad(P.advect);
       gl.uniform2f(P.advect.u.uTexel, texel[0], texel[1]);
       gl.uniform1f(P.advect.u.uDt, 0.018);
-      gl.uniform1f(P.advect.u.uDiss, 0.996);
+      gl.uniform1f(P.advect.u.uDiss, 0.998);
       gl.activeTexture(gl.TEXTURE0);
       gl.bindTexture(gl.TEXTURE_2D, vel.read.tex);
       gl.uniform1i(P.advect.u.uVel, 0);
@@ -250,7 +250,7 @@
       bindQuad(P.advect);
       gl.uniform2f(P.advect.u.uTexel, 1 / dyeW, 1 / dyeH);
       gl.uniform1f(P.advect.u.uDt, 0.018);
-      gl.uniform1f(P.advect.u.uDiss, 0.994);
+      gl.uniform1f(P.advect.u.uDiss, 0.997);
       gl.activeTexture(gl.TEXTURE0);
       gl.bindTexture(gl.TEXTURE_2D, vel.read.tex);
       gl.uniform1i(P.advect.u.uVel, 0);
@@ -292,12 +292,12 @@
         var ang = t * (0.4 + i * 0.13) + i;
         var dx = Math.cos(ang) * 0.016;
         var dy = Math.sin(ang * 0.88) * 0.013;
-        var pulse = 0.16 + 0.08 * Math.sin(t * 1.1 + i) + flash * 0.35;
-        splat(e.x, e.y, dx, dy, [e.c[0] * pulse, e.c[1] * pulse, e.c[2] * pulse], 0.0007 + e.s * 0.0007, 380);
+        var pulse = 0.13 + 0.07 * Math.sin(t * 0.7 + i) + flash * 0.16;
+        splat(e.x, e.y, dx, dy, [e.c[0] * pulse, e.c[1] * pulse, e.c[2] * pulse], 0.0016 + e.s * 0.0014, 240);
       }
       if (flash > 0.55) {
         var col = beat > beat2 ? MAG : CYA;
-        splat(0.5 + Math.sin(t * 0.7) * 0.2, 0.5, 0.02, 0.01, [col[0] * 0.7, col[1] * 0.7, col[2] * 0.7], 0.0024, 700);
+        splat(0.5 + Math.sin(t * 0.7) * 0.2, 0.5, 0.012, 0.008, [col[0] * 0.38, col[1] * 0.38, col[2] * 0.38], 0.0045, 360);
       }
     }
 
