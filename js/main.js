@@ -29,7 +29,6 @@
     menuToggle.classList.toggle('active', open);
     menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     document.body.classList.toggle('nav-open', open);
-    if (navBackdrop) navBackdrop.hidden = !open;
     if (!document.body.classList.contains('cookie-lock')) {
       document.body.style.overflow = open ? 'hidden' : '';
     }
