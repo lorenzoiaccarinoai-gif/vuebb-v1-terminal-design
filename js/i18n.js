@@ -147,6 +147,7 @@
       "port.wip": "In progress",
       "port.wip.desc": "Three boutique projects underway. Open the block for previews.",
       "cap.emozioni": "Emozioni Capresi — entire villa in Capri. In progress.",
+      "cap.emozioniCasa": "Emozioni Capresi — Inside the house. In progress.",
       "cap.moonlight": "Moonlight since 1980 — Chef Lucio’s restaurant. In progress.",
       "cap.montano": "Il Montano — Eco Bistrot & Cocktail Bar. In progress.",
       "met.title": "From brief to live,<br>without noise.",
