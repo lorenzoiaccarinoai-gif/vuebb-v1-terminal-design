@@ -231,6 +231,11 @@
   flex-shrink: 0;
 }
 
+.shot-phone figcaption {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .shot-screen-phone {
   width: min(100%, 250px);
   flex: 0 0 auto;
