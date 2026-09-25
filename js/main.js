@@ -110,11 +110,13 @@
     const screen = shot.querySelector('.shot-screen');
     const browser = shot.querySelector('.browser');
     lightboxFrame.innerHTML = '';
+    const phone = shot.classList.contains('shot-phone') || (screen && screen.classList.contains('shot-screen-phone'));
+    lightbox.classList.toggle('is-phone', phone);
     if (browser) lightboxFrame.appendChild(browser.cloneNode(true));
     if (screen) {
       const clone = screen.cloneNode(true);
       clone.querySelectorAll('source, img').forEach((el) => {
-        el.setAttribute('sizes', 'min(1280px, 92vw)');
+        el.setAttribute('sizes', phone ? 'min(380px, 70vw)' : 'min(1280px, 92vw)');
       });
       clone.querySelector('img')?.setAttribute('decoding', 'async');
       lightboxFrame.appendChild(clone);

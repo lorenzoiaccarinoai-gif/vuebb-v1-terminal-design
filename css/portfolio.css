@@ -210,21 +210,16 @@
   object-position: top center;
 }
 
-.shot-phone .shot-screen {
+.shot-screen-phone {
   aspect-ratio: 700 / 1544;
   width: min(100%, 230px);
   margin-inline: auto;
 }
 
-.shot-phone .shot-screen picture,
-.shot-phone .shot-screen img {
+.shot-screen-phone picture,
+.shot-screen-phone img {
   object-fit: contain;
   object-position: top center;
-}
-
-.gallery-frame .shot-phone .shot-screen {
-  width: min(100%, 420px);
-  max-height: min(84vh, 920px);
 }
 
 .shot-hero {
@@ -373,6 +368,25 @@
 .gallery-frame .shot-screen img {
   object-fit: contain;
   background: #0b0a12;
+}
+
+.gallery-lightbox.is-phone .gallery-figure {
+  width: min(420px, calc(100% - 4.5rem));
+}
+
+.gallery-frame .shot-screen-phone {
+  width: min(100%, 380px);
+  height: min(78vh, 820px);
+  max-height: min(78vh, 820px);
+  aspect-ratio: 700 / 1544;
+  margin-inline: auto;
+}
+
+.gallery-frame .shot-screen-phone picture,
+.gallery-frame .shot-screen-phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .gallery-caption {
