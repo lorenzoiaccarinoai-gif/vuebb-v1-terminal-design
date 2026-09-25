@@ -226,14 +226,15 @@
   min-height: 0;
 }
 
-.shot-phone .browser,
-.shot-phone figcaption {
+.shot-phone .browser {
   flex-shrink: 0;
 }
 
 .shot-phone figcaption {
-  margin-top: auto;
-  margin-bottom: auto;
+  flex: 1 1 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: center;
 }
 
 .shot-screen-phone {
