@@ -210,6 +210,23 @@
   object-position: top center;
 }
 
+.shot-phone .shot-screen {
+  aspect-ratio: 700 / 1544;
+  width: min(100%, 230px);
+  margin-inline: auto;
+}
+
+.shot-phone .shot-screen picture,
+.shot-phone .shot-screen img {
+  object-fit: contain;
+  object-position: top center;
+}
+
+.gallery-frame .shot-phone .shot-screen {
+  width: min(100%, 420px);
+  max-height: min(84vh, 920px);
+}
+
 .shot-hero {
   height: 58%;
 }
