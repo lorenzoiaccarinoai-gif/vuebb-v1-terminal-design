@@ -16,8 +16,9 @@
     else document.body.insertBefore(canvas, document.body.firstChild);
   }
 
-  if (initWebgl(canvas)) return;
-  initCanvas2d(canvas);
+  if (!initWebgl(canvas) && canvas && canvas.parentNode) {
+    canvas.parentNode.removeChild(canvas);
+  }
 
   function initWebgl(canvas) {
     var gl = canvas.getContext('webgl', { premultipliedAlpha: false, alpha: true, antialias: false });
@@ -335,9 +336,4 @@
     return true;
   }
 
-  function initCanvas2d(canvas) {
-    var s = document.createElement('script');
-    s.src = 'js/bg-press-2d.js';
-    document.head.appendChild(s);
-  }
 })();
