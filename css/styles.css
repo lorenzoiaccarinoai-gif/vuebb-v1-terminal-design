@@ -194,6 +194,15 @@ button {
   gap: 1rem;
 }
 
+.policy-page .header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+.policy-page .header-inner > .logo-link { justify-self: start; }
+.policy-page .header-inner > .btn { justify-self: center; }
+.policy-page .header-inner > .lang-toggle { justify-self: end; }
+
 .logo-link {
   display: flex;
   align-items: center;
@@ -1325,6 +1334,19 @@ body.book-open .cta-book-float,
 
   .header-inner > .cta-book-header {
     margin-left: 0;
+  }
+
+  .policy-page .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+  }
+  .policy-page .header-inner > .btn {
+    margin-left: 0;
+  }
+  .policy-page .header-inner > .lang-toggle {
+    margin-left: 0;
+    justify-self: end;
   }
 
   .contact-row {
