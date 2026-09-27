@@ -237,6 +237,14 @@
     try {
       const saved = localStorage.getItem("vuebb-lang");
       if (saved === "en" || saved === "it") start = saved;
+      else {
+        const codes = [navigator.language, ...(navigator.languages || [])];
+        for (const c of codes) {
+          const l = String(c || "").toLowerCase();
+          if (l.startsWith("it")) { start = "it"; break; }
+          if (l.startsWith("en")) { start = "en"; break; }
+        }
+      }
     } catch (e) {}
     setLanguage(start);
 
