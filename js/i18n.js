@@ -233,7 +233,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    let start = "it";
+    let start = "en";
     try {
       const saved = localStorage.getItem("vuebb-lang");
       if (saved === "en" || saved === "it") start = saved;
