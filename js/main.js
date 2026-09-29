@@ -189,7 +189,7 @@
     }
   });
 
-  const GA_ID = 'G-V5BW8KJ77Y';
+  const GA_ID = 'G-66CWBWMK19';
   const CONSENT_KEY = 'tsm-cookie-consent';
   const CONSENT_MAX_AGE = 1000 * 60 * 60 * 24 * 180;
   const banner = document.getElementById('cookie-banner');
