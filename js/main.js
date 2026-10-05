@@ -239,28 +239,14 @@
     });
   }
 
-  function lockPage() {
-    document.body.classList.add('cookie-lock');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function unlockPage() {
-    document.body.classList.remove('cookie-lock');
-    document.body.style.overflow = '';
-  }
-
   function hideBanner() {
     if (!banner) return;
-    banner.classList.remove('is-open');
     banner.hidden = true;
-    unlockPage();
   }
 
   function showBanner() {
     if (!banner) return;
     banner.hidden = false;
-    lockPage();
-    requestAnimationFrame(() => banner.classList.add('is-open'));
   }
 
   function acceptCookies() {
@@ -278,6 +264,7 @@
   document.getElementById('cookie-accept')?.addEventListener('click', acceptCookies);
   document.getElementById('cookie-reject')?.addEventListener('click', rejectCookies);
   document.getElementById('cookie-manage')?.addEventListener('click', (e) => {
+    e.preventDefault();
     showBanner();
   });
 
