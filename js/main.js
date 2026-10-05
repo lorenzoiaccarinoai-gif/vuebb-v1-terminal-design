@@ -239,13 +239,20 @@
     });
   }
 
+  function unlockScroll() {
+    document.body.classList.remove('cookie-lock');
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  }
+
   function hideBanner() {
-    if (!banner) return;
-    banner.hidden = true;
+    if (banner) banner.hidden = true;
+    unlockScroll();
   }
 
   function showBanner() {
     if (!banner) return;
+    unlockScroll();
     banner.hidden = false;
   }
 
