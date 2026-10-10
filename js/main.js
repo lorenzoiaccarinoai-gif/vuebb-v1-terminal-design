@@ -382,18 +382,19 @@
     cover?.classList.add('is-out');
     document.body.classList.add('is-ready');
     document.body.classList.remove('is-booting');
-    setTimeout(() => heroContent?.classList.add('is-in'), 160);
+    heroContent?.classList.add('is-in');
   }
 
-  if (reduced) {
-    startUncover();
-    document.querySelectorAll('.reveal').forEach(unveil);
-    shots.forEach(unveil);
-  } else {
-    window.addEventListener('load', () => setTimeout(startUncover, 700));
-    setTimeout(startUncover, 2200);
-    revealElements.forEach((el) => revealObserver.observe(el));
-  }
+  startUncover();
+  const vh = window.innerHeight || document.documentElement.clientHeight || 800;
+  document.querySelectorAll('.reveal').forEach((el) => {
+    if (el.getBoundingClientRect().top < vh) {
+      el.style.transition = 'none';
+      unveil(el);
+    } else {
+      revealObserver.observe(el);
+    }
+  });
 
   pickScrollHover();
   setTimeout(pickScrollHover, 500);

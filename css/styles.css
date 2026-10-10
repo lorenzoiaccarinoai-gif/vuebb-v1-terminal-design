@@ -884,9 +884,8 @@ button {
 .hero-title,
 .hero-tagline,
 .hero-actions {
-  opacity: 0;
-  transform: translateY(var(--reveal-y));
-  transition: opacity var(--reveal-dur) var(--ease), transform var(--reveal-dur) var(--ease);
+  opacity: 1;
+  transform: none;
 }
 
 .hero-content.is-in .chip,
@@ -980,8 +979,7 @@ body.is-booting {
 }
 
 .header {
-  opacity: 0;
-  transition: opacity var(--reveal-dur) var(--ease);
+  opacity: 1;
 }
 
 body.is-ready .header {
