@@ -1418,3 +1418,18 @@ body.book-open .cta-book-float,
     transition: none !important;
   }
 }
+
+/* Performance: force compositing on animated elements */
+.blob,
+.page-cover-logo,
+.btn::after,
+.spec-card::before,
+.quote-card::before,
+.price-card::before,
+.steps li::before,
+.contact-panel::before,
+.product-card::after,
+.product-visual {
+  will-change: transform;
+  transform: translateZ(0);
+}
