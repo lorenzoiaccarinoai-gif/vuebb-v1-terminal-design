@@ -4,21 +4,21 @@
   src: url("../fonts/geist-sans-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: Geist;
   src: url("../fonts/geist-sans-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: Geist;
   src: url("../fonts/geist-sans-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 /* TSM — grainy dark UI, galaxy palette */
@@ -116,7 +116,7 @@ button {
   border-radius: 50%;
   filter: blur(70px);
   opacity: 0.55;
-  animation: drift 18s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .blob-a {
@@ -987,9 +987,8 @@ body.is-ready .header {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(var(--reveal-y));
-  transition: opacity var(--reveal-dur) var(--ease), transform var(--reveal-dur) var(--ease);
+  opacity: 1;
+  transform: none;
 }
 
 .reveal.visible,
