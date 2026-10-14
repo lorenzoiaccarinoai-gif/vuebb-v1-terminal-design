@@ -1437,3 +1437,10 @@ body.book-open .cta-book-float,
   height: 22px;
   margin: 0 auto;
 }
+
+#servizi {
+  scroll-margin-top: var(--header);
+}
+#contatti {
+  scroll-margin-top: calc(var(--header) + 12px);
+}
