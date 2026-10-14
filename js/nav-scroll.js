@@ -67,7 +67,7 @@
 
   function currentId() {
     if (window.scrollY < 24) return '';
-    var line = headerH() + 20;
+    var line = headerH() + 80;
     var doc = document.documentElement;
     if (window.innerHeight + window.scrollY >= doc.scrollHeight - 8) {
       return sections[sections.length - 1].id;
