@@ -428,7 +428,7 @@ button {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: calc(var(--header) + 0.4rem) 0 0;
+  padding: calc(var(--header) + 2.5rem) 0 0;
 }
 
 .hero-content {
@@ -484,7 +484,7 @@ button {
 .hero-tagline {
   margin-top: 0.4rem;
   font-size: clamp(1.05rem, 2vw, 1.3rem);
-  margin: 0.4rem auto 1.2rem;
+  margin: 0.6rem auto 1.8rem;
 }
 
 .hero-actions {
@@ -1430,7 +1430,7 @@ body.book-open .cta-book-float,
 }
 .hero-logo .logo-img {
   height: 90px;
-  margin: 0 auto 1.2rem;
+  margin: 0 auto 2.2rem;
 }
 .footer-logo-img,
 .footer-logo .logo-img {
