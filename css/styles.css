@@ -54,6 +54,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -1439,8 +1440,8 @@ body.book-open .cta-book-float,
 }
 
 #servizi {
-  scroll-margin-top: var(--header);
+  scroll-margin-top: calc(var(--header) + 8px);
 }
 #contatti {
-  scroll-margin-top: calc(var(--header) + 12px);
+  scroll-margin-top: calc(var(--header) + 24px);
 }
