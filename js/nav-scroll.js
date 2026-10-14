@@ -1,7 +1,7 @@
 (function () {
   var header = document.getElementById('header');
   var links = Array.prototype.slice.call(
-    document.querySelectorAll('.nav a[href^="#"], .footer-links a[href^="#"], .logo-link[href^="#"]')
+    document.querySelectorAll('a[href^="#"]')
   );
   var sections = Array.prototype.slice.call(document.querySelectorAll('section[id]'));
   if (!links.length || !sections.length) return;
@@ -40,7 +40,7 @@
     var section = document.getElementById(id);
     var el = anchorOf(section);
     if (!el) return 0;
-    var gap = id === 'contatti' ? 28 : 16;
+    var gap = id === 'contatti' ? 36 : 20;
     return Math.max(0, window.scrollY + el.getBoundingClientRect().top - headerH() - gap);
   }
 
