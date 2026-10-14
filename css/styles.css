@@ -650,7 +650,7 @@ button {
 }
 
 .product-visual {
-  height: 160px;
+  height: 48px;
   position: relative;
   overflow: hidden;
   transition: transform 0.8s var(--ease), filter 0.8s var(--ease);
@@ -1424,16 +1424,16 @@ body.book-open .cta-book-float,
 }
 
 .logo-img {
-  height: 160px;
+  height: 48px;
   width: auto;
   display: block;
 }
 .hero-logo .logo-img {
-  height: 380px;
+  height: 90px;
   margin: 0 auto 0.1rem;
 }
 .footer-logo-img,
 .footer-logo .logo-img {
-  height: 180px;
+  height: 56px;
   margin: 0 auto;
 }
