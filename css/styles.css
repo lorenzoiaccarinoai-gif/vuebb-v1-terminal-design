@@ -438,7 +438,7 @@ button {
 }
 
 .chip {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.1rem;
   display: inline-flex;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
@@ -484,7 +484,7 @@ button {
 .hero-tagline {
   margin-top: 0.4rem;
   font-size: clamp(1.05rem, 2vw, 1.3rem);
-  margin: 0.1rem auto 0.8rem;
+  margin: 0.05rem auto 0.4rem;
 }
 
 .hero-actions {
@@ -1430,7 +1430,7 @@ body.book-open .cta-book-float,
 }
 .hero-logo .logo-img {
   height: 380px;
-  margin: 0.2rem auto 0.2rem;
+  margin: 0.05rem auto 0.05rem;
 }
 .footer-logo-img,
 .footer-logo .logo-img {
