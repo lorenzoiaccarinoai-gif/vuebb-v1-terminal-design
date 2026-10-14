@@ -1421,16 +1421,16 @@ body.book-open .cta-book-float,
 }
 
 .logo-img {
-  height: 72px;
+  height: 110px;
   width: auto;
   display: block;
 }
 .hero-logo .logo-img {
-  height: 180px;
+  height: 280px;
   margin: 0 auto 1.5rem;
 }
 .footer-logo-img,
 .footer-logo .logo-img {
-  height: 90px;
+  height: 140px;
   margin: 0 auto;
 }
