@@ -274,6 +274,7 @@ button {
 
 .nav-link.active::after {
   transform: scaleX(1);
+  opacity: 1;
 }
 
 @media (hover: hover) and (pointer: fine) {

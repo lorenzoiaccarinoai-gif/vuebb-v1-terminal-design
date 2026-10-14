@@ -40,7 +40,7 @@
     var section = document.getElementById(id);
     var el = anchorOf(section);
     if (!el) return 0;
-    var gap = id === 'contatti' ? 36 : 20;
+    var gap = id === 'contatti' ? 80 : 20;
     return Math.max(0, window.scrollY + el.getBoundingClientRect().top - headerH() - gap);
   }
 
