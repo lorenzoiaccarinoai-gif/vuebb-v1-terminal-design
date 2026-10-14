@@ -438,6 +438,7 @@ button {
 }
 
 .chip {
+  margin-bottom: 0.3rem;
   display: inline-flex;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
@@ -1429,7 +1430,7 @@ body.book-open .cta-book-float,
 }
 .hero-logo .logo-img {
   height: 380px;
-  margin: 0 auto 0.15rem;
+  margin: 0.2rem auto 0.2rem;
 }
 .footer-logo-img,
 .footer-logo .logo-img {
