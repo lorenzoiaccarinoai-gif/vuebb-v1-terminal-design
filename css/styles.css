@@ -346,7 +346,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
+  height: 22px;
   padding: 0 1.35rem;
   border-radius: 999px;
   font-weight: 600;
@@ -650,7 +650,7 @@ button {
 }
 
 .product-visual {
-  height: 48px;
+  height: 22px;
   position: relative;
   overflow: hidden;
   transition: transform 0.8s var(--ease), filter 0.8s var(--ease);
@@ -1424,7 +1424,7 @@ body.book-open .cta-book-float,
 }
 
 .logo-img {
-  height: 48px;
+  height: 22px;
   width: auto;
   display: block;
 }
