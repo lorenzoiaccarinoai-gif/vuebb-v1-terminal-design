@@ -23,16 +23,10 @@
   }
 
   function setActive(id) {
-    links.forEach(function (link) {
-      link.classList.remove('is-hover');
-      if (link.classList.contains('logo-link')) {
-        link.classList.remove('active');
-        return;
-      }
+    document.querySelectorAll('.nav-link').forEach(function (link) {
+      link.classList.remove('active');
       var href = link.getAttribute('href') || '';
-      if (href.charAt(0) !== '#') return;
       if (id && href === '#' + id) link.classList.add('active');
-      else link.classList.remove('active');
     });
   }
 
