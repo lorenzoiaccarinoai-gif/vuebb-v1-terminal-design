@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://vuebb.com/sitemap.xml
+# updated
