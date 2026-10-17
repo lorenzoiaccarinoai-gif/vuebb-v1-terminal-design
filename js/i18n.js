@@ -82,8 +82,8 @@
       "price.web.note": "Pagine, funzionalità e personal branding.",
       "price.app.note": "Flussi, integrazioni e requisiti specifici.",
       "price.ecom.note": "Catalogo, pagamenti e logistica.",
-      "price.include": "Il canone include: manutenzione, hosting, dominio proprietario, informativa privacy e cookie.",
-      "price.extra": "Extra da quotare: produzione editoriale di contenuti ottimizzati SEO e AI, reportistica mensile sul traffico web, aggiornamenti successivi alla prima release ufficiale del sito web.",
+      "price.include": "Il canone include: manutenzione, hosting, informativa privacy e cookie.",
+      "price.extra": "Extra da quotare: dominio proprietario, produzione editoriale di contenuti ottimizzati SEO e AI, reportistica mensile sul traffico web, aggiornamenti successivi alla prima release ufficiale del sito web.",
       "cta.label": "Iniziamo",
       "cta.title": "Raccontaci il tuo progetto",
       "cta.desc": "Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.",
@@ -210,165 +210,158 @@
       "met.desc": "A clear path from the first conversation to the site, web app or store. Every project is mobile-first: fluid interfaces and an experience built for phones and tablets.",
       "met.founder": "Founder of Vuebb",
       "met.about": "Years alongside innovative professional start-ups shaped the Vuebb approach. The aim is to help clients reach their full potential.",
-      "met.s1.title": "Listen",
-      "met.s1.desc": "We start with you. We understand brand, goals and digital ambition. No solution before a precise diagnosis.",
+      "met.s1.title": "Listening",
+      "met.s1.desc": "We start with you. We understand the brand, goals and digital ambitions. No solution before a precise diagnosis.",
       "met.s2.title": "Design",
       "met.s2.desc": "We define architecture, flows and interfaces. Every decision is shared and reasoned.",
       "met.s3.title": "Build",
-      "met.s3.desc": "Iterative development, continuous testing, obsessive quality. No surprises.",
-      "met.s4.title": "Stay with you",
-      "met.s4.desc": "Handover is not abandonment. Training, support and evolution are part of the work.",
-      "who.title": "For those who will not settle for “already done”",
+      "met.s3.desc": "Iterative development, continuous testing, obsessive attention to quality. No surprises.",
+      "met.s4.title": "Support",
+      "met.s4.desc": "Delivery does not mean abandonment. Training, support and evolution are part of the work.",
+      "who.title": "For those who don’t settle for the “already made”",
       "who.p.title": "Professionals",
-      "who.p.desc": "Studios, consultants, creatives. Anyone managing high-value relationships who needs a web presence that matches their work.",
+      "who.p.desc": "Studios, consultants, creatives. Anyone who manages high-value relationships and needs a web at the level of their professionalism.",
       "who.m.title": "Micro-businesses",
-      "who.m.desc": "Agile teams that want to grow without losing identity. A web that scales with you, instead of imposing someone else’s model.",
+      "who.m.desc": "Agile realities that want to grow without losing identity. A web that scales with you, not one that imposes foreign models.",
       "who.s.title": "SMEs",
-      "who.s.desc": "Structured companies looking for boutique sites, vertical web apps and e-commerce, and a partner who speaks the language of business.",
+      "who.s.desc": "Structured companies looking for boutique sites, web apps and vertical e-commerce, and a partner who speaks the language of business.",
       "price.label": "Investment",
-      "price.title": "Tailored pricing, value without compromise",
-      "price.desc": "Monthly retainer, no upfront fee. Prices include VAT.",
+      "price.title": "Tailored prices, uncompromising value",
+      "price.desc": "Monthly retainer, no upfront cost. Prices include VAT.",
       "price.from": "from",
       "price.month": " / month",
-      "price.iva": "VAT included · no setup fee",
+      "price.iva": "VAT included · upfront cost 0",
       "price.web.note": "Pages, features and personal branding.",
       "price.app.note": "Flows, integrations and specific requirements.",
       "price.ecom.note": "Catalogue, payments and logistics.",
-      "price.include": "The retainer includes: maintenance, hosting, your own domain, privacy notice and cookies.",
-      "price.extra": "Quoted separately: SEO and AI editorial content, monthly traffic reporting, updates after the first official site release.",
+      "price.include": "The retainer includes: maintenance, hosting, privacy notice and cookies.",
+      "price.extra": "Quoted separately: your own domain, SEO and AI editorial content, monthly traffic reporting, updates after the first official site release.",
       "cta.label": "Let’s start",
       "cta.title": "Tell us about your project",
-      "cta.desc": "Every collaboration starts with a conversation. No commitment — just listening and clarity.",
-      "cta.mail": "Email us",
+      "cta.desc": "Every collaboration starts with a conversation. No commitment, just listening and clarity.",
+      "cta.mail": "Write us an email",
       "cta.reply": "Reply within two working days",
       "legal.privacy": "Privacy notice",
       "legal.cookie": "Cookie notice",
       "legal.manage": "Manage cookies",
       "legal.copy": "All rights reserved.",
-      "legal.back": "Back to site",
-      "cookie.title": "Clear language on cookies.",
-      "cookie.text": "We only save your preference; we collect no data before you choose. <a href=\"cookie-policy.html\" target=\"_blank\" rel=\"noopener\">Cookie notice</a>",
+      "legal.back": "Back to the site",
+      "cookie.title": "Clarity on cookie use.",
+      "cookie.text": "We only save your preference; we collect no data before your authorization. <a href=\"cookie-policy.html\" target=\"_blank\" rel=\"noopener\">Cookie notice</a>",
       "cookie.reject": "Necessary only",
-      "cookie.accept": "Accept",
+      "cookie.accept": "I accept",
       "book.label": "Booking",
       "book.desc": "30 minutes. No commitment — just listening and clarity.",
-      "book.legal": "The form is Google Calendar. <a href=\"privacy-policy.html\" target=\"_blank\" rel=\"noopener\">Privacy notice</a> · <a href=\"cookie-policy.html\" target=\"_blank\" rel=\"noopener\">Cookie notice</a>",
+      "book.legal": "The form is from Google Calendar. <a href=\"privacy-policy.html\" target=\"_blank\" rel=\"noopener\">Privacy notice</a> · <a href=\"cookie-policy.html\" target=\"_blank\" rel=\"noopener\">Cookie notice</a>",
       "pp.label": "Notice",
       "pp.title": "Privacy notice",
-      "pp.lead": "How we handle your data when you email us, write on WhatsApp, or book a call from the popup. Art. 13 GDPR.",
+      "pp.lead": "How we process data when you write via email or WhatsApp, or when you book a call from the popup. Art. 13 GDPR.",
       "pp.holder.t": "Controller",
       "pp.holder.p": "Lorenzo Iaccarino — Vuebb.<br>tecnologiasumisura.info@gmail.com · +39 333 458 5718",
       "pp.when.t": "When it applies",
-      "pp.when.p": "When you contact us from the site: email, WhatsApp, or the “Book Demo Call” popup. The popup opens Google Calendar Appointment Scheduling, with a short contact form (name, email and, if you add them, phone and notes) and a date and time picker.",
-      "pp.data.t": "What data",
-      "pp.data.p1": "<strong>Email and WhatsApp.</strong> Phone number, email address, name and message content, plus channel metadata (date, delivery status).",
-      "pp.data.p2": "<strong>Call booking.</strong> Name, email, optional phone and notes, chosen slot, appointment confirmation and technical calendar metadata (timezone, language, booking status). We do not ask for more than the call requires.",
+      "pp.when.p": "When you contact us from the site: email, WhatsApp, or the «Book a demo call» popup. The popup opens Google Calendar Appointment Scheduling, with a mini contact form (name, email and, if you provide them, phone and notes) and the choice of date and time.",
+      "pp.data.t": "Which data",
+      "pp.data.p1": "<strong>Email and WhatsApp.</strong> Number, email address, name and message content, plus channel metadata (date, delivery status).",
+      "pp.data.p2": "<strong>Call booking.</strong> Name, email, any phone and notes, chosen slot, appointment confirmation and calendar technical metadata (timezone, language, booking status). We do not ask for data beyond the call.",
       "pp.why.t": "Why",
-      "pp.why.p": "To reply, book the intro and demo call, understand the project and, if you ask, start a working relationship. We do not use these contacts for automated marketing or share them with third parties for profiling.",
+      "pp.why.p": "To reply to you, schedule the introductory and demo call, understand the project and, if you ask, start a working relationship. We do not use these contacts for automated marketing nor share them with third parties for profiling.",
       "pp.basis.t": "Legal basis",
-      "pp.basis.p": "Art. 6(1)(b) GDPR: pre-contractual steps at your request (a message or booking a slot). If the contact stays informal, Art. 6(1)(f): legitimate interest in following up.",
-      "pp.duty.t": "Is it required?",
-      "pp.duty.p": "Providing data is not mandatory. Without a contact detail or without completing the calendar form we cannot reply or confirm the call.",
+      "pp.basis.p": "Art. 6(1)(b) GDPR: pre-contractual measures at your request (message or slot booking). If the contact remains informal, art. 6(1)(f): legitimate interest in following up.",
+      "pp.duty.t": "Obligation",
+      "pp.duty.p": "Providing the data is not obligatory. Without a contact or without completing the calendar form we cannot reply or confirm the call.",
       "pp.keep.t": "Retention",
-      "pp.keep.p": "For as long as needed to handle the request or hold the call and, if work starts, for the life of the engagement. The appointment stays on the calendar until the slot and useful follow-up. Otherwise no longer than 24 months from the last contact, unless the law requires more.",
-      "pp.who.t": "Who processes it",
-      "pp.who.p": "The controller. Providers of the channel you use: Google Ireland Ltd. (Gmail and Google Calendar Appointment Scheduling, including the mini form in the popup) and WhatsApp Ireland Ltd. (Meta group).",
+      "pp.keep.p": "For the time needed to handle the request or hold the call, and, if a engagement arises, for the duration of the relationship. The appointment stays on the calendar until the slot and useful follow-up. Otherwise no longer than 24 months from the last contact, except legal obligations.",
+      "pp.who.t": "Who processes them",
+      "pp.who.p": "The controller. Channel providers you use: Google Ireland Ltd. (Gmail and Google Calendar Appointment Scheduling, including the mini form in the popup) and WhatsApp Ireland Ltd. (Meta group).",
       "pp.xfer.t": "Transfers",
-      "pp.xfer.p": "Google and Meta may also process data outside the EU, under standard contractual clauses. Opening Gmail, WhatsApp or the booking calendar also means their own notices apply (in particular <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google’s Privacy Policy</a>).",
-      "pp.rights.t": "Your rights",
-      "pp.rights.p": "Access, rectification, erasure, restriction, objection, portability and a complaint to the Italian Data Protection Authority (Garante). Write to tecnologiasumisura.info@gmail.com. For a slot already booked you can also use the management link Google sends by email.",
+      "pp.xfer.p": "Google and Meta may process data outside the EU, with standard contractual clauses. Opening Gmail, WhatsApp or the booking calendar also applies their notices (in particular <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google Privacy Policy</a>).",
+      "pp.rights.t": "Rights",
+      "pp.rights.p": "Access, rectification, erasure, restriction, objection, portability and complaint to the Privacy Authority. Write to tecnologiasumisura.info@gmail.com. For an already booked slot you can also use the management link Google sends by email.",
       "pp.updated": "Updated 17 September 2026.",
       "cp.label": "Notice",
       "cp.title": "Cookie notice",
-      "cp.lead": "Which cookies this site uses, including the call-booking popup, and how to choose them.",
+      "cp.lead": "Which cookies this site uses, including the call booking popup, and how to choose them.",
       "cp.holder.t": "Controller",
       "cp.holder.p": "Lorenzo Iaccarino — Vuebb.<br>tecnologiasumisura.info@gmail.com",
       "cp.use.t": "What we use",
-      "cp.use.p": "Technical cookies, analytics cookies (only with your consent) and, if you open the “Book Demo Call” popup, Google Calendar cookies and storage needed for the booking form. Site language is local technical storage and does not go through analytics consent.",
+      "cp.use.p": "Technical cookies, analytics cookies (only with your consent) and, if you open the «Book a demo call» popup, Google Calendar cookies and storage necessary for the booking form. The site language is local technical storage and does not go through analytics consent.",
       "cp.tech.t": "Technical cookies (necessary)",
-      "cp.tech.p1": "They store your banner choice (accept / reject). Duration: 6 months. Legal basis: Art. 122 of the Italian Privacy Code and legitimate interest in providing the service. They do not require consent.",
-      "cp.tech.p2": "We also save the site language (IT/EN) in the browser’s local storage (<code>vuebb-lang</code>), on your device. It only shows the site in the right language on later visits. It is not a profiling cookie, is not used for analytics or ads, and does not go through the consent banner.",
+      "cp.tech.p1": "They store your banner choice (accept / reject). Duration: 6 months. Legal basis: art. 122 Privacy Code and legitimate interest in providing the service. They do not require consent.",
+      "cp.tech.p2": "We also save the site language (IT/EN) in the browser's local storage (<code>vuebb-lang</code>), on your device. It only serves to show the site in the right language on subsequent visits. It is not a profiling cookie, is not used for statistics or advertising and does not go through the consent banner.",
       "cp.ana.t": "Analytics cookies",
-      "cp.ana.p": "Provider: Google Ireland Ltd. Purpose: measure visits and site use, in aggregate, with anonymised IP. Typical cookies: <code>_ga</code> (24 months), <code>_ga_*</code> (24 months). Legal basis: consent. They are set only after “Accept”.",
+      "cp.ana.p": "Provider: Google Ireland Ltd. Purpose: measure visits and site use, in aggregated form, with anonymized IP. Typical cookies: <code>_ga</code> (24 months), <code>_ga_*</code> (24 months). Legal basis: consent. They are installed only after «Accept».",
       "cp.cal.t": "Call booking (Google Calendar)",
-      "cp.cal.p1": "The “Book Demo Call” button opens a popup with a Google Calendar Appointment Scheduling iframe. There you find the calendar and a short form (name, email, optional contacts and notes). The iframe starts only after the click: Google Calendar is not loaded before that.",
-      "cp.cal.p2": "Provider: Google Ireland Ltd. Cookies and storage on <code>calendar.google.com</code> show slots, submit the form and confirm the appointment. They are technical cookies of the service you asked for (Art. 122 Italian Privacy Code). If you are already signed in to Google, your account cookies also apply under Google’s rules.",
+      "cp.cal.p1": "The «Book a demo call» button opens a popup with an iframe of Google Calendar Appointment Scheduling. There you find the calendar and a mini form (name, email, any contacts and notes). The iframe starts only after the click: before that Google Calendar is not loaded.",
+      "cp.cal.p2": "Provider: Google Ireland Ltd. Cookies and storage of the <code>calendar.google.com</code> domain serve to show the slots, send the form and confirm the appointment. They are technical cookies of the service you requested (art. 122 Privacy Code). If you are already logged into Google, your account cookies also apply, according to Google's rules.",
       "cp.font.t": "Fonts",
-      "cp.font.p": "The typefaces (Geist Sans) are hosted on this site. No requests are made to Google Fonts or other third-party font CDNs.",
+      "cp.font.p": "The typefaces (Geist Sans) are hosted on this site. No resources are requested from Google Fonts or other third-party CDNs for typography.",
       "cp.xfer.t": "Transfers",
-      "cp.xfer.p": "If you accept analytics, or if you open the booking popup, Google may also process data outside the EU under its standard contractual clauses. Details: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google Privacy Policy</a> and <a href=\"https://policies.google.com/technologies/cookies\" target=\"_blank\" rel=\"noopener\">Google cookies</a>. Fonts do not involve transfers.",
+      "cp.xfer.p": "If you accept analytics, or if you open the booking popup, Google may process data outside the EU according to its standard contractual clauses. Details: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google Privacy Policy</a> and <a href=\"https://policies.google.com/technologies/cookies\" target=\"_blank\" rel=\"noopener\">Google cookies</a>. Fonts do not involve transfers.",
       "cp.manage.t": "How to manage consent",
-      "cp.manage.p1": "Analytics: accept or reject from the banner; you can change your mind from “Manage cookies” at the bottom of the site. Refusal does not affect browsing. If you refuse after accepting, Analytics cookies are deleted and the script is no longer loaded.",
-      "cp.manage.p2": "Call booking: it does not go through the banner. It starts only if you open the popup. To avoid loading Google Calendar, do not use “Book Demo Call” and write to us by email or WhatsApp.",
-      "cp.rights.t": "Your rights",
-      "cp.rights.p": "Access, rectification, erasure, restriction, objection, portability and a complaint to the Italian Data Protection Authority (Garante). Write to tecnologiasumisura.info@gmail.com.",
+      "cp.manage.p1": "Analytics: accept or reject from the banner; you can change your mind from «Manage cookies» at the bottom of the site. Rejection does not prejudice navigation. If you reject after accepting, Analytics cookies are deleted and the script is no longer loaded.",
+      "cp.manage.p2": "Call booking: does not go through the banner. It activates only if you open the popup. To avoid loading Google Calendar, do not use «Book a demo call» and write to us via email or WhatsApp.",
+      "cp.rights.t": "Rights",
+      "cp.rights.p": "Access, rectification, erasure, restriction, objection, portability and complaint to the Privacy Authority. Write to tecnologiasumisura.info@gmail.com.",
       "cp.updated": "Updated 17 September 2026.",
       "page.privacy": "Privacy notice — Vuebb",
       "page.cookie": "Cookie notice — Vuebb"
     }
   };
 
-  let currentLang = "it";
-
-  function setLanguage(lang) {
-    if (!translations[lang]) return;
-    currentLang = lang;
+  function applyTranslations(lang) {
     document.documentElement.lang = lang;
-    try { localStorage.setItem("vuebb-lang", lang); } catch (e) {}
-
-    const flagEl = document.getElementById("langFlag");
-    const codeEl = document.getElementById("langCode");
-    if (flagEl && codeEl) {
-      flagEl.innerHTML = lang === "it" ? '<svg viewBox="0 0 3 2" width="18" height="12" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg>' : '<svg viewBox="0 0 60 30" width="18" height="12" aria-hidden="true"><clipPath id="c"><path d="M0,0v30h60V0z"/></clipPath><path d="M0,0v30h60V0z" fill="#012169"/><path d="M0,0l60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0l60,30M60,0L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>';
-      codeEl.textContent = lang === "it" ? "IT" : "EN";
-    }
-
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      const text = translations[lang][key];
-      if (text === undefined) return;
-      if (text.includes("<")) el.innerHTML = text;
-      else el.textContent = text;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = translations[lang][key];
+        } else {
+          el.innerHTML = translations[lang][key];
+        }
+      }
     });
-
-    document.querySelectorAll("[data-i18n-caption]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-caption");
-      const text = translations[lang][key];
-      if (text) el.setAttribute("data-caption", text);
+    document.querySelectorAll('[data-i18n-caption]').forEach(el => {
+      const key = el.getAttribute('data-i18n-caption');
+      if (translations[lang] && translations[lang][key]) {
+        el.setAttribute('data-caption', translations[lang][key]);
+      }
     });
-
-    const pageKey = document.body.getAttribute("data-page");
-    if (pageKey && translations[lang][pageKey]) {
-      document.title = translations[lang][pageKey];
-    }
-    const meta = document.querySelector('meta[name="description"]');
-    const descKey = document.body.getAttribute("data-desc");
-    if (meta && descKey && translations[lang][descKey]) {
-      meta.setAttribute("content", translations[lang][descKey]);
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (translations[lang] && translations[lang][key]) {
+        el.setAttribute('aria-label', translations[lang][key]);
+      }
+    });
+    const titleKey = document.body.getAttribute('data-i18n-title');
+    if (titleKey && translations[lang] && translations[lang][titleKey]) {
+      document.title = translations[lang][titleKey];
     }
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    let start = "en";
-    try {
-      const saved = localStorage.getItem("vuebb-lang");
-      if (saved === "en" || saved === "it") start = saved;
-      else {
-        const codes = [navigator.language, ...(navigator.languages || [])];
-        for (const c of codes) {
-          const l = String(c || "").toLowerCase();
-          if (l.startsWith("it")) { start = "it"; break; }
-          if (l.startsWith("en")) { start = "en"; break; }
-        }
+  function setLang(lang) {
+    localStorage.setItem('vuebb-lang', lang);
+    applyTranslations(lang);
+    const flag = document.getElementById('langFlag');
+    const code = document.getElementById('langCode');
+    if (flag && code) {
+      if (lang === 'it') {
+        flag.innerHTML = '<svg viewBox="0 0 3 2" width="18" height="12" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg>';
+        code.textContent = 'IT';
+      } else {
+        flag.innerHTML = '<svg viewBox="0 0 60 30" width="18" height="12" aria-hidden="true"><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#c8102e" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/></svg>';
+        code.textContent = 'EN';
       }
-    } catch (e) {}
-    setLanguage(start);
-
-    const toggle = document.getElementById("langToggle");
-    if (toggle) {
-      toggle.addEventListener("click", () => {
-        setLanguage(currentLang === "it" ? "en" : "it");
-      });
     }
-  });
+  }
+
+  const saved = localStorage.getItem('vuebb-lang') || 'it';
+  setLang(saved);
+
+  const toggle = document.getElementById('langToggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const current = localStorage.getItem('vuebb-lang') || 'it';
+      setLang(current === 'it' ? 'en' : 'it');
+    });
+  }
 })();
