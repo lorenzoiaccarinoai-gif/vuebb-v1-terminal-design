@@ -139,26 +139,41 @@ body {
 .hero {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
   min-height: 100svh;
   align-items: center;
   justify-content: center;
   padding: calc(var(--header) + 4.5rem) 0 4.5rem;
   background-color: #e4e4e2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: var(--header);
+  bottom: 0;
   background-image: url("../images/hero-terminal.jpg");
   background-image: image-set(
     url("../images/hero-terminal.webp") type("image/webp"),
     url("../images/hero-terminal.jpg") type("image/jpeg")
   );
-  background-position: center center;
+  background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
+  filter: blur(6px);
+  transform: scale(1.08);
+  transform-origin: center top;
+  pointer-events: none;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   background: radial-gradient(
     ellipse 72% 58% at 50% 46%,
@@ -170,7 +185,7 @@ body {
 
 .hero > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-logo .logo-img {
@@ -661,7 +676,10 @@ body {
   .hero {
     min-height: 100svh;
     padding: calc(var(--header) + 2.4rem) 0 2.4rem;
-    background-position: 58% center;
+  }
+
+  .hero::after {
+    background-position: 58% top;
   }
 
   .nav-backdrop {
