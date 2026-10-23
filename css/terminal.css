@@ -137,9 +137,40 @@ body {
 }
 
 .hero {
-  min-height: 72vh;
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
   align-items: center;
-  padding: calc(var(--header) + 4.5rem) 0 3rem;
+  justify-content: center;
+  padding: calc(var(--header) + 4.5rem) 0 4.5rem;
+  background-color: #e4e4e2;
+  background-image: url("../images/hero-terminal.jpg");
+  background-image: image-set(
+    url("../images/hero-terminal.webp") type("image/webp"),
+    url("../images/hero-terminal.jpg") type("image/jpeg")
+  );
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 72% 58% at 50% 46%,
+    rgba(240, 240, 240, 0.62),
+    rgba(240, 240, 240, 0.16) 58%,
+    rgba(240, 240, 240, 0) 78%
+  );
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-logo .logo-img {
@@ -628,8 +659,9 @@ body {
   }
 
   .hero {
-    min-height: 0;
-    padding: calc(var(--header) + 2.4rem) 0 1.5rem;
+    min-height: 100svh;
+    padding: calc(var(--header) + 2.4rem) 0 2.4rem;
+    background-position: 58% center;
   }
 
   .nav-backdrop {
