@@ -163,8 +163,8 @@ body {
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(6px);
-  transform: scale(1.08);
+  filter: blur(11px);
+  transform: scale(1.1);
   transform-origin: center top;
   pointer-events: none;
 }
