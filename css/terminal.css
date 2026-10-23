@@ -68,10 +68,7 @@ body {
 }
 
 .header .logo-img,
-.hero-logo .logo-img {
-  filter: brightness(0);
-}
-
+.hero-logo .logo-img,
 .footer .logo-img {
   filter: none;
 }
