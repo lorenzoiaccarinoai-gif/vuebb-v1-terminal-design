@@ -24,9 +24,9 @@
 
   function setActive(id) {
     document.querySelectorAll('.nav-link').forEach(function (link) {
-      link.classList.remove('active');
       var href = link.getAttribute('href') || '';
-      if (id && href === '#' + id) link.classList.add('active');
+      if (href.charAt(0) !== '#') return;
+      link.classList.toggle('active', !!(id && href === '#' + id));
     });
   }
 

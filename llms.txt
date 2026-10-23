@@ -8,3 +8,10 @@
 
 ## Contatti
 - [Home](https://vuebb.com/)
+- [Filosofia](https://vuebb.com/filosofia)
+- [Servizi](https://vuebb.com/servizi)
+- [Portfolio](https://vuebb.com/portfolio)
+- [Metodo](https://vuebb.com/metodo)
+- [Per chi](https://vuebb.com/per-chi)
+- [Prezzi](https://vuebb.com/prezzi)
+- [Contatti](https://vuebb.com/contatti)

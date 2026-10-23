@@ -282,7 +282,7 @@
     showBanner();
   }
 
-  const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel, .portfolio-trigger, .shot';
+  const scrollHoverSel = '.spec-card, .quote-card, .price-card, .product-card, .steps li, .contact-panel, .portfolio-trigger, .shot, .route-card';
 
   function isMobileLayout() {
     return window.innerWidth <= 960;
@@ -341,10 +341,10 @@
   window.addEventListener('resize', onScrollHover);
 
   const revealElements = document.querySelectorAll(
-    '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel, .portfolio-trigger'
+    '.section-header, .spec-card, .product-card, .steps li, .quote-card, .price-card, .contact-panel, .portfolio-trigger, .route-card'
   );
 
-  document.querySelectorAll('.product-card, .section-header, .spec-card, .quote-card, .price-card, .steps li, .contact-panel, .portfolio-trigger').forEach((el) => {
+  document.querySelectorAll('.product-card, .section-header, .spec-card, .quote-card, .price-card, .steps li, .contact-panel, .portfolio-trigger, .route-card').forEach((el) => {
     el.classList.add('reveal');
   });
 

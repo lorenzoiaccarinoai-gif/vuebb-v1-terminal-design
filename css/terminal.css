@@ -2,7 +2,7 @@
    Source: https://terminal-industries.com/ (computed 2026-10-23)
    Suisse Intl is a commercial face. Geist (already in the repo, OFL) stands in
    for it. Geist Mono (OFL, Vercel) matches Terminal's label and CTA face.
-   Palette: #052424 ink, #f0f0f0 canvas, #ffffff paper, #abff02 lime, #fb6b3c orange, #7f7f7f label.
+   Palette: #052424 ink, #f0f0f0 canvas, #ffffff paper, #abff02 lime (CTA only), #fb6b3c orange, #7f7f7f label, #454742 stone.
    Buttons 8px, cards 24px, no glass, no neon glow. */
 
 @font-face {
@@ -27,7 +27,7 @@
   --muted: rgba(5, 36, 36, 0.68);
   --lime: #052424;
   --lime-2: #454742;
-  --cyan: #abff02;
+  --cyan: #454742;
   --blue: #052424;
   --magenta: #fb6b3c;
   --violet: #e6e6e2;
@@ -47,8 +47,8 @@
 }
 
 ::selection {
-  background: var(--cta);
-  color: var(--cta-ink);
+  background: var(--orange);
+  color: #fff;
 }
 
 body {
@@ -85,7 +85,7 @@ body {
 
 .nav-link::after {
   height: 2px;
-  background: var(--cta);
+  background: var(--ink);
 }
 
 .nav-link.active {
@@ -356,7 +356,7 @@ body {
 
 .v1 { background: var(--forest) !important; }
 .v2 { background: var(--orange) !important; }
-.v3 { background: var(--cta) !important; }
+.v3 { background: var(--lime-2) !important; }
 
 .product-visual::after {
   opacity: 0.12;
@@ -372,8 +372,8 @@ body {
 .product-body li.feature-accent,
 .product-card:hover .product-body li.feature-accent,
 .product-card.is-hover .product-body li.feature-accent {
-  color: var(--cta-ink);
-  background: var(--cta);
+  color: #fff;
+  background: var(--forest);
   border-color: transparent;
   box-shadow: none;
   letter-spacing: 0.04em;
@@ -432,8 +432,8 @@ body {
 .steps li.is-hover > span,
 .steps li:hover .step-index,
 .steps li.is-hover .step-index {
-  color: var(--cta-ink);
-  background: var(--cta);
+  color: #fff;
+  background: var(--forest);
   border-color: transparent;
   box-shadow: none;
 }
@@ -461,7 +461,7 @@ body {
 .footer-legal a:hover,
 .footer-cookie-btn:hover,
 .footer #cookie-manage:hover {
-  color: var(--cta);
+  color: var(--orange);
 }
 
 .page-cover {
@@ -477,11 +477,11 @@ body {
 }
 
 .page-cover-logo::after {
-  background-image: linear-gradient(90deg, #fff, var(--cta));
+  background-image: linear-gradient(90deg, #fff, var(--orange));
 }
 
 .logo-mark::after {
-  background-image: linear-gradient(90deg, var(--forest), var(--cta));
+  background-image: linear-gradient(90deg, var(--forest), var(--orange));
 }
 
 .book-modal,
@@ -528,8 +528,8 @@ body {
 .gallery-nav:hover,
 .gallery-nav.is-hover {
   transform: translateY(-2px);
-  color: var(--ink);
-  background: var(--cta);
+  color: #fff;
+  background: var(--forest);
   border-color: transparent;
   box-shadow: none;
 }
@@ -566,7 +566,7 @@ body {
 
 .policy-copy code {
   color: var(--forest);
-  background: rgba(171, 255, 2, 0.45);
+  background: var(--violet);
   padding: 0.05em 0.35em;
   border-radius: 4px;
 }
@@ -639,6 +639,73 @@ body {
   :root {
     --section-y: 3.6rem;
   }
+}
+
+
+.page-main {
+  padding-top: var(--header);
+}
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.route-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 100%;
+  padding: 1.45rem 1.35rem 1.4rem;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.route-card h3 {
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.route-card p {
+  color: rgba(5, 36, 36, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.route-card .route-go {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.route-card:hover,
+.route-card.is-hover,
+.route-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(5, 36, 36, 0.08);
+  background: var(--paper);
+  outline: none;
+}
+
+h1.section-title {
+  margin: 0 0 0.9rem;
+}
+
+@media (max-width: 960px) {
+  .route-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .route-grid { grid-template-columns: 1fr; }
 }
 
 /* Spigoli vivi */
