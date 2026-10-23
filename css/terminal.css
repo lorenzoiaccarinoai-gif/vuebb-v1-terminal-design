@@ -40,7 +40,7 @@
   --label: #7f7f7f;
   --orange: #fb6b3c;
   --mono: "Geist Mono", ui-monospace, monospace;
-  --radius: 24px;
+  --radius: 0;
   --ease: cubic-bezier(0, 0, 0.58, 1);
   --header: 72px;
   --section-y: clamp(4.75rem, 8vw, 7.5rem);
@@ -639,4 +639,16 @@ body {
   :root {
     --section-y: 3.6rem;
   }
+}
+
+/* Spigoli vivi */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+.gallery-frame .shot-screen-phone img,
+.shot-screen-phone img {
+  clip-path: none !important;
 }
