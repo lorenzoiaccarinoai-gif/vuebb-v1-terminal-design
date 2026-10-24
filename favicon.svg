@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="95.0 46.0 132 132" role="img" aria-label="Vuebb">
-  <title>Vuebb</title>
-  <rect x="95.0" y="46.0" width="132" height="132" fill="#052424"/>
-  <clipPath id="v-cap"><rect x="90" y="73.2" width="160" height="90"/></clipPath>
-  <polyline points="129.76,73.55 161.50,144.45 193.24,73.55" fill="none" stroke="#ffffff" stroke-width="10.5" stroke-linejoin="round" stroke-linecap="butt" clip-path="url(#v-cap)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990.00 990.00" role="img" aria-label="VUEBB">
+  <title>VUEBB</title>
+  <rect width="990.00" height="990.00" fill="#052424"/>
+  <g fill="#ffffff" transform="translate(160.00 850.00) scale(1 -1)"><path d="M21 710 277 0H393L649 710H552L335 98L117 710Z"/></g>
 </svg>
