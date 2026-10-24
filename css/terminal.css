@@ -186,7 +186,8 @@ body {
 }
 
 .hero-logo .logo-img {
-  height: clamp(72px, 12vw, 112px);
+  width: min(100%, 32rem);
+  height: auto;
   margin-bottom: 2.4rem;
 }
 
