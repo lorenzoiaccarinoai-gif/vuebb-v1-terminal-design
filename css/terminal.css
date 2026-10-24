@@ -388,8 +388,40 @@ body {
 }
 
 #servizi,
-#pricing {
+#pricing,
+#filosofia,
+#portfolio,
+#metodo,
+#per-chi,
+#contatti,
+.policy-main {
   background: #fff;
+}
+
+body:has(.page-main),
+body:has(.policy-main) {
+  background: #fff;
+}
+
+#filosofia .spec-card:not(.highlight),
+#per-chi .spec-card:not(.highlight),
+#contatti .contact-panel,
+#portfolio .shot,
+#portfolio .portfolio-trigger {
+  background: var(--canvas);
+}
+
+#filosofia .spec-card:not(.highlight):hover,
+#filosofia .spec-card:not(.highlight).is-hover,
+#per-chi .spec-card:not(.highlight):hover,
+#per-chi .spec-card:not(.highlight).is-hover,
+#contatti .contact-panel:hover,
+#contatti .contact-panel.is-hover,
+#portfolio .shot:hover,
+#portfolio .shot.is-hover,
+#portfolio .portfolio-trigger:hover,
+#portfolio .portfolio-trigger.is-hover {
+  background: #e7e7e4;
 }
 
 #servizi .product-card,
