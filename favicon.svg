@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990.00 990.00" role="img" aria-label="VUEBB">
-  <title>VUEBB</title>
-  <rect width="990.00" height="990.00" fill="#052424"/>
-  <g fill="#ffffff" transform="translate(160.00 850.00) scale(1 -1)"><path d="M21 710 277 0H393L649 710H552L335 98L117 710Z"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 990" role="img" aria-label="Vuebb">
+  <title>Vuebb</title>
+  <rect width="990" height="990" fill="#052424"/>
+  <g fill="#ffffff" transform="translate(160 850) scale(1 -1)"><path d="M21 710 277 0H393L649 710H552L335 98L117 710Z"/></g>
 </svg>
