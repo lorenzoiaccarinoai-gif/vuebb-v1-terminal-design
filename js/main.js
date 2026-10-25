@@ -401,15 +401,97 @@
   setTimeout(pickScrollHover, 1400);
 
   const BOOK_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ34NtKx9wpTpUpEBwgfvwcQG2KDi4bOZApzVYQErB2D7M5inhF2rV_MMeUP55mwEplWqhvfihtz?gv=true&hl=it';
+  const MAIL_TO = 'tecnologiasumisura.info@gmail.com';
+  const WA_PHONE = '393334585718';
   const bookModal = document.getElementById('book-modal');
   const bookFrame = document.getElementById('book-frame');
   const bookClose = document.getElementById('book-close');
+  let leadIntent = 'request';
+  let leadTrigger = null;
+
+  const leadModal = document.createElement('div');
+  leadModal.className = 'book-modal lead-modal';
+  leadModal.id = 'lead-modal';
+  leadModal.hidden = true;
+  leadModal.setAttribute('role', 'dialog');
+  leadModal.setAttribute('aria-modal', 'true');
+  leadModal.setAttribute('aria-labelledby', 'lead-title');
+  leadModal.innerHTML = `
+    <div class="book-modal-panel lead-panel">
+      <div class="book-modal-head">
+        <div class="book-modal-copy">
+          <h2 id="lead-title" data-i18n="lead.title.request">Richiesta di contatto</h2>
+          <p id="lead-intro" data-i18n="lead.intro.request">Compila e conferma. La richiesta arriva per e-mail, senza aprire la tua posta.</p>
+        </div>
+        <button class="gallery-close" id="lead-close" type="button" data-i18n-aria="lead.close" aria-label="Chiudi">×</button>
+      </div>
+      <form class="lead-form" id="lead-form" novalidate>
+        <input class="lead-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="lead-field">
+          <span data-i18n="lead.name">Nome e cognome</span>
+          <input name="name" type="text" autocomplete="name" required minlength="3">
+        </label>
+        <fieldset class="lead-field">
+          <legend data-i18n="lead.kind">Sei</legend>
+          <div class="lead-choices">
+            <label><input type="radio" name="kind" value="pro" required><span data-i18n="lead.kind.pro">Professionista</span></label>
+            <label><input type="radio" name="kind" value="shop"><span data-i18n="lead.kind.shop">Attività commerciale</span></label>
+            <label><input type="radio" name="kind" value="biz"><span data-i18n="lead.kind.biz">Azienda</span></label>
+          </div>
+        </fieldset>
+        <label class="lead-field">
+          <span data-i18n="lead.company">Nome attività o azienda, se c’è</span>
+          <input name="company" type="text" autocomplete="organization">
+        </label>
+        <div class="lead-split">
+          <label class="lead-field">
+            <span data-i18n="lead.email">E-mail</span>
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+          <label class="lead-field">
+            <span data-i18n="lead.phone">Telefono</span>
+            <input name="phone" type="tel" autocomplete="tel" required>
+          </label>
+        </div>
+        <fieldset class="lead-field">
+          <legend data-i18n="lead.service">Servizio</legend>
+          <div class="lead-choices">
+            <label><input type="radio" name="service" value="web" required><span data-i18n="lead.service.web">Sito web</span></label>
+            <label><input type="radio" name="service" value="app"><span data-i18n="lead.service.app">Web app gestionale</span></label>
+            <label><input type="radio" name="service" value="ecom"><span data-i18n="lead.service.ecom">E-commerce</span></label>
+          </div>
+        </fieldset>
+        <label class="lead-field">
+          <span data-i18n="lead.project">Due righe sul progetto</span>
+          <textarea name="project" rows="3" required minlength="8"></textarea>
+        </label>
+        <p class="lead-privacy" data-i18n="lead.privacy">Inviando confermi di aver letto l’<a href="privacy-policy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
+        <p class="lead-status" id="lead-status" role="status"></p>
+        <div class="lead-actions">
+          <button class="btn btn-lime" id="lead-submit" type="submit" data-i18n="lead.submit.request">Invia la richiesta</button>
+        </div>
+      </form>
+    </div>`;
+  document.body.appendChild(leadModal);
+  window.VuebbI18n?.apply();
+
+  const leadForm = document.getElementById('lead-form');
+  const leadClose = document.getElementById('lead-close');
+  const leadTitle = document.getElementById('lead-title');
+  const leadIntro = document.getElementById('lead-intro');
+  const leadSubmit = document.getElementById('lead-submit');
+  const leadStatus = document.getElementById('lead-status');
+
+  function t(key) {
+    return window.VuebbI18n ? window.VuebbI18n.t(key) : key;
+  }
 
   function openBookModal() {
     if (!bookModal || document.body.classList.contains('cookie-lock')) return;
     if (nav && nav.classList.contains('open')) closeNav();
     if (bookFrame && !bookFrame.getAttribute('src')) {
-      bookFrame.src = BOOK_URL;
+      const lang = window.VuebbI18n ? window.VuebbI18n.lang() : 'it';
+      bookFrame.src = BOOK_URL.replace('hl=it', 'hl=' + (lang === 'en' ? 'en' : 'it'));
     }
     bookModal.hidden = false;
     requestAnimationFrame(() => bookModal.classList.add('is-open'));
@@ -422,7 +504,7 @@
     if (!bookModal) return;
     bookModal.classList.remove('is-open');
     document.body.classList.remove('book-open');
-    if (!document.body.classList.contains('cookie-lock')) {
+    if (!document.body.classList.contains('cookie-lock') && !leadModal.classList.contains('is-open')) {
       document.body.style.overflow = '';
     }
     setTimeout(() => {
@@ -430,11 +512,165 @@
     }, 450);
   }
 
+  function openLead(intent, trigger) {
+    if (document.body.classList.contains('cookie-lock')) return;
+    if (nav && nav.classList.contains('open')) closeNav();
+    leadIntent = intent;
+    leadTrigger = trigger || null;
+    const titleKey = intent === 'call' ? 'lead.title.call' : intent === 'whatsapp' ? 'lead.title.wa' : 'lead.title.request';
+    const introKey = intent === 'call' ? 'lead.intro.call' : intent === 'whatsapp' ? 'lead.intro.wa' : 'lead.intro.request';
+    const submitKey = intent === 'call' ? 'lead.submit.call' : intent === 'whatsapp' ? 'lead.submit.wa' : 'lead.submit.request';
+    leadTitle.setAttribute('data-i18n', titleKey);
+    leadIntro.setAttribute('data-i18n', introKey);
+    leadSubmit.setAttribute('data-i18n', submitKey);
+    leadStatus.textContent = '';
+    leadStatus.className = 'lead-status';
+    leadSubmit.disabled = false;
+    window.VuebbI18n?.apply();
+    leadModal.hidden = false;
+    requestAnimationFrame(() => leadModal.classList.add('is-open'));
+    document.body.classList.add('book-open');
+    document.body.style.overflow = 'hidden';
+    leadForm.querySelector('[name="name"]')?.focus();
+  }
+
+  function closeLead() {
+    leadModal.classList.remove('is-open');
+    if (!bookModal?.classList.contains('is-open')) {
+      document.body.classList.remove('book-open');
+      if (!document.body.classList.contains('cookie-lock')) document.body.style.overflow = '';
+    }
+    setTimeout(() => {
+      if (!leadModal.classList.contains('is-open')) leadModal.hidden = true;
+    }, 450);
+    leadTrigger?.focus();
+  }
+
+  function selectedLabel(name, map) {
+    const value = new FormData(leadForm).get(name);
+    return value && map[value] ? t(map[value]) : '';
+  }
+
+  function leadPayload() {
+    const data = new FormData(leadForm);
+    const kind = selectedLabel('kind', { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' });
+    const service = selectedLabel('service', { web: 'lead.service.web', app: 'lead.service.app', ecom: 'lead.service.ecom' });
+    return {
+      name: String(data.get('name') || '').trim(),
+      kind: kind,
+      company: String(data.get('company') || '').trim(),
+      email: String(data.get('email') || '').trim(),
+      phone: String(data.get('phone') || '').trim(),
+      service: service,
+      project: String(data.get('project') || '').trim(),
+      honey: String(data.get('_honey') || '').trim()
+    };
+  }
+
+  function whatsappText(info) {
+    const lang = window.VuebbI18n ? window.VuebbI18n.lang() : 'it';
+    if (lang === 'en') {
+      return [
+        'Hello Vuebb, I am ' + info.name + '.',
+        'I am: ' + info.kind + '.',
+        'Business or company: ' + (info.company || '—'),
+        'Email: ' + info.email,
+        'Phone: ' + info.phone,
+        'Interested in: ' + info.service,
+        'Project: ' + info.project
+      ].join('\n');
+    }
+    return [
+      'Ciao Vuebb, sono ' + info.name + '.',
+      'Sono: ' + info.kind + '.',
+      'Attività o azienda: ' + (info.company || '—'),
+      'E-mail: ' + info.email,
+      'Telefono: ' + info.phone,
+      'Interessato a: ' + info.service,
+      'Progetto: ' + info.project
+    ].join('\n');
+  }
+
+  async function sendLeadMail(info) {
+    const channel = leadIntent === 'call' ? 'Call confermata' : 'Richiesta di contatto';
+    const res = await fetch('https://formsubmit.co/ajax/' + MAIL_TO, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Vuebb — ' + channel + ' — ' + info.name,
+        _template: 'table',
+        _captcha: 'false',
+        _replyto: info.email,
+        Nome: info.name,
+        Tipo: info.kind,
+        'Attività o azienda': info.company || '—',
+        Email: info.email,
+        Telefono: info.phone,
+        Servizio: info.service,
+        Progetto: info.project,
+        Canale: channel,
+        Lingua: window.VuebbI18n ? window.VuebbI18n.lang().toUpperCase() : 'IT'
+      })
+    });
+    if (!res.ok) throw new Error('mail');
+    const json = await res.json().catch(() => ({}));
+    if (json.success === false || json.success === 'false') throw new Error('mail');
+  }
+
   document.querySelectorAll('[data-book-call]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openBookModal();
+      openLead('call', btn);
     });
+  });
+
+  document.querySelectorAll('[data-lead]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLead(btn.getAttribute('data-lead') || 'request', btn);
+    });
+  });
+
+  leadForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const info = leadPayload();
+    if (info.honey) return;
+    if (!leadForm.checkValidity() || !info.kind || !info.service) {
+      leadStatus.textContent = t('lead.err.fields');
+      leadStatus.className = 'lead-status is-err';
+      leadForm.reportValidity();
+      return;
+    }
+    if (leadIntent === 'whatsapp') {
+      const url = 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(whatsappText(info));
+      window.open(url, '_blank', 'noopener');
+      closeLead();
+      return;
+    }
+    leadSubmit.disabled = true;
+    leadStatus.textContent = t('lead.sending');
+    leadStatus.className = 'lead-status';
+    try {
+      await sendLeadMail(info);
+      if (leadIntent === 'call') {
+        closeLead();
+        openBookModal();
+      } else {
+        leadStatus.textContent = t('lead.ok');
+        leadStatus.className = 'lead-status is-ok';
+        leadForm.reset();
+        leadSubmit.disabled = false;
+      }
+    } catch (err) {
+      leadSubmit.disabled = false;
+      leadStatus.textContent = t('lead.err');
+      leadStatus.className = 'lead-status is-err';
+    }
+  });
+
+  leadClose?.addEventListener('click', closeLead);
+  leadModal.addEventListener('click', (e) => {
+    if (e.target === leadModal) closeLead();
   });
 
   bookClose?.addEventListener('click', closeBookModal);
@@ -442,9 +678,9 @@
     if (e.target === bookModal) closeBookModal();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && bookModal?.classList.contains('is-open')) {
-      closeBookModal();
-    }
+    if (e.key !== 'Escape') return;
+    if (leadModal.classList.contains('is-open')) closeLead();
+    else if (bookModal?.classList.contains('is-open')) closeBookModal();
   });
 
   const yearEl = document.getElementById('year');
