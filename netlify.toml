@@ -1,3 +1,14 @@
 [build]
   command = "node write-icons.js"
   publish = "."
+
+[[redirects]]
+  from = "/filosofia"
+  to = "/metodo"
+  status = 301
+
+[[redirects]]
+  from = "/filosofia.html"
+  to = "/metodo.html"
+  status = 301
+
