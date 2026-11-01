@@ -408,7 +408,7 @@ body:has(.policy-main) {
   background: #fff;
 }
 
-#filosofia .spec-card:not(.highlight),
+.page-routes .spec-card:not(.highlight),
 #metodo .spec-card:not(.highlight),
 #per-chi .spec-card:not(.highlight),
 #contatti .contact-panel,
@@ -417,8 +417,8 @@ body:has(.policy-main) {
   background: var(--canvas);
 }
 
-#filosofia .spec-card:not(.highlight):hover,
-#filosofia .spec-card:not(.highlight).is-hover,
+.page-routes .spec-card:not(.highlight):hover,
+.page-routes .spec-card:not(.highlight).is-hover,
 #metodo .spec-card:not(.highlight):hover,
 #metodo .spec-card:not(.highlight).is-hover,
 #per-chi .spec-card:not(.highlight):hover,
@@ -960,4 +960,9 @@ h1.section-title {
 .spec-card.highlight.reveal.is-in:hover,
 .spec-card.highlight.reveal.is-in.is-hover {
   background: var(--forest);
+}
+
+/* Give the philosophy cards room before the page navigation. */
+.page-routes .spec-grid {
+  margin-bottom: 3rem;
 }
