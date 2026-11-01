@@ -966,3 +966,29 @@ h1.section-title {
 .page-routes .spec-grid {
   margin-bottom: 3rem;
 }
+
+/* Home: a clear progression from our philosophy to the ways to work with us. */
+.page-routes { padding-top: clamp(5rem, 9vw, 9rem); padding-bottom: clamp(5rem, 9vw, 9rem); }
+.page-routes #filosofia { max-width: 100%; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.page-routes #filosofia .section-title { max-width: 850px; font-size: clamp(3rem, 7vw, 6.5rem); line-height: .98; letter-spacing: -.055em; }
+.page-routes #filosofia .section-desc { max-width: 720px; font-size: clamp(1.1rem, 1.8vw, 1.4rem); line-height: 1.5; margin-top: 1.6rem; }
+.page-routes .spec-grid { gap: 1rem; margin-bottom: clamp(5rem, 9vw, 9rem); }
+.page-routes .spec-card { min-height: 230px; padding: clamp(1.6rem, 2.5vw, 2.5rem); display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; border-radius: 4px; }
+.page-routes .spec-card h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); line-height: 1.15; }
+.page-routes .spec-card p { line-height: 1.55; }
+.home-explore-header { display: flex; justify-content: space-between; align-items: end; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(5,36,36,.25); margin-bottom: 2.5rem; }
+.home-explore-header h2 { margin: .75rem 0 0; font-size: clamp(2.3rem, 4.5vw, 4.5rem); line-height: 1; letter-spacing: -.05em; font-weight: 400; }
+.home-explore-header p { max-width: 320px; margin: 0; color: rgba(5,36,36,.7); line-height: 1.5; }
+.page-routes .route-grid { gap: 1px; background: rgba(5,36,36,.15); border: 1px solid rgba(5,36,36,.15); }
+.page-routes .route-card { min-height: 260px; padding: 1.8rem; background: #fff; border-radius: 0; transition: background .25s ease, transform .25s ease, box-shadow .25s ease; }
+.page-routes .route-card h3 { margin-top: .8rem; font-size: clamp(1.6rem, 2.3vw, 2.1rem); }
+.page-routes .route-card p { max-width: 38ch; line-height: 1.5; }
+.page-routes .route-card .route-go::after { content: " ↗"; display: inline-block; transition: transform .2s ease; }
+.page-routes .route-card:hover, .page-routes .route-card.is-hover, .page-routes .route-card:focus-visible { background: #edf2e6; transform: none; box-shadow: inset 0 0 0 2px var(--forest); }
+.page-routes .route-card:hover .route-go::after, .page-routes .route-card:focus-visible .route-go::after { transform: translate(3px, -3px); }
+@media (max-width: 640px) {
+  .page-routes .spec-card { min-height: 0; gap: 1.5rem; }
+  .home-explore-header { display: block; }
+  .home-explore-header p { margin-top: 1.25rem; }
+  .page-routes .route-card { min-height: 220px; }
+}
