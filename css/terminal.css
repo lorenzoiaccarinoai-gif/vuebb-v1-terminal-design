@@ -953,3 +953,11 @@ h1.section-title {
 .shot-screen-phone img {
   clip-path: none !important;
 }
+
+/* Preserve the dark card during reveal and hover states. */
+.spec-card.highlight.reveal.visible:hover,
+.spec-card.highlight.reveal.visible.is-hover,
+.spec-card.highlight.reveal.is-in:hover,
+.spec-card.highlight.reveal.is-in.is-hover {
+  background: var(--forest);
+}

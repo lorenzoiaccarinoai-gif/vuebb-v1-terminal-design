@@ -4,11 +4,11 @@
 
 [[redirects]]
   from = "/filosofia"
-  to = "/metodo"
+  to = "/#filosofia"
   status = 301
 
 [[redirects]]
   from = "/filosofia.html"
-  to = "/metodo.html"
+  to = "/#filosofia"
   status = 301
 
