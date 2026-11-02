@@ -2,7 +2,7 @@
    Source: https://terminal-industries.com/ (computed 2026-10-23)
    Suisse Intl is a commercial face. Geist (already in the repo, OFL) stands in
    for it. Geist Mono (OFL, Vercel) matches Terminal's label and CTA face.
-   Palette: #052424 ink, #f0f0f0 canvas, #ffffff paper, #abff02 lime (CTA only), #fb6b3c orange, #7f7f7f label, #454742 stone.
+   Palette: #111111 ink, #faf7f9 canvas, #ffffff paper, #d94a87 lime (CTA only), #b83279 orange, #7f7f7f label, #454742 stone.
    Buttons 8px, cards 24px, no glass, no neon glow. */
 
 @font-face {
@@ -21,24 +21,24 @@
 }
 
 :root {
-  --bg: #f0f0f0;
+  --bg: #faf7f9;
   --bg-2: #ffffff;
-  --ink: #052424;
-  --muted: rgba(5, 36, 36, 0.68);
-  --lime: #052424;
+  --ink: #111111;
+  --muted: rgba(17, 17, 17, 0.68);
+  --lime: #111111;
   --lime-2: #454742;
   --cyan: #454742;
-  --blue: #052424;
-  --magenta: #fb6b3c;
+  --blue: #111111;
+  --magenta: #b83279;
   --violet: #e6e6e2;
-  --line: rgba(5, 36, 36, 0.12);
-  --cta: #abff02;
-  --cta-ink: #052424;
+  --line: rgba(17, 17, 17, 0.12);
+  --cta: #d94a87;
+  --cta-ink: #111111;
   --paper: #ffffff;
-  --canvas: #f0f0f0;
-  --forest: #052424;
+  --canvas: #faf7f9;
+  --forest: #111111;
   --label: #7f7f7f;
-  --orange: #fb6b3c;
+  --orange: #b83279;
   --mono: "Geist Mono", ui-monospace, monospace;
   --radius: 0;
   --ease: cubic-bezier(0, 0, 0.58, 1);
@@ -64,7 +64,7 @@ body {
 .header {
   background: rgba(240, 240, 240, 0.9);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(5, 36, 36, 0.08);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .header .logo-img,
@@ -77,7 +77,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.03em;
-  color: rgba(5, 36, 36, 0.72);
+  color: rgba(17, 17, 17, 0.72);
 }
 
 .nav-link::after {
@@ -92,7 +92,7 @@ body {
 .lang-toggle {
   border-radius: 8px;
   background: var(--paper);
-  border-color: rgba(5, 36, 36, 0.12);
+  border-color: rgba(17, 17, 17, 0.12);
   color: var(--ink);
 }
 
@@ -207,7 +207,7 @@ body {
 }
 
 .section-desc {
-  color: rgba(5, 36, 36, 0.72);
+  color: rgba(17, 17, 17, 0.72);
 }
 
 .chip {
@@ -314,7 +314,7 @@ body {
 .product-card::after,
 .portfolio-trigger::before,
 .shot::before {
-  background: linear-gradient(115deg, transparent 30%, rgba(5, 36, 36, 0.05) 50%, transparent 70%) !important;
+  background: linear-gradient(115deg, transparent 30%, rgba(17, 17, 17, 0.05) 50%, transparent 70%) !important;
 }
 
 .spec-card:hover,
@@ -364,7 +364,7 @@ body {
 .contact-panel.reveal.is-in.is-hover {
   transform: translateY(-4px);
   border-color: transparent;
-  box-shadow: 0 18px 40px rgba(5, 36, 36, 0.08);
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.08);
   background: var(--paper);
 }
 
@@ -454,8 +454,8 @@ body:has(.policy-main) {
 
 .product-body li {
   border-radius: 8px;
-  border-color: rgba(5, 36, 36, 0.12);
-  color: rgba(5, 36, 36, 0.72);
+  border-color: rgba(17, 17, 17, 0.12);
+  color: rgba(17, 17, 17, 0.72);
   background: transparent;
 }
 
@@ -471,7 +471,7 @@ body:has(.policy-main) {
 
 .product-card:hover .product-body li,
 .product-card.is-hover .product-body li {
-  border-color: rgba(5, 36, 36, 0.2);
+  border-color: rgba(17, 17, 17, 0.2);
   color: var(--ink);
   background: transparent;
 }
@@ -491,7 +491,7 @@ body:has(.policy-main) {
 }
 
 .steps::before {
-  background: rgba(5, 36, 36, 0.2);
+  background: rgba(17, 17, 17, 0.2);
   border-radius: 0;
 }
 
@@ -510,7 +510,7 @@ body:has(.policy-main) {
 .step-index {
   color: var(--forest);
   background: var(--paper);
-  border: 1px solid rgba(5, 36, 36, 0.16);
+  border: 1px solid rgba(17, 17, 17, 0.16);
   border-radius: 8px;
   box-shadow: none;
   font-family: var(--mono);
@@ -576,7 +576,7 @@ body:has(.policy-main) {
 
 .book-modal,
 .gallery-lightbox {
-  background: rgba(5, 36, 36, 0.62);
+  background: rgba(17, 17, 17, 0.62);
   backdrop-filter: blur(10px);
 }
 
@@ -585,7 +585,7 @@ body:has(.policy-main) {
   color: var(--ink);
   border: 0;
   border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(5, 36, 36, 0.22);
+  box-shadow: 0 24px 60px rgba(17, 17, 17, 0.22);
 }
 
 .book-modal-legal a {
@@ -596,7 +596,7 @@ body:has(.policy-main) {
   background: var(--paper);
   border: 0;
   border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(5, 36, 36, 0.22);
+  box-shadow: 0 24px 60px rgba(17, 17, 17, 0.22);
 }
 
 .gallery-lightbox .gallery-caption,
@@ -629,7 +629,7 @@ body:has(.policy-main) {
   color: var(--ink);
   border: 0;
   border-radius: 24px;
-  box-shadow: 0 18px 50px rgba(5, 36, 36, 0.16);
+  box-shadow: 0 18px 50px rgba(17, 17, 17, 0.16);
 }
 
 .cookie-copy h2 {
@@ -640,7 +640,7 @@ body:has(.policy-main) {
 }
 
 .cookie-copy p {
-  color: rgba(5, 36, 36, 0.7);
+  color: rgba(17, 17, 17, 0.7);
 }
 
 .cookie-copy a {
@@ -687,7 +687,7 @@ body:has(.policy-main) {
 @media (max-width: 768px) {
   .nav {
     background: var(--canvas);
-    border-left: 1px solid rgba(5, 36, 36, 0.08);
+    border-left: 1px solid rgba(17, 17, 17, 0.08);
   }
 
   .nav .nav-link {
@@ -727,7 +727,7 @@ body:has(.policy-main) {
   }
 
   .nav-backdrop {
-    background: rgba(5, 36, 36, 0.28);
+    background: rgba(17, 17, 17, 0.28);
   }
 
   :root {
@@ -765,7 +765,7 @@ body:has(.policy-main) {
 }
 
 .route-card p {
-  color: rgba(5, 36, 36, 0.72);
+  color: rgba(17, 17, 17, 0.72);
   font-size: 0.98rem;
   line-height: 1.45;
 }
@@ -785,7 +785,7 @@ body:has(.policy-main) {
 .route-card.is-hover,
 .route-card:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(5, 36, 36, 0.08);
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.08);
   background: var(--paper);
   outline: none;
 }
@@ -909,7 +909,7 @@ h1.section-title {
 
 .lead-privacy {
   margin: 0;
-  color: rgba(5, 36, 36, 0.62);
+  color: rgba(17, 17, 17, 0.62);
   font-size: 0.78rem;
   line-height: 1.45;
 }
@@ -976,15 +976,15 @@ h1.section-title {
 .page-routes .spec-card { min-height: 230px; padding: clamp(1.6rem, 2.5vw, 2.5rem); display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; border-radius: 4px; }
 .page-routes .spec-card h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); line-height: 1.15; }
 .page-routes .spec-card p { line-height: 1.55; }
-.home-explore-header { display: flex; justify-content: space-between; align-items: end; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(5,36,36,.25); margin-bottom: 2.5rem; }
+.home-explore-header { display: flex; justify-content: space-between; align-items: end; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(17,17,17,.25); margin-bottom: 2.5rem; }
 .home-explore-header h2 { margin: .75rem 0 0; font-size: clamp(2.3rem, 4.5vw, 4.5rem); line-height: 1; letter-spacing: -.05em; font-weight: 400; }
-.home-explore-header p { max-width: 320px; margin: 0; color: rgba(5,36,36,.7); line-height: 1.5; }
-.page-routes .route-grid { gap: 1px; background: rgba(5,36,36,.15); border: 1px solid rgba(5,36,36,.15); }
+.home-explore-header p { max-width: 320px; margin: 0; color: rgba(17,17,17,.7); line-height: 1.5; }
+.page-routes .route-grid { gap: 1px; background: rgba(17,17,17,.15); border: 1px solid rgba(17,17,17,.15); }
 .page-routes .route-card { min-height: 260px; padding: 1.8rem; background: #fff; border-radius: 0; transition: background .25s ease, transform .25s ease, box-shadow .25s ease; }
 .page-routes .route-card h3 { margin-top: .8rem; font-size: clamp(1.6rem, 2.3vw, 2.1rem); }
 .page-routes .route-card p { max-width: 38ch; line-height: 1.5; }
 .page-routes .route-card .route-go::after { content: " ↗"; display: inline-block; transition: transform .2s ease; }
-.page-routes .route-card:hover, .page-routes .route-card.is-hover, .page-routes .route-card:focus-visible { background: #edf2e6; transform: none; box-shadow: inset 0 0 0 2px var(--forest); }
+.page-routes .route-card:hover, .page-routes .route-card.is-hover, .page-routes .route-card:focus-visible { background: #fcf2f7; transform: none; box-shadow: inset 0 0 0 2px var(--forest); }
 .page-routes .route-card:hover .route-go::after, .page-routes .route-card:focus-visible .route-go::after { transform: translate(3px, -3px); }
 @media (max-width: 640px) {
   .page-routes .spec-card { min-height: 0; gap: 1.5rem; }
@@ -992,3 +992,161 @@ h1.section-title {
   .home-explore-header p { margin-top: 1.25rem; }
   .page-routes .route-card { min-height: 220px; }
 }
+
+/* Philosophy: editorial introduction and a single set of principles. */
+.page-routes #filosofia {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  background: var(--forest);
+  padding: clamp(2rem, 5vw, 5rem);
+  margin-bottom: 0;
+  scroll-margin-top: 90px;
+}
+.page-routes #filosofia .section-label { color: var(--cta); margin-bottom: 2rem; }
+.page-routes #filosofia .section-title { color: #fff; max-width: 10ch; font-size: clamp(2.8rem, 5.4vw, 5.5rem); line-height: 1.02; margin: 0; }
+.philosophy-intro { border-top: 1px solid rgba(255,255,255,.3); padding-top: 1.5rem; }
+.page-routes #filosofia .section-desc { color: rgba(255,255,255,.83); font-size: clamp(1.05rem, 1.35vw, 1.25rem); line-height: 1.55; margin: 1.25rem 0 0; max-width: 36ch; }
+.page-routes .spec-grid { gap: 1px; background: #dddddd; border: 1px solid #dddddd; }
+.page-routes .spec-card, .page-routes .spec-card:not(.highlight) { background: #fffafd; min-height: 300px; padding: clamp(1.75rem, 3vw, 2.75rem); display: flex; flex-direction: column; justify-content: flex-start; gap: 0; }
+.page-routes .spec-card.highlight { background: #fbe9f2; color: var(--forest); }
+.page-routes .spec-card.highlight h3, .page-routes .spec-card.highlight p { color: var(--forest); }
+.page-routes .spec-card:hover, .page-routes .spec-card.is-hover, .page-routes .spec-card:not(.highlight):hover, .page-routes .spec-card:not(.highlight).is-hover { background: #fcf2f7; transform: none; box-shadow: none; }
+.page-routes .spec-card.highlight:hover, .page-routes .spec-card.highlight.is-hover { background: #f6d4e5; }
+.philosophy-number { display: block; color: #666666; font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; margin-bottom: 2.75rem; }
+.philosophy-number span { opacity: .55; }
+.page-routes .spec-card h3 { color: var(--forest); font-size: clamp(1.35rem, 1.8vw, 1.7rem); font-weight: 500; letter-spacing: -.035em; margin: 0 0 1rem; }
+.page-routes .spec-card p { margin: 0; color: #555555; font-size: 1rem; line-height: 1.6; max-width: 37ch; }
+@media (max-width: 800px) {
+  .page-routes #filosofia { grid-template-columns: 1fr; gap: 2.5rem; }
+  .page-routes #filosofia .section-title { max-width: 14ch; }
+  .page-routes .spec-card, .page-routes .spec-card:not(.highlight) { min-height: 0; }
+  .philosophy-number { margin-bottom: 1.5rem; }
+}
+.page-routes .spec-card.highlight.reveal.visible:hover,
+.page-routes .spec-card.highlight.reveal.visible.is-hover,
+.page-routes .spec-card.highlight.reveal.is-in:hover,
+.page-routes .spec-card.highlight.reveal.is-in.is-hover { background: #f6d4e5; }
+
+/* Shared editorial treatment across the site. */
+.page-main > .section > .container > .section-header {
+  background: var(--forest);
+  padding: clamp(2rem, 5vw, 5rem);
+  margin-bottom: 0;
+}
+.page-main > .section > .container > .section-header .section-label { color: var(--cta); margin-bottom: 2rem; }
+.page-main > .section > .container > .section-header .section-title { color: #fff; max-width: 14ch; font-size: clamp(2.8rem, 5.4vw, 5.5rem); line-height: 1.02; letter-spacing: -.05em; }
+.page-main > .section > .container > .section-header .section-desc { color: rgba(255,255,255,.8); max-width: 48rem; margin-top: 1.5rem; font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.55; }
+#servizi .product-grid, #pricing .price-grid, #per-chi .spec-grid { gap: 1px; background: #dddddd; border: 1px solid #dddddd; }
+#servizi .product-card, #pricing .price-card, #per-chi .spec-card:not(.highlight) { background: #fffafd; }
+#servizi .product-card:hover, #servizi .product-card.is-hover, #pricing .price-card:hover, #pricing .price-card.is-hover, #per-chi .spec-card:not(.highlight):hover, #per-chi .spec-card:not(.highlight).is-hover { background: #fcf2f7; transform: none; box-shadow: none; }
+#metodo .about-row { margin-top: 1px; }
+.contact-end { background: #fbe9f2; padding: clamp(4rem, 7vw, 7rem) 0; }
+.contact-end-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 7vw, 7rem); align-items: start; }
+.contact-end-copy { position: sticky; top: 110px; }
+.contact-end-copy .section-label { color: #666666; }
+.contact-end-copy h2 { font-size: clamp(2.8rem, 5vw, 5rem); line-height: 1.02; letter-spacing: -.05em; font-weight: 400; margin: 1rem 0 1.5rem; max-width: 10ch; }
+.contact-end-copy p { max-width: 33ch; line-height: 1.6; color: #555555; }
+.contact-end-form { background: #fff; padding: clamp(1.25rem, 3vw, 2.5rem); }
+.contact-end-form .lead-form { padding: 0; gap: 1rem; overflow: visible; }
+.contact-end-form .lead-field input:focus-visible, .contact-end-form .lead-field textarea:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+.contact-end-form .lead-actions { justify-content: flex-start; }
+@media (max-width: 800px) {
+  .contact-end-grid { grid-template-columns: 1fr; }
+  .contact-end-copy { position: static; }
+}
+#contatti .contact-panel, #contatti .contact-panel:hover, #contatti .contact-panel.is-hover { background: var(--forest); color: #fff; padding: clamp(2rem, 5vw, 5rem); transform: none; }
+#contatti .contact-panel .section-label { color: var(--cta); }
+#contatti .contact-panel .section-title { color: #fff; font-size: clamp(2.8rem, 5.4vw, 5.5rem); line-height: 1.02; }
+#contatti .contact-panel .section-desc, #contatti .contact-note { color: rgba(255,255,255,.8); }
+#contatti .contact-panel .btn-ghost { background: #fff; color: var(--forest); }
+
+/* Instagram-inspired accent gradient. */
+.btn-lime, .btn-lime:hover, .btn-lime.is-hover { background: linear-gradient(110deg,#833ab4,#c13584,#e1306c,#f77737); color: #fff; }
+.page-routes #filosofia .section-label, .page-main > .section > .container > .section-header .section-label, #contatti .contact-panel .section-label { color: #ffffff; }
+.page-routes .spec-card.highlight { background: #fbe9f2; }
+.contact-end { background: #fbe9f2; }
+/* Black and white surfaces with the original vivid gradient accents. */
+:root { --forest: #111111; --ink: #111111; --canvas: #ffffff; --bg: #ffffff; --paper: #ffffff; --muted: rgba(17,17,17,.7); }
+body, .page-routes, #servizi, #pricing, #portfolio, #metodo, #per-chi, #contatti, .policy-main { background: #fff; }
+.page-routes #filosofia, .page-main > .section > .container > .section-header, #contatti .contact-panel, #contatti .contact-panel:hover, #contatti .contact-panel.is-hover, .footer { background: #111; }
+.page-routes .spec-card, .page-routes .spec-card:not(.highlight), .page-routes .spec-card.highlight, #servizi .product-card, #pricing .price-card, #per-chi .spec-card:not(.highlight), .contact-end { background: #fff; }
+.page-routes .spec-card:hover, .page-routes .spec-card.is-hover, .page-routes .spec-card:not(.highlight):hover, .page-routes .spec-card:not(.highlight).is-hover, .page-routes .spec-card.highlight:hover, .page-routes .spec-card.highlight.is-hover, #servizi .product-card:hover, #servizi .product-card.is-hover, #pricing .price-card:hover, #pricing .price-card.is-hover { background: #f3f3f3; }
+
+#servizi .product-visual.v1, #servizi .product-visual.v2, #servizi .product-visual.v3 { background: #111 !important; }
+/* Dark base for the Instagram-inspired preview. */
+:root { --bg: #080808; --bg-2: #111; --canvas: #080808; --paper: #161616; --ink: #f5f5f5; --muted: rgba(255,255,255,.72); --line: rgba(255,255,255,.18); }
+body, body:has(.page-main), body:has(.policy-main), .page-routes, #servizi, #pricing, #portfolio, #metodo, #per-chi, #contatti, .policy-main { background: #080808; color: #f5f5f5; }
+.header { background: #080808; }
+.header .nav-link, .header .lang-toggle { color: #f5f5f5; }
+.header .logo-link img { filter: invert(1); }
+.page-routes .spec-card, .page-routes .spec-card:not(.highlight), .page-routes .spec-card.highlight, #servizi .product-card, #pricing .price-card, #per-chi .spec-card:not(.highlight), .page-routes .route-card { background: #191919; color: #f5f5f5; }
+.page-routes .spec-card h3, .page-routes .spec-card.highlight h3, .page-routes .spec-card p, .page-routes .spec-card.highlight p, .page-routes .route-card h3, .page-routes .route-card p, .product-card h3, .product-card p, .price-card h3, #per-chi .spec-card h3, #per-chi .spec-card p { color: #f5f5f5; }
+.page-routes .spec-card:hover, .page-routes .spec-card.is-hover, .page-routes .spec-card:not(.highlight):hover, .page-routes .spec-card:not(.highlight).is-hover, .page-routes .spec-card.highlight:hover, .page-routes .spec-card.highlight.is-hover, #servizi .product-card:hover, #servizi .product-card.is-hover, #pricing .price-card:hover, #pricing .price-card.is-hover, .page-routes .route-card:hover, .page-routes .route-card.is-hover, .page-routes .route-card:focus-visible { background: #292929; color: #fff; box-shadow: none; }
+.home-explore-header, .page-routes .route-grid, .page-routes .spec-grid, #servizi .product-grid, #pricing .price-grid, #per-chi .spec-grid { border-color: #444; }
+.home-explore-header p, .contact-end-copy p { color: #c2c2c2; }
+.contact-end { background: #101010; color: #fff; }
+.contact-end-form { background: #fff; color: #111; }
+.contact-end-form .lead-field input, .contact-end-form .lead-field textarea, .contact-end-form .lead-choices label { background: #eee; color: #111; }
+.contact-end-form .lead-choices label:has(input:checked) { background: #222; color: #fff; }
+.contact-end-form .lead-privacy, .contact-end-form .lead-privacy a { color: #444; }
+
+.header .logo-link img { filter: none; }
+.philosophy-number, .product-index { color: #aaa; }
+/* Black surfaces throughout the dark preview. */
+:root { --bg: #000; --bg-2: #000; --canvas: #000; --paper: #000; }
+body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #servizi, #pricing, #portfolio, #metodo, #per-chi, #contatti, .policy-main, .footer, .contact-end,
+.page-routes #filosofia, .page-main > .section > .container > .section-header, #contatti .contact-panel, #contatti .contact-panel:hover, #contatti .contact-panel.is-hover,
+.page-routes .spec-card, .page-routes .spec-card:not(.highlight), .page-routes .spec-card.highlight, #servizi .product-card, #pricing .price-card, #per-chi .spec-card:not(.highlight), .page-routes .route-card,
+.page-routes .spec-card:hover, .page-routes .spec-card.is-hover, .page-routes .spec-card:not(.highlight):hover, .page-routes .spec-card:not(.highlight).is-hover, .page-routes .spec-card.highlight:hover, .page-routes .spec-card.highlight.is-hover, #servizi .product-card:hover, #servizi .product-card.is-hover, #pricing .price-card:hover, #pricing .price-card.is-hover, .page-routes .route-card:hover, .page-routes .route-card.is-hover, .page-routes .route-card:focus-visible { background: #000; }
+#servizi .product-visual.v1, #servizi .product-visual.v2, #servizi .product-visual.v3 { background: #000 !important; }
+/* White outlines keep adjacent black panels distinct. */
+.page-routes .spec-grid, .page-routes .route-grid, #servizi .product-grid, #pricing .price-grid, #per-chi .spec-grid { background: #fff; border: 1px solid #fff; gap: 1px; }
+.page-routes #filosofia, .page-main > .section > .container > .section-header, #contatti .contact-panel, #metodo .about-row, #metodo .steps li, #portfolio .portfolio-trigger, #portfolio .shot, .policy-panel, .contact-end-form { border: 1px solid #fff; }
+.page-routes .spec-card, .page-routes .route-card, #servizi .product-card, #pricing .price-card, #per-chi .spec-card { box-shadow: none; }
+.page-routes .route-card:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+/* Remove the added panel outlines. */
+.page-routes .spec-grid, .page-routes .route-grid, #servizi .product-grid, #pricing .price-grid, #per-chi .spec-grid { background: transparent; border: 0; gap: 1rem; }
+.page-routes #filosofia, .page-main > .section > .container > .section-header, #contatti .contact-panel, #metodo .about-row, #metodo .steps li, #portfolio .portfolio-trigger, #portfolio .shot, .policy-panel, .contact-end-form { border: 0; }
+/* Contact form in the dark preview. */
+.contact-end { background: #000; color: #fff; }
+.contact-end-copy .section-label { color: #bbb; }
+.contact-end-copy p { color: #ccc; }
+.contact-end-form { background: #000; color: #fff; padding: clamp(1.25rem, 3vw, 2.5rem); }
+.contact-end-form .lead-field > span, .contact-end-form .lead-field legend { color: #ccc; }
+.contact-end-form .lead-field input:not([type="radio"]), .contact-end-form .lead-field textarea { background: #000; color: #fff; border: 1px solid #aaa; }
+.contact-end-form .lead-field input:focus-visible, .contact-end-form .lead-field textarea:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.contact-end-form .lead-choices label { background: #000; color: #fff; border: 1px solid #999; }
+.contact-end-form .lead-choices label:has(input:checked) { background: #fff; color: #111; border-color: #fff; }
+.contact-end-form .lead-choices input { accent-color: #c13584; }
+.contact-end-form .lead-privacy, .contact-end-form .lead-privacy a { color: #ccc; }
+.contact-end-form .lead-status.is-ok { color: #b7f6d0; }
+.contact-end-form .lead-status.is-err { color: #ffadbd; }
+.contact-end-form .lead-choices label { border: 0; }
+.contact-end-form .lead-choices label:has(input:checked) { border: 0; }
+
+/* Founder and process presented together. */
+#metodo .method-layout { display: grid; grid-template-columns: minmax(250px, .9fr) minmax(0, 2fr); gap: clamp(2rem, 4vw, 4rem); align-items: start; margin-top: 2rem; }
+#metodo .about-row, #metodo .about-row:hover, #metodo .about-row.is-hover { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 0; margin: 0; background: #000; box-shadow: none; transform: none; }
+#metodo .about-photo { width: min(100%, 260px); height: auto; aspect-ratio: 1; background: #000; }
+#metodo .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+#metodo .about-copy h3, #metodo .about-copy p { color: #fff; }
+#metodo .about-copy .section-label { color: #c9c9c9; }
+#metodo .steps { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); max-width: none; gap: 1.5rem; padding: 0; margin: 0; }
+#metodo .steps::before { display: none; }
+#metodo .steps li, #metodo .steps li:hover, #metodo .steps li.is-hover { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 0; margin: 0; background: #000; transform: none; }
+#metodo .steps li > span, #metodo .steps li:hover > span, #metodo .steps li.is-hover > span { width: auto; height: auto; display: block; color: #fff; background: none; border: 0; box-shadow: none; font-size: 1rem; opacity: 1; }
+#metodo .steps li > div { padding: 0; }
+#metodo .steps h3 { color: #fff; font-size: clamp(1.15rem, 1.5vw, 1.45rem); }
+#metodo .steps p { color: #ddd; line-height: 1.55; }
+@media (max-width: 1050px) { #metodo .method-layout { grid-template-columns: 1fr; } #metodo .about-row { display: flex; flex-direction: row; } #metodo .about-photo { width: 180px; flex: 0 0 180px; } }
+@media (max-width: 700px) { #metodo .steps { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2.5rem 1.25rem; } #metodo .about-row { flex-direction: column; } #metodo .about-photo { flex: none; } }
+@media (max-width: 380px) { #metodo .steps { grid-template-columns: 1fr; } }
+/* Green-to-blue accent experiment. */
+.btn-lime, .btn-lime:hover, .btn-lime.is-hover { background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff); color: #071b26; }
+/* Unify remaining accent details with the green and blue palette. */
+:root { --orange: #31d6c4; --magenta: #31d6c4; --cta: #31d6c4; }
+.contact-end-form .lead-choices input { accent-color: #22cbbf; }
+.page-routes .route-card .route-go, .footer-legal a:hover, .footer-cookie-btn:hover { color: #35dcca; }
+::selection { background: #24cdbf; color: #001915; }

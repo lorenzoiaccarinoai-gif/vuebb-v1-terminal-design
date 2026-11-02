@@ -46,14 +46,15 @@
     <div class="container header-inner">
       <a href="index.html" class="logo-link" aria-label="Vuebb Home">
         <picture>
-          <source type="image/svg+xml" srcset="images/logo-vuebb.svg">
-          <source type="image/webp" srcset="images/logo-vuebb.webp">
-          <img src="images/logo-vuebb.png" alt="Vuebb" class="logo-img" width="1160" height="221">
+
+
+          <img src="images/logo-vuebb-ondark.png" alt="Vuebb" class="logo-img" width="1160" height="221">
         </picture>
       </a>
       <nav class="nav" id="nav">
         <button type="button" class="nav-close" id="nav-close" aria-label="Chiudi menu">×</button>
         <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
           <li><a href="servizi.html" class="nav-link" data-i18n="nav.servizi">Servizi</a></li>
           <li><a href="metodo.html" class="nav-link" data-i18n="nav.metodo">Metodo</a></li>
           <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
@@ -88,9 +89,9 @@
         </article>
         <article class="spec-card">
           <h3 data-i18n="who.m.title">Micro-Imprese</h3>
-          <p data-i18n="who.m.desc">Realtà agili che vogliono crescere senza perdere identità. Un web che scala con voi, non che vi impone modelli estranei.</p>
+          <p data-i18n="who.m.desc">Realtà agili che vogliono crescere senza perdere identità. Un web che cresce con te, senza importi modelli estranei.</p>
         </article>
-        <article class="spec-card highlight">
+        <article class="spec-card">
           <h3 data-i18n="who.s.title">PMI</h3>
           <p data-i18n="who.s.desc">Aziende strutturate che cercano siti boutique, web app ed e-commerce verticali, e un partner che parla il linguaggio del business.</p>
         </article>
@@ -98,6 +99,58 @@
     </div>
   </section>
   </main>
+
+  <section class="contact-end" aria-labelledby="contact-end-title">
+    <div class="container contact-end-grid">
+      <div class="contact-end-copy"><span class="section-label" data-i18n="cta.label">Iniziamo</span><h2 id="contact-end-title" data-i18n="cta.title">Raccontaci il tuo progetto</h2><p data-i18n="cta.desc">Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.</p></div>
+      <div class="contact-end-form">      <form class="lead-form" id="footer-lead-form" novalidate>
+        <input class="lead-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="lead-field">
+          <span data-i18n="lead.name">Nome e cognome</span>
+          <input name="name" type="text" autocomplete="name" required minlength="3">
+        </label>
+        <fieldset class="lead-field">
+          <legend data-i18n="lead.kind">Sei</legend>
+          <div class="lead-choices">
+            <label><input type="radio" name="kind" value="pro" required><span data-i18n="lead.kind.pro">Professionista</span></label>
+            <label><input type="radio" name="kind" value="shop"><span data-i18n="lead.kind.shop">Attività commerciale</span></label>
+            <label><input type="radio" name="kind" value="biz"><span data-i18n="lead.kind.biz">Azienda</span></label>
+          </div>
+        </fieldset>
+        <label class="lead-field">
+          <span data-i18n="lead.company">Nome attività o azienda, se c’è</span>
+          <input name="company" type="text" autocomplete="organization">
+        </label>
+        <div class="lead-split">
+          <label class="lead-field">
+            <span data-i18n="lead.email">E-mail</span>
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+          <label class="lead-field">
+            <span data-i18n="lead.phone">Telefono</span>
+            <input name="phone" type="tel" autocomplete="tel" required>
+          </label>
+        </div>
+        <fieldset class="lead-field">
+          <legend data-i18n="lead.service">Servizio</legend>
+          <div class="lead-choices">
+            <label><input type="radio" name="service" value="web" required><span data-i18n="lead.service.web">Sito web</span></label>
+            <label><input type="radio" name="service" value="app"><span data-i18n="lead.service.app">Web app gestionale</span></label>
+            <label><input type="radio" name="service" value="ecom"><span data-i18n="lead.service.ecom">E-commerce</span></label>
+          </div>
+        </fieldset>
+        <label class="lead-field">
+          <span data-i18n="lead.project">Due righe sul progetto</span>
+          <textarea name="project" rows="3" required minlength="8"></textarea>
+        </label>
+        <p class="lead-privacy" data-i18n="lead.privacy">Inviando confermi di aver letto l’<a href="privacy-policy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
+        <p class="lead-status" id="footer-lead-status" role="status"></p>
+        <div class="lead-actions">
+          <button class="btn btn-lime" id="footer-lead-submit" type="submit" data-i18n="lead.submit.request">Invia la richiesta</button>
+        </div>
+      </form></div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container footer-inner">
@@ -152,6 +205,7 @@
   </div>
 
   <script src="js/i18n.js" defer></script>
+  <script src="js/contact-footer.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>
