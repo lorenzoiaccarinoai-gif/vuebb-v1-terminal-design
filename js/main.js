@@ -460,9 +460,11 @@
         <fieldset class="lead-field">
           <legend data-i18n="lead.service">Servizio</legend>
           <div class="lead-choices">
-            <label><input type="radio" name="service" value="web" required><span data-i18n="lead.service.web">Sito web</span></label>
-            <label><input type="radio" name="service" value="app"><span data-i18n="lead.service.app">Web app gestionale</span></label>
-            <label><input type="radio" name="service" value="ecom"><span data-i18n="lead.service.ecom">E-commerce</span></label>
+            <label><input type="radio" name="service" value="create" required><span data-i18n="lead.service.create">Creazione Sito Web</span></label>
+            <label><input type="radio" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span></label>
+            <label><input type="radio" name="service" value="performance"><span data-i18n="lead.service.performance">Ottimizzazione Performance Sito Web</span></label>
+            <label><input type="radio" name="service" value="seo"><span data-i18n="lead.service.seo">Ottimizzazione Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</span></label>
+            <label><input type="radio" name="service" value="privacy"><span data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</span></label>
           </div>
         </fieldset>
         <label class="lead-field">
@@ -572,7 +574,7 @@
   function leadPayload() {
     const data = new FormData(leadForm);
     const kind = selectedLabel('kind', { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' });
-    const service = selectedLabel('service', { web: 'lead.service.web', app: 'lead.service.app', ecom: 'lead.service.ecom' });
+    const service = selectedLabel('service', { create: 'lead.service.create', review: 'lead.service.review', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' });
     return {
       name: String(data.get('name') || '').trim(),
       kind: kind,

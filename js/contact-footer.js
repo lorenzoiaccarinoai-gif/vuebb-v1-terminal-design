@@ -16,7 +16,7 @@
       return;
     }
     const kind = { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' };
-    const service = { web: 'lead.service.web', app: 'lead.service.app', ecom: 'lead.service.ecom' };
+    const service = { create: 'lead.service.create', review: 'lead.service.review', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' };
     submit.disabled = true;
     status.className = 'lead-status';
     status.textContent = t('lead.sending');
