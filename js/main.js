@@ -459,13 +459,18 @@
         </div>
         <fieldset class="lead-field">
           <legend data-i18n="lead.service">Servizio</legend>
-          <div class="lead-choices">
-            <label><input type="checkbox" name="service" value="create"><span data-i18n="lead.service.create">Creazione Sito Web</span></label>
-            <label><input type="checkbox" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span></label>
-            <label><input type="checkbox" name="service" value="maintenance"><span data-i18n="lead.service.maintenance">Mantenimento Sito Web</span></label>
-            <label><input type="checkbox" name="service" value="performance"><span data-i18n="lead.service.performance">Ottimizzazione Performance Sito Web</span></label>
-            <label><input type="checkbox" name="service" value="seo"><span data-i18n="lead.service.seo">Ottimizzazione Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</span></label>
-            <label><input type="checkbox" name="service" value="privacy"><span data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</span></label>
+          <p class="lead-choice-heading" data-i18n="lead.service.full">Servizio completo</p>
+          <p class="lead-choice-note" data-i18n="lead.service.full.note">Include ottimizzazione performance, posizionamento e verifica privacy</p>
+          <div class="lead-choices lead-choices--stack">
+            <label><input type="checkbox" name="service" value="create"><span data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
+            <label><input type="checkbox" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
+            <label><input type="checkbox" name="service" value="maintenance"><span data-i18n="lead.service.maintenance">Mantenimento Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
+          </div>
+          <p class="lead-choice-heading"><span data-i18n="lead.service.single">Oppure scegli un singolo intervento</span> <small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></p>
+          <div class="lead-choices lead-choices--stack">
+            <label><input type="checkbox" name="service" value="performance"><span data-i18n="lead.service.performance">Ottimizzazione Performance</span><small class="lead-included" data-i18n="lead.service.included">Incluso</small></label>
+            <label><input type="checkbox" name="service" value="seo"><span data-i18n="lead.service.seo">Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</span><small class="lead-included" data-i18n="lead.service.included">Incluso</small></label>
+            <label><input type="checkbox" name="service" value="privacy"><span data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</span><small class="lead-included" data-i18n="lead.service.included">Incluso</small></label>
           </div>
         </fieldset>
         <label class="lead-field">
@@ -573,7 +578,7 @@
   }
 
   function selectedLabels(name, map) {
-    return new FormData(leadForm).getAll(name).map((value) => map[value] ? t(map[value]) : '').filter(Boolean).join('; ');
+    return new FormData(leadForm).getAll(name).map((value) => map[value] ? t(map[value]) + (['create', 'review', 'maintenance'].includes(value) ? ' ' + t('lead.service.includes') : '') : '').filter(Boolean).join('; ');
   }
 
   function syncServiceValidity() {
@@ -665,6 +670,28 @@
       openLead(btn.getAttribute('data-lead') || 'request', btn);
     });
   });
+
+  function syncIncludedServices(form) {
+    const pick = (value) => form.querySelector('input[name="service"][value="' + value + '"]');
+    const full = ['create', 'review', 'maintenance'].some((value) => pick(value)?.checked);
+    ['performance', 'seo', 'privacy'].forEach((value) => {
+      const box = pick(value);
+      if (!box) return;
+      if (full) { box.checked = true; box.disabled = true; }
+      else if (box.disabled) { box.checked = false; box.disabled = false; }
+    });
+  }
+
+  document.addEventListener('change', (e) => {
+    const box = e.target;
+    if (box.name !== 'service' || !box.form) return;
+    if (box.checked && (box.value === 'create' || box.value === 'review')) {
+      const other = box.form.querySelector('input[name="service"][value="' + (box.value === 'create' ? 'review' : 'create') + '"]');
+      if (other) other.checked = false;
+    }
+    syncIncludedServices(box.form);
+  });
+  document.addEventListener('reset', (e) => { setTimeout(() => syncIncludedServices(e.target), 0); });
 
   leadForm.addEventListener('change', (e) => { if (e.target.name === 'service') syncServiceValidity(); });
   leadForm?.addEventListener('submit', async (e) => {

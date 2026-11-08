@@ -1293,3 +1293,15 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
+
+/* Contact form: full services include the single ones. */
+.lead-choice-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem; margin: 1rem 0 .15rem; font-size: .95rem; font-weight: 600; color: #fff; }
+.lead-choice-note { margin: 0 0 .35rem; font-size: .85rem; line-height: 1.4; color: #bbb; }
+.lead-choices--stack { display: flex; flex-direction: column; align-items: stretch; gap: .1rem; }
+.lead-choices--stack label { display: flex; width: 100%; }
+.lead-choices--stack label span { flex: 1 1 auto; }
+.lead-cadence, .lead-included { flex: none; font-size: .72rem; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: #9fb0b5; }
+.lead-included { display: none; color: #36d9ce; }
+.lead-choices--stack label:has(input:disabled) .lead-included { display: inline; }
+.lead-choices--stack label:has(input:disabled) { cursor: not-allowed; }
+.contact-end-form .lead-choices input[type="checkbox"]:disabled { cursor: not-allowed; opacity: .75; }
