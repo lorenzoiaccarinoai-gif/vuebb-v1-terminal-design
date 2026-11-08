@@ -1328,3 +1328,6 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 #servizi .catalog-note + .product-grid, #servizi .catalog-heading + .product-grid { margin-top: 1.5rem; }
 #servizi .service-cadence { display: inline-block; margin: .5rem 0 .75rem; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: #aaa; }
 #pricing .catalog-cta { margin-top: 1.5rem; display: inline-flex; }
+
+/* Keep catalog feature tags readable on the dark background. */
+#servizi .product-body li:not(.feature-accent) { color: #f5f5f5; border-color: rgba(255,255,255,.4); }
