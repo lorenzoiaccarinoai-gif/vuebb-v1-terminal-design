@@ -1141,25 +1141,10 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 
 #filosofia .gradient-text {
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(100deg, #2af0a8 0%, #14dccb 28%, #12bdf0 58%, #3f7bff 100%);
-  background-image: linear-gradient(100deg in oklch, #2af0a8 0%, #12bdf0 58%, #3f7bff 100%);
-  background-size: 160% 100%;
-  background-position: 0% 50%;
+  background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: filo-gradient-drift 9s ease-in-out infinite alternate;
-}
-
-@keyframes filo-gradient-drift {
-  to { background-position: 100% 50%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #filosofia .gradient-text {
-    animation: none;
-    background-size: 100% 100%;
-  }
 }
 
 /* The first homepage section clears the fixed header. */
