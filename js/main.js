@@ -471,12 +471,6 @@
             <label class="lead-choice--addon"><input type="checkbox" name="service" value="ultra" disabled><span data-i18n="lead.service.ultra">Vuebb Ultra</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
             <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.ultra.desc">Tutte le funzioni di Vuebb Pro, con in più fino a 5 aggiornamenti contenutistici e 1 aggiornamento strutturale al mese e supporto prioritario.</p>
           </div>
-          <p class="lead-choice-heading"><span data-i18n="lead.service.single">Oppure scegli un singolo intervento</span> <small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></p>
-          <div class="lead-choices lead-choices--stack">
-            <label><input type="checkbox" name="service" value="performance"><span data-i18n="lead.service.performance">Ottimizzazione Performance</span><small class="lead-included" data-i18n="lead.service.included">Incluso</small></label>
-            <label><input type="checkbox" name="service" value="seo"><span data-i18n="lead.service.seo">Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</span><small class="lead-included" data-i18n="lead.service.included">Incluso</small></label>
-            <label><input type="checkbox" name="service" value="privacy"><span data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</span><small class="lead-included" data-i18n="lead.service.included">Incluso</small></label>
-          </div>
         </fieldset>
         <label class="lead-field">
           <span data-i18n="lead.project">Due righe sul progetto e i tuoi obiettivi</span>
