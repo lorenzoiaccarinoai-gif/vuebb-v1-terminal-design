@@ -4,11 +4,14 @@
   "description": "Siti, web app ed e-commerce ultra personalizzati. Interfacce che coinvolgono e convertono.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f0f0f0",
+  "background_color": "#000000",
   "theme_color": "#052424",
   "icons": [
-    { "src": "/favicon-48.png", "sizes": "48x48", "type": "image/png" },
-    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+    {
+      "src": "/images/favicon-vuebb-neon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
   ]
 }

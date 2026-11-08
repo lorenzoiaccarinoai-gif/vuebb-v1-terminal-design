@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <title>Vuebb</title>
+  <defs>
+    <linearGradient id="gradient" x1="318" y1="0" x2="640" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00f1bb"/>
+      <stop offset="0.5" stop-color="#00bfe9"/>
+      <stop offset="1" stop-color="#3178ff"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(5 47) scale(1.114286 1.112727) translate(-307 -376)" fill="#000" stroke="url(#gradient)" stroke-width="7" stroke-linejoin="miter">
+    <path d="M318 390 H424 L534 550 L486 625 Z"/>
+    <path d="M470 390 H640 L556 518 Z"/>
+  </g>
+</svg>

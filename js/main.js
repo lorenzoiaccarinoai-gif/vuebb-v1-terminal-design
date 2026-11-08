@@ -440,8 +440,12 @@
           </div>
         </fieldset>
         <label class="lead-field">
-          <span data-i18n="lead.company">Nome attività o azienda, se c’è</span>
-          <input name="company" type="text" autocomplete="organization">
+          <span data-i18n="lead.company">Nome attività / azienda</span>
+          <input name="company" type="text" autocomplete="organization" disabled>
+        </label>
+        <label class="lead-field">
+          <span data-i18n="lead.role">Ruolo in attività / azienda</span>
+          <input name="role" type="text" autocomplete="organization-title" disabled>
         </label>
         <div class="lead-split">
           <label class="lead-field">
@@ -462,7 +466,7 @@
           </div>
         </fieldset>
         <label class="lead-field">
-          <span data-i18n="lead.project">Due righe sul progetto</span>
+          <span data-i18n="lead.project">Due righe sul progetto e i tuoi obiettivi</span>
           <textarea name="project" rows="3" required minlength="8"></textarea>
         </label>
         <p class="lead-privacy" data-i18n="lead.privacy">Inviando confermi di aver letto l’<a href="privacy-policy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
@@ -473,6 +477,20 @@
       </form>
     </div>`;
   document.body.appendChild(leadModal);
+
+  function updateCompanyField(form) {
+    const kind = form.querySelector('input[name="kind"]:checked');
+    form.querySelectorAll('input[name="company"], input[name="role"]').forEach((field) => {
+      field.disabled = !kind || !['shop', 'biz'].includes(kind.value);
+      if (kind && kind.value === 'pro') field.value = '';
+    });
+  }
+  document.addEventListener('change', (event) => {
+    if (event.target.matches('.lead-form input[name="kind"]')) updateCompanyField(event.target.form);
+  });
+  document.addEventListener('reset', (event) => {
+    if (event.target.matches('.lead-form')) setTimeout(() => updateCompanyField(event.target), 0);
+  }, true);
   window.VuebbI18n?.apply();
 
   const leadForm = document.getElementById('lead-form');
@@ -559,6 +577,7 @@
       name: String(data.get('name') || '').trim(),
       kind: kind,
       company: String(data.get('company') || '').trim(),
+      role: String(data.get('role') || '').trim(),
       email: String(data.get('email') || '').trim(),
       phone: String(data.get('phone') || '').trim(),
       service: service,
@@ -574,6 +593,7 @@
         'Hello Vuebb, I am ' + info.name + '.',
         'I am: ' + info.kind + '.',
         'Business or company: ' + (info.company || '—'),
+        'Role: ' + (info.role || '—'),
         'Email: ' + info.email,
         'Phone: ' + info.phone,
         'Interested in: ' + info.service,
@@ -584,6 +604,7 @@
       'Ciao Vuebb, sono ' + info.name + '.',
       'Sono: ' + info.kind + '.',
       'Attività o azienda: ' + (info.company || '—'),
+      'Ruolo: ' + (info.role || '—'),
       'E-mail: ' + info.email,
       'Telefono: ' + info.phone,
       'Interessato a: ' + info.service,
@@ -604,6 +625,7 @@
         Nome: info.name,
         Tipo: info.kind,
         'Attività o azienda': info.company || '—',
+        Ruolo: info.role || '—',
         Email: info.email,
         Telefono: info.phone,
         Servizio: info.service,

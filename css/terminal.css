@@ -144,28 +144,6 @@ body {
   background-color: #e4e4e2;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  left: 0;
-  right: 0;
-  top: var(--header);
-  bottom: 0;
-  background-image: url("../images/hero-terminal.jpg");
-  background-image: image-set(
-    url("../images/hero-terminal.webp") type("image/webp"),
-    url("../images/hero-terminal.jpg") type("image/jpeg")
-  );
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: blur(11px);
-  transform: scale(1.1);
-  transform-origin: center top;
-  pointer-events: none;
-}
-
 .hero::before {
   content: "";
   position: absolute;
@@ -1118,7 +1096,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 .contact-end-form .lead-field input:not([type="radio"]), .contact-end-form .lead-field textarea { background: #000; color: #fff; border: 1px solid #aaa; }
 .contact-end-form .lead-field input:focus-visible, .contact-end-form .lead-field textarea:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .contact-end-form .lead-choices label { background: #000; color: #fff; border: 1px solid #999; }
-.contact-end-form .lead-choices label:has(input:checked) { background: #fff; color: #111; border-color: #fff; }
+.contact-end-form .lead-choices label:has(input:checked) { background: transparent; color: #fff; }
 .contact-end-form .lead-choices input { accent-color: #c13584; }
 .contact-end-form .lead-privacy, .contact-end-form .lead-privacy a { color: #ccc; }
 .contact-end-form .lead-status.is-ok { color: #b7f6d0; }
@@ -1150,3 +1128,153 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 .contact-end-form .lead-choices input { accent-color: #22cbbf; }
 .page-routes .route-card .route-go, .footer-legal a:hover, .footer-cookie-btn:hover { color: #35dcca; }
 ::selection { background: #24cdbf; color: #001915; }
+
+/* Service accents match the primary call-to-action. */
+#servizi .product-visual.v1, #servizi .product-visual.v2, #servizi .product-visual.v3 {
+  background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff) !important;
+}
+
+/* Dark hero and high-contrast copy. */
+.hero { background-color: #000; }
+.hero::before { display: none; }
+.hero-tagline { color: #fff; }
+
+#filosofia .gradient-text {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* The first homepage section clears the fixed header. */
+#sezioni.page-routes { padding-top: calc(var(--header) + clamp(2rem, 5vw, 5rem)); }
+
+/* Balance the homepage introduction beneath the navigation. */
+#filosofia .philosophy-intro { align-self: end; }
+#filosofia .philosophy-intro .section-desc { margin-top: 0; }
+@media (max-width: 800px) {
+  #filosofia .philosophy-intro { align-self: auto; }
+}
+
+/* Align the introduction with the section below. */
+.page-routes #filosofia { padding-inline: 0; }
+
+/* Keep section headings aligned with the shared content container. */
+.page-main > .section > .container > .section-header,
+#contatti .contact-panel,
+#contatti .contact-panel:hover,
+#contatti .contact-panel.is-hover {
+  padding-inline: 0;
+}
+.contact-end-copy { padding-inline: 0; }
+@media (max-width: 800px) {
+  .contact-end-form { padding-inline: 0; }
+}
+
+/* Shared spacing rhythm for sections and their contents. */
+:root {
+  --layout-section-gap: clamp(4rem, 7vw, 6rem);
+  --layout-content-gap: clamp(2rem, 4vw, 3.5rem);
+  --layout-column-gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+#sezioni.page-routes {
+  padding-top: calc(var(--header) + var(--layout-content-gap));
+  padding-bottom: calc(var(--layout-section-gap) / 2);
+}
+.page-routes #filosofia {
+  padding-block: var(--layout-content-gap);
+  gap: var(--layout-content-gap);
+}
+.page-routes .spec-grid {
+  gap: var(--layout-column-gap);
+  margin-bottom: var(--layout-section-gap);
+}
+.page-routes .spec-card,
+.page-routes .spec-card:not(.highlight) {
+  min-height: 0;
+  padding: var(--layout-content-gap) 0 0;
+}
+.page-routes .philosophy-number { margin-bottom: 1.5rem; }
+.home-explore-header { margin-bottom: var(--layout-content-gap); }
+.page-routes .route-grid { gap: var(--layout-column-gap); }
+.page-routes .route-card { padding: 1.5rem 0; }
+.page-main > .section > .container > .section-header {
+  padding-block: 0 var(--layout-content-gap);
+}
+.contact-end { padding-block: calc(var(--layout-section-gap) / 2) var(--layout-section-gap); }
+.contact-end-grid { gap: var(--layout-content-gap); }
+.contact-end-form { padding: 0; }
+.contact-end-form .lead-form { gap: 1.25rem; }
+@media (max-width: 800px) {
+  .page-routes #filosofia { gap: 1.75rem; }
+  .page-routes .spec-grid, .page-routes .route-grid { gap: 1.5rem; }
+  .page-routes .spec-card, .page-routes .spec-card:not(.highlight) { padding-top: 1.5rem; }
+  .page-routes .route-card { min-height: 0; }
+}
+
+/* Keep the same separation before the shared contact form on every page. */
+.page-main > .section:last-child,
+.policy-main {
+  padding-bottom: calc(var(--layout-section-gap) / 2);
+}
+#contatti .contact-panel,
+#contatti .contact-panel:hover,
+#contatti .contact-panel.is-hover,
+.policy-panel {
+  padding-bottom: 0;
+}
+
+/* Logo originale: dimensioni leggibili nella navigazione e nel footer. */
+.header .logo-img, .footer .logo-img { height: 52px; width: auto; }
+@media (max-width: 768px) { .header .logo-img { height: 42px; } }
+@media (max-width: 380px) { .header .logo-img { height: 36px; } }
+
+/* Square choice indicators for the contact form. */
+.contact-end-form .lead-choices input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: 1px solid #aaa;
+  border-radius: 0;
+  background: #000;
+  cursor: pointer;
+}
+.contact-end-form .lead-choices input[type="radio"]:checked {
+  border-color: transparent;
+  background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
+}
+.contact-end-form .lead-choices input[type="radio"]:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Square selection indicators with the Vuebb gradient. */
+.contact-end-form .lead-choices input[type="radio"] {
+  flex-basis: 1.05rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  border: 1px solid #b3c0c4;
+  border-radius: 2px;
+  background: #090d0e;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.contact-end-form .lead-choices input[type="radio"]:checked {
+  border-color: #36d9ce;
+  background: linear-gradient(135deg, #15eaa1 0%, #00bfe7 52%, #3274ff 100%);
+  box-shadow: inset 0 0 0 2px #071317;
+}
+
+.lead-field input[name="company"]:disabled, .lead-field input[name="role"]:disabled { opacity: .45; cursor: not-allowed; }
+
+.cta-response-accent {
+  color: #31d6c4;
+  background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}

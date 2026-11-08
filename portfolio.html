@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <link rel="icon" href="/images/favicon-vuebb-neon.svg?v=20261105j" type="image/svg+xml" sizes="any">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Vuebb</title>
   <meta name="description" content="Lavori Vuebb in corso: siti boutique unici, attualmente in lavorazione.">
   <link rel="canonical" href="https://vuebb.com/portfolio">
-  <link rel="icon" href="/favicon.ico" sizes="48x48">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
@@ -30,7 +26,7 @@
   <link rel="stylesheet" href="css/boot.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/portfolio.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/metodo.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/terminal.css?v=risposta-20261105">
 </head>
 <body data-i18n-title="page.portfolio">
   <div class="mesh" aria-hidden="true">
@@ -48,7 +44,7 @@
         <picture>
 
 
-          <img src="images/logo-vuebb-ondark.png" alt="Vuebb" class="logo-img" width="1160" height="221">
+          <img src="images/logo-vuebb-neon-aligned.svg" alt="Vuebb" class="logo-img" width="1160" height="221">
         </picture>
       </a>
       <nav class="nav" id="nav">
@@ -154,7 +150,7 @@
 
   <section class="contact-end" aria-labelledby="contact-end-title">
     <div class="container contact-end-grid">
-      <div class="contact-end-copy"><span class="section-label" data-i18n="cta.label">Iniziamo</span><h2 id="contact-end-title" data-i18n="cta.title">Raccontaci il tuo progetto</h2><p data-i18n="cta.desc">Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.</p></div>
+      <div class="contact-end-copy"><span class="section-label" data-i18n="cta.label">Iniziamo</span><h2 id="contact-end-title" data-i18n="cta.title">Raccontaci il tuo progetto</h2><p data-i18n="cta.desc">Ogni storia di successo inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.<br><br>Ci impegneremo a illustrarti come le soluzioni digitali di Vuebb possono potenziare il tuo business: <span class="cta-response-accent">risposta garantita entro 24 ore</span>.</p></div>
       <div class="contact-end-form">      <form class="lead-form" id="footer-lead-form" novalidate>
         <input class="lead-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="lead-field">
@@ -170,8 +166,12 @@
           </div>
         </fieldset>
         <label class="lead-field">
-          <span data-i18n="lead.company">Nome attività o azienda, se c’è</span>
-          <input name="company" type="text" autocomplete="organization">
+          <span data-i18n="lead.company">Nome attività / azienda</span>
+          <input name="company" type="text" autocomplete="organization" disabled>
+        </label>
+        <label class="lead-field">
+          <span data-i18n="lead.role">Ruolo in attività / azienda</span>
+          <input name="role" type="text" autocomplete="organization-title" disabled>
         </label>
         <div class="lead-split">
           <label class="lead-field">
@@ -192,7 +192,7 @@
           </div>
         </fieldset>
         <label class="lead-field">
-          <span data-i18n="lead.project">Due righe sul progetto</span>
+          <span data-i18n="lead.project">Due righe sul progetto e i tuoi obiettivi</span>
           <textarea name="project" rows="3" required minlength="8"></textarea>
         </label>
         <p class="lead-privacy" data-i18n="lead.privacy">Inviando confermi di aver letto l’<a href="privacy-policy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
@@ -208,9 +208,9 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <picture>
-          <source type="image/svg+xml" srcset="images/logo-vuebb-ondark.svg">
+          <source type="image/svg+xml" srcset="images/logo-vuebb-neon-aligned.svg">
           <source type="image/webp" srcset="images/logo-vuebb-ondark.webp">
-          <img src="images/logo-vuebb-ondark.png" alt="Vuebb" class="logo-img" width="1160" height="221">
+          <img src="images/logo-vuebb-neon-aligned.svg" alt="Vuebb" class="logo-img" width="1160" height="221">
         </picture>
       </div>
       <div class="footer-legal">
@@ -267,9 +267,9 @@
     </div>
   </div>
 
-  <script src="js/i18n.js" defer></script>
-  <script src="js/contact-footer.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/i18n.js?v=storia-20261105" defer></script>
+  <script src="js/contact-footer.js?v=ruolo-20261105" defer></script>
+  <script src="js/main.js?v=obiettivi-20261105" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>
 </html>

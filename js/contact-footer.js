@@ -28,6 +28,7 @@
           _template: 'table', _captcha: 'false', _replyto: String(data.get('email')).trim(),
           Nome: String(data.get('name')).trim(), Tipo: t(kind[data.get('kind')]),
           'Attività o azienda': String(data.get('company') || '').trim() || '—',
+          Ruolo: String(data.get('role') || '').trim() || '—',
           Email: String(data.get('email')).trim(), Telefono: String(data.get('phone')).trim(),
           Servizio: t(service[data.get('service')]), Progetto: String(data.get('project')).trim(),
           Canale: 'Richiesta di contatto', Lingua: window.VuebbI18n ? window.VuebbI18n.lang().toUpperCase() : 'IT'

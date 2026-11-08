@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <link rel="icon" href="/images/favicon-vuebb-neon.svg?v=20261105j" type="image/svg+xml" sizes="any">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Quali cookie usa questo sito, incluso il popup di prenotazione call, e come sceglierli.">
   <title>Informativa cookie — Vuebb</title>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="preload" href="fonts/geist-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/geist-sans-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/portfolio.css">
-  <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/terminal.css?v=risposta-20261105">
 </head>
 <body class="is-ready policy-page" data-page="page.cookie" data-desc="cp.lead">
   <div class="mesh" aria-hidden="true">
@@ -31,7 +27,7 @@
         <picture>
 
 
-          <img src="images/logo-vuebb-ondark.png" alt="Vuebb" class="logo-img" width="1160" height="221">
+          <img src="images/logo-vuebb-neon-aligned.svg" alt="Vuebb" class="logo-img" width="1160" height="221">
         </picture>
       </a>
       <a href="index.html" class="btn btn-lime btn-sm">Home</a>
@@ -95,7 +91,7 @@
   </main>
   <section class="contact-end" aria-labelledby="contact-end-title">
     <div class="container contact-end-grid">
-      <div class="contact-end-copy"><span class="section-label" data-i18n="cta.label">Iniziamo</span><h2 id="contact-end-title" data-i18n="cta.title">Raccontaci il tuo progetto</h2><p data-i18n="cta.desc">Ogni collaborazione inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.</p></div>
+      <div class="contact-end-copy"><span class="section-label" data-i18n="cta.label">Iniziamo</span><h2 id="contact-end-title" data-i18n="cta.title">Raccontaci il tuo progetto</h2><p data-i18n="cta.desc">Ogni storia di successo inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.<br><br>Ci impegneremo a illustrarti come le soluzioni digitali di Vuebb possono potenziare il tuo business: <span class="cta-response-accent">risposta garantita entro 24 ore</span>.</p></div>
       <div class="contact-end-form">      <form class="lead-form" id="footer-lead-form" novalidate>
         <input class="lead-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="lead-field">
@@ -111,8 +107,12 @@
           </div>
         </fieldset>
         <label class="lead-field">
-          <span data-i18n="lead.company">Nome attività o azienda, se c’è</span>
-          <input name="company" type="text" autocomplete="organization">
+          <span data-i18n="lead.company">Nome attività / azienda</span>
+          <input name="company" type="text" autocomplete="organization" disabled>
+        </label>
+        <label class="lead-field">
+          <span data-i18n="lead.role">Ruolo in attività / azienda</span>
+          <input name="role" type="text" autocomplete="organization-title" disabled>
         </label>
         <div class="lead-split">
           <label class="lead-field">
@@ -133,7 +133,7 @@
           </div>
         </fieldset>
         <label class="lead-field">
-          <span data-i18n="lead.project">Due righe sul progetto</span>
+          <span data-i18n="lead.project">Due righe sul progetto e i tuoi obiettivi</span>
           <textarea name="project" rows="3" required minlength="8"></textarea>
         </label>
         <p class="lead-privacy" data-i18n="lead.privacy">Inviando confermi di aver letto l’<a href="privacy-policy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
@@ -145,7 +145,7 @@
     </div>
   </section>
 
-  <script src="js/i18n.js" defer></script>
-  <script src="js/contact-footer.js" defer></script>
+  <script src="js/i18n.js?v=storia-20261105" defer></script>
+  <script src="js/contact-footer.js?v=ruolo-20261105" defer></script>
 </body>
 </html>
