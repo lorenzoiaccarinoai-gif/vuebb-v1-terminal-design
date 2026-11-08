@@ -31,6 +31,22 @@
     syncIncludedServices(box.form);
   });
   document.addEventListener('reset', (e) => { setTimeout(() => syncIncludedServices(e.target), 0); });
+  function syncBusinessFields(form) {
+    const kind = form.querySelector('input[name="kind"]:checked');
+    const isBusiness = !!kind && ['shop', 'biz'].includes(kind.value);
+    const group = form.querySelector('.lead-business');
+    if (group) group.hidden = !isBusiness;
+    form.querySelectorAll('input[name="company"], input[name="role"]').forEach((field) => {
+      field.disabled = !isBusiness;
+      if (!isBusiness) field.value = '';
+    });
+  }
+  document.addEventListener('change', (e) => {
+    if (e.target.matches('.lead-form input[name="kind"]')) syncBusinessFields(e.target.form);
+  });
+  document.addEventListener('reset', (e) => {
+    if (e.target.matches('.lead-form')) setTimeout(() => syncBusinessFields(e.target), 0);
+  });
   const floatingContact = document.querySelector('.cta-book-float');
   const contactSection = document.getElementById('contatto');
   if (floatingContact && contactSection && 'IntersectionObserver' in window) {

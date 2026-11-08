@@ -1292,9 +1292,9 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 .contact-end-form .lead-choices input[type="checkbox"]:disabled { cursor: not-allowed; opacity: .75; }
 
 /* Maintenance is an add-on to website creation or review. */
-.lead-choices--stack label.lead-choice--addon { width: auto; margin-left: 1.6rem; }
+.lead-choices--stack label.lead-choice--addon { width: auto; margin-left: 0; }
 .lead-choices--stack label.lead-choice--addon:has(input:disabled) { opacity: .5; }
-.lead-choice-note--addon { margin: -.35rem 0 .35rem calc(1.6rem + .75rem + 1.05rem + .45rem); }
+.lead-choice-note--addon { margin: -.35rem 0 .35rem calc(.75rem + 1.05rem + .45rem); }
 
 /* Home philosophy cards stay still on hover. */
 .page-routes .spec-card:hover,
@@ -1368,3 +1368,39 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
   #servizi .plan-card--featured { margin: 0 -1rem; padding: 1.75rem 1rem !important; }
 }
 #servizi .catalog-bundle .product-body .plan-inherit { margin-top: 1.1rem; }
+.lead-field legend + .lead-choice-note { margin-top: .6rem; }
+.lead-choice-subheading { margin: 1.5rem 0 .6rem; color: #ccc; font-family: "Geist Mono", ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: 1.32px; text-transform: uppercase; }
+.lead-choice-subheading + .lead-choice-note { margin-top: 0; }
+
+/* Contact form: compact details and selectable service cards. */
+.lead-split--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lead-form .lead-choices--cards, .lead-form .lead-choices--segmented { display: grid; gap: .6rem; }
+.lead-form .lead-choices--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: .6rem; }
+.lead-form .lead-choices--plans { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lead-form .lead-choices--segmented { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lead-form .lead-choices--cards label.lead-card, .lead-form .lead-choices--segmented label { position: relative; cursor: pointer; border: 1px solid rgba(255,255,255,.35); background: transparent; color: #fff; transition: border-color .15s ease, background-color .15s ease; }
+.lead-form .lead-choices--cards label.lead-card { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: .45rem; width: auto; padding: 1rem 1.1rem; }
+.lead-form .lead-choices--segmented label { display: flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: .4rem .6rem; text-align: center; font-size: .9rem; }
+.lead-form .lead-choices--cards label.lead-card input, .lead-form .lead-choices--segmented label input { position: absolute; width: 1px !important; height: 1px !important; margin: 0; opacity: 0 !important; pointer-events: none; }
+.lead-form .lead-choices--cards label.lead-card:hover:not(:has(input:disabled)), .lead-form .lead-choices--segmented label:hover { border-color: #fff; }
+.lead-form .lead-choices--cards label.lead-card:has(input:checked), .lead-form .lead-choices--segmented label:has(input:checked) { border-color: #15eaa1; background: rgba(21,234,161,.1); }
+.lead-form .lead-choices--cards label.lead-card:has(input:focus-visible), .lead-form .lead-choices--segmented label:has(input:focus-visible) { outline: 2px solid #fff; outline-offset: 2px; }
+.lead-form .lead-choices--cards label.lead-card:has(input:checked)::after { content: "\2713"; position: absolute; top: .7rem; right: .85rem; color: #15eaa1; font-size: .9rem; }
+.lead-form .lead-choices--cards label.lead-card:has(input:disabled) { cursor: not-allowed; opacity: .5; }
+.lead-form .lead-choices--cards label.lead-card.lead-card--featured { background: linear-gradient(180deg, rgba(0,191,231,.16), rgba(0,191,231,0) 80%); }
+.lead-form .lead-choices--cards label.lead-card.lead-card--featured:has(input:checked) { background: linear-gradient(180deg, rgba(21,234,161,.2), rgba(0,191,231,.03) 80%); }
+.lead-card-name { padding-right: 1.1rem; font-size: 1rem; font-weight: 500; line-height: 1.25; }
+.lead-card-name em { display: block; margin-top: .25rem; color: #15eaa1; font-size: .62rem; font-style: normal; letter-spacing: .1em; text-transform: uppercase; }
+.lead-card-price { color: #aaa; font-size: .7rem; letter-spacing: .04em; text-transform: uppercase; }
+.lead-card-price strong { margin-right: .15rem; color: #fff; font-size: 1.35rem; font-weight: 400; letter-spacing: -.02em; text-transform: none; }
+.lead-card-desc { color: #c2c2c2; font-size: .8rem; line-height: 1.4; }
+@media (max-width: 760px) {
+  .lead-split--3, .lead-form .lead-choices--plans { grid-template-columns: 1fr; }
+  .lead-card-name em { display: inline; margin-left: .35rem; }
+}
+.lead-card-price strong { display: block; margin: 0 0 .1rem; }
+
+/* Selected form choices follow the site gradient. */
+.lead-form .lead-choices--cards label.lead-card:has(input:checked), .lead-form .lead-choices--segmented label:has(input:checked), .lead-form .lead-choices--cards label.lead-card.lead-card--featured:has(input:checked) { border: 1px solid transparent; background: linear-gradient(110deg, rgba(21,234,161,.17), rgba(0,191,231,.17), rgba(50,116,255,.17)) padding-box, linear-gradient(#000, #000) padding-box, linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff) border-box; }
+.lead-form .lead-choices--cards label.lead-card:has(input:checked)::after { background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead-business[hidden] { display: none; }

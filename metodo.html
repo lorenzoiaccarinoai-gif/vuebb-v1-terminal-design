@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="css/boot.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/portfolio.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/metodo.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/terminal.css?v=risposta-20261105">
+  <link rel="stylesheet" href="css/terminal.css?v=campi-attivita-20261108">
 </head>
 <body data-i18n-title="page.metodo">
   <div class="mesh" aria-hidden="true">
@@ -58,7 +58,6 @@
         </ul>
         <a class="btn btn-lime btn-sm" href="#contatto" data-i18n="nav.contatti">Contattaci</a>
       </nav>
-      <button type="button" class="btn btn-lime btn-sm cta-book cta-book-header" data-book-call data-i18n="cta.book">Prenota Call Demo</button>
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambia lingua">
         <span class="flag" id="langFlag"><svg viewBox="0 0 3 2" width="18" height="12" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></span>
         <span class="lang-code" id="langCode">IT</span>
@@ -104,30 +103,14 @@
 
   <section class="contact-end" id="contatto" aria-labelledby="contact-end-title">
     <div class="container contact-end-grid">
-      <div class="contact-end-copy"><span class="section-label" data-i18n="cta.label">Iniziamo</span><h2 id="contact-end-title" data-i18n="cta.title">Raccontaci il tuo progetto</h2><p data-i18n="cta.desc">Ogni storia di successo inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.<br><br>Ci impegneremo a illustrarti come le soluzioni digitali di Vuebb possono potenziare il tuo business: <span class="cta-response-accent">risposta garantita entro 24 ore</span>.</p></div>
+      <div class="contact-end-copy"><span class="section-label" data-i18n="cta.label">Iniziamo</span><h2 id="contact-end-title" data-i18n="cta.title">Racconta il tuo progetto, senza impegno</h2><p data-i18n="cta.desc">Ogni storia di successo inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.<br><br>Ci impegneremo a illustrarti come le soluzioni digitali di Vuebb possono potenziare il tuo business: <span class="cta-response-accent">risposta garantita entro 24 ore</span>.</p></div>
       <div class="contact-end-form">      <form class="lead-form" id="footer-lead-form" novalidate>
         <input class="lead-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <label class="lead-field">
-          <span data-i18n="lead.name">Nome e cognome</span>
-          <input name="name" type="text" autocomplete="name" required minlength="3">
-        </label>
-        <fieldset class="lead-field">
-          <legend data-i18n="lead.kind">Sei</legend>
-          <div class="lead-choices">
-            <label><input type="radio" name="kind" value="pro" required><span data-i18n="lead.kind.pro">Professionista</span></label>
-            <label><input type="radio" name="kind" value="shop"><span data-i18n="lead.kind.shop">Attività commerciale</span></label>
-            <label><input type="radio" name="kind" value="biz"><span data-i18n="lead.kind.biz">Azienda</span></label>
-          </div>
-        </fieldset>
-        <label class="lead-field">
-          <span data-i18n="lead.company">Nome attività / azienda</span>
-          <input name="company" type="text" autocomplete="organization" disabled>
-        </label>
-        <label class="lead-field">
-          <span data-i18n="lead.role">Ruolo in attività / azienda</span>
-          <input name="role" type="text" autocomplete="organization-title" disabled>
-        </label>
-        <div class="lead-split">
+        <div class="lead-split lead-split--3">
+          <label class="lead-field">
+            <span data-i18n="lead.name">Nome e cognome</span>
+            <input name="name" type="text" autocomplete="name" required minlength="3">
+          </label>
           <label class="lead-field">
             <span data-i18n="lead.email">E-mail</span>
             <input name="email" type="email" autocomplete="email" required>
@@ -138,18 +121,36 @@
           </label>
         </div>
         <fieldset class="lead-field">
-          <legend data-i18n="lead.service">Servizio</legend>
-          <p class="lead-choice-heading" data-i18n="lead.service.full">Servizio completo</p>
-          <p class="lead-choice-note" data-i18n="lead.service.full.note">Include ottimizzazione performance, posizionamento e verifica privacy</p>
-          <div class="lead-choices lead-choices--stack">
-            <label><input type="checkbox" name="service" value="create"><span data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-cadence" data-i18n="lead.price.create">€ 799 IVA inclusa</small></label>
-            <label><input type="checkbox" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-cadence" data-i18n="lead.price.review">€ 499 IVA inclusa</small></label>
-            <label class="lead-choice--addon"><input type="checkbox" name="service" value="basic" disabled><span data-i18n="lead.service.basic">Vuebb Basic</span><small class="lead-cadence" data-i18n="lead.price.basic">+ € 14 / mese IVA inclusa</small></label>
-            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.basic.desc">Il tuo sito resta online nel tempo, con hosting, manutenzione mensile di base e verifica mensile del rispetto delle leggi sulla privacy.</p>
-            <label class="lead-choice--addon"><input type="checkbox" name="service" value="maintenance" disabled><span data-i18n="lead.service.maintenance.label">Vuebb Pro (Consigliato)</span><small class="lead-cadence" data-i18n="lead.price.maintenance">+ € 24 / mese IVA inclusa</small></label>
-            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.maintenance.desc">Tutte le funzioni di Vuebb Basic, con in più ottimizzazione mensile di performance e posizionamento nei risultati di ricerca e fino a 2 aggiornamenti contenutistici al mese.</p>
-            <label class="lead-choice--addon"><input type="checkbox" name="service" value="ultra" disabled><span data-i18n="lead.service.ultra">Vuebb Ultra</span><small class="lead-cadence" data-i18n="lead.price.ultra">+ € 49 / mese IVA inclusa</small></label>
-            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.ultra.desc">Tutte le funzioni di Vuebb Pro, con in più fino a 5 aggiornamenti contenutistici e 1 aggiornamento strutturale al mese e supporto prioritario.</p>
+          <legend data-i18n="lead.kind">Sei</legend>
+          <div class="lead-choices lead-choices--segmented">
+            <label><input type="radio" name="kind" value="pro" required><span data-i18n="lead.kind.pro">Professionista</span></label>
+            <label><input type="radio" name="kind" value="shop"><span data-i18n="lead.kind.shop">Attività commerciale</span></label>
+            <label><input type="radio" name="kind" value="biz"><span data-i18n="lead.kind.biz">Azienda</span></label>
+          </div>
+        </fieldset>
+        <div class="lead-split lead-business" hidden>
+          <label class="lead-field">
+            <span data-i18n="lead.company">Nome attività / azienda</span>
+            <input name="company" type="text" autocomplete="organization" disabled>
+          </label>
+          <label class="lead-field">
+            <span data-i18n="lead.role">Ruolo in attività / azienda</span>
+            <input name="role" type="text" autocomplete="organization-title" disabled>
+          </label>
+        </div>
+        <fieldset class="lead-field">
+          <legend data-i18n="lead.service">Servizi una tantum</legend>
+          <p class="lead-choice-note" data-i18n="lead.service.full.note">Include ottimizzazione performance, posizionamento nei risultati di ricerca e verifica privacy.</p>
+          <div class="lead-choices lead-choices--cards">
+            <label class="lead-card"><input type="checkbox" name="service" value="create"><span class="lead-card-name" data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-card-price" data-i18n="lead.price.create"><strong>€ 799</strong> IVA inclusa</small></label>
+            <label class="lead-card"><input type="checkbox" name="service" value="review"><span class="lead-card-name" data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-card-price" data-i18n="lead.price.review"><strong>€ 499</strong> IVA inclusa</small></label>
+          </div>
+          <p class="lead-choice-subheading" data-i18n="lead.service.recurring">Servizi ricorrenti</p>
+          <p class="lead-choice-note" data-i18n="lead.service.recurring.note">Ogni mese supportiamo il tuo sito. Questi servizi si aggiungono a quelli una tantum: richiedono la Creazione o la Revisione del Sito Web.</p>
+          <div class="lead-choices lead-choices--cards lead-choices--plans">
+            <label class="lead-card"><input type="checkbox" name="service" value="basic" disabled><span class="lead-card-name" data-i18n="lead.service.basic">Vuebb Basic</span><small class="lead-card-price" data-i18n="lead.price.basic"><strong>+ € 14</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.basic.desc">Hosting, manutenzione mensile di base e verifica mensile della privacy.</small></label>
+            <label class="lead-card lead-card--featured"><input type="checkbox" name="service" value="maintenance" disabled><span class="lead-card-name"><span data-i18n="lead.service.maintenance">Vuebb Pro</span> <em data-i18n="serv.plan.recommended">Consigliato</em></span><small class="lead-card-price" data-i18n="lead.price.maintenance"><strong>+ € 24</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.maintenance.desc">Tutte le funzioni di Basic, più ottimizzazione mensile di performance e posizionamento e fino a 2 aggiornamenti contenutistici al mese.</small></label>
+            <label class="lead-card"><input type="checkbox" name="service" value="ultra" disabled><span class="lead-card-name" data-i18n="lead.service.ultra">Vuebb Ultra</span><small class="lead-card-price" data-i18n="lead.price.ultra"><strong>+ € 49</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.ultra.desc">Tutte le funzioni di Pro, più fino a 5 aggiornamenti contenutistici e 1 strutturale al mese e supporto prioritario.</small></label>
           </div>
         </fieldset>
         <label class="lead-field">
@@ -200,27 +201,9 @@
   </div>
 
 
-  <div class="book-modal" id="book-modal" hidden role="dialog" aria-modal="true" aria-labelledby="book-title">
-    <div class="book-modal-panel">
-      <div class="book-modal-head">
-        <div class="book-modal-copy">
-          <span class="section-label" data-i18n="book.label">Prenotazione</span>
-          <h2 id="book-title" data-i18n="cta.book">Prenota Call Demo</h2>
-          <p data-i18n="book.desc">30 minuti. Nessun impegno — solo ascolto e chiarezza.</p>
-          <p class="book-modal-legal" data-i18n="book.legal">Il form è di Google Calendar. <a href="privacy-policy.html" target="_blank" rel="noopener">Informativa privacy</a> · <a href="cookie-policy.html" target="_blank" rel="noopener">Cookie</a></p>
-        </div>
-        <button class="gallery-close" id="book-close" type="button" aria-label="Chiudi prenotazione">×</button>
-      </div>
-      <div class="book-modal-frame">
-        <div class="browser" aria-hidden="true"><span></span><span></span><span></span></div>
-        <iframe id="book-frame" title="Calendario prenotazione call Vuebb" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/i18n.js?v=form-prezzi-20261108" defer></script>
-  <script src="js/contact-footer.js?v=no-singoli-20261108" defer></script>
-  <script src="js/main.js?v=form-prezzi-20261108" defer></script>
+  <script src="js/i18n.js?v=no-call-20261108" defer></script>
+  <script src="js/contact-footer.js?v=campi-attivita-20261108" defer></script>
+  <script src="js/main.js?v=no-call-20261108" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>
 </html>
