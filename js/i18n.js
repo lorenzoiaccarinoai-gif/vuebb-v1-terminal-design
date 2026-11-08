@@ -168,7 +168,7 @@
       "lead.service.review": "Revisione Sito Web",
       "lead.service.maintenance": "Vuebb Pro",
       "lead.service.maintenance.label": "Vuebb Pro (Consigliato)",
-      "lead.service.maintenance.desc": "Tutte le funzioni di Vuebb Basic, con in più ottimizzazione mensile di performance e posizionamento e fino a 2 aggiornamenti contenutistici al mese.",
+      "lead.service.maintenance.desc": "Tutte le funzioni di Vuebb Basic, con in più ottimizzazione mensile di performance e posizionamento nei risultati di ricerca e fino a 2 aggiornamenti contenutistici al mese.",
       "lead.service.ultra": "Vuebb Ultra",
       "lead.service.ultra.desc": "Tutte le funzioni di Vuebb Pro, con in più fino a 5 aggiornamenti contenutistici e 1 aggiornamento strutturale al mese e supporto prioritario.",
       "serv.ultra.price": "<strong>+ € 49</strong> / mese IVA inclusa",
