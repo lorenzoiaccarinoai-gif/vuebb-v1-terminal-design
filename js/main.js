@@ -464,7 +464,8 @@
           <div class="lead-choices lead-choices--stack">
             <label><input type="checkbox" name="service" value="create"><span data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
             <label><input type="checkbox" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
-            <label><input type="checkbox" name="service" value="maintenance"><span data-i18n="lead.service.maintenance">Mantenimento Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
+            <label class="lead-choice--addon"><input type="checkbox" name="service" value="maintenance" disabled><span data-i18n="lead.service.maintenance.label">Vuebb Care (Consigliato)</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
+            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.maintenance.desc">Il tuo sito resta sicuro e aggiornato, con controlli mensili di performance, posizionamento e privacy.</p>
           </div>
           <p class="lead-choice-heading"><span data-i18n="lead.service.single">Oppure scegli un singolo intervento</span> <small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></p>
           <div class="lead-choices lead-choices--stack">
@@ -578,7 +579,7 @@
   }
 
   function selectedLabels(name, map) {
-    return new FormData(leadForm).getAll(name).map((value) => map[value] ? t(map[value]) + (['create', 'review', 'maintenance'].includes(value) ? ' ' + t('lead.service.includes') : '') : '').filter(Boolean).join('; ');
+    return new FormData(leadForm).getAll(name).map((value) => map[value] ? t(map[value]) + (['create', 'review'].includes(value) ? ' ' + t('lead.service.includes') : '') : '').filter(Boolean).join('; ');
   }
 
   function syncServiceValidity() {
@@ -673,7 +674,9 @@
 
   function syncIncludedServices(form) {
     const pick = (value) => form.querySelector('input[name="service"][value="' + value + '"]');
-    const full = ['create', 'review', 'maintenance'].some((value) => pick(value)?.checked);
+    const full = ['create', 'review'].some((value) => pick(value)?.checked);
+    const maintenance = pick('maintenance');
+    if (maintenance) { maintenance.disabled = !full; if (!full) maintenance.checked = false; }
     ['performance', 'seo', 'privacy'].forEach((value) => {
       const box = pick(value);
       if (!box) return;

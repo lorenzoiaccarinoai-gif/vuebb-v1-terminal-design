@@ -1290,3 +1290,8 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 .lead-choices--stack label:has(input:disabled) .lead-included { display: inline; }
 .lead-choices--stack label:has(input:disabled) { cursor: not-allowed; }
 .contact-end-form .lead-choices input[type="checkbox"]:disabled { cursor: not-allowed; opacity: .75; }
+
+/* Maintenance is an add-on to website creation or review. */
+.lead-choices--stack label.lead-choice--addon { width: auto; margin-left: 1.6rem; }
+.lead-choices--stack label.lead-choice--addon:has(input:disabled) { opacity: .5; }
+.lead-choice-note--addon { margin: -.35rem 0 .35rem calc(1.6rem + .75rem + 1.05rem + .45rem); }
