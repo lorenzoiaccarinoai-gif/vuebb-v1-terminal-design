@@ -2,9 +2,12 @@
 > Siti, web app ed e-commerce ultra personalizzati. Interfacce che coinvolgono e convertono.
 
 ## Servizi
-- Siti Web Boutique
-- Web App
-- E-commerce
+- Creazione Sito Web
+- Revisione Sito Web
+- Vuebb Care
+- Ottimizzazione Performance
+- Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)
+- Verifica Rispetto Leggi sulla Privacy
 
 ## Contatti
 - [Home](https://vuebb.com/)
