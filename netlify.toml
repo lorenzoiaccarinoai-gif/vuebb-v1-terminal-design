@@ -14,12 +14,12 @@
 
 [[redirects]]
   from = "/prezzi"
-  to = "/servizi#pricing"
+  to = "/servizi"
   status = 301
 
 [[redirects]]
   from = "/prezzi.html"
-  to = "/servizi#pricing"
+  to = "/servizi"
   status = 301
 
 [[redirects]]
