@@ -460,11 +460,12 @@
         <fieldset class="lead-field">
           <legend data-i18n="lead.service">Servizio</legend>
           <div class="lead-choices">
-            <label><input type="radio" name="service" value="create" required><span data-i18n="lead.service.create">Creazione Sito Web</span></label>
-            <label><input type="radio" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span></label>
-            <label><input type="radio" name="service" value="performance"><span data-i18n="lead.service.performance">Ottimizzazione Performance Sito Web</span></label>
-            <label><input type="radio" name="service" value="seo"><span data-i18n="lead.service.seo">Ottimizzazione Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</span></label>
-            <label><input type="radio" name="service" value="privacy"><span data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</span></label>
+            <label><input type="checkbox" name="service" value="create"><span data-i18n="lead.service.create">Creazione Sito Web</span></label>
+            <label><input type="checkbox" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span></label>
+            <label><input type="checkbox" name="service" value="maintenance"><span data-i18n="lead.service.maintenance">Mantenimento Sito Web</span></label>
+            <label><input type="checkbox" name="service" value="performance"><span data-i18n="lead.service.performance">Ottimizzazione Performance Sito Web</span></label>
+            <label><input type="checkbox" name="service" value="seo"><span data-i18n="lead.service.seo">Ottimizzazione Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</span></label>
+            <label><input type="checkbox" name="service" value="privacy"><span data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</span></label>
           </div>
         </fieldset>
         <label class="lead-field">
@@ -571,10 +572,20 @@
     return value && map[value] ? t(map[value]) : '';
   }
 
+  function selectedLabels(name, map) {
+    return new FormData(leadForm).getAll(name).map((value) => map[value] ? t(map[value]) : '').filter(Boolean).join('; ');
+  }
+
+  function syncServiceValidity() {
+    const boxes = Array.from(leadForm.querySelectorAll('input[name="service"]'));
+    const anyChecked = boxes.some((box) => box.checked);
+    boxes.forEach((box, index) => box.setCustomValidity(!anyChecked && index === 0 ? t('lead.err.service') : ''));
+  }
+
   function leadPayload() {
     const data = new FormData(leadForm);
     const kind = selectedLabel('kind', { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' });
-    const service = selectedLabel('service', { create: 'lead.service.create', review: 'lead.service.review', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' });
+    const service = selectedLabels('service', { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' });
     return {
       name: String(data.get('name') || '').trim(),
       kind: kind,
@@ -655,10 +666,12 @@
     });
   });
 
+  leadForm.addEventListener('change', (e) => { if (e.target.name === 'service') syncServiceValidity(); });
   leadForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const info = leadPayload();
     if (info.honey) return;
+    syncServiceValidity();
     if (!leadForm.checkValidity() || !info.kind || !info.service) {
       leadStatus.textContent = t('lead.err.fields');
       leadStatus.className = 'lead-status is-err';

@@ -1093,7 +1093,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 .contact-end-copy p { color: #ccc; }
 .contact-end-form { background: #000; color: #fff; padding: clamp(1.25rem, 3vw, 2.5rem); }
 .contact-end-form .lead-field > span, .contact-end-form .lead-field legend { color: #ccc; }
-.contact-end-form .lead-field input:not([type="radio"]), .contact-end-form .lead-field textarea { background: #000; color: #fff; border: 1px solid #aaa; }
+.contact-end-form .lead-field input:not([type="radio"]):not([type="checkbox"]), .contact-end-form .lead-field textarea { background: #000; color: #fff; border: 1px solid #aaa; }
 .contact-end-form .lead-field input:focus-visible, .contact-end-form .lead-field textarea:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .contact-end-form .lead-choices label { background: #000; color: #fff; border: 1px solid #999; }
 .contact-end-form .lead-choices label:has(input:checked) { background: transparent; color: #fff; }
@@ -1246,7 +1246,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 @media (max-width: 380px) { .header .logo-img { height: 36px; } }
 
 /* Square choice indicators for the contact form. */
-.contact-end-form .lead-choices input[type="radio"] {
+.contact-end-form .lead-choices input[type="radio"], .contact-end-form .lead-choices input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   flex: 0 0 1rem;
@@ -1258,17 +1258,17 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
   background: #000;
   cursor: pointer;
 }
-.contact-end-form .lead-choices input[type="radio"]:checked {
+.contact-end-form .lead-choices input[type="radio"]:checked, .contact-end-form .lead-choices input[type="checkbox"]:checked {
   border-color: transparent;
   background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
 }
-.contact-end-form .lead-choices input[type="radio"]:focus-visible {
+.contact-end-form .lead-choices input[type="radio"]:focus-visible, .contact-end-form .lead-choices input[type="checkbox"]:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 3px;
 }
 
 /* Square selection indicators with the Vuebb gradient. */
-.contact-end-form .lead-choices input[type="radio"] {
+.contact-end-form .lead-choices input[type="radio"], .contact-end-form .lead-choices input[type="checkbox"] {
   flex-basis: 1.05rem;
   width: 1.05rem;
   height: 1.05rem;
@@ -1277,7 +1277,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
   background: #090d0e;
   transition: border-color .18s ease, box-shadow .18s ease;
 }
-.contact-end-form .lead-choices input[type="radio"]:checked {
+.contact-end-form .lead-choices input[type="radio"]:checked, .contact-end-form .lead-choices input[type="checkbox"]:checked {
   border-color: #36d9ce;
   background: linear-gradient(135deg, #15eaa1 0%, #00bfe7 52%, #3274ff 100%);
   box-shadow: inset 0 0 0 2px #071317;

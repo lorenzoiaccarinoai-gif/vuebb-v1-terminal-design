@@ -5,10 +5,17 @@
   const status = document.getElementById('footer-lead-status');
   const submit = document.getElementById('footer-lead-submit');
   const t = (key) => window.VuebbI18n ? window.VuebbI18n.t(key) : key;
+  const serviceBoxes = Array.from(form.querySelectorAll('input[name="service"]'));
+  const syncServiceValidity = () => {
+    const anyChecked = serviceBoxes.some((box) => box.checked);
+    serviceBoxes.forEach((box, index) => box.setCustomValidity(!anyChecked && index === 0 ? t('lead.err.service') : ''));
+  };
+  form.addEventListener('change', (event) => { if (event.target.name === 'service') syncServiceValidity(); });
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const data = new FormData(form);
     if (data.get('_honey')) return;
+    syncServiceValidity();
     if (!form.checkValidity()) {
       status.textContent = t('lead.err.fields');
       status.className = 'lead-status is-err';
@@ -16,7 +23,7 @@
       return;
     }
     const kind = { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' };
-    const service = { create: 'lead.service.create', review: 'lead.service.review', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' };
+    const service = { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' };
     submit.disabled = true;
     status.className = 'lead-status';
     status.textContent = t('lead.sending');
@@ -30,7 +37,7 @@
           'Attività o azienda': String(data.get('company') || '').trim() || '—',
           Ruolo: String(data.get('role') || '').trim() || '—',
           Email: String(data.get('email')).trim(), Telefono: String(data.get('phone')).trim(),
-          Servizio: t(service[data.get('service')]), Progetto: String(data.get('project')).trim(),
+          Servizio: data.getAll('service').map((value) => t(service[value])).join('; '), Progetto: String(data.get('project')).trim(),
           Canale: 'Richiesta di contatto', Lingua: window.VuebbI18n ? window.VuebbI18n.lang().toUpperCase() : 'IT'
         })
       });
