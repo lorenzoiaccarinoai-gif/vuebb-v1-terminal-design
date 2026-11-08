@@ -1334,5 +1334,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 
 /* Four full-service cards sit two by two on wide screens. */
 @media (min-width: 961px) {
-  #servizi .product-grid--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #servizi .product-grid--pair { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  #servizi .product-grid--pair > .product-card { grid-column: span 2; }
+  #servizi .product-grid--pair > .product-card:nth-child(-n+2) { grid-column: span 3; }
 }

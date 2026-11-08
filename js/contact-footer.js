@@ -3,7 +3,7 @@
   function syncIncludedServices(form) {
     const pick = (value) => form.querySelector('input[name="service"][value="' + value + '"]');
     const full = ['create', 'review'].some((value) => pick(value)?.checked);
-    ['maintenance', 'basic'].forEach((value) => {
+    ['basic', 'maintenance', 'ultra'].forEach((value) => {
       const addon = pick(value);
       if (addon) { addon.disabled = !full; if (!full) addon.checked = false; }
     });
@@ -18,9 +18,11 @@
   document.addEventListener('change', (e) => {
     const box = e.target;
     if (box.name !== 'service' || !box.form) return;
-    if (box.checked && ['maintenance', 'basic'].includes(box.value)) {
-      const other = box.form.querySelector('input[name="service"][value="' + (box.value === 'basic' ? 'maintenance' : 'basic') + '"]');
-      if (other) other.checked = false;
+    if (box.checked && ['basic', 'maintenance', 'ultra'].includes(box.value)) {
+      ['basic', 'maintenance', 'ultra'].filter((value) => value !== box.value).forEach((value) => {
+        const other = box.form.querySelector('input[name="service"][value="' + value + '"]');
+        if (other) other.checked = false;
+      });
     }
     if (box.checked && (box.value === 'create' || box.value === 'review')) {
       const other = box.form.querySelector('input[name="service"][value="' + (box.value === 'create' ? 'review' : 'create') + '"]');
@@ -59,7 +61,7 @@
       return;
     }
     const kind = { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' };
-    const service = { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', basic: 'lead.service.basic', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' };
+    const service = { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', basic: 'lead.service.basic', ultra: 'lead.service.ultra', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' };
     submit.disabled = true;
     status.className = 'lead-status';
     status.textContent = t('lead.sending');

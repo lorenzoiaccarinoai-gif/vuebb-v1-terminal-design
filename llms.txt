@@ -4,7 +4,8 @@
 ## Servizi
 - Creazione Sito Web
 - Revisione Sito Web
-- Vuebb Care
+- Vuebb Pro
+- Vuebb Ultra
 - Vuebb Basic
 - Ottimizzazione Performance
 - Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)

@@ -466,8 +466,10 @@
             <label><input type="checkbox" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
             <label class="lead-choice--addon"><input type="checkbox" name="service" value="basic" disabled><span data-i18n="lead.service.basic">Vuebb Basic</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
             <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.basic.desc">Il tuo sito resta online nel tempo, con hosting e manutenzione mensile di base inclusa.</p>
-            <label class="lead-choice--addon"><input type="checkbox" name="service" value="maintenance" disabled><span data-i18n="lead.service.maintenance.label">Vuebb Care (Consigliato)</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
-            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.maintenance.desc">Il tuo sito resta sicuro e aggiornato nel tempo, con controlli mensili di performance, posizionamento e privacy.</p>
+            <label class="lead-choice--addon"><input type="checkbox" name="service" value="maintenance" disabled><span data-i18n="lead.service.maintenance.label">Vuebb Pro (Consigliato)</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
+            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.maintenance.desc">Il tuo sito resta sicuro e aggiornato nel tempo, con controlli mensili di performance, posizionamento e privacy e fino a 2 aggiornamenti contenutistici al mese.</p>
+            <label class="lead-choice--addon"><input type="checkbox" name="service" value="ultra" disabled><span data-i18n="lead.service.ultra">Vuebb Ultra</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
+            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.ultra.desc">Tutte le funzioni di Vuebb Pro, con in più fino a 5 aggiornamenti contenutistici e 1 aggiornamento strutturale al mese e supporto prioritario.</p>
           </div>
           <p class="lead-choice-heading"><span data-i18n="lead.service.single">Oppure scegli un singolo intervento</span> <small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></p>
           <div class="lead-choices lead-choices--stack">
@@ -593,7 +595,7 @@
   function leadPayload() {
     const data = new FormData(leadForm);
     const kind = selectedLabel('kind', { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' });
-    const service = selectedLabels('service', { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', basic: 'lead.service.basic', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' });
+    const service = selectedLabels('service', { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', basic: 'lead.service.basic', ultra: 'lead.service.ultra', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' });
     return {
       name: String(data.get('name') || '').trim(),
       kind: kind,
