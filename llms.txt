@@ -17,3 +17,4 @@
 - [Scopri Vuebb](https://vuebb.com/metodo)
 - [Portfolio](https://vuebb.com/portfolio)
 - [Per chi](https://vuebb.com/per-chi)
+- [Contatti](https://vuebb.com/contatti)

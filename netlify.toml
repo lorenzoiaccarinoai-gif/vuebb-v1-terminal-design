@@ -21,13 +21,3 @@
   from = "/prezzi.html"
   to = "/servizi"
   status = 301
-
-[[redirects]]
-  from = "/contatti"
-  to = "/#contatto"
-  status = 301
-
-[[redirects]]
-  from = "/contatti.html"
-  to = "/#contatto"
-  status = 301

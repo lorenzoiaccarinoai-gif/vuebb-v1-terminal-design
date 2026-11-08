@@ -10,7 +10,7 @@
   <link rel="preload" href="fonts/geist-sans-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/portfolio.css">
-  <link rel="stylesheet" href="css/terminal.css?v=campi-attivita-20261108">
+  <link rel="stylesheet" href="css/terminal.css?v=chiusura-20261108">
 </head>
 <body class="is-ready policy-page" data-page="page.privacy" data-desc="pp.lead">
   <div class="mesh" aria-hidden="true">
@@ -93,71 +93,13 @@
   <section class="contact-end" id="contatto" aria-labelledby="contact-end-title">
     <div class="container contact-end-grid">
       <div class="contact-end-copy"><span class="section-label" data-i18n="cta.label">Iniziamo</span><h2 id="contact-end-title" data-i18n="cta.title">Racconta il tuo progetto, senza impegno</h2><p data-i18n="cta.desc">Ogni storia di successo inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.<br><br>Ci impegneremo a illustrarti come le soluzioni digitali di Vuebb possono potenziare il tuo business: <span class="cta-response-accent">risposta garantita entro 24 ore</span>.</p></div>
-      <div class="contact-end-form">      <form class="lead-form" id="footer-lead-form" novalidate>
-        <input class="lead-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="lead-split lead-split--3">
-          <label class="lead-field">
-            <span data-i18n="lead.name">Nome e cognome</span>
-            <input name="name" type="text" autocomplete="name" required minlength="3">
-          </label>
-          <label class="lead-field">
-            <span data-i18n="lead.email">E-mail</span>
-            <input name="email" type="email" autocomplete="email" required>
-          </label>
-          <label class="lead-field">
-            <span data-i18n="lead.phone">Telefono</span>
-            <input name="phone" type="tel" autocomplete="tel" required>
-          </label>
-        </div>
-        <fieldset class="lead-field">
-          <legend data-i18n="lead.kind">Sei</legend>
-          <div class="lead-choices lead-choices--segmented">
-            <label><input type="radio" name="kind" value="pro" required><span data-i18n="lead.kind.pro">Professionista</span></label>
-            <label><input type="radio" name="kind" value="shop"><span data-i18n="lead.kind.shop">Attività commerciale</span></label>
-            <label><input type="radio" name="kind" value="biz"><span data-i18n="lead.kind.biz">Azienda</span></label>
-          </div>
-        </fieldset>
-        <div class="lead-split lead-business" hidden>
-          <label class="lead-field">
-            <span data-i18n="lead.company">Nome attività / azienda</span>
-            <input name="company" type="text" autocomplete="organization" disabled>
-          </label>
-          <label class="lead-field">
-            <span data-i18n="lead.role">Ruolo in attività / azienda</span>
-            <input name="role" type="text" autocomplete="organization-title" disabled>
-          </label>
-        </div>
-        <fieldset class="lead-field">
-          <legend data-i18n="lead.service">Servizi una tantum</legend>
-          <p class="lead-choice-note" data-i18n="lead.service.full.note">Include ottimizzazione performance, posizionamento nei risultati di ricerca e verifica privacy.</p>
-          <div class="lead-choices lead-choices--cards">
-            <label class="lead-card"><input type="checkbox" name="service" value="create"><span class="lead-card-name" data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-card-price" data-i18n="lead.price.create"><strong>€ 799</strong> IVA inclusa</small></label>
-            <label class="lead-card"><input type="checkbox" name="service" value="review"><span class="lead-card-name" data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-card-price" data-i18n="lead.price.review"><strong>€ 499</strong> IVA inclusa</small></label>
-          </div>
-          <p class="lead-choice-subheading" data-i18n="lead.service.recurring">Servizi ricorrenti</p>
-          <p class="lead-choice-note" data-i18n="lead.service.recurring.note">Ogni mese supportiamo il tuo sito. Questi servizi si aggiungono a quelli una tantum: richiedono la Creazione o la Revisione del Sito Web.</p>
-          <div class="lead-choices lead-choices--cards lead-choices--plans">
-            <label class="lead-card"><input type="checkbox" name="service" value="basic" disabled><span class="lead-card-name" data-i18n="lead.service.basic">Vuebb Basic</span><small class="lead-card-price" data-i18n="lead.price.basic"><strong>+ € 14</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.basic.desc">Hosting, manutenzione mensile di base e verifica mensile della privacy.</small></label>
-            <label class="lead-card lead-card--featured"><input type="checkbox" name="service" value="maintenance" disabled><span class="lead-card-name"><span data-i18n="lead.service.maintenance">Vuebb Pro</span> <em data-i18n="serv.plan.recommended">Consigliato</em></span><small class="lead-card-price" data-i18n="lead.price.maintenance"><strong>+ € 24</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.maintenance.desc">Tutte le funzioni di Basic, più ottimizzazione mensile di performance e posizionamento e fino a 2 aggiornamenti contenutistici al mese.</small></label>
-            <label class="lead-card"><input type="checkbox" name="service" value="ultra" disabled><span class="lead-card-name" data-i18n="lead.service.ultra">Vuebb Ultra</span><small class="lead-card-price" data-i18n="lead.price.ultra"><strong>+ € 49</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.ultra.desc">Tutte le funzioni di Pro, più fino a 5 aggiornamenti contenutistici e 1 strutturale al mese e supporto prioritario.</small></label>
-          </div>
-        </fieldset>
-        <label class="lead-field">
-          <span data-i18n="lead.project">Due righe sul progetto e i tuoi obiettivi</span>
-          <textarea name="project" rows="3" required minlength="8"></textarea>
-        </label>
-        <p class="lead-privacy" data-i18n="lead.privacy">Inviando confermi di aver letto l’<a href="privacy-policy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
-        <p class="lead-status" id="footer-lead-status" role="status"></p>
-        <div class="lead-actions">
-          <button class="btn btn-lime" id="footer-lead-submit" type="submit" data-i18n="lead.submit.request">Invia la richiesta</button>
-        </div>
-      </form></div>
+      <a class="btn btn-lime contact-cta" href="contatti.html" data-i18n="nav.contatti">Contattaci</a>
     </div>
   </section>
 
-  <a class="btn btn-lime cta-book cta-book-float" href="#contatto" data-i18n="nav.contatti">Contattaci</a>
+  <a class="btn btn-lime cta-book cta-book-float" href="contatti.html" data-i18n="nav.contatti">Contattaci</a>
 
-  <script src="js/i18n.js?v=no-call-20261108" defer></script>
-  <script src="js/contact-footer.js?v=campi-attivita-20261108" defer></script>
+  <script src="js/i18n.js?v=pagina-contatti-20261108" defer></script>
+  <script src="js/contact-footer.js?v=pagina-contatti-20261108" defer></script>
 </body>
 </html>
