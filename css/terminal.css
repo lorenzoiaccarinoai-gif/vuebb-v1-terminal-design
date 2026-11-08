@@ -983,7 +983,7 @@ h1.section-title {
   scroll-margin-top: 90px;
 }
 .page-routes #filosofia .section-label { color: var(--cta); margin-bottom: 2rem; }
-.page-routes #filosofia .section-title { color: #fff; max-width: 10ch; font-size: clamp(2.8rem, 5.4vw, 5.5rem); line-height: 1.02; margin: 0; }
+.page-routes #filosofia .section-title { color: #fff; max-width: none; font-size: clamp(2.8rem, 5.4vw, 5.5rem); line-height: 1.02; margin: 0; }
 .philosophy-intro { border-top: 1px solid rgba(255,255,255,.3); padding-top: 1.5rem; }
 .page-routes #filosofia .section-desc { color: rgba(255,255,255,.83); font-size: clamp(1.05rem, 1.35vw, 1.25rem); line-height: 1.55; margin: 1.25rem 0 0; max-width: 36ch; }
 .page-routes .spec-grid { gap: 1px; background: #dddddd; border: 1px solid #dddddd; }
@@ -998,7 +998,7 @@ h1.section-title {
 .page-routes .spec-card p { margin: 0; color: #555555; font-size: 1rem; line-height: 1.6; max-width: 37ch; }
 @media (max-width: 800px) {
   .page-routes #filosofia { grid-template-columns: 1fr; gap: 2.5rem; }
-  .page-routes #filosofia .section-title { max-width: 14ch; }
+  .page-routes #filosofia .section-title { max-width: none; }
   .page-routes .spec-card, .page-routes .spec-card:not(.highlight) { min-height: 0; }
   .philosophy-number { margin-bottom: 1.5rem; }
 }
