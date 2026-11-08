@@ -1332,9 +1332,39 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 /* Keep catalog feature tags readable on the dark background. */
 #servizi .product-body li:not(.feature-accent) { color: #f5f5f5; border-color: rgba(255,255,255,.4); }
 
-/* Four full-service cards sit two by two on wide screens. */
+/* Base services side by side; recurring plans hang off them as an add-on. */
 @media (min-width: 961px) {
-  #servizi .product-grid--pair { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  #servizi .product-grid--pair > .product-card { grid-column: span 2; }
-  #servizi .product-grid--pair > .product-card:nth-child(-n+2) { grid-column: span 3; }
+  #servizi .product-grid--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+#servizi .catalog-bundle { margin-top: 2.5rem; }
+#servizi .catalog-bundle .product-grid { margin: 0; gap: 3.5rem 4rem; border: 0; background: transparent; }
+#servizi .catalog-bundle .product-card { border: 0; background: transparent; box-shadow: none; }
+#servizi .catalog-bundle .product-body { padding: 0; }
+#servizi .catalog-bundle .service-cadence { display: block; margin: 1rem 0 1.25rem; color: #aaa; font-size: .7rem; }
+#servizi .catalog-bundle .service-cadence strong { margin-right: .2rem; color: #fff; font-size: 2.1rem; font-weight: 400; letter-spacing: -.03em; text-transform: none; }
+#servizi .catalog-bundle .product-body ul { display: block; margin: 0; padding: 0; list-style: none; }
+#servizi .catalog-bundle .product-body li { position: relative; padding: .4rem 0 .4rem 1.4rem; border: 0; background: transparent; color: #f5f5f5; font-size: .95rem; line-height: 1.35; }
+#servizi .catalog-bundle .product-body li::before { content: "\2713"; position: absolute; left: 0; color: #15eaa1; font-size: .85rem; }
+#servizi .plan-addon { margin-top: clamp(4rem, 8vw, 6.5rem); }
+#servizi .plan-head .catalog-heading { margin: .75rem 0 0; }
+#servizi .plan-head .catalog-note { max-width: 46rem; margin-top: .85rem; line-height: 1.5; }
+#servizi .plan-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2.25rem; }
+#servizi .plan-card { padding: 2rem 2.25rem; }
+#servizi .plan-card:first-child { padding-left: 0; }
+#servizi .plan-card:last-child { padding-right: 0; }
+#servizi .plan-card--featured { background: linear-gradient(180deg, rgba(0,191,231,.16), rgba(0,191,231,0) 80%); }
+#servizi .plan-title { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+#servizi .plan-card h3 { margin: 0; color: #fff; font-size: 1.25rem; font-weight: 400; letter-spacing: -.02em; }
+#servizi .plan-badge { color: #15eaa1; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+#servizi .plan-card .service-cadence { display: block; margin: 1rem 0 1.25rem; color: #aaa; font-size: .7rem; }
+#servizi .plan-card .service-cadence strong { margin-right: .2rem; color: #fff; font-size: 2.1rem; font-weight: 400; letter-spacing: -.03em; text-transform: none; }
+#servizi .plan-inherit { margin: 0 0 .5rem; color: #aaa; font-size: .9rem; }
+#servizi .plan-card ul { margin: 0; padding: 0; list-style: none; }
+#servizi .plan-card li { position: relative; padding: .4rem 0 .4rem 1.4rem; color: #f5f5f5; font-size: .95rem; line-height: 1.35; }
+#servizi .plan-card li::before { content: "\2713"; position: absolute; left: 0; color: #15eaa1; font-size: .85rem; }
+@media (max-width: 960px) {
+  #servizi .plan-grid { grid-template-columns: 1fr; margin-top: 1.5rem; }
+  #servizi .plan-card, #servizi .plan-card:first-child, #servizi .plan-card:last-child { padding: 1.75rem 0; }
+  #servizi .plan-card--featured { margin: 0 -1rem; padding: 1.75rem 1rem !important; }
+}
+#servizi .catalog-bundle .product-body .plan-inherit { margin-top: 1.1rem; }

@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="css/boot.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/portfolio.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/metodo.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/terminal.css?v=piani-20261108">
+  <link rel="stylesheet" href="css/terminal.css?v=piani-mensili-20261108">
 </head>
 <body data-i18n-title="page.servizi">
   <div class="mesh" aria-hidden="true">
@@ -79,15 +79,16 @@
         <p class="section-desc" data-i18n="serv.desc">Ogni progetto nasce da un dialogo profondo e si costruisce come un pezzo unico.</p>
       </div>
       <h2 class="catalog-heading" data-i18n="lead.service.full">Servizio completo</h2>
-      <p class="catalog-note" data-i18n="lead.service.full.note">Include ottimizzazione performance, posizionamento e verifica privacy</p>
+      <p class="catalog-note" data-i18n="serv.full.note">Intervento una tantum che include ottimizzazione performance, posizionamento e verifica privacy</p>
+      <div class="catalog-bundle">
       <div class="product-grid product-grid--pair">
         <article class="product-card">
-          <div class="product-visual v1"></div>
           <div class="product-body">
             <span class="product-index">01</span>
             <h3 data-i18n="lead.service.create">Creazione Sito Web</h3>
-            <span class="service-cadence" data-i18n="serv.create.price">€ 799 IVA inclusa</span>
+            <span class="service-cadence" data-i18n="serv.create.price"><strong>€ 799</strong> una tantum, IVA inclusa</span>
             <p data-i18n="serv.create.desc">Progettiamo e realizziamo il tuo sito web da zero, su misura per la tua attività.</p>
+            <p class="plan-inherit" data-i18n="serv.base.includes">Include, una tantum:</p>
             <ul>
               <li data-i18n="serv.create.responsive">Design Responsive per Smartphone e Tablet</li>
               <li data-i18n="lead.service.performance">Ottimizzazione Performance</li>
@@ -97,12 +98,12 @@
           </div>
         </article>
         <article class="product-card">
-          <div class="product-visual v3"></div>
           <div class="product-body">
             <span class="product-index">02</span>
             <h3 data-i18n="lead.service.review">Revisione Sito Web</h3>
-            <span class="service-cadence" data-i18n="serv.review.price">€ 499 IVA inclusa</span>
+            <span class="service-cadence" data-i18n="serv.review.price"><strong>€ 499</strong> una tantum, IVA inclusa</span>
             <p data-i18n="serv.review.desc">Analizziamo il sito che hai già e lo miglioriamo, senza ripartire da zero.</p>
+            <p class="plan-inherit" data-i18n="serv.base.includes">Include, una tantum:</p>
             <ul>
               <li data-i18n="serv.create.responsive">Design Responsive per Smartphone e Tablet</li>
               <li data-i18n="lead.service.performance">Ottimizzazione Performance</li>
@@ -111,48 +112,54 @@
             </ul>
           </div>
         </article>
-        <article class="product-card">
-          <div class="product-visual v2"></div>
-          <div class="product-body">
-            <span class="product-index">03</span>
+      </div>
+      <section class="plan-addon" aria-labelledby="plans-title">
+        <div class="plan-head">
+          <div>
+            <span class="section-label" data-i18n="serv.plans.label">Piani ricorrenti</span>
+            <h2 class="catalog-heading" id="plans-title" data-i18n="serv.plans.title">Aggiungi un piano al tuo sito</h2>
+          </div>
+          <p class="catalog-note" data-i18n="serv.plans.note">Creazione e Revisione includono performance, posizionamento e privacy una tantum. Con un piano ricorrente li controlliamo ogni mese, così restano sempre allineati. I piani si attivano solo insieme a Creazione o Revisione Sito Web.</p>
+        </div>
+        <div class="plan-grid">
+          <article class="plan-card">
             <h3 data-i18n="lead.service.basic">Vuebb Basic</h3>
-            <span class="service-cadence" data-i18n="serv.basic.price">€ 14 / mese IVA inclusa</span>
-            <p data-i18n="lead.service.basic.desc">Il tuo sito resta online nel tempo, con hosting e manutenzione mensile di base inclusa.</p>
+            <span class="service-cadence" data-i18n="serv.basic.price"><strong>+ € 14</strong> / mese IVA inclusa</span>
+            <p class="plan-inherit" data-i18n="serv.plan.includes">Include:</p>
             <ul>
-              <li class="feature-accent" data-i18n="serv.care.plus">Si aggiunge a Creazione o Revisione Sito Web</li>
+              <li data-i18n="serv.plan.hosting">Hosting</li>
+              <li data-i18n="serv.plan.maint">Manutenzione mensile di base</li>
+              <li data-i18n="serv.plan.privacy">Check mensile Leggi sulla Privacy</li>
             </ul>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-visual v3"></div>
-          <div class="product-body">
-            <span class="product-index">04</span>
-            <h3 data-i18n="lead.service.maintenance.label">Vuebb Pro (Consigliato)</h3>
-            <span class="service-cadence" data-i18n="serv.care.price">€ 24 / mese IVA inclusa</span>
-            <p data-i18n="lead.service.maintenance.desc">Il tuo sito resta sicuro e aggiornato nel tempo, con controlli mensili di performance, posizionamento e privacy e fino a 2 aggiornamenti contenutistici al mese.</p>
+          </article>
+          <article class="plan-card plan-card--featured">
+            <div class="plan-title"><h3 data-i18n="lead.service.maintenance">Vuebb Pro</h3><span class="plan-badge" data-i18n="serv.plan.recommended">Consigliato</span></div>
+            <span class="service-cadence" data-i18n="serv.care.price"><strong>+ € 24</strong> / mese IVA inclusa</span>
+            <p class="plan-inherit" data-i18n="serv.plan.fromBasic">Tutto di Vuebb Basic, più:</p>
             <ul>
-              <li class="feature-accent" data-i18n="serv.care.plus">Si aggiunge a Creazione o Revisione Sito Web</li>
+              <li data-i18n="serv.plan.perf">Check mensile Performance</li>
+              <li data-i18n="serv.plan.seo">Check mensile Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</li>
+              <li data-i18n="serv.plan.content2">Fino a 2 aggiornamenti contenutistici al mese</li>
             </ul>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-visual v1"></div>
-          <div class="product-body">
-            <span class="product-index">05</span>
+          </article>
+          <article class="plan-card">
             <h3 data-i18n="lead.service.ultra">Vuebb Ultra</h3>
-            <span class="service-cadence" data-i18n="serv.ultra.price">€ 49 / mese IVA inclusa</span>
-            <p data-i18n="lead.service.ultra.desc">Tutte le funzioni di Vuebb Pro, con in più fino a 5 aggiornamenti contenutistici e 1 aggiornamento strutturale al mese e supporto prioritario.</p>
+            <span class="service-cadence" data-i18n="serv.ultra.price"><strong>+ € 49</strong> / mese IVA inclusa</span>
+            <p class="plan-inherit" data-i18n="serv.plan.fromPro">Tutto di Vuebb Pro, più:</p>
             <ul>
-              <li class="feature-accent" data-i18n="serv.care.plus">Si aggiunge a Creazione o Revisione Sito Web</li>
+              <li data-i18n="serv.plan.content5">Fino a 5 aggiornamenti contenutistici al mese</li>
+              <li data-i18n="serv.plan.structural">1 aggiornamento strutturale al mese</li>
+              <li data-i18n="serv.plan.priority">Supporto prioritario</li>
             </ul>
-          </div>
-        </article>
+          </article>
+        </div>
+      </section>
       </div>
       <h2 class="catalog-heading" data-i18n="lead.service.single">Oppure scegli un singolo intervento</h2>
       <div class="product-grid">
         <article class="product-card">
           <div class="product-body">
-            <span class="product-index">06</span>
+            <span class="product-index">03</span>
             <h3 data-i18n="lead.service.performance">Ottimizzazione Performance</h3>
             <span class="service-cadence" data-i18n="serv.perf.price">€ 229 IVA inclusa</span>
             <p data-i18n="serv.perf.desc">Rendiamo il tuo sito più veloce e fluido su ogni dispositivo.</p>
@@ -160,7 +167,7 @@
         </article>
         <article class="product-card">
           <div class="product-body">
-            <span class="product-index">07</span>
+            <span class="product-index">04</span>
             <h3 data-i18n="lead.service.seo">Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</h3>
             <span class="service-cadence" data-i18n="serv.seo.price">€ 349 IVA inclusa</span>
             <p data-i18n="serv.seo.desc">Lavoriamo perché il tuo sito si faccia trovare nei motori di ricerca, nelle risposte AI e nelle ricerche locali.</p>
@@ -168,7 +175,7 @@
         </article>
         <article class="product-card">
           <div class="product-body">
-            <span class="product-index">08</span>
+            <span class="product-index">05</span>
             <h3 data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</h3>
             <span class="service-cadence" data-i18n="serv.priv.price">€ 119 IVA inclusa</span>
             <p data-i18n="serv.priv.desc">Controlliamo che il tuo sito rispetti le leggi sulla privacy.</p>
@@ -222,7 +229,7 @@
             <label><input type="checkbox" name="service" value="create"><span data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
             <label><input type="checkbox" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
             <label class="lead-choice--addon"><input type="checkbox" name="service" value="basic" disabled><span data-i18n="lead.service.basic">Vuebb Basic</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
-            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.basic.desc">Il tuo sito resta online nel tempo, con hosting e manutenzione mensile di base inclusa.</p>
+            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.basic.desc">Il tuo sito resta online nel tempo, con hosting, manutenzione mensile di base e verifica mensile del rispetto delle leggi sulla privacy.</p>
             <label class="lead-choice--addon"><input type="checkbox" name="service" value="maintenance" disabled><span data-i18n="lead.service.maintenance.label">Vuebb Pro (Consigliato)</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
             <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.maintenance.desc">Il tuo sito resta sicuro e aggiornato nel tempo, con controlli mensili di performance, posizionamento e privacy e fino a 2 aggiornamenti contenutistici al mese.</p>
             <label class="lead-choice--addon"><input type="checkbox" name="service" value="ultra" disabled><span data-i18n="lead.service.ultra">Vuebb Ultra</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
@@ -301,9 +308,9 @@
     </div>
   </div>
 
-  <script src="js/i18n.js?v=responsive-20261108" defer></script>
+  <script src="js/i18n.js?v=piani-mensili-20261108" defer></script>
   <script src="js/contact-footer.js?v=piani-20261108" defer></script>
-  <script src="js/main.js?v=piani-20261108" defer></script>
+  <script src="js/main.js?v=piani-mensili-20261108" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>
 </html>
