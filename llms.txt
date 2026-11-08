@@ -8,9 +8,8 @@
 
 ## Contatti
 - [Home](https://vuebb.com/)
-- [Servizi](https://vuebb.com/servizi)
-- [Metodo](https://vuebb.com/metodo)
+- [Servizi & Prezzi](https://vuebb.com/servizi)
+- [Scopri Vuebb](https://vuebb.com/metodo)
 - [Portfolio](https://vuebb.com/portfolio)
 - [Per chi](https://vuebb.com/per-chi)
-- [Prezzi](https://vuebb.com/prezzi)
 - [Contatti](https://vuebb.com/contatti)
