@@ -7,9 +7,6 @@
 - Vuebb Pro
 - Vuebb Ultra
 - Vuebb Basic
-- Ottimizzazione Performance
-- Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)
-- Verifica Rispetto Leggi sulla Privacy
 
 ## Contatti
 - [Home](https://vuebb.com/)
