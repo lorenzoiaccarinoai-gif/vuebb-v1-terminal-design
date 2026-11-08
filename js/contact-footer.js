@@ -91,7 +91,7 @@
           'Attività o azienda': String(data.get('company') || '').trim() || '—',
           Ruolo: String(data.get('role') || '').trim() || '—',
           Email: String(data.get('email')).trim(), Telefono: String(data.get('phone') || '').trim() || '—',
-          Servizio: data.getAll('service').map((value) => t(service[value]) + (['create', 'review'].includes(value) ? ' ' + t('lead.service.includes') : '')).join('; '), Progetto: String(data.get('project')).trim(),
+          Servizio: data.getAll('service').map((value) => t(service[value]) + (['create', 'review'].includes(value) ? ' ' + t('lead.service.includes') : '')).join('; '), Progetto: String(data.get('project') || '').trim() || '—', Domande: String(data.get('questions') || '').trim() || '—',
           Canale: 'Richiesta di contatto', Lingua: window.VuebbI18n ? window.VuebbI18n.lang().toUpperCase() : 'IT'
         })
       });

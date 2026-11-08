@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="css/boot.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/portfolio.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/metodo.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/terminal.css?v=chiusura-20261108">
+  <link rel="stylesheet" href="css/terminal.css?v=domande-20261108">
 </head>
 <body data-i18n-title="page.contatti">
   <div class="mesh" aria-hidden="true">
@@ -109,8 +109,9 @@
                   <input name="role" type="text" autocomplete="organization-title" disabled>
                 </label>
               </div>
-              <fieldset class="lead-field">
-                <legend data-i18n="lead.service">Servizi una tantum</legend>
+              <fieldset class="lead-field lead-field--services">
+                <legend data-i18n="lead.service">Sono interessato a</legend>
+                <p class="lead-choice-subheading" data-i18n="lead.service.once">Servizi una tantum</p>
                 <p class="lead-choice-note" data-i18n="lead.service.full.note">Include ottimizzazione performance, posizionamento nei risultati di ricerca e verifica privacy.</p>
                 <div class="lead-choices lead-choices--cards">
                   <label class="lead-card"><input type="checkbox" name="service" value="create"><span class="lead-card-name" data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-card-price" data-i18n="lead.price.create"><strong>€ 799</strong> IVA inclusa</small></label>
@@ -124,10 +125,16 @@
                   <label class="lead-card"><input type="checkbox" name="service" value="ultra" disabled><span class="lead-card-name" data-i18n="lead.service.ultra">Vuebb Ultra</span><small class="lead-card-price" data-i18n="lead.price.ultra"><strong>+ € 49</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.ultra.desc">Tutte le funzioni di Pro, più fino a 5 aggiornamenti contenutistici e 1 strutturale al mese e supporto prioritario.</small></label>
                 </div>
               </fieldset>
-              <label class="lead-field">
-                <span data-i18n="lead.project">Due righe sul progetto e i tuoi obiettivi</span>
-                <textarea name="project" rows="3" required minlength="8"></textarea>
-              </label>
+              <div class="lead-split">
+                <label class="lead-field">
+                  <span data-i18n="lead.project">Due righe sul progetto e i tuoi obiettivi (facoltativo)</span>
+                  <textarea name="project" rows="3"></textarea>
+                </label>
+                <label class="lead-field">
+                  <span data-i18n="lead.questions">Domande per Vuebb (facoltativo)</span>
+                  <textarea name="questions" rows="3"></textarea>
+                </label>
+              </div>
               <p class="lead-privacy" data-i18n="lead.privacy">Inviando confermi di aver letto l’<a href="privacy-policy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
               <p class="lead-status" id="footer-lead-status" role="status"></p>
               <div class="lead-actions">
@@ -171,8 +178,8 @@
   </div>
 
 
-  <script src="js/i18n.js?v=tel-facoltativo-20261108" defer></script>
-  <script src="js/contact-footer.js?v=tel-facoltativo-20261108" defer></script>
+  <script src="js/i18n.js?v=domande-20261108" defer></script>
+  <script src="js/contact-footer.js?v=domande-20261108" defer></script>
   <script src="js/main.js?v=no-call-20261108" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>
