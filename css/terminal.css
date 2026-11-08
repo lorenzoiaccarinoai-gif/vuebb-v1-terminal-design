@@ -1331,3 +1331,8 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 
 /* Keep catalog feature tags readable on the dark background. */
 #servizi .product-body li:not(.feature-accent) { color: #f5f5f5; border-color: rgba(255,255,255,.4); }
+
+/* Four full-service cards sit two by two on wide screens. */
+@media (min-width: 961px) {
+  #servizi .product-grid--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

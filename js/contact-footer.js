@@ -1,5 +1,34 @@
 (function () {
   'use strict';
+  function syncIncludedServices(form) {
+    const pick = (value) => form.querySelector('input[name="service"][value="' + value + '"]');
+    const full = ['create', 'review'].some((value) => pick(value)?.checked);
+    ['maintenance', 'basic'].forEach((value) => {
+      const addon = pick(value);
+      if (addon) { addon.disabled = !full; if (!full) addon.checked = false; }
+    });
+    ['performance', 'seo', 'privacy'].forEach((value) => {
+      const box = pick(value);
+      if (!box) return;
+      if (full) { box.checked = true; box.disabled = true; }
+      else if (box.disabled) { box.checked = false; box.disabled = false; }
+    });
+  }
+
+  document.addEventListener('change', (e) => {
+    const box = e.target;
+    if (box.name !== 'service' || !box.form) return;
+    if (box.checked && ['maintenance', 'basic'].includes(box.value)) {
+      const other = box.form.querySelector('input[name="service"][value="' + (box.value === 'basic' ? 'maintenance' : 'basic') + '"]');
+      if (other) other.checked = false;
+    }
+    if (box.checked && (box.value === 'create' || box.value === 'review')) {
+      const other = box.form.querySelector('input[name="service"][value="' + (box.value === 'create' ? 'review' : 'create') + '"]');
+      if (other) other.checked = false;
+    }
+    syncIncludedServices(box.form);
+  });
+  document.addEventListener('reset', (e) => { setTimeout(() => syncIncludedServices(e.target), 0); });
   const floatingContact = document.querySelector('.cta-book-float');
   const contactSection = document.getElementById('contatto');
   if (floatingContact && contactSection && 'IntersectionObserver' in window) {
@@ -30,7 +59,7 @@
       return;
     }
     const kind = { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' };
-    const service = { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' };
+    const service = { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', basic: 'lead.service.basic', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' };
     submit.disabled = true;
     status.className = 'lead-status';
     status.textContent = t('lead.sending');

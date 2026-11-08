@@ -464,6 +464,8 @@
           <div class="lead-choices lead-choices--stack">
             <label><input type="checkbox" name="service" value="create"><span data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
             <label><input type="checkbox" name="service" value="review"><span data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-cadence" data-i18n="lead.cadence.once">Una tantum</small></label>
+            <label class="lead-choice--addon"><input type="checkbox" name="service" value="basic" disabled><span data-i18n="lead.service.basic">Vuebb Basic</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
+            <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.basic.desc">Il tuo sito resta online nel tempo, con l’hosting incluso.</p>
             <label class="lead-choice--addon"><input type="checkbox" name="service" value="maintenance" disabled><span data-i18n="lead.service.maintenance.label">Vuebb Care (Consigliato)</span><small class="lead-cadence" data-i18n="lead.cadence.recurring">Ricorrente</small></label>
             <p class="lead-choice-note lead-choice-note--addon" data-i18n="lead.service.maintenance.desc">Il tuo sito resta sicuro e aggiornato nel tempo, con controlli mensili di performance, posizionamento e privacy.</p>
           </div>
@@ -591,7 +593,7 @@
   function leadPayload() {
     const data = new FormData(leadForm);
     const kind = selectedLabel('kind', { pro: 'lead.kind.pro', shop: 'lead.kind.shop', biz: 'lead.kind.biz' });
-    const service = selectedLabels('service', { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' });
+    const service = selectedLabels('service', { create: 'lead.service.create', review: 'lead.service.review', maintenance: 'lead.service.maintenance', basic: 'lead.service.basic', performance: 'lead.service.performance', seo: 'lead.service.seo', privacy: 'lead.service.privacy' });
     return {
       name: String(data.get('name') || '').trim(),
       kind: kind,
@@ -671,30 +673,6 @@
       openLead(btn.getAttribute('data-lead') || 'request', btn);
     });
   });
-
-  function syncIncludedServices(form) {
-    const pick = (value) => form.querySelector('input[name="service"][value="' + value + '"]');
-    const full = ['create', 'review'].some((value) => pick(value)?.checked);
-    const maintenance = pick('maintenance');
-    if (maintenance) { maintenance.disabled = !full; if (!full) maintenance.checked = false; }
-    ['performance', 'seo', 'privacy'].forEach((value) => {
-      const box = pick(value);
-      if (!box) return;
-      if (full) { box.checked = true; box.disabled = true; }
-      else if (box.disabled) { box.checked = false; box.disabled = false; }
-    });
-  }
-
-  document.addEventListener('change', (e) => {
-    const box = e.target;
-    if (box.name !== 'service' || !box.form) return;
-    if (box.checked && (box.value === 'create' || box.value === 'review')) {
-      const other = box.form.querySelector('input[name="service"][value="' + (box.value === 'create' ? 'review' : 'create') + '"]');
-      if (other) other.checked = false;
-    }
-    syncIncludedServices(box.form);
-  });
-  document.addEventListener('reset', (e) => { setTimeout(() => syncIncludedServices(e.target), 0); });
 
   leadForm.addEventListener('change', (e) => { if (e.target.name === 'service') syncServiceValidity(); });
   leadForm?.addEventListener('submit', async (e) => {
