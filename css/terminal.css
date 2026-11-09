@@ -618,11 +618,14 @@ body:has(.policy-main) {
 }
 
 .cookie-copy p {
-  color: rgba(17, 17, 17, 0.7);
+  color: var(--muted);
 }
 
 .cookie-copy a {
-  color: var(--forest);
+  display: block;
+  width: fit-content;
+  margin-top: 4px;
+  color: var(--ink);
   font-weight: 500;
 }
 
