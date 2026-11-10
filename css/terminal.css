@@ -968,9 +968,6 @@ h1.section-title {
 .page-routes .spec-card { min-height: 230px; padding: clamp(1.6rem, 2.5vw, 2.5rem); display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; border-radius: 4px; }
 .page-routes .spec-card h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); line-height: 1.15; }
 .page-routes .spec-card p { line-height: 1.55; }
-.home-explore-header { display: flex; justify-content: space-between; align-items: end; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(17,17,17,.25); margin-bottom: 2.5rem; }
-.home-explore-header h2 { margin: .75rem 0 0; font-size: clamp(2.3rem, 4.5vw, 4.5rem); line-height: 1; letter-spacing: -.05em; font-weight: 400; }
-.home-explore-header p { max-width: 320px; margin: 0; color: rgba(17,17,17,.7); line-height: 1.5; }
 .page-routes .route-grid { gap: 1px; background: rgba(17,17,17,.15); border: 1px solid rgba(17,17,17,.15); }
 .page-routes .route-card { min-height: 260px; padding: 1.8rem; background: #fff; border-radius: 0; transition: background .25s ease, transform .25s ease, box-shadow .25s ease; }
 .page-routes .route-card h3 { margin-top: .8rem; font-size: clamp(1.6rem, 2.3vw, 2.1rem); }
@@ -980,8 +977,6 @@ h1.section-title {
 .page-routes .route-card:hover .route-go::after, .page-routes .route-card:focus-visible .route-go::after { transform: translate(3px, -3px); }
 @media (max-width: 640px) {
   .page-routes .spec-card { min-height: 0; gap: 1.5rem; }
-  .home-explore-header { display: block; }
-  .home-explore-header p { margin-top: 1.25rem; }
   .page-routes .route-card { min-height: 220px; }
 }
 
@@ -1075,8 +1070,8 @@ body, body:has(.page-main), body:has(.policy-main), .page-routes, #servizi, #pri
 .page-routes .spec-card, .page-routes .spec-card:not(.highlight), .page-routes .spec-card.highlight, #servizi .product-card, #pricing .price-card, #per-chi .spec-card:not(.highlight), .page-routes .route-card { background: #191919; color: #f5f5f5; }
 .page-routes .spec-card h3, .page-routes .spec-card.highlight h3, .page-routes .spec-card p, .page-routes .spec-card.highlight p, .page-routes .route-card h3, .page-routes .route-card p, .product-card h3, .product-card p, .price-card h3, #per-chi .spec-card h3, #per-chi .spec-card p { color: #f5f5f5; }
 .page-routes .spec-card:hover, .page-routes .spec-card.is-hover, .page-routes .spec-card:not(.highlight):hover, .page-routes .spec-card:not(.highlight).is-hover, .page-routes .spec-card.highlight:hover, .page-routes .spec-card.highlight.is-hover, #servizi .product-card:hover, #servizi .product-card.is-hover, #pricing .price-card:hover, #pricing .price-card.is-hover, .page-routes .route-card:hover, .page-routes .route-card.is-hover, .page-routes .route-card:focus-visible { background: #292929; color: #fff; box-shadow: none; }
-.home-explore-header, .page-routes .route-grid, .page-routes .spec-grid, #servizi .product-grid, #pricing .price-grid, #per-chi .spec-grid { border-color: #444; }
-.home-explore-header p, .contact-end-copy p { color: #c2c2c2; }
+.page-routes .route-grid, .page-routes .spec-grid, #servizi .product-grid, #pricing .price-grid, #per-chi .spec-grid { border-color: #444; }
+.contact-end-copy p { color: #c2c2c2; }
 .contact-end { background: #101010; color: #fff; }
 .contact-end-form { background: #fff; color: #111; }
 .contact-end-form .lead-field input, .contact-end-form .lead-field textarea, .contact-end-form .lead-choices label { background: #eee; color: #111; }
@@ -1202,7 +1197,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
   padding: var(--layout-content-gap) 0 0;
 }
 .page-routes .philosophy-number { margin-bottom: 1.5rem; }
-.home-explore-header { margin-bottom: var(--layout-content-gap); }
+.home-divider { margin: 0 0 var(--layout-content-gap); border: 0; border-top: 1px solid #444; }
 .page-routes .route-grid { gap: var(--layout-column-gap); }
 .page-routes .route-card { padding: 1.5rem 0; }
 .page-main > .section > .container > .section-header {
