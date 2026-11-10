@@ -998,7 +998,6 @@ h1.section-title {
 }
 .page-routes #filosofia .section-label { color: var(--cta); margin-bottom: 2rem; }
 .page-routes #filosofia .section-title { color: #fff; max-width: none; font-size: clamp(2.8rem, 5.4vw, 5.5rem); line-height: 1.02; margin: 0; }
-.philosophy-intro { border-top: 1px solid rgba(255,255,255,.3); padding-top: 1.5rem; }
 .page-routes #filosofia .section-desc { color: rgba(255,255,255,.83); font-size: clamp(1.05rem, 1.35vw, 1.25rem); line-height: 1.55; margin: 1.25rem 0 0; max-width: 36ch; }
 .page-routes .spec-grid { gap: 1px; background: #dddddd; border: 1px solid #dddddd; }
 .page-routes .spec-card, .page-routes .spec-card:not(.highlight) { background: #fffafd; min-height: 300px; padding: clamp(1.75rem, 3vw, 2.75rem); display: flex; flex-direction: column; justify-content: flex-start; gap: 0; }
@@ -1163,13 +1162,6 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 
 /* The first homepage section clears the fixed header. */
 #sezioni.page-routes { padding-top: calc(var(--header) + clamp(2rem, 5vw, 5rem)); }
-
-/* Balance the homepage introduction beneath the navigation. */
-#filosofia .philosophy-intro { align-self: end; }
-#filosofia .philosophy-intro .section-desc { margin-top: 0; }
-@media (max-width: 800px) {
-  #filosofia .philosophy-intro { align-self: auto; }
-}
 
 /* Align the introduction with the section below. */
 .page-routes #filosofia { padding-inline: 0; }
