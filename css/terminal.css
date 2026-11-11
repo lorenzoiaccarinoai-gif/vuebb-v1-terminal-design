@@ -1444,3 +1444,32 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 @media (max-width: 960px) {
   #servizi .deep-grid { grid-template-columns: 1fr; }
 }
+
+/* Scrolling client logos next to the Portfolio card. */
+.logo-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logo-scroll 22s linear infinite;
+}
+.logo-track img { flex: none; height: 64px; width: auto; margin-right: clamp(3rem, 6vw, 5.5rem); }
+.logo-track .logo-mark-wide { height: 52px; }
+.logo-track .logo-mark-lockup { height: 60px; }
+.logo-track .logo-mark-pleiadi { height: 72px; }
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
+@keyframes logo-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 640px) {
+  .logo-track img { height: 48px; }
+  .logo-track .logo-mark-wide { height: 40px; }
+  .logo-track .logo-mark-lockup { height: 46px; }
+  .logo-track .logo-mark-pleiadi { height: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; }
+}
+.logo-marquee-top { margin: 0 0 var(--layout-content-gap); padding-block: .5rem; }
