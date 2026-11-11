@@ -42,7 +42,7 @@
   --mono: "Geist Mono", ui-monospace, monospace;
   --radius: 0;
   --ease: cubic-bezier(0, 0, 0.58, 1);
-  --header: 72px;
+  --header: calc(72px + 16px);
   --section-y: clamp(4.75rem, 8vw, 7.5rem);
 }
 
@@ -1473,3 +1473,32 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
   .logo-track { animation: none; }
 }
 .logo-marquee-top { margin: 0 0 var(--layout-content-gap); padding-block: .5rem; }
+
+.logo-marquee { display: block; cursor: pointer; }
+
+/* Checkmarks in the Vuebb gradient */
+#servizi .catalog-bundle .product-body li::before,
+#servizi .plan-card li::before,
+.lead-form .lead-choices--cards label.lead-card:has(input:checked)::after {
+  background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+
+/* Crisp checkmarks: vector check mask filled with the gradient (replaces the text glyph) */
+#servizi .catalog-bundle .product-body li::before,
+#servizi .plan-card li::before,
+.lead-form .lead-choices--cards label.lead-card:has(input:checked)::after {
+  content: ""; width: .8rem; height: .8rem; margin-top: .3em;
+  -webkit-text-fill-color: initial; -webkit-background-clip: border-box; background-clip: border-box;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 8.5l3.5 3.5 7.5-8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 8.5l3.5 3.5 7.5-8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.lead-form .lead-choices--cards label.lead-card:has(input:checked)::after { margin-top: 0; }
+
+
+/* Space between the top edge of the window and the header */
+:root { --header-offset: 16px; }
+.header { top: var(--header-offset); height: 72px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: var(--header-offset); background: #000; z-index: 99; }
+
