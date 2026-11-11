@@ -956,7 +956,7 @@ h1.section-title {
 /* Home: a clear progression from our philosophy to the ways to work with us. */
 .page-routes { padding-top: clamp(5rem, 9vw, 9rem); padding-bottom: clamp(5rem, 9vw, 9rem); }
 .page-routes #filosofia { max-width: 100%; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
-.page-routes #filosofia .section-title { max-width: 850px; font-size: clamp(3rem, 7vw, 6.5rem); line-height: .98; letter-spacing: -.055em; }
+.page-routes #filosofia .section-title { max-width: 850px; font-size: clamp(3rem, 7vw, 6.5rem); line-height: .98; letter-spacing: -.05em; }
 .page-routes #filosofia .section-desc { max-width: 720px; font-size: clamp(1.1rem, 1.8vw, 1.4rem); line-height: 1.5; margin-top: 1.6rem; }
 .page-routes .spec-grid { gap: 1rem; margin-bottom: clamp(5rem, 9vw, 9rem); }
 .page-routes .spec-card { min-height: 230px; padding: clamp(1.6rem, 2.5vw, 2.5rem); display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; border-radius: 4px; }
@@ -1561,3 +1561,35 @@ input[type="checkbox"] { border-radius: 5px; }
 :root { --font: "Manrope", system-ui, -apple-system, sans-serif; }
 body, .nav .nav-link { font-family: var(--font); font-optical-sizing: auto; }
 h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-spacing: -0.015em; word-spacing: .04em; }
+
+/* Uniform rhythm for page titles: same gap from the header and to the content below */
+:root { --title-top: clamp(3.5rem, 8vw, 7.2rem); --title-bottom: clamp(2.5rem, 5vw, 4.4rem); }
+.page-main > section:first-of-type, .page-main > #metodo.section { padding-top: var(--title-top); }
+#sezioni.page-routes { padding-top: calc(var(--header) + var(--title-top)); }
+.page-main > section:first-of-type > .container > .section-header,
+.page-routes #filosofia { margin-bottom: var(--title-bottom); }
+
+.page-routes #filosofia + .home-divider { margin-top: 0; }
+#metodo .section-header { margin-bottom: var(--title-bottom); }
+#metodo .method-layout { margin-top: 0; }
+.page-routes #filosofia { padding-top: 0; }
+#portfolio .section-header + * { margin-top: 0; }
+
+/* Approfondimento: prima / dopo */
+#servizi .deep-grid { display: block; margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,.1); }
+#servizi .deep-item { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr); gap: 2.5rem; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+#servizi .deep-item h3 { margin: 0; font-size: 1.35rem; }
+#servizi .deep-tag, #servizi .deep-risk .cta-response-accent { display: flex; align-items: center; gap: .5rem; margin-bottom: .55rem; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
+#servizi .deep-tag { color: #fff; }
+#servizi .deep-tag::before, #servizi .deep-risk .cta-response-accent::before { content: ""; width: 16px; height: 16px; flex: none; }
+#servizi .deep-tag::before { background: linear-gradient(110deg,#15eaa1,#00bfe7,#3274ff); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat; }
+#servizi .deep-risk .cta-response-accent { color: #8a8a8a; -webkit-text-fill-color: #8a8a8a; background: none; }
+#servizi .deep-risk .cta-response-accent::before { background: #6f6f6f; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 4.5l7 7M11.5 4.5l-7 7' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 4.5l7 7M11.5 4.5l-7 7' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; }
+#servizi .deep-item .deep-with p { color: #f2f2f2; }
+#servizi .deep-item .deep-risk { margin: 0; color: #8f8f8f; }
+#servizi .deep-risk > span:last-child { display: block; }
+@media (max-width: 860px) {
+  #servizi .deep-item { grid-template-columns: 1fr 1fr; gap: 1.25rem 1.5rem; }
+  #servizi .deep-item h3 { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) { #servizi .deep-item { grid-template-columns: 1fr; } }
