@@ -1,24 +1,9 @@
 /* Terminal Industries — applied UI kit
    Source: https://terminal-industries.com/ (computed 2026-10-23)
-   Suisse Intl is a commercial face. Geist (already in the repo, OFL) stands in
-   for it. Geist Mono (OFL, Vercel) matches Terminal's label and CTA face.
+   Typeface: Manrope (OFL), self-hosted in fonts/manrope-latin-var.woff2.
    Palette: #111111 ink, #faf7f9 canvas, #ffffff paper, #d94a87 lime (CTA only), #b83279 orange, #7f7f7f label, #454742 stone.
    Buttons 8px, cards 24px, no glass, no neon glow. */
 
-@font-face {
-  font-family: "Geist Mono";
-  src: url("../fonts/geist-mono-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geist Mono";
-  src: url("../fonts/geist-mono-600.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --bg: #faf7f9;
@@ -39,7 +24,7 @@
   --forest: #111111;
   --label: #7f7f7f;
   --orange: #b83279;
-  --mono: "Geist Mono", ui-monospace, monospace;
+  --mono: "Manrope", system-ui, sans-serif;
   --radius: 0;
   --ease: cubic-bezier(0, 0, 0.58, 1);
   --header: calc(72px + 16px);
@@ -683,7 +668,7 @@ body:has(#cookie-banner:not([hidden]))::before {
   }
 
   .nav .nav-link {
-    font-family: Geist, system-ui, sans-serif;
+    font-family: var(--font);
     font-weight: 400;
     font-size: clamp(1.7rem, 7vw, 2.15rem);
     letter-spacing: -0.04em;
@@ -1364,7 +1349,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 }
 #servizi .catalog-bundle .product-body .plan-inherit { margin-top: 1.1rem; }
 .lead-field legend + .lead-choice-note { margin-top: .6rem; }
-.lead-choice-subheading { margin: 1.5rem 0 .6rem; color: #ccc; font-family: "Geist Mono", ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: 1.32px; text-transform: uppercase; }
+.lead-choice-subheading { margin: 1.5rem 0 .6rem; color: #ccc; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 1.32px; text-transform: uppercase; }
 .lead-choice-subheading + .lead-choice-note { margin-top: 0; }
 
 /* Contact form: compact details and selectable service cards. */
@@ -1530,7 +1515,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: var(--head
 #servizi .shared-features .plan-inherit {
   margin: 0 0 1.1rem; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #8a8a8a;
 }
-#servizi .shared-features ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); grid-auto-flow: column; column-gap: 3rem; }
+#servizi .shared-features ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(5, auto); grid-auto-flow: column; column-gap: 3rem; }
 @media (max-width: 720px) {
   #servizi .switch { display: grid; width: 100%; }
   #servizi .switch button { padding: .7rem .5rem; letter-spacing: .08em; }
@@ -1593,3 +1578,47 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
   #servizi .deep-item h3 { grid-column: 1 / -1; }
 }
 @media (max-width: 520px) { #servizi .deep-item { grid-template-columns: 1fr; } }
+
+/* Per chi: fisarmonica */
+#per-chi .who-acc { border-top: 1px solid rgba(255,255,255,.12); }
+#per-chi .who-item { border-bottom: 1px solid rgba(255,255,255,.12); }
+#per-chi .who-word { display: flex; align-items: baseline; gap: 1.25rem; width: 100%; padding: 1.4rem 0; border: 0; background: none; text-align: left; cursor: pointer; font: inherit; font-size: clamp(1.6rem, 2.3vw, 2.1rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.05; color: #4a4a4a; transition: color .4s ease; }
+#per-chi .who-word .who-index { font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: .14em; color: #555; transition: color .4s ease; }
+#per-chi .who-word:not(.is-active):hover { color: #8a8a8a; }
+#per-chi .who-word.is-active > span:nth-child(2) { background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#per-chi .who-word.is-active .who-index { color: #00bfe7; }
+#per-chi .who-word:focus-visible { outline: 2px solid #00bfe7; outline-offset: 4px; border-radius: 6px; }
+#per-chi .who-detail { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .5s cubic-bezier(.2,.8,.2,1), opacity .4s ease; }
+#per-chi .who-detail.is-active { grid-template-rows: 1fr; opacity: 1; }
+#per-chi .who-detail > div { overflow: hidden; }
+#per-chi .who-detail p { margin: 0; padding: 0 0 1.5rem calc(12px * 2 + 1.25rem); max-width: 60ch; font-size: .95rem; line-height: 1.55; color: #d7d7d7; }
+@media (max-width: 560px) { #per-chi .who-detail p { padding-left: 0; } }
+
+/* Nessuna linea divisoria nelle sezioni */
+#per-chi .who-acc, #per-chi .who-item,
+#servizi .shared-features, #servizi .deep-grid, #servizi .deep-item { border-top: 0 !important; border-bottom: 0 !important; }
+
+/* Manrope ovunque */
+:root { --mono: "Manrope", system-ui, sans-serif; }
+.lead-choice-subheading { font-family: var(--mono); }
+
+/* Menu mobile: la X si disegna con due linee che ruotano (come +/− di Per chi) */
+@media (max-width: 1100px) {
+  .nav .nav-close { font-size: 0; color: transparent; }
+  .nav .nav-close::before, .nav .nav-close::after { content: ""; position: absolute; left: 50%; top: 50%; width: 22px; height: 1.5px; margin: -.75px 0 0 -11px; border-radius: 2px; background: #f5f5f5; transform: rotate(0); transition: transform .5s cubic-bezier(.2,.8,.2,1) .15s, background .35s ease; }
+  .nav.open .nav-close::before { transform: rotate(45deg); }
+  .nav.open .nav-close::after { transform: rotate(-45deg); }
+  .nav.open .nav-close:hover::before, .nav.open .nav-close:focus-visible::before { transform: rotate(135deg); background: #00bfe7; }
+  .nav.open .nav-close:hover::after, .nav.open .nav-close:focus-visible::after { transform: rotate(45deg); background: #00bfe7; }
+}
+@media (prefers-reduced-motion: reduce) { .nav .nav-close::before, .nav .nav-close::after { transition: none; } }
+
+/* Per chi: fisarmonica + domande retoriche affiancate */
+#per-chi .who-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+#per-chi .who-questions ul { list-style: none; margin: 1.25rem 0 0; padding: 0; }
+#per-chi .who-questions li { position: relative; padding: .7rem 0 .7rem 1.6rem; font-size: clamp(1.05rem, 1.4vw, 1.2rem); line-height: 1.4; letter-spacing: -.01em; color: #e8e8e8; }
+#per-chi .who-questions li::before { content: "?"; position: absolute; left: 0; top: .7rem; font-weight: 600; background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#per-chi .who-q-answer { margin: 1.75rem 0 0; font-size: .95rem; line-height: 1.55; color: #bdbdbd; }
+#per-chi .who-q-answer .route-go { display: inline-block; margin-left: .35rem; padding: 0; }
+#per-chi .who-q-answer .route-go::after { content: " ↗"; }
+@media (max-width: 860px) { #per-chi .who-layout { grid-template-columns: 1fr; } }

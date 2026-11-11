@@ -19,9 +19,7 @@
   <meta name="twitter:title" content="Per chi — Vuebb">
   <meta name="twitter:description" content="Professionisti, micro-imprese e PMI che non si accontentano di un sito già fatto.">
   <meta name="twitter:image" content="https://vuebb.com/images/og-vuebb.png">
-  <link rel="preload" href="fonts/geist-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/geist-sans-500.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/geist-sans-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/manrope-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/boot.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/portfolio.css" media="print" onload="this.media='all'">
@@ -75,19 +73,33 @@
       <div class="section-header">
         <h1 class="section-title" data-i18n="who.title">Per chi non si accontenta</h1>
       </div>
-      <div class="spec-grid">
-        <article class="spec-card">
-          <h3 data-i18n="who.p.title">Professionisti</h3>
-          <p data-i18n="who.p.desc">Studi, consulenti, creativi. Chi gestisce relazioni di alto valore e ha bisogno di un web all’altezza della propria professionalità.</p>
-        </article>
-        <article class="spec-card">
-          <h3 data-i18n="who.m.title">Micro-Imprese</h3>
-          <p data-i18n="who.m.desc">Realtà agili che vogliono crescere senza perdere identità. Un web che cresce con te, senza importi modelli estranei.</p>
-        </article>
-        <article class="spec-card">
-          <h3 data-i18n="who.s.title">PMI</h3>
-          <p data-i18n="who.s.desc">Aziende strutturate che cercano un sito web curato e aggiornato, e un partner che parla il linguaggio del business.</p>
-        </article>
+      <div class="who-layout">
+        <div class="who-manifesto who-acc" data-active="p">
+          <div class="who-item">
+            <button type="button" class="who-word is-active" data-k="p" aria-controls="who-p" aria-expanded="true"><span class="who-index">01</span><span data-i18n="who.p.title">Professionisti</span></button>
+            <div class="who-detail is-active" id="who-p" data-k="p"><div><p data-i18n="who.p.desc">Studi, consulenti, creativi. Se gestisci relazioni di alto valore hai bisogno di un sito web all’altezza della tua professionalità.</p></div></div>
+          </div>
+          <div class="who-item">
+            <button type="button" class="who-word" data-k="m" aria-controls="who-m" aria-expanded="false"><span class="who-index">02</span><span data-i18n="who.m.title">Micro-Imprese</span></button>
+            <div class="who-detail" id="who-m" data-k="m"><div><p data-i18n="who.m.desc">Realtà agili che vogliono crescere senza perdere identità. Porta il tuo business a un nuovo livello.</p></div></div>
+          </div>
+          <div class="who-item">
+            <button type="button" class="who-word" data-k="s" aria-controls="who-s" aria-expanded="false"><span class="who-index">03</span><span data-i18n="who.s.title">PMI</span></button>
+            <div class="who-detail" id="who-s" data-k="s"><div><p data-i18n="who.s.desc">Aziende strutturate che cercano un sito web curato e aggiornato. Scegli un Web Partner affidabile che ragiona nei termini del tuo business.</p></div></div>
+          </div>
+        </div>
+        <aside class="who-questions" aria-labelledby="who-q-title">
+          <span class="section-label" id="who-q-title" data-i18n="who.q.label">Ti riconosci?</span>
+          <ul>
+            <li data-i18n="who.q.1">Il tuo sito web non porta nuovi clienti?</li>
+            <li data-i18n="who.q.2">Hai un sito che non sai come aggiornare?</li>
+            <li data-i18n="who.q.4">I tuoi concorrenti compaiono su Google prima di te?</li>
+            <li data-i18n="who.q.5">Il tuo sito è lento o si vede male da smartphone?</li>
+            <li data-i18n="who.q.6">Non sai se il tuo sito rispetta le norme sulla privacy?</li>
+            <li data-i18n="who.q.7">Hai un'idea chiara del tuo business, ma non di come raccontarla online?</li>
+          </ul>
+          <p class="who-q-answer"><span data-i18n="who.q.answer">Se hai risposto sì anche solo a una domanda, Vuebb fa per te.</span> <a href="contatti.html" class="route-go" data-i18n="who.q.cta">Parliamone</a></p>
+        </aside>
       </div>
     </div>
   </section>
@@ -139,5 +151,6 @@
   <script src="js/contact-footer.js?v=pagina-contatti-20261108" defer></script>
   <script src="js/main.js?v=no-call-20261108" defer></script>
   <script src="js/logo-fill.js" defer></script>
+  <script src="js/who-manifesto.js" defer></script>
 </body>
 </html>
