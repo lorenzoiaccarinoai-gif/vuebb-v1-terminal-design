@@ -1455,7 +1455,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
   display: flex;
   align-items: center;
   width: max-content;
-  animation: logo-scroll 22s linear infinite;
+  animation: logo-scroll 48s linear infinite; will-change: transform;
 }
 .logo-track img { flex: none; height: 64px; width: auto; margin-right: clamp(3rem, 6vw, 5.5rem); }
 .logo-track .logo-mark-wide { height: 52px; }
