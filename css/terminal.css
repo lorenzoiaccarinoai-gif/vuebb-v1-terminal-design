@@ -934,12 +934,6 @@ h1.section-title {
   .lead-actions .btn { width: 100%; }
 }
 
-/* Spigoli vivi */
-*,
-*::before,
-*::after {
-  border-radius: 0 !important;
-}
 
 .gallery-frame .shot-screen-phone img,
 .shot-screen-phone img {
@@ -1344,8 +1338,8 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 #servizi .catalog-bundle .service-cadence { display: block; margin: 1rem 0 1.25rem; color: #aaa; font-size: .7rem; }
 #servizi .catalog-bundle .service-cadence strong { margin-right: .2rem; color: #fff; font-size: 2.1rem; font-weight: 400; letter-spacing: -.03em; text-transform: none; }
 #servizi .catalog-bundle .product-body ul { display: block; margin: 0; padding: 0; list-style: none; }
-#servizi .catalog-bundle .product-body li { position: relative; padding: .4rem 0 .4rem 1.4rem; border: 0; background: transparent; color: #f5f5f5; font-size: .95rem; line-height: 1.35; }
-#servizi .catalog-bundle .product-body li::before { content: "\2713"; position: absolute; left: 0; color: #15eaa1; font-size: .85rem; }
+#servizi .catalog-bundle .product-body li, #servizi .shared-features li { position: relative; padding: .4rem 0 .4rem 1.4rem; border: 0; background: transparent; color: #f5f5f5; font-size: .95rem; line-height: 1.35; }
+#servizi .catalog-bundle .product-body li::before, #servizi .shared-features li::before { content: "\2713"; position: absolute; left: 0; color: #15eaa1; font-size: .85rem; }
 #servizi .plan-addon { margin-top: clamp(4rem, 8vw, 6.5rem); }
 #servizi .plan-head .catalog-heading { margin: .75rem 0 0; }
 #servizi .plan-head .catalog-note { max-width: 46rem; margin-top: .85rem; line-height: 1.5; }
@@ -1477,7 +1471,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 .logo-marquee { display: block; cursor: pointer; }
 
 /* Checkmarks in the Vuebb gradient */
-#servizi .catalog-bundle .product-body li::before,
+#servizi .catalog-bundle .product-body li::before, #servizi .shared-features li::before,
 #servizi .plan-card li::before,
 .lead-form .lead-choices--cards label.lead-card:has(input:checked)::after {
   background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
@@ -1486,7 +1480,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 }
 
 /* Crisp checkmarks: vector check mask filled with the gradient (replaces the text glyph) */
-#servizi .catalog-bundle .product-body li::before,
+#servizi .catalog-bundle .product-body li::before, #servizi .shared-features li::before,
 #servizi .plan-card li::before,
 .lead-form .lead-choices--cards label.lead-card:has(input:checked)::after {
   content: ""; width: .8rem; height: .8rem; margin-top: .3em;
@@ -1502,3 +1496,68 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 .header { top: var(--header-offset); height: 72px; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: var(--header-offset); background: #000; z-index: 99; }
 
+
+/* One-off services: a switch picks the service, the shared features stay below */
+#servizi .service-switch { border: 0; background: none; }
+#servizi .switch-head { padding: 0; }
+#servizi .switch {
+  position: relative; display: inline-grid; grid-template-columns: 1fr 1fr;
+  padding: 4px; border: 1px solid #333; border-radius: 999px; background: #0a0a0a;
+}
+#servizi .switch button {
+  position: relative; z-index: 1; border: 0; background: none; cursor: pointer;
+  padding: .7rem 1.4rem; border-radius: 999px; white-space: nowrap;
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: #9a9a9a; transition: color .35s var(--ease, ease);
+}
+#servizi .switch button[aria-selected="true"] { color: #000; }
+#servizi .switch-thumb {
+  position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px;
+  background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
+  transition: transform .45s var(--ease, cubic-bezier(.2,.8,.2,1));
+}
+#servizi .service-switch[data-active="review"] .switch-thumb { transform: translateX(100%); }
+#servizi .switch-panes { display: grid; padding: clamp(1.5rem, 3vw, 2.25rem) 0 clamp(1.75rem, 3.5vw, 2.5rem); }
+#servizi .switch-pane {
+  grid-area: 1 / 1; opacity: 0; transform: translateY(8px); visibility: hidden;
+  transition: opacity .4s ease, transform .4s ease, visibility 0s .4s;
+}
+#servizi .switch-pane.is-active { opacity: 1; transform: none; visibility: visible; transition: opacity .4s ease .05s, transform .4s ease .05s; }
+#servizi .switch-pane h3 { margin: 0 0 .6rem; }
+#servizi .switch-pane .service-cadence strong { font-size: clamp(2.6rem, 5vw, 3.6rem); }
+#servizi .switch-pane p { margin: .9rem 0 0; max-width: 46ch; }
+#servizi .shared-features { border-top: 1px solid #333; padding: clamp(1.5rem, 3vw, 2.25rem) 0 0; }
+#servizi .shared-features .plan-inherit {
+  margin: 0 0 1.1rem; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #8a8a8a;
+}
+#servizi .shared-features ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); grid-auto-flow: column; column-gap: 3rem; }
+@media (max-width: 720px) {
+  #servizi .switch { display: grid; width: 100%; }
+  #servizi .switch button { padding: .7rem .5rem; letter-spacing: .08em; }
+  #servizi .shared-features ul { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; }
+}
+@media (prefers-reduced-motion: reduce) { #servizi .switch-thumb, #servizi .switch-pane { transition: none; } }
+/* Selector and price side by side on wide screens */
+@media (min-width: 721px) {
+  #servizi .service-switch { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  #servizi .switch-panes { padding: 0; }
+  #servizi .service-switch .shared-features { grid-column: 1 / -1; margin-top: clamp(1.75rem, 3.5vw, 2.5rem); }
+}
+
+/* Apple-style soft corners */
+:root { --r-lg: 22px; --r-md: 14px; --r-sm: 10px; }
+.btn, .lang-toggle, .plan-badge, .cookie-actions button, #servizi .switch, #servizi .switch button, #servizi .switch-thumb { border-radius: 999px; }
+.spec-card, .route-card, .plan-card, .product-card, .price-card, .lead-card,
+.policy-panel, .contact-panel, .portfolio-panel, .cookie-banner-inner, .gallery-frame, .gallery-stage { border-radius: var(--r-lg); }
+.page-routes .route-card { border-radius: var(--r-lg); }
+.shot, .shot-screen, .shot-screen img, .gallery-frame img { border-radius: var(--r-md); }
+input:not([type="checkbox"]):not([type="radio"]), select, textarea { border-radius: var(--r-sm); }
+input[type="checkbox"] { border-radius: 5px; }
+.nav, .nav-close { border-radius: var(--r-md); }
+.lead-choices label, .lead-choices label > span, .lead-choices--cards label.lead-card { border-radius: var(--r-sm); }
+
+/* Manrope (self-hosted, OFL) */
+@font-face { font-family: "Manrope"; src: url("../fonts/manrope-latin-var.woff2") format("woff2"); font-weight: 300 800; font-style: normal; font-display: swap; }
+:root { --font: "Manrope", system-ui, -apple-system, sans-serif; }
+body, .nav .nav-link { font-family: var(--font); font-optical-sizing: auto; }
+h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-spacing: -0.015em; word-spacing: .04em; }

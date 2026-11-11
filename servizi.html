@@ -76,43 +76,38 @@
         <h1 class="section-title" data-i18n="serv.title">Prezzi su misura, valore senza compromessi</h1>
       </div>
       <div class="catalog-bundle">
-      <div class="product-grid product-grid--pair">
-        <article class="product-card">
-          <div class="product-body">
-            <span class="product-index">01</span>
+      <div class="service-switch" data-active="create">
+        <div class="switch-head">
+          <div class="switch" role="tablist" aria-label="Tipo di servizio">
+            <span class="switch-thumb" aria-hidden="true"></span>
+            <button type="button" role="tab" id="tab-create" aria-selected="true" aria-controls="pane-create" data-target="create" data-i18n="serv.switch.new">Nuovo sito</button>
+            <button type="button" role="tab" id="tab-review" aria-selected="false" aria-controls="pane-review" data-target="review" data-i18n="serv.switch.existing">Ho già un sito</button>
+          </div>
+        </div>
+        <div class="switch-panes">
+          <div class="switch-pane is-active" id="pane-create" role="tabpanel" aria-labelledby="tab-create" data-pane="create">
             <h3 data-i18n="lead.service.create">Creazione Sito Web</h3>
             <span class="service-cadence" data-i18n="serv.create.price"><strong>€ 790</strong> una tantum, IVA inclusa</span>
             <p data-i18n="serv.create.desc">Progettiamo e realizziamo il tuo sito web da zero, su misura per te.</p>
-            <p class="plan-inherit" data-i18n="serv.base.includes">Include, una tantum:</p>
-            <ul>
-              <li data-i18n="serv.create.responsive">Design Responsive per Smartphone e Tablet</li>
-              <li data-i18n="serv.create.multilang">Traduzione multilingua di tutti i contenuti del sito</li>
-              <li data-i18n="serv.create.pages">Numero di pagine illimitato</li>
-              <li data-i18n="serv.create.forms">Form di contatto, di prenotazione e automazioni su misura</li>
-              <li data-i18n="lead.service.performance">Ottimizzazione Performance</li>
-              <li data-i18n="lead.service.seo">Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</li>
-              <li data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</li>
-            </ul>
           </div>
-        </article>
-        <article class="product-card">
-          <div class="product-body">
-            <span class="product-index">02</span>
+          <div class="switch-pane" id="pane-review" role="tabpanel" aria-labelledby="tab-review" data-pane="review">
             <h3 data-i18n="lead.service.review">Revisione Sito Web</h3>
             <span class="service-cadence" data-i18n="serv.review.price"><strong>€ 480</strong> una tantum, IVA inclusa</span>
             <p data-i18n="serv.review.desc">Analizziamo il sito che hai già e lo miglioriamo, senza ripartire da zero.</p>
-            <p class="plan-inherit" data-i18n="serv.base.includes">Include, una tantum:</p>
-            <ul>
-              <li data-i18n="serv.create.responsive">Design Responsive per Smartphone e Tablet</li>
-              <li data-i18n="serv.create.multilang">Traduzione multilingua di tutti i contenuti del sito</li>
-              <li data-i18n="serv.create.pages">Numero di pagine illimitato</li>
-              <li data-i18n="serv.create.forms">Form di contatto, di prenotazione e automazioni su misura</li>
-              <li data-i18n="lead.service.performance">Ottimizzazione Performance</li>
-              <li data-i18n="lead.service.seo">Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</li>
-              <li data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</li>
-            </ul>
           </div>
-        </article>
+        </div>
+        <div class="shared-features">
+          <p class="plan-inherit" data-i18n="serv.shared.includes">Sempre incluso, una tantum</p>
+          <ul>
+            <li data-i18n="serv.create.responsive">Design Responsive per Smartphone e Tablet</li>
+            <li data-i18n="lead.service.seo">Posizionamento nei Risultati di Ricerca (SEO, AI, Locale)</li>
+            <li data-i18n="lead.service.performance">Ottimizzazione Performance</li>
+            <li data-i18n="lead.service.privacy">Verifica Rispetto Leggi sulla Privacy</li>
+            <li data-i18n="serv.create.forms">Form di contatto, di prenotazione e automazioni su misura</li>
+            <li data-i18n="serv.create.multilang">Traduzione multilingua di tutti i contenuti del sito</li>
+            <li data-i18n="serv.create.pages">Numero di pagine illimitato</li>
+          </ul>
+        </div>
       </div>
       <section class="plan-addon" aria-labelledby="plans-title">
         <div class="plan-head">
@@ -120,7 +115,6 @@
             <span class="section-label" data-i18n="serv.plans.label">Piani ricorrenti</span>
             <h2 class="catalog-heading" id="plans-title" data-i18n="serv.plans.title">Scegli un supporto continuo</h2>
           </div>
-          <p class="catalog-note" data-i18n="serv.plans.note">Con un piano ricorrente, Vuebb esegue mensilmente le operazioni di manutenzione, aggiornamento e ottimizzazione del tuo sito web.</p>
         </div>
         <div class="plan-grid">
           <article class="plan-card">
@@ -146,13 +140,13 @@
           </article>
           <article class="plan-card">
             <h3 data-i18n="lead.service.ultra">Vuebb Ultra</h3>
-            <span class="service-cadence" data-i18n="serv.ultra.price"><strong>+ € 54</strong> / mese IVA inclusa</span>
+            <span class="service-cadence" data-i18n="serv.ultra.price"><strong>+ € 64</strong> / mese IVA inclusa</span>
             <p class="plan-inherit" data-i18n="serv.plan.fromPro">Tutto di Vuebb Pro, più:</p>
             <ul>
               <li data-i18n="serv.plan.content5">5 aggiornamenti contenutistici al mese (con traduzione multilingua)</li>
               <li data-i18n="serv.plan.structural">1 aggiornamento strutturale al mese</li>
               <li data-i18n="serv.plan.priority">Supporto prioritario</li>
-              <li data-i18n="serv.plan.call">Call mensile di 1h sui tuoi obiettivi</li>
+              <li data-i18n="serv.plan.call">Call mensile dedicata di 1h</li>
             </ul>
           </article>
         </div>
@@ -231,6 +225,7 @@
   <script src="js/i18n.js?v=approfondimento-20261108" defer></script>
   <script src="js/contact-footer.js?v=pagina-contatti-20261108" defer></script>
   <script src="js/main.js?v=no-call-20261108" defer></script>
+  <script src="js/service-switch.js" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>
 </html>
