@@ -132,7 +132,7 @@
       "price.extra": "Extra da quotare: dominio proprietario, produzione editoriale di contenuti ottimizzati SEO e AI, reportistica mensile sul traffico web, aggiornamenti successivi alla prima release ufficiale del sito web.",
       "cta.label": "Iniziamo",
       "cta.title": "Racconta il tuo progetto, senza impegno",
-      "cta.desc": "Ogni storia di successo inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.<br><br>Ci impegneremo a illustrarti come le soluzioni digitali di Vuebb possono potenziare il tuo business: <span class=\"cta-response-accent\">risposta garantita entro 24 ore</span>.",
+      "cta.desc": "Ogni storia di successo inizia con una conversazione. Nessun impegno, solo ascolto e chiarezza.<br><br>Ti illustreremo come le soluzioni digitali di Vuebb possono potenziare il tuo business: <span class=\"cta-response-accent\">risposta garantita entro 24 ore</span>.",
       "cta.mail": "Scrivici una mail",
       "cta.request": "Invia una richiesta",
       "cta.reply": "Risposta entro due giorni lavorativi",
