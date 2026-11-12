@@ -52,7 +52,6 @@
           <li><a href="per-chi.html" class="nav-link active" aria-current="page" data-i18n="nav.perchi">Per chi</a></li>
           <li><a href="servizi.html" class="nav-link" data-i18n="nav.servizi">Catalogo Servizi</a></li>
           <li><a href="metodo.html" class="nav-link" data-i18n="nav.metodo">Scopri Vuebb</a></li>
-          <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
         </ul>
         <a class="btn btn-lime btn-sm" href="contatti.html" data-i18n="nav.contatti">Contattaci</a>
       </nav>
@@ -68,39 +67,75 @@
   </header>
 
   <main class="page-main">
-  <section class="section who" id="per-chi">
+  <section class="section who page-routes" id="per-chi">
     <div class="container">
       <div class="section-header">
-        <h1 class="section-title" data-i18n="who.title">Per chi non si accontenta</h1>
+        <h1 class="section-title" data-i18n="who.title">Se <span class="gradient-text">non ti accontenti</span></h1>
       </div>
-      <div class="who-layout">
-        <div class="who-manifesto who-acc" data-active="p">
-          <div class="who-item">
-            <button type="button" class="who-word is-active" data-k="p" aria-controls="who-p" aria-expanded="true"><span class="who-index">01</span><span data-i18n="who.p.title">Professionisti</span></button>
-            <div class="who-detail is-active" id="who-p" data-k="p"><div><p data-i18n="who.p.desc">Studi, consulenti, creativi. Se gestisci relazioni di alto valore hai bisogno di un sito web all’altezza della tua professionalità.</p></div></div>
+      <div class="route-grid who-grid">
+        <article class="route-card">
+          <span class="product-index">01</span>
+          <h3 data-i18n="who.p.title">Professionisti</h3>
+          <p data-i18n="who.p.desc">Studi, consulenti, creativi. Se gestisci relazioni di alto valore hai bisogno di un sito web all’altezza della tua professionalità.</p>
+        </article>
+        <article class="route-card">
+          <span class="product-index">02</span>
+          <h3 data-i18n="who.m.title">Micro-Imprese</h3>
+          <p data-i18n="who.m.desc">Realtà agili che vogliono crescere senza perdere identità. Porta il tuo business a un nuovo livello.</p>
+        </article>
+        <article class="route-card">
+          <span class="product-index">03</span>
+          <h3 data-i18n="who.s.title">PMI</h3>
+          <p data-i18n="who.s.desc">Aziende strutturate che cercano un sito web curato e aggiornato. Scegli un Web Partner affidabile che ragiona nei termini del tuo business.</p>
+        </article>
+      </div>
+      <section class="clients" aria-labelledby="clients-title">
+        <div class="clients-head">
+          <div>
+            <span class="section-label" data-i18n="cli.label">Clienti</span>
+            <h2 class="catalog-heading" id="clients-title" data-i18n="cli.title">Chi ci ha già scelto</h2>
           </div>
-          <div class="who-item">
-            <button type="button" class="who-word" data-k="m" aria-controls="who-m" aria-expanded="false"><span class="who-index">02</span><span data-i18n="who.m.title">Micro-Imprese</span></button>
-            <div class="who-detail" id="who-m" data-k="m"><div><p data-i18n="who.m.desc">Realtà agili che vogliono crescere senza perdere identità. Porta il tuo business a un nuovo livello.</p></div></div>
-          </div>
-          <div class="who-item">
-            <button type="button" class="who-word" data-k="s" aria-controls="who-s" aria-expanded="false"><span class="who-index">03</span><span data-i18n="who.s.title">PMI</span></button>
-            <div class="who-detail" id="who-s" data-k="s"><div><p data-i18n="who.s.desc">Aziende strutturate che cercano un sito web curato e aggiornato. Scegli un Web Partner affidabile che ragiona nei termini del tuo business.</p></div></div>
+          <div class="clients-nav">
+            <button type="button" class="clients-btn" data-dir="-1" aria-label="Precedente" data-i18n-aria="cli.prev"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 15l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="clients-btn" data-dir="1" aria-label="Successivo" data-i18n-aria="cli.next"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
         </div>
-        <aside class="who-questions" aria-labelledby="who-q-title">
-          <span class="section-label" id="who-q-title" data-i18n="who.q.label">Ti riconosci?</span>
-          <ul>
+        <ul class="clients-track" tabindex="0" aria-label="Loghi dei clienti">
+            <li class="client">
+              <a class="client-link" href="https://ristorantemoonlight.it" target="_blank" rel="noopener"><div class="client-logo"><img src="images/portfolio/logos/moonlight-logo-vuebb-sm.png" alt="Moonlight" decoding="async"></div>
+              <p class="client-caption"><strong>Moonlight</strong><span data-i18n="cli.moonlight">Ristorante di Pesce nella Penisola Sorrentina, aperto dal 1980.</span></p></a>
+            </li>
+            <li class="client">
+              <a class="client-link" href="https://www.emozionicapresi.it" target="_blank" rel="noopener"><div class="client-logo"><img src="images/portfolio/logos/emozioni-capresi-lockup-vuebb-sm.png" alt="Emozioni Capresi" decoding="async"></div>
+              <p class="client-caption"><strong>Emozioni Capresi</strong><span data-i18n="cli.emozioni">Villa per vacanze nel cuore di Capri.</span></p></a>
+            </li>
+            <li class="client">
+              <a class="client-link" href="https://ilmontano.com" target="_blank" rel="noopener"><div class="client-logo"><img src="images/portfolio/logos/il-montano-lockup-vuebb-sm.png" alt="Il Montano" decoding="async"></div>
+              <p class="client-caption"><strong>Il Montano</strong><span data-i18n="cli.montano">Eco Bistrot &amp; Cocktail Bar che si affaccia sull’Isola de Li Galli.</span></p></a>
+            </li>
+            <li class="client">
+              <div class="client-logo"><img src="images/portfolio/logos/rever-wordmark-vuebb-sm.png" class="client-img-rever" alt="Studio Rever" decoding="async"></div>
+              <p class="client-caption"><strong>Studio Rever <span class="client-wip" data-i18n="cli.wip">(in lavorazione)</span></strong><span data-i18n="cli.rever">Studio multidisciplinare di Personal Training e Osteopatia a Milano.</span></p>
+            </li>
+            <li class="client">
+              <div class="client-logo"><img src="images/portfolio/logos/pleiadi-lockup-vuebb-sm.png" alt="Studio Pleiadi" decoding="async"></div>
+              <p class="client-caption"><strong>Studio Pleiadi <span class="client-wip" data-i18n="cli.wip">(in lavorazione)</span></strong><span data-i18n="cli.pleiadi">Studio multidisciplinare di Psicoterapia a Milano.</span></p>
+            </li>
+        </ul>
+      </section>
+      <section class="who-questions" aria-labelledby="who-q-title">
+        <span class="section-label" data-i18n="who.q.label">Ti riconosci?</span>
+        <h2 class="catalog-heading" id="who-q-title" data-i18n="who.q.title">Se una di queste domande ti suona familiare, sei nel posto giusto</h2>
+        <ul>
             <li data-i18n="who.q.1">Il tuo sito web non porta nuovi clienti?</li>
             <li data-i18n="who.q.2">Hai un sito che non sai come aggiornare?</li>
             <li data-i18n="who.q.4">I tuoi concorrenti compaiono su Google prima di te?</li>
             <li data-i18n="who.q.5">Il tuo sito è lento o si vede male da smartphone?</li>
             <li data-i18n="who.q.6">Non sai se il tuo sito rispetta le norme sulla privacy?</li>
             <li data-i18n="who.q.7">Hai un'idea chiara del tuo business, ma non di come raccontarla online?</li>
-          </ul>
-          <p class="who-q-answer"><span data-i18n="who.q.answer">Se hai risposto sì anche solo a una domanda, Vuebb fa per te.</span> <a href="contatti.html" class="route-go" data-i18n="who.q.cta">Parliamone</a></p>
-        </aside>
-      </div>
+        </ul>
+        <p class="who-q-answer"><span data-i18n="who.q.answer">Se hai risposto sì anche solo a una domanda, Vuebb fa per te.</span> <a href="contatti.html" class="route-go" data-i18n="who.q.cta">Parliamone</a></p>
+      </section>
     </div>
   </section>
   </main>
@@ -151,6 +186,6 @@
   <script src="js/contact-footer.js?v=pagina-contatti-20261108" defer></script>
   <script src="js/main.js?v=no-call-20261108" defer></script>
   <script src="js/logo-fill.js" defer></script>
-  <script src="js/who-manifesto.js" defer></script>
+  <script src="js/clients-slider.js" defer></script>
 </body>
 </html>

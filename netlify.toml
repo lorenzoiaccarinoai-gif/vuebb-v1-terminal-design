@@ -21,3 +21,13 @@
   from = "/prezzi.html"
   to = "/servizi"
   status = 301
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/"
+  status = 301
