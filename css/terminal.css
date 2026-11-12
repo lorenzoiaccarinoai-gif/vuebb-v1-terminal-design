@@ -1733,6 +1733,9 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
 /* Rever: wordmark otticamente più grande degli altri, lo riduco */
 #per-chi .client .client-logo img.client-img-rever { max-height: 44px; }
 @media (max-width: 760px) { #per-chi .client .client-logo img.client-img-rever { max-height: 36px; } }
+/* Studio Pleiadi: lockup largo, lo riduco */
+#per-chi .client .client-logo img[src*="pleiadi-lockup"] { max-height: 48px; max-width: 80%; }
+@media (max-width: 760px) { #per-chi .client .client-logo img[src*="pleiadi-lockup"] { max-height: 40px; } }
 /* stessa distanza logo–didascalia per tutti: area logo ad altezza fissa */
 @media (max-width: 760px) { #per-chi .clients-track .client .client-logo { height: 56px; align-items: center; } }
 /* slider verticale centrato nella pagina (testi sempre allineati a sinistra) */
@@ -1812,3 +1815,16 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 #per-chi .who-q-answer .route-go { margin-left: 0; }
+
+/* Header: marchio V vettoriale */
+.header .logo-link { display: inline-flex; align-items: center; align-self: center; line-height: 0; text-decoration: none; border-radius: 10px; }
+.header .logo-v { display: block; height: 52px; width: auto; aspect-ratio: 338 / 251; overflow: visible; }
+.header .logo-v path { fill: none; stroke: url(#logo-v-grad); stroke-width: 9; stroke-linejoin: round; }
+.header .logo-link:focus-visible { outline: 2px solid #00bfe7; outline-offset: 6px; }
+@media (max-width: 768px) { .header .logo-v { height: 40px; } }
+/* Header più alto: il logo ha lo stesso spazio sopra (bordo pagina) e sotto (fine header) */
+.header { height: 88px; }
+.header .header-inner { padding-bottom: 16px; }
+@media (max-width: 768px) { .header { height: 72px; } }
+/* Header desktop: logo a sinistra, menu e lingua allineati a destra */
+@media (min-width: 769px) { .header .header-inner > .nav { margin-left: auto; margin-right: 2rem; } }
