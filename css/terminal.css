@@ -1870,3 +1870,34 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
 .page-main > .section > .container > .section-header > .section-title + .section-desc { margin-top: 1.5rem; }
 .policy-main { padding-bottom: 102.4px; }
 @media (max-width: 768px) { .policy-main { padding-top: calc(var(--header-offset) + 72px + 60px); padding-bottom: 64px; } }
+/* Paragrafo sotto il titolo di pagina: stessa distanza che c'è tra titolo e contenuto nelle altre pagine */
+.page-main > .section > .container > .section-header > .section-title + .section-desc,
+.page-main > #contatti > .container > .section-header .section-desc,
+.policy-panel .section-header > .section-title + .section-desc { margin-top: 130px; }
+@media (max-width: 768px) {
+  .page-main > .section > .container > .section-header > .section-title + .section-desc,
+  .page-main > #contatti > .container > .section-header .section-desc,
+  .policy-panel .section-header > .section-title + .section-desc { margin-top: 86px; }
+}
+/* Footer allineato al resto del sito: a sinistra sul margine dei contenuti, stessi font e spaziature */
+.footer { padding: 102.4px 0; text-align: left; }
+.footer .footer-inner { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; text-align: left; gap: 1.5rem; }
+.footer .footer-brand { margin: 0; }
+.footer .logo-img.footer-logo-v { height: 52px; width: auto; display: block; }
+.footer .footer-legal { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: .75rem 2rem; margin: 0; }
+.footer .footer-legal a, .footer #cookie-manage {
+  font-family: var(--font); font-size: 1rem; font-weight: 400; line-height: 1.6; letter-spacing: normal; text-transform: none;
+  color: #cccccc; background: none; border: 0; padding: 0; margin: 0; cursor: pointer; text-decoration: none;
+}
+.footer .footer-legal a:hover, .footer #cookie-manage:hover { color: #00bfe7; }
+.footer .footer-copy { margin: 0; font-family: var(--font); font-size: 13px; line-height: 1.5; letter-spacing: .02em; color: #8a8a8a; }
+@media (max-width: 768px) {
+  .footer { padding: 64px 0; }
+  .footer .logo-img.footer-logo-v { height: 40px; }
+  .footer .footer-legal { flex-direction: column; align-items: flex-start; gap: .6rem; }
+}
+/* Footer allineato a destra (sul margine destro dei contenuti) */
+.footer, .footer .footer-inner { text-align: right; }
+.footer .footer-inner { align-items: flex-end; }
+.footer .footer-legal { justify-content: flex-end; }
+@media (max-width: 768px) { .footer .footer-legal { align-items: flex-end; } }
