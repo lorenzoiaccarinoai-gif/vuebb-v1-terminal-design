@@ -32,8 +32,8 @@
   });
   document.addEventListener('reset', (e) => { setTimeout(() => syncIncludedServices(e.target), 0); });
   function syncBusinessFields(form) {
-    const kind = form.querySelector('input[name="kind"]:checked');
-    const isBusiness = !!kind && ['shop', 'biz'].includes(kind.value);
+    const kind = form.querySelector('select[name="kind"]');
+    const isBusiness = !!kind && !!kind.value && ['shop', 'biz'].includes(kind.value);
     const group = form.querySelector('.lead-business');
     if (group) group.hidden = !isBusiness;
     form.querySelectorAll('input[name="company"], input[name="role"]').forEach((field) => {
@@ -42,7 +42,7 @@
     });
   }
   document.addEventListener('change', (e) => {
-    if (e.target.matches('.lead-form input[name="kind"]')) syncBusinessFields(e.target.form);
+    if (e.target.matches('.lead-form select[name="kind"]')) syncBusinessFields(e.target.form);
   });
   document.addEventListener('reset', (e) => {
     if (e.target.matches('.lead-form')) setTimeout(() => syncBusinessFields(e.target), 0);

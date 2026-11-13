@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="css/boot.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/portfolio.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/metodo.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/terminal.css?v=no-titolo-contatti-20261108">
+  <link rel="stylesheet" href="css/terminal.css?v=steps-20261113">
 </head>
 <body data-i18n-title="page.contatti">
   <div class="mesh" aria-hidden="true">
@@ -85,44 +85,25 @@
                   <input name="phone" type="tel" autocomplete="tel">
                 </label>
               </div>
-              <fieldset class="lead-field">
-                <legend data-i18n="lead.kind">Sei</legend>
-                <div class="lead-choices lead-choices--segmented">
-                  <label><input type="radio" name="kind" value="pro" required><span data-i18n="lead.kind.pro">Professionista</span></label>
-                  <label><input type="radio" name="kind" value="shop"><span data-i18n="lead.kind.shop">Attività commerciale</span></label>
-                  <label><input type="radio" name="kind" value="biz"><span data-i18n="lead.kind.biz">Azienda</span></label>
-                </div>
-              </fieldset>
-              <div class="lead-split lead-business" hidden>
+              <div class="lead-split lead-split--choices">
                 <label class="lead-field">
-                  <span data-i18n="lead.company">Nome attività / azienda</span>
-                  <input name="company" type="text" autocomplete="organization" disabled>
+                  <span data-i18n="lead.kind">Sono</span>
+                  <select name="kind" required>
+                    <option value="" selected disabled data-i18n="lead.select">Seleziona</option>
+                    <option value="pro" data-i18n="lead.kind.pro">Professionista</option>
+                    <option value="shop" data-i18n="lead.kind.shop">Attività commerciale</option>
+                    <option value="biz" data-i18n="lead.kind.biz">Azienda</option>
+                  </select>
                 </label>
                 <label class="lead-field">
-                  <span data-i18n="lead.role">Ruolo in attività / azienda</span>
-                  <input name="role" type="text" autocomplete="organization-title" disabled>
+                  <span data-i18n="lead.service">Mi interessa</span>
+                  <select name="service" required>
+                    <option value="" selected disabled data-i18n="lead.select">Seleziona</option>
+                    <option value="create" data-i18n="lead.service.create">Creazione Sito Web</option>
+                    <option value="review" data-i18n="lead.service.review">Revisione Sito Web</option>
+                  </select>
                 </label>
               </div>
-              <fieldset class="lead-field lead-field--services">
-                <legend data-i18n="lead.service">Sono interessato a:</legend>
-                <div class="lead-group-head">
-                  <p class="lead-choice-subheading" data-i18n="lead.service.once">Servizi una tantum</p>
-                  <p class="lead-choice-note" data-i18n="lead.service.full.note">Includono ottimizzazione performance, posizionamento nei risultati di ricerca e verifica privacy.</p>
-                </div>
-                <div class="lead-choices lead-choices--cards">
-                  <label class="lead-card"><input type="checkbox" name="service" value="create"><span class="lead-card-name" data-i18n="lead.service.create">Creazione Sito Web</span><small class="lead-card-price" data-i18n="lead.price.create"><strong>€ 1.290</strong> IVA inclusa</small></label>
-                  <label class="lead-card"><input type="checkbox" name="service" value="review"><span class="lead-card-name" data-i18n="lead.service.review">Revisione Sito Web</span><small class="lead-card-price" data-i18n="lead.price.review"><strong>€ 680</strong> IVA inclusa</small></label>
-                </div>
-                <div class="lead-group-head">
-                  <p class="lead-choice-subheading" data-i18n="lead.service.recurring">Servizi ricorrenti</p>
-                  <p class="lead-choice-note" data-i18n="lead.service.recurring.note">Includono il supporto mensile al tuo sito. Si aggiungono a quelli una tantum: richiedono la Creazione o la Revisione del Sito Web.</p>
-                </div>
-                <div class="lead-choices lead-choices--cards lead-choices--plans">
-                  <label class="lead-card"><input type="checkbox" name="service" value="basic" disabled><span class="lead-card-name" data-i18n="lead.service.basic">Vuebb Basic</span><small class="lead-card-price" data-i18n="lead.price.basic"><strong>€ 36</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.basic.desc">Hosting, manutenzione mensile di base e verifica mensile della privacy.</small></label>
-                  <label class="lead-card lead-card--featured"><input type="checkbox" name="service" value="maintenance" disabled><span class="lead-card-name"><span data-i18n="lead.service.maintenance">Vuebb Pro</span> <em data-i18n="serv.plan.recommended">Consigliato</em></span><small class="lead-card-price" data-i18n="lead.price.maintenance"><strong>€ 48</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.maintenance.desc">Tutte le funzioni di Basic, più ottimizzazione mensile di performance e posizionamento e fino a 2 aggiornamenti contenutistici al mese.</small></label>
-                  <label class="lead-card"><input type="checkbox" name="service" value="ultra" disabled><span class="lead-card-name" data-i18n="lead.service.ultra">Vuebb Ultra</span><small class="lead-card-price" data-i18n="lead.price.ultra"><strong>€ 105</strong> / mese IVA inclusa</small><small class="lead-card-desc" data-i18n="lead.service.ultra.desc">Tutte le funzioni di Pro, più fino a 5 aggiornamenti contenutistici e 1 strutturale al mese e supporto prioritario.</small></label>
-                </div>
-              </fieldset>
               <div class="lead-split">
                 <label class="lead-field">
                   <span data-i18n="lead.project">Due righe sul progetto e i tuoi obiettivi (facoltativo)</span>
@@ -169,8 +150,10 @@
   </div>
 
 
-  <script src="js/i18n.js?v=includono-20261108" defer></script>
-  <script src="js/contact-footer.js?v=domande-20261108" defer></script>
+  <script src="js/i18n.js?v=steps-20261113" defer></script>
+  <script src="js/contact-footer.js?v=select-20261113" defer></script>
+  <script src="js/lead-select.js?v=20261113" defer></script>
+  <script src="js/lead-steps.js?v=20261113" defer></script>
   <script src="js/main.js?v=no-call-20261108" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>
