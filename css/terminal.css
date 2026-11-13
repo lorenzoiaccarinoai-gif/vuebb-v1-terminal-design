@@ -1818,8 +1818,7 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
 
 /* Header: marchio V vettoriale */
 .header .logo-link { display: inline-flex; align-items: center; align-self: center; line-height: 0; text-decoration: none; border-radius: 10px; }
-.header .logo-v { display: block; height: 52px; width: auto; aspect-ratio: 338 / 251; overflow: visible; }
-.header .logo-v path { fill: none; stroke: url(#logo-v-grad); stroke-width: 9; stroke-linejoin: round; }
+.header .logo-v { display: block; height: 52px; width: auto; aspect-ratio: 791 / 608; overflow: visible; }
 .header .logo-link:focus-visible { outline: 2px solid #00bfe7; outline-offset: 6px; }
 @media (max-width: 768px) { .header .logo-v { height: 40px; } }
 /* Header più alto: il logo ha lo stesso spazio sopra (bordo pagina) e sotto (fine header) */
@@ -1833,3 +1832,5 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
 }
 /* Header desktop: logo a sinistra, menu e lingua allineati a destra */
 @media (min-width: 769px) { .header .header-inner > .nav { margin-left: auto; margin-right: 2rem; } }
+/* Footer: nuovo marchio V */
+.footer .logo-img.footer-logo-v { height: 52px; width: auto; }
