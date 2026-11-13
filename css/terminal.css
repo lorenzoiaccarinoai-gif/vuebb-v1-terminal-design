@@ -2067,3 +2067,5 @@ html.i18n-wait body { opacity: 0; }
 }
 /* Chiusura istantanea del menu quando si cambia pagina */
 html.nav-instant .nav, html.nav-instant .nav *, html.nav-instant .nav::before, html.nav-instant .nav-backdrop, html.nav-instant .menu-toggle .menu-bar, html.nav-instant .cta-book-float { transition: none !important; animation: none !important; }
+/* CTA flottante: sparisce all'istante quando un altro Contattaci e a schermo (anche quello del menu), ricompare con dissolvenza */
+.cta-book-float.cta-float-on.is-hidden, body.nav-open .cta-book-float.cta-float-on { transition: none !important; opacity: 0; visibility: hidden; }

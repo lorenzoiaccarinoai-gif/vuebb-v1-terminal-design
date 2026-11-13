@@ -53,13 +53,16 @@
       closeNav();
     });
     navBackdrop?.addEventListener('click', closeNav);
-    // Se si clicca un link con il menu aperto, il menu si chiude all'istante: la pagina cambia senza animazioni a meta
+    // Link cliccato con il menu aperto: prima il menu si chiude con la sua animazione (X compresa), poi si cambia pagina
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a[href]');
-      if (!link || !nav.classList.contains('open') || link.target === '_blank' || e.defaultPrevented) return;
-      document.documentElement.classList.add('nav-instant');
+      if (!link || !nav.classList.contains('open') || link.target === '_blank' || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      const url = new URL(link.href, location.href);
+      if (url.origin !== location.origin) return;
+      e.preventDefault();
+      e.stopPropagation();
       closeNav();
-      setTimeout(() => document.documentElement.classList.remove('nav-instant'), 800);
+      setTimeout(() => { location.href = url.href; }, 400);
     }, true);
     window.addEventListener('pageshow', () => { document.documentElement.classList.remove('nav-instant'); if (nav.classList.contains('open')) closeNav(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); menuToggle.focus(); } });
