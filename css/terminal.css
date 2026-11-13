@@ -1851,3 +1851,8 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
 }
 #metodo .about-manifesto .about-quote::before { content: "\201C"; margin-right: .08em; }
 #metodo .about-manifesto .about-quote::after { content: "\201D"; margin-left: .06em; }
+/* DNA: niente stile "card" sul blocco del fondatore (angoli arrotondati + overflow tagliavano il testo su mobile) */
+#metodo .spec-card, #metodo .spec-card:hover, #metodo .spec-card.is-hover, #metodo .spec-card.highlight, #metodo .spec-card.highlight:hover {
+  border-radius: 0; overflow: visible; background: none; border: 0; box-shadow: none; transform: none; padding: 0;
+}
+#metodo .spec-card::before, #metodo .spec-card::after { display: none; }
