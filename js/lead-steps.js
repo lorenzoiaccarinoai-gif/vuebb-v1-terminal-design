@@ -111,3 +111,12 @@
   }, true);
   show(0);
 })();
+(function () {
+  // I campi di testo libero crescono con il contenuto mantenendo la forma a capsula
+  const grow = (ta) => { ta.style.height = 'auto'; ta.style.height = Math.max(58, ta.scrollHeight + 2) + 'px'; ta.style.overflow = ta.scrollHeight > 320 ? 'auto' : 'hidden'; };
+  document.querySelectorAll('.lead-form textarea').forEach((ta) => {
+    ta.rows = 1;
+    ta.addEventListener('input', () => grow(ta));
+    ta.form?.addEventListener('reset', () => setTimeout(() => grow(ta), 0));
+  });
+})();

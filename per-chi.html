@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <script>try{if(localStorage.getItem("vuebb-lang")==="en"){document.documentElement.classList.add("i18n-wait");setTimeout(function(){document.documentElement.classList.remove("i18n-wait")},1200)}}catch(e){}</script>
+  <style>@view-transition{navigation:auto}</style>
+  <script type="speculationrules">{"prerender":[{"where":{"href_matches":"/*.html"},"eagerness":"moderate"}],"prefetch":[{"where":{"href_matches":"/*.html"},"eagerness":"eager"}]}</script>
   <link rel="icon" href="/images/favicon-vuebb-neon.svg?v=20261113b" type="image/svg+xml" sizes="any">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +27,7 @@
   <link rel="stylesheet" href="css/boot.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/portfolio.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/metodo.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/terminal.css?v=chiusura-20261108">
+  <link rel="stylesheet" href="css/terminal.css?v=nav-20261113">
 </head>
 <body data-i18n-title="page.perchi">
   <div class="mesh" aria-hidden="true">
@@ -170,9 +173,10 @@
   </div>
 
 
-  <script src="js/i18n.js?v=pagina-contatti-20261108" defer></script>
-  <script src="js/contact-footer.js?v=pagina-contatti-20261108" defer></script>
-  <script src="js/main.js?v=no-call-20261108" defer></script>
+  <script src="js/i18n.js?v=nav-20261113" defer></script>
+  <script src="js/contact-footer.js?v=float-20261113" defer></script>
+  <script src="js/cta-float.js?v=20261113" defer></script>
+  <script src="js/main.js?v=nav-20261113" defer></script>
   <script src="js/logo-fill.js" defer></script>
   <script src="js/clients-slider.js" defer></script>
 </body>

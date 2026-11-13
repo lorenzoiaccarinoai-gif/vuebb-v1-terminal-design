@@ -596,6 +596,7 @@
 
   const saved = localStorage.getItem('vuebb-lang') || 'it';
   setLang(saved);
+  document.documentElement.classList.remove('i18n-wait');
 
   window.VuebbI18n = {
     lang: function () { return localStorage.getItem('vuebb-lang') || 'it'; },

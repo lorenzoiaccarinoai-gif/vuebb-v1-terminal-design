@@ -53,6 +53,7 @@
       closeNav();
     });
     navBackdrop?.addEventListener('click', closeNav);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); menuToggle.focus(); } });
 
     document.addEventListener('click', (e) => {
       if (

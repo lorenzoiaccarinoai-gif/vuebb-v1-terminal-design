@@ -47,13 +47,6 @@
   document.addEventListener('reset', (e) => {
     if (e.target.matches('.lead-form')) setTimeout(() => syncBusinessFields(e.target), 0);
   });
-  const floatingContact = document.querySelector('.cta-book-float');
-  const contactSection = document.getElementById('contatto');
-  if (floatingContact && contactSection && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => {
-      floatingContact.style.display = entry.isIntersecting ? 'none' : '';
-    }, { rootMargin: '0px 0px -15% 0px' }).observe(contactSection);
-  }
   const form = document.getElementById('footer-lead-form');
   if (!form) return;
   const status = document.getElementById('footer-lead-status');
