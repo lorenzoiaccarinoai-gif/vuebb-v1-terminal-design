@@ -3,7 +3,7 @@
 <head>
   <script>try{if(localStorage.getItem("vuebb-lang")==="en"){document.documentElement.classList.add("i18n-wait");setTimeout(function(){document.documentElement.classList.remove("i18n-wait")},1200)}}catch(e){}</script>
   <style>@view-transition{navigation:auto}</style>
-  <script type="speculationrules">{"prerender":[{"where":{"href_matches":"/*.html"},"eagerness":"moderate"}],"prefetch":[{"where":{"href_matches":"/*.html"},"eagerness":"eager"}]}</script>
+  <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"eager"}]}</script>
   <link rel="icon" href="/images/favicon-vuebb-neon.svg?v=20261113b" type="image/svg+xml" sizes="any">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -215,7 +215,7 @@
 
   <script src="js/i18n.js?v=nav-20261113" defer></script>
   <script src="js/contact-footer.js?v=float-20261113" defer></script>
-  <script src="js/cta-float.js?v=sync-20261113" defer></script>
+  <script src="js/cta-float.js?v=netlify-20261113" defer></script>
   <script src="js/main.js?v=navx-20261113" defer></script>
   <script src="js/service-switch.js" defer></script>
   <script src="js/logo-fill.js" defer></script>

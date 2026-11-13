@@ -11,7 +11,7 @@
     btn.textContent = (window.VuebbI18n && window.VuebbI18n.t('nav.contatti')) || 'Contattaci';
     document.body.appendChild(btn);
   }
-  const targets = Array.from(document.querySelectorAll('a[href*="contatti.html"], .contact-end-form, #footer-lead-submit'))
+  const targets = Array.from(document.querySelectorAll('a[href*="contatti"], .contact-end-form, #footer-lead-submit'))
     .filter((el) => el !== btn && !el.closest('.header, .nav, header'));
   const onScreen = (el) => {
     const r = el.getBoundingClientRect();
