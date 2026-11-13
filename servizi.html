@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <script>try{if(localStorage.getItem("vuebb-lang")==="en"){document.documentElement.classList.add("i18n-wait");setTimeout(function(){document.documentElement.classList.remove("i18n-wait")},1200)}}catch(e){}</script>
+  <script>(function(){function h(){try{var t=+sessionStorage.getItem("vuebb-nav-handoff");sessionStorage.removeItem("vuebb-nav-handoff");if(!t||Date.now()-t>4000||innerWidth>768)return;var d=document.documentElement;d.classList.add("nav-handoff");var go=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(function(){d.classList.remove("nav-handoff")},80)})})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",go):go()}catch(e){}}document.prerendering?document.addEventListener("prerenderingchange",h,{once:true}):h()})()</script>
   <style>@view-transition{navigation:auto}</style>
   <script type="speculationrules">{"prerender":[{"where":{"selector_matches":".nav a, .logo-link, .contact-cta, .cta-book-float"},"eagerness":"eager"},{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"eager"}]}</script>
   <link rel="icon" href="/favicon.ico?v=20261113c" sizes="48x48">
@@ -30,7 +31,7 @@
   <link rel="stylesheet" href="css/boot.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/portfolio.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/metodo.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/terminal.css?v=x2-20261113">
+  <link rel="stylesheet" href="css/terminal.css?v=handoff2-20261113">
 </head>
 <body data-i18n-title="page.servizi">
   <div class="mesh" aria-hidden="true">
@@ -219,7 +220,7 @@
   <script src="js/i18n.js?v=nav-20261113" defer></script>
   <script src="js/contact-footer.js?v=float-20261113" defer></script>
   <script src="js/cta-float.js?v=netlify-20261113" defer></script>
-  <script src="js/main.js?v=x2-20261113" defer></script>
+  <script src="js/main.js?v=handoff-20261113" defer></script>
   <script src="js/service-switch.js" defer></script>
   <script src="js/logo-fill.js" defer></script>
 </body>

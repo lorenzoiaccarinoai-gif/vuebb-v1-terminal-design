@@ -2046,10 +2046,10 @@ body.nav-open .cta-book-float.cta-float-on { opacity: 0; transform: translateY(1
 }
 /* === Navigazione tra pagine: dissolvenza rapida, header fermo === */
 
-.header { view-transition-name: site-header; }
+.header { view-transition-name: none; }
 ::view-transition-old(root) { animation: vtOut .16s ease both; }
 ::view-transition-new(root) { animation: vtIn .24s ease both; }
-::view-transition-group(site-header) { animation: none; }
+
 @keyframes vtOut { to { opacity: 0; } }
 @keyframes vtIn { from { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none; } }
@@ -2096,3 +2096,16 @@ html.nav-instant .nav, html.nav-instant .nav *, html.nav-instant .nav::before, h
 .lead-form.is-stepped .lead-select-list { animation-duration: .12s; }
 .lead-progress-bar i { transition-duration: .25s; }
 .btn, .nav-link, .nav-link::after, .lang-toggle, .lead-step-back, .lead-select-btn, .lead-select-list li, .footer a, .spec-card, .price-card, .product-card, .quote-card, .route-card, .lead-form input, .lead-form textarea { transition-duration: .18s !important; }
+/* Passaggio di consegne del menu: la nuova pagina nasce con il menu aperto e sfocato, poi il menu si ritrae */
+@media (max-width: 768px) {
+  html.nav-handoff .nav { transform: none !important; visibility: visible !important; transition: none !important; z-index: 21; }
+  html.nav-handoff .nav::before { opacity: 1; transition: none !important; }
+  html.nav-handoff .nav .nav-list li, html.nav-handoff .nav > .btn { opacity: 1; transform: none; transition: none !important; }
+  html.nav-handoff .nav-backdrop { opacity: 1 !important; visibility: visible !important; transition: none !important; }
+  html.nav-handoff .header .menu-toggle .menu-bar { width: 24px; top: 21px; background: linear-gradient(90deg,#15eaa1,#00bfe7,#3b6cff); transition: none !important; }
+  html.nav-handoff .header .menu-toggle .menu-bar:first-child { transform: rotate(45deg); }
+  html.nav-handoff .header .menu-toggle .menu-bar:last-child { transform: rotate(-45deg); }
+  html.nav-handoff .nav .nav-close::before { transform: rotate(45deg); transition: none !important; }
+  html.nav-handoff .nav .nav-close::after { transform: rotate(-45deg); transition: none !important; }
+  html.nav-handoff .cta-book-float { opacity: 0 !important; visibility: hidden !important; transition: none !important; }
+}

@@ -53,16 +53,15 @@
       closeNav();
     });
     navBackdrop?.addEventListener('click', closeNav);
-    // Link cliccato con il menu aperto: prima il menu si chiude con la sua animazione (X compresa), poi si cambia pagina
+    // Link cliccato con il menu aperto: la nuova pagina si carica subito sotto il menu sfocato;
+    // appena pronta, il menu si ritrae e la sezione e gia li (vedi script nel <head> e html.nav-handoff)
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a[href]');
       if (!link || !nav.classList.contains('open') || link.target === '_blank' || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
       const url = new URL(link.href, location.href);
       if (url.origin !== location.origin) return;
-      e.preventDefault();
+      try { sessionStorage.setItem('vuebb-nav-handoff', String(Date.now())); } catch (_) {}
       e.stopPropagation();
-      closeNav();
-      setTimeout(() => { location.href = url.href; }, 200);
     }, true);
     window.addEventListener('pageshow', () => { document.documentElement.classList.remove('nav-instant'); if (nav.classList.contains('open')) closeNav(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); menuToggle.focus(); } });
