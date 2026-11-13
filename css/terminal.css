@@ -1901,3 +1901,6 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
 .footer .footer-inner { align-items: flex-end; }
 .footer .footer-legal { justify-content: flex-end; }
 @media (max-width: 768px) { .footer .footer-legal { align-items: flex-end; } }
+/* Selettore lingua: testo con lo stesso stile delle voci di menu */
+.header .lang-toggle, .header .lang-toggle .lang-code { font-family: var(--font); font-size: 14px; font-weight: 500; letter-spacing: .03em; text-transform: uppercase; }
+@media (max-width: 768px) { .header .lang-toggle, .header .lang-toggle .lang-code { font-size: 14px; } }
