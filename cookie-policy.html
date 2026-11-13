@@ -22,16 +22,30 @@
 
   <header class="header" id="header">
     <div class="container header-inner">
-      <a href="index.html#hero" class="logo-link" aria-label="Vuebb Home">
+      <a href="index.html" class="logo-link" aria-label="Vuebb Home">
         <img src="images/logo-vuebb-v.svg" alt="Vuebb" class="logo-v" width="791" height="608">
       </a>
-      <a href="index.html" class="btn btn-lime btn-sm">Home</a>
+      <nav class="nav" id="nav">
+        <button type="button" class="nav-close" id="nav-close" aria-label="Chiudi menu">×</button>
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+          <li><a href="per-chi.html" class="nav-link" data-i18n="nav.perchi">Clienti</a></li>
+          <li><a href="servizi.html" class="nav-link" data-i18n="nav.servizi">Servizi</a></li>
+          <li><a href="metodo.html" class="nav-link" data-i18n="nav.metodo">DNA</a></li>
+        </ul>
+        <a class="btn btn-lime btn-sm" href="contatti.html" data-i18n="nav.contatti">Contattaci</a>
+      </nav>
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambia lingua">
-        <span class="flag" id="langFlag">🇮🇹</span>
+        <span class="flag" id="langFlag"><svg viewBox="0 0 3 2" width="18" height="12" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></span>
         <span class="lang-code" id="langCode">IT</span>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
       </button>
     </div>
   </header>
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
   <main class="section policy-main">
     <div class="container contact-panel policy-panel">
@@ -89,5 +103,6 @@
 
   <script src="js/i18n.js?v=pagina-contatti-20261108" defer></script>
   <script src="js/contact-footer.js?v=pagina-contatti-20261108" defer></script>
+  <script src="js/main.js?v=no-call-20261108" defer></script>
 </body>
 </html>
