@@ -2065,3 +2065,5 @@ html.i18n-wait body { opacity: 0; }
   .nav-backdrop { background: rgba(0,0,0,.35); -webkit-backdrop-filter: blur(12px) saturate(1.1); backdrop-filter: blur(12px) saturate(1.1); will-change: opacity; transition: opacity .26s cubic-bezier(.4,0,.2,1), visibility 0s linear .26s; visibility: hidden; }
   body.nav-open .nav-backdrop { visibility: visible; transition: opacity .34s cubic-bezier(.22,1,.36,1), visibility 0s; }
 }
+/* Chiusura istantanea del menu quando si cambia pagina */
+html.nav-instant .nav, html.nav-instant .nav *, html.nav-instant .nav::before, html.nav-instant .nav-backdrop, html.nav-instant .menu-toggle .menu-bar, html.nav-instant .cta-book-float { transition: none !important; animation: none !important; }

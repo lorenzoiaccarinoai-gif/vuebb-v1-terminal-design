@@ -53,6 +53,15 @@
       closeNav();
     });
     navBackdrop?.addEventListener('click', closeNav);
+    // Se si clicca un link con il menu aperto, il menu si chiude all'istante: la pagina cambia senza animazioni a meta
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href]');
+      if (!link || !nav.classList.contains('open') || link.target === '_blank' || e.defaultPrevented) return;
+      document.documentElement.classList.add('nav-instant');
+      closeNav();
+      setTimeout(() => document.documentElement.classList.remove('nav-instant'), 800);
+    }, true);
+    window.addEventListener('pageshow', () => { document.documentElement.classList.remove('nav-instant'); if (nav.classList.contains('open')) closeNav(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); menuToggle.focus(); } });
 
     document.addEventListener('click', (e) => {
