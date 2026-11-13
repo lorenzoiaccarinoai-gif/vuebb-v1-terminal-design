@@ -1825,6 +1825,11 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
 /* Header più alto: il logo ha lo stesso spazio sopra (bordo pagina) e sotto (fine header) */
 .header { height: 88px; }
 .header .header-inner { padding-bottom: 16px; }
-@media (max-width: 768px) { .header { height: 72px; } }
+/* Mobile (iPhone): header attaccato al bordo superiore, lo spazio di 16px è dentro l'header */
+@media (max-width: 768px) {
+  .header { top: 0; height: calc(72px + var(--header-offset)); }
+  .header .header-inner { padding-top: var(--header-offset); }
+  body::before { display: none; }
+}
 /* Header desktop: logo a sinistra, menu e lingua allineati a destra */
 @media (min-width: 769px) { .header .header-inner > .nav { margin-left: auto; margin-right: 2rem; } }
