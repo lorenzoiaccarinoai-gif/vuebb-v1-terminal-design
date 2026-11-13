@@ -1126,7 +1126,7 @@ body, body:has(.page-main), body:has(.policy-main), .header, .page-routes, #serv
 .hero::before { display: none; }
 .hero-tagline { color: #fff; }
 
-#filosofia .gradient-text, .section-title .gradient-text {
+#filosofia .gradient-text, .section-title .gradient-text, .about-headline .gradient-text, .section-desc .gradient-text {
   -webkit-text-fill-color: transparent;
   background: linear-gradient(110deg, #15eaa1, #00bfe7, #3274ff);
   -webkit-background-clip: text;
@@ -1834,3 +1834,20 @@ h1, h2, h3, .section-title { font-family: var(--font); font-weight: 500; letter-
 @media (min-width: 769px) { .header .header-inner > .nav { margin-left: auto; margin-right: 2rem; } }
 /* Footer: nuovo marchio V */
 .footer .logo-img.footer-logo-v { height: 52px; width: auto; }
+/* DNA: sezione fondatore in stile manifesto (titolo, testo in corsivo, firma) */
+#metodo .about-manifesto { max-width: 46rem; margin-inline: 0; text-align: left; }
+#metodo .about-manifesto .about-headline { margin: 0 0 1rem; font-family: var(--font); font-weight: 500; font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; letter-spacing: -.04em; color: #fff; }
+#metodo .about-manifesto .about-quote { margin: 0 0 1.25rem; font-style: italic; font-size: 1.05rem; line-height: 1.65; color: #bdbdbd; }
+#metodo .about-manifesto .about-sign { margin: 0; font-size: .9rem; line-height: 1.5; color: #8a8a8a; }
+#metodo .about-manifesto .about-sign strong { font-weight: 500; color: #fff; }
+/* DNA: senza le card dei passi, il manifesto occupa tutta la larghezza */
+#metodo .method-layout { grid-template-columns: 1fr; }
+/* DNA: virgolette color gradiente intorno alla citazione del fondatore */
+#metodo .about-manifesto .about-quote::before,
+#metodo .about-manifesto .about-quote::after {
+  font-style: normal; font-weight: 600; font-size: 1.6em; line-height: 0; vertical-align: -0.3em;
+  background: linear-gradient(135deg, #15eaa1 0%, #00bfe7 55%, #3274ff 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+#metodo .about-manifesto .about-quote::before { content: "\201C"; margin-right: .08em; }
+#metodo .about-manifesto .about-quote::after { content: "\201D"; margin-left: .06em; }
