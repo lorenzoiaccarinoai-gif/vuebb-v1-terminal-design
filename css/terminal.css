@@ -2069,3 +2069,30 @@ html.i18n-wait body { opacity: 0; }
 html.nav-instant .nav, html.nav-instant .nav *, html.nav-instant .nav::before, html.nav-instant .nav-backdrop, html.nav-instant .menu-toggle .menu-bar, html.nav-instant .cta-book-float { transition: none !important; animation: none !important; }
 /* CTA flottante: sparisce all'istante quando un altro Contattaci e a schermo (anche quello del menu), ricompare con dissolvenza */
 .cta-book-float.cta-float-on.is-hidden, body.nav-open .cta-book-float.cta-float-on { transition: none !important; opacity: 0; visibility: hidden; }
+/* === Velocita x2: tutte le animazioni dimezzate === */
+@media (max-width: 768px) {
+  .nav { transition: transform .19s cubic-bezier(.4,0,.2,1), visibility 0s linear .19s; }
+  .nav.open { transition: transform .3s cubic-bezier(.22,1,.36,1), visibility 0s; }
+  .nav::before { transition: opacity .15s ease; }
+  .nav.open::before { transition-delay: .1s; }
+  .nav .nav-list li, .nav > .btn { transition: opacity .08s ease, transform .1s ease; }
+  .nav.open .nav-list li, .nav.open > .btn { transition: opacity .22s ease, transform .32s cubic-bezier(.22,1,.36,1); }
+  .nav.open .nav-list li:nth-child(1) { transition-delay: .05s; }
+  .nav.open .nav-list li:nth-child(2) { transition-delay: .075s; }
+  .nav.open .nav-list li:nth-child(3) { transition-delay: .1s; }
+  .nav.open .nav-list li:nth-child(4) { transition-delay: .125s; }
+  .nav.open > .btn { transition-delay: .16s; }
+  .nav-backdrop { transition: opacity .13s cubic-bezier(.4,0,.2,1), visibility 0s linear .13s; }
+  body.nav-open .nav-backdrop { transition: opacity .17s cubic-bezier(.22,1,.36,1), visibility 0s; }
+  .header .menu-toggle .menu-bar { transition: transform .2s cubic-bezier(.2,.8,.2,1), width .15s ease, top .15s ease, background .15s ease; }
+  .nav .nav-close::before, .nav .nav-close::after { transition: transform .25s cubic-bezier(.2,.8,.2,1) .07s, background .18s ease; }
+}
+::view-transition-old(root) { animation-duration: .08s; }
+::view-transition-new(root) { animation-duration: .12s; }
+.cta-book-float.cta-float-on { transition: opacity .18s ease, transform .18s ease; }
+.lead-form.is-stepped .lead-field.is-current { animation-duration: .25s; }
+.lead-form.is-stepped .lead-field.is-shake { animation-duration: .2s; }
+.lead-field-error { animation-duration: .15s; }
+.lead-form.is-stepped .lead-select-list { animation-duration: .12s; }
+.lead-progress-bar i { transition-duration: .25s; }
+.btn, .nav-link, .nav-link::after, .lang-toggle, .lead-step-back, .lead-select-btn, .lead-select-list li, .footer a, .spec-card, .price-card, .product-card, .quote-card, .route-card, .lead-form input, .lead-form textarea { transition-duration: .18s !important; }

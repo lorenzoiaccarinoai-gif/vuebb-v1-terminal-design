@@ -96,7 +96,7 @@
   });
   form.addEventListener('change', (e) => {
     if (e.target.tagName === 'SELECT' && steps[current].contains(e.target) && current < steps.length - 1) {
-      setTimeout(() => go(1), 280);
+      setTimeout(() => go(1), 140);
     }
   });
   form.addEventListener('reset', () => setTimeout(() => show(0), 0));

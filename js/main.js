@@ -62,7 +62,7 @@
       e.preventDefault();
       e.stopPropagation();
       closeNav();
-      setTimeout(() => { location.href = url.href; }, 400);
+      setTimeout(() => { location.href = url.href; }, 200);
     }, true);
     window.addEventListener('pageshow', () => { document.documentElement.classList.remove('nav-instant'); if (nav.classList.contains('open')) closeNav(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); menuToggle.focus(); } });
