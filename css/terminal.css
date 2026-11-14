@@ -2132,3 +2132,6 @@ button, .btn, .clients-btn, .menu-toggle, .nav-close, .lang-toggle, .lead-select
 @media (prefers-reduced-motion: reduce) { .cta-book-float.cta-float-on:not(.is-hidden) { animation: none !important; } }
 @media (max-width: 768px) { .header .nav, .header .nav.open { background: #000 !important; background-image: none !important; } }
 @media (max-width: 768px) { .header .nav, .header .nav.open { border-radius: 0 !important; } }
+/* Tutte le CTA Contattaci respirano come quella flottante */
+a.btn[href*="contatti"] { animation: ctaBreath 2.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { a.btn[href*="contatti"] { animation: none; } }
