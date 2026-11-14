@@ -2109,3 +2109,26 @@ html.nav-instant .nav, html.nav-instant .nav *, html.nav-instant .nav::before, h
   html.nav-handoff .nav .nav-close::after { transform: rotate(-45deg); transition: none !important; }
   html.nav-handoff .cta-book-float { opacity: 0 !important; visibility: hidden !important; transition: none !important; }
 }
+/* === Tocco su mobile: niente riquadro blu del browser, riscontro nello stile del sito === */
+html { -webkit-tap-highlight-color: transparent; }
+*, *::before, *::after { -webkit-tap-highlight-color: transparent; }
+button, .btn, .clients-btn, .menu-toggle, .nav-close, .lang-toggle, .lead-select-btn, .lead-step-back, .lead-select-list li, label, .switch button { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; touch-action: manipulation; }
+@media (hover: none) {
+  .btn:active, .clients-btn:active, .lang-toggle:active, .lead-step-back:active, .lead-select-btn:active, .switch button:active, .nav-close:active, .menu-toggle:active { transform: scale(.96); filter: brightness(1.15); transition: transform .08s ease, filter .08s ease; }
+  .nav .nav-link:active, .footer a:active, .lead-select-list li:active { opacity: .7; transition: opacity .08s ease; }
+}
+/* Pulsazione della CTA flottante con il gradiente del sito */
+.cta-book-float.cta-float-on { animation: none !important; isolation: isolate; }
+.cta-book-float.cta-float-on::before { content: ""; position: absolute; inset: 0; border-radius: 999px; z-index: -1; pointer-events: none; box-shadow: none; background: linear-gradient(90deg,#15eaa1,#00bfe7,#3b6cff); filter: blur(6px); opacity: 0; animation: ctaPulseGrad 2.2s cubic-bezier(.22,1,.36,1) infinite; }
+@keyframes ctaPulseGrad { 0% { opacity: .55; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.35, 1.7); } }
+@media (prefers-reduced-motion: reduce) { .cta-book-float.cta-float-on::before { animation: none; } }
+.cta-book-float.cta-float-on { overflow: visible !important; }
+.cta-book-float.cta-float-on::before { animation: ctaPulseGrad2 2.2s ease-out infinite; filter: blur(5px); }
+@keyframes ctaPulseGrad2 { 0% { opacity: .85; transform: scale(1); } 75%, 100% { opacity: 0; transform: scale(1.25, 1.6); } }
+/* Pulsazione: solo un respiro lento di dimensione, nessun alone */
+.cta-book-float.cta-float-on::before { display: none !important; animation: none !important; }
+.cta-book-float.cta-float-on:not(.is-hidden) { animation: ctaBreath 2.8s ease-in-out infinite !important; }
+@keyframes ctaBreath { 0%, 100% { scale: 1; } 50% { scale: 1.06; } }
+@media (prefers-reduced-motion: reduce) { .cta-book-float.cta-float-on:not(.is-hidden) { animation: none !important; } }
+@media (max-width: 768px) { .header .nav, .header .nav.open { background: #000 !important; background-image: none !important; } }
+@media (max-width: 768px) { .header .nav, .header .nav.open { border-radius: 0 !important; } }
